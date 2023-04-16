@@ -1,0 +1,35 @@
+.blockItem {
+  width: 90px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background: #dee2e6;
+  cursor: grab;
+  justify-self: center;
+  padding: 5px;
+
+  .icon {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+    span {
+      font-size: 1.6em;
+    }
+  }
+
+  .name {
+    width: 100%;
+    height: calc(100% - 50px);
+    min-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    text-align: center;
+  }
+}

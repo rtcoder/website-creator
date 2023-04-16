@@ -1,0 +1,27 @@
+.icon {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: inherit;
+  user-select: none;
+
+  svg {
+    width: inherit;
+    display: flex;
+    height: inherit;
+    color: inherit;
+
+    path {
+      color: inherit;
+      fill: currentColor;
+    }
+  }
+
+  i,
+  span.materialSymbolsOutlined,
+  span.materialSymbolsRounded,
+  span.materialSymbolsSharp {
+    font-size: inherit;
+  }
+}

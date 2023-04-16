@@ -1,0 +1,31 @@
+.modalArea {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.20);
+  display: none;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+
+  &.open {
+    display: flex;
+  }
+
+  .modalContainer {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    height: 500px;
+    max-height: calc(100% - 40px);
+    background: white;
+    box-shadow: 0 0 5px 3px #6e6e6e;
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      padding: 15px;
+      height: calc(100% - 50px);
+      overflow: auto;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    line-height: 24px;
+}
+
+table :is(td,th) {
+    padding: 0.5rem 0.5rem;
+    text-align: left;
+}
+
+table thead {
+    border-bottom: 1px solid currentColor;
+    vertical-align: bottom;
+}
+
+table tbody {
+    vertical-align: inherit;
+}
+
+table td {
+    border-bottom: 1px solid #ddd;
+}
+
+table > :not(:last-child) > :last-child > * {
+    border-bottom-color: currentColor;
+}
