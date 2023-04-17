@@ -1,12 +1,14 @@
-import {VariableBlock} from "@/models/VariableBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class VariableParagraphBlock extends VariableBlock {
-    type = BLOCK_TYPES.PARAGRAPH_VARIABLE;
+export class VariableParagraphBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
 
-    getContentHtml() {
-        return this.generateSelector(true, `Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit. Donec facilisis eros posuere erat aliquet mattis facilisis rutrum.`);
+    static create(data?: Partial<BlockInterface>): VariableParagraphBlock {
+        return new VariableParagraphBlock({...data, type: BLOCK_TYPES.PARAGRAPH_VARIABLE});
     }
 
     getSelectorAttributes() {
@@ -16,7 +18,8 @@ export class VariableParagraphBlock extends VariableBlock {
     }
 
     setStartingTextContent() {
-        this.textContent = 'Paragraf';
+        this.textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis eros posuere erat
+                        aliquet mattis facilisis rutrum.`;
     }
 
     getStartingTagName() {

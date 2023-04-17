@@ -61,9 +61,9 @@ function getBlockContent(
             return <ContainerBlockComponent block={block} selectedBlock={selectedBlock} rwdMode={rwdMode}
                                             styleState={styleState}/>
         case BLOCK_TYPES.PARAGRAPH:
-            return <TextBlockComponent block={block} multiline={true}/>
+            return <TextBlockComponent block={block} multiline={true} editable={true}/>
         case BLOCK_TYPES.HEADING:
-            return <TextBlockComponent block={block} multiline={false}/>
+            return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.UL:
 
             break;
@@ -74,7 +74,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.BUTTON:
-            return <TextBlockComponent block={block} multiline={false}/>
+            return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.ICON:
 
             break;
@@ -91,7 +91,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.QUOTE:
-            return <TextBlockComponent block={block} multiline={true}/>
+            return <TextBlockComponent block={block} multiline={true} editable={true}/>
         case BLOCK_TYPES.IFRAME:
 
             break;
@@ -99,11 +99,9 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.PARAGRAPH_VARIABLE:
-
-            break;
+            return <TextBlockComponent block={block} multiline={true}/>
         case BLOCK_TYPES.HEADING_VARIABLE:
-
-            break;
+            return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.IMAGE_VARIABLE:
 
             break;
@@ -117,8 +115,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.QUOTE_VARIABLE:
-
-            break;
+            return <TextBlockComponent block={block} multiline={true}/>
         case BLOCK_TYPES.GOOGLE_MAPS:
 
             break;

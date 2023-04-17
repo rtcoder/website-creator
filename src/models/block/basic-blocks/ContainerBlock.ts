@@ -11,6 +11,7 @@ export class ContainerBlock extends BlockModel {
     static create(data?: Partial<BlockInterface>): ContainerBlock {
         return new ContainerBlock({...data, type: BLOCK_TYPES.CONTAINER});
     }
+
     getStartingStyle() {
         return {
             all: {
