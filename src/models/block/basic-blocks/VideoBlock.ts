@@ -1,12 +1,20 @@
-import {MediaUploadBlock} from "@/models/MediaUploadBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class VideoBlock extends MediaUploadBlock {
-    type = BLOCK_TYPES.VIDEO;
+export class VideoBlock extends BlockModel {
     acceptType = 'video/*';
     changeButtonTitle = 'Zmień wideo';
     onChangeInput = `uploadMedia(event, '${this.id}', '${this.tagName}', onLoadMediaVideo)`;
     addIcon = {name: 'fa-sharp fa-light fa-video-plus', type: 'fontawesome'};
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): VideoBlock {
+        return new VideoBlock({...data, type: BLOCK_TYPES.VIDEO});
+    }
 
     getSelectorAttributes() {
         return {

@@ -32,80 +32,81 @@ export function mapBlock(block: Partial<BlockPlainInterface>, resetId = false): 
     }
     switch (block.type) {
         case BLOCK_TYPES.CONTAINER:
-            block = new ContainerBlock(block);
+            block = ContainerBlock.create(block);
+            block.children = mapStructure(block.children, resetId);
             break;
         case BLOCK_TYPES.PARAGRAPH:
-            block = new ParagraphBlock(block);
+            block = ParagraphBlock.create(block);
             break;
         case BLOCK_TYPES.HEADING:
-            block = new HeadingBlock(block);
+            block = HeadingBlock.create(block);
             break;
         case BLOCK_TYPES.UL:
-            block = new UlBlock(block);
+            block = UlBlock.create(block);
+            block.children = mapStructure(block.children, resetId);
             break;
         case BLOCK_TYPES.IMAGE:
-            block = new ImageBlock(block);
+            block = ImageBlock.create(block);
             break;
         case BLOCK_TYPES.VIDEO:
-            block = new VideoBlock(block);
+            block = VideoBlock.create(block);
             break;
         case BLOCK_TYPES.BUTTON:
-            block = new ButtonBlock(block);
+            block = ButtonBlock.create(block);
             break;
         case BLOCK_TYPES.ICON:
-            block = new IconBlock(block);
+            block = IconBlock.create(block);
             break;
         case BLOCK_TYPES.AUDIO:
-            block = new AudioBlock(block);
+            block = AudioBlock.create(block);
             break;
         case BLOCK_TYPES.YOUTUBE:
-            block = new YoutubeBlock(block);
+            block = YoutubeBlock.create(block);
             break;
         case BLOCK_TYPES.VIMEO:
-            block = new VimeoBlock(block);
+            block = VimeoBlock.create(block);
             break;
         case BLOCK_TYPES.HR:
-            block = new HrBlock(block);
+            block = HrBlock.create(block);
             break;
         case BLOCK_TYPES.QUOTE:
-            block = new QuoteBlock(block);
+            block = QuoteBlock.create(block);
             break;
         case BLOCK_TYPES.IFRAME:
-            block = new IframeBlock(block);
+            block = IframeBlock.create(block);
             break;
         case BLOCK_TYPES.SPOTIFY:
-            block = new SpotifyBlock(block);
+            block = SpotifyBlock.create(block);
             break;
         case BLOCK_TYPES.PARAGRAPH_VARIABLE:
-            block = new VariableParagraphBlock(block);
+            block = VariableParagraphBlock.create(block);
             break;
         case BLOCK_TYPES.HEADING_VARIABLE:
-            block = new VariableHeadingBlock(block);
+            block = VariableHeadingBlock.create(block);
             break;
         case BLOCK_TYPES.IMAGE_VARIABLE:
-            block = new VariableImageBlock(block);
+            block = VariableImageBlock.create(block);
             break;
         case BLOCK_TYPES.VIDEO_VARIABLE:
-            block = new VariableVideoBlock(block);
+            block = VariableVideoBlock.create(block);
             break;
         case BLOCK_TYPES.AUDIO_VARIABLE:
-            block = new VariableAudioBlock(block);
+            block = VariableAudioBlock.create(block);
             break;
         case BLOCK_TYPES.ICON_VARIABLE:
-            block = new VariableIconBlock(block);
+            block = VariableIconBlock.create(block);
             break;
         case BLOCK_TYPES.QUOTE_VARIABLE:
-            block = new VariableQuoteBlock(block);
+            block = VariableQuoteBlock.create(block);
             break;
         case BLOCK_TYPES.GOOGLE_MAPS:
-            block = new GoogleMapsBlock(block);
+            block = GoogleMapsBlock.create(block);
             break;
         case BLOCK_TYPES.GOOGLE_CALENDAR:
-            block = new GoogleCalendarBlock(block);
+            block = GoogleCalendarBlock.create(block);
             break;
     }
-    block.children = mapStructure(block.children, resetId);
-    return block;
+    return block as BlockInterface;
 }
 
 export function mapStructure(structure, resetId = false) {

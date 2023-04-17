@@ -1,8 +1,15 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class IframeBlock extends FrameBlock {
-    type = BLOCK_TYPES.IFRAME;
+export class IframeBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): IframeBlock {
+        return new IframeBlock({...data, type: BLOCK_TYPES.IFRAME});
+    }
 
     getSelectorAttributes() {
         return {

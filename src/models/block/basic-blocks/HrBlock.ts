@@ -1,11 +1,14 @@
-import {BlockHTML} from "@/models/BlockHTML";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class HrBlock extends BlockHTML {
-    type = BLOCK_TYPES.HR;
+export class HrBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
 
-    getContentHtml() {
-        return this.generateSelector();
+    static create(data?: Partial<BlockInterface>): HrBlock {
+        return new HrBlock({...data, type: BLOCK_TYPES.HR});
     }
 
     getStartingStyle() {

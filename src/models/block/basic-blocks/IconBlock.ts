@@ -1,8 +1,15 @@
-import {BlockHTML} from "@/models/BlockHTML";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class IconBlock extends BlockHTML {
-    type = BLOCK_TYPES.ICON;
+export class IconBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): IconBlock {
+        return new IconBlock({...data, type: BLOCK_TYPES.ICON});
+    }
 
     static getIconStartingStyles() {
         return {

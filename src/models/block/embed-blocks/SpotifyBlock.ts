@@ -1,9 +1,17 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class SpotifyBlock extends FrameBlock {
-    type = BLOCK_TYPES.SPOTIFY;
+export class SpotifyBlock extends BlockModel {
     modifyValueFn = 'modifySpotifySourceValue';
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): SpotifyBlock {
+        return new SpotifyBlock({...data, type: BLOCK_TYPES.SPOTIFY});
+    }
 
     getSelectorAttributes() {
         return {

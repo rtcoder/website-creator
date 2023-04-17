@@ -1,9 +1,17 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class YoutubeBlock extends FrameBlock {
-    type = BLOCK_TYPES.YOUTUBE;
+export class YoutubeBlock extends BlockModel {
     modifyValueFn = 'modifyYoutubeSourceValue';
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): YoutubeBlock {
+        return new YoutubeBlock({...data, type: BLOCK_TYPES.YOUTUBE});
+    }
 
     getSelectorAttributes() {
         return {

@@ -1,9 +1,17 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class GoogleMapsBlock extends FrameBlock {
-    type = BLOCK_TYPES.GOOGLE_MAPS;
+export class GoogleMapsBlock extends BlockModel {
     modifyValueFn = 'modifyGoogleMapsSourceValue';
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): GoogleMapsBlock {
+        return new GoogleMapsBlock({...data, type: BLOCK_TYPES.GOOGLE_MAPS});
+    }
 
     getSelectorAttributes() {
         return {

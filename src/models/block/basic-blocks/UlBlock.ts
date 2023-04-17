@@ -1,8 +1,15 @@
-import {BlockHTML} from "@/models/BlockHTML";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class UlBlock extends BlockHTML {
-    type = BLOCK_TYPES.UL;
+export class UlBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): UlBlock {
+        return new UlBlock({...data, type: BLOCK_TYPES.UL});
+    }
 
     getContentHtml() {
         return `<ul class="children"

@@ -1,9 +1,16 @@
-import {VariableBlock} from "@/models/VariableBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
 import {IconBlock} from "@/models/block/basic-blocks/IconBlock";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class VariableIconBlock extends VariableBlock {
-    type = BLOCK_TYPES.ICON_VARIABLE;
+export class VariableIconBlock extends BlockModel {
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): VariableIconBlock {
+        return new VariableIconBlock({...data, type: BLOCK_TYPES.ICON_VARIABLE});
+    }
 
     getStartingStyle() {
         return IconBlock.getIconStartingStyles();

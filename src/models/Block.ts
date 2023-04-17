@@ -12,8 +12,8 @@ export class BlockModel implements BlockInterface {
     styles: Styles;
     children: Children = [] as Children;
     textContent: string;
-    settings = {};
-    attributes = {};
+    settings: PlainObj = {};
+    attributes: PlainObj = {};
     blockLink = null
 
     private constructor(data: Partial<BlockInterface> = {}) {

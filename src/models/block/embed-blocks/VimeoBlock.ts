@@ -1,9 +1,17 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class VimeoBlock extends FrameBlock {
-    type = BLOCK_TYPES.VIMEO;
+export class VimeoBlock extends BlockModel {
     modifyValueFn = 'modifyVimeoSourceValue';
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): VimeoBlock {
+        return new VimeoBlock({...data, type: BLOCK_TYPES.VIMEO});
+    }
 
     getSelectorAttributes() {
         return {

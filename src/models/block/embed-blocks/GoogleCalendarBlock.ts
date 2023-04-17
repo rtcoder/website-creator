@@ -1,9 +1,17 @@
-import {FrameBlock} from "@/models/FrameBlock";
 import {BLOCK_TYPES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockModel} from "@/models/Block";
 
-export class GoogleCalendarBlock extends FrameBlock {
-    type = BLOCK_TYPES.GOOGLE_CALENDAR;
+export class GoogleCalendarBlock extends BlockModel {
     modifyValueFn = 'modifyGoogleCalendarSourceValue';
+
+    private constructor(data: Partial<BlockInterface>) {
+        super(data);
+    }
+
+    static create(data?: Partial<BlockInterface>): GoogleCalendarBlock {
+        return new GoogleCalendarBlock({...data, type: BLOCK_TYPES.GOOGLE_CALENDAR});
+    }
 
     getSelectorAttributes() {
         return {
