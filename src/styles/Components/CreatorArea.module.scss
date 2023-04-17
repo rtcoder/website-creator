@@ -1,3 +1,6 @@
 .creatorArea {
   grid-area: creatorArea;
+  >*{
+    height: 100%;
+  }
 }

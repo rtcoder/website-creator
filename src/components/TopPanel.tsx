@@ -17,11 +17,9 @@ export default function TopPanel(props: TopPanelProps) {
     const [helpModalOpened, setHelpModalOpened] = useState(false);
     const openHelpModal = () => {
         setHelpModalOpened(true);
-        console.log({helpModalOpened})
     }
     const closeHelpModal = () => {
         setHelpModalOpened(false);
-        console.log({helpModalOpened})
     }
     return (
         <div className={styles.topPanel}>

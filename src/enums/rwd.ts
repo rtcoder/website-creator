@@ -4,11 +4,11 @@ export enum RWD_MODES {
     MOBILE = 'mobile',
 }
 
-export enum RWD_STYLE_NAMES {
-    [RWD_MODES.DESKTOP] = 'all',
-    [RWD_MODES.TABLET] = 'max-width:992px',
-    [RWD_MODES.MOBILE] = 'max-width:576px'
-}
+export const RWD_STYLE_NAMES = {
+    [RWD_MODES.DESKTOP]: 'all',
+    [RWD_MODES.TABLET]: 'max-width:992px',
+    [RWD_MODES.MOBILE]: 'max-width:576px'
+} as const;
 
 export const STYLES_RWD_INHERITANCE_ORDER = [
     RWD_STYLE_NAMES[RWD_MODES.DESKTOP],

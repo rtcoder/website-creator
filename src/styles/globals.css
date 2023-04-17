@@ -48,3 +48,21 @@ ul, ol {
 .react-tabs ul li.react-tabs__tab--selected {
     color: #09d;
 }
+
+input {
+    width: 100%;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-variant: inherit;
+    font-family: inherit;
+    letter-spacing: inherit;
+    font-style: inherit;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    display: contents;
+}
