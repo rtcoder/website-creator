@@ -9,6 +9,7 @@ import ContainerBlockComponent from "@/components/Blocks/ContainerBlockComponent
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockProps} from "@/interfaces/BlockProps.interface";
 import TextBlockComponent from "@/components/Blocks/TextBlockComponent";
+import HrBlockComponent from "@/components/Blocks/HrBlockComponent";
 
 export default function (props: BlockProps) {
     const {block, selectedBlock, rwdMode, styleState} = props;
@@ -88,10 +89,9 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.HR:
-
-            break;
+            return <HrBlockComponent/>
         case BLOCK_TYPES.QUOTE:
-            return <TextBlockComponent block={block} multiline={true} editable={true}/>
+            return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.IFRAME:
 
             break;
@@ -99,7 +99,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.PARAGRAPH_VARIABLE:
-            return <TextBlockComponent block={block} multiline={true}/>
+            return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.HEADING_VARIABLE:
             return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.IMAGE_VARIABLE:
@@ -115,7 +115,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.QUOTE_VARIABLE:
-            return <TextBlockComponent block={block} multiline={true}/>
+            return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.GOOGLE_MAPS:
 
             break;
