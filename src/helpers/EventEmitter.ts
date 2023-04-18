@@ -33,10 +33,6 @@ interface DropNewElementInterface {
     targetId: string | null;
 }
 
-interface UpdateContentInterface {
-    element: BlockInterface;
-    content: string;
-}
 
 interface EventEmitterInterface {
     _events: PlainObj;
@@ -77,17 +73,9 @@ interface EventEmitterInterface {
 
     // subscribe(event: Events.SET_STYLE_STATE, callback: (data: BlockInterface) => void): void;
 
-    dispatch(event: Events.UPDATE_CONTENT, data: UpdateContentInterface): void;
-
-    subscribe(event: Events.UPDATE_CONTENT, callback: (data: UpdateContentInterface) => void): void;
-
     // dispatch(event: Events.ADD_SPECIAL_CHAR_TO_CONTENT, data: BlockInterface): void;
 
     // subscribe(event: Events.ADD_SPECIAL_CHAR_TO_CONTENT, callback: (data: BlockInterface) => void): void;
-
-    // dispatch(event: Events.UPDATE_ATTRIBUTES, data: BlockInterface): void;
-
-    // subscribe(event: Events.UPDATE_ATTRIBUTES, callback: (data: BlockInterface) => void): void;
 
     // dispatch(event: Events.SET_ICON, data: BlockInterface): void;
 

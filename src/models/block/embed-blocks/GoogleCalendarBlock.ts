@@ -3,21 +3,12 @@ import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockModel} from "@/models/Block";
 
 export class GoogleCalendarBlock extends BlockModel {
-    modifyValueFn = 'modifyGoogleCalendarSourceValue';
-
     private constructor(data: Partial<BlockInterface>) {
         super(data);
     }
 
     static create(data?: Partial<BlockInterface>): GoogleCalendarBlock {
         return new GoogleCalendarBlock({...data, type: BLOCK_TYPES.GOOGLE_CALENDAR});
-    }
-
-    getSelectorAttributes() {
-        return {
-            ...this.getStartingAttributes(),
-            src: this.attributes.src ?? '',
-        }
     }
 
     getStartingAttributes() {
@@ -32,13 +23,3 @@ export class GoogleCalendarBlock extends BlockModel {
     }
 }
 
-function modifyGoogleCalendarSourceValue(inputValue) {
-    if (inputValue.includes('<iframe')) {
-        const strPart = inputValue.split(' ').find(part => part.startsWith('src'));
-        if (strPart) {
-            return strPart.replace('src="', '').replace('"', '');
-        }
-    }
-
-    return inputValue;
-}

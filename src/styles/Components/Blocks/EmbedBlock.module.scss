@@ -1,0 +1,39 @@
+.frameContainer {
+  height: inherit;
+  width: 100%;
+  position: relative;
+
+  &.withMedia {
+    .absoluteMask {
+      display: block;
+    }
+
+    input {
+      display: none;
+    }
+
+    iframe {
+      display: block;
+    }
+
+  }
+
+  input {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+    display: none;
+  }
+
+  .absoluteMask {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+}
+

@@ -10,6 +10,11 @@ import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockProps} from "@/interfaces/BlockProps.interface";
 import TextBlockComponent from "@/components/Blocks/TextBlockComponent";
 import HrBlockComponent from "@/components/Blocks/HrBlockComponent";
+import YouTubeBlockComponent from "@/components/Blocks/YouTubeBlockComponent";
+import VimeoBlockComponent from "@/components/Blocks/VimeoBlockComponent";
+import SpotifyBlockComponent from "@/components/Blocks/SpotifyBlockComponent";
+import GoogleMapsBlockComponent from "@/components/Blocks/GoogleMapsBlockComponent";
+import GoogleCalendarBlockComponent from "@/components/Blocks/GoogleCalendarBlockComponent";
 
 export default function (props: BlockProps) {
     const {block, selectedBlock, rwdMode, styleState} = props;
@@ -83,11 +88,9 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.YOUTUBE:
-
-            break;
+            return <YouTubeBlockComponent block={block}/>
         case BLOCK_TYPES.VIMEO:
-
-            break;
+            return <VimeoBlockComponent block={block}/>
         case BLOCK_TYPES.HR:
             return <HrBlockComponent/>
         case BLOCK_TYPES.QUOTE:
@@ -96,8 +99,7 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.SPOTIFY:
-
-            break;
+            return <SpotifyBlockComponent block={block}/>
         case BLOCK_TYPES.PARAGRAPH_VARIABLE:
             return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.HEADING_VARIABLE:
@@ -117,11 +119,9 @@ function getBlockContent(
         case BLOCK_TYPES.QUOTE_VARIABLE:
             return <TextBlockComponent block={block}/>
         case BLOCK_TYPES.GOOGLE_MAPS:
-
-            break;
+            return <GoogleMapsBlockComponent block={block}/>
         case BLOCK_TYPES.GOOGLE_CALENDAR:
-
-            break;
+            return <GoogleCalendarBlockComponent block={block}/>
     }
     return '';
 }

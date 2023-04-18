@@ -3,7 +3,6 @@ import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockModel} from "@/models/Block";
 
 export class GoogleMapsBlock extends BlockModel {
-    modifyValueFn = 'modifyGoogleMapsSourceValue';
 
     private constructor(data: Partial<BlockInterface>) {
         super(data);
@@ -11,13 +10,6 @@ export class GoogleMapsBlock extends BlockModel {
 
     static create(data?: Partial<BlockInterface>): GoogleMapsBlock {
         return new GoogleMapsBlock({...data, type: BLOCK_TYPES.GOOGLE_MAPS});
-    }
-
-    getSelectorAttributes() {
-        return {
-            ...this.getStartingAttributes(),
-            src: this.attributes.src ?? '',
-        }
     }
 
     getStartingAttributes() {
@@ -31,15 +23,4 @@ export class GoogleMapsBlock extends BlockModel {
             loading: 'lazy'
         }
     }
-}
-
-function modifyGoogleMapsSourceValue(inputValue) {
-    if (inputValue.includes('<iframe')) {
-        const strPart = inputValue.split(' ').find(part => part.startsWith('src'));
-        if (strPart) {
-            return strPart.replace('src="', '').replace('"', '');
-        }
-    }
-
-    return inputValue;
 }

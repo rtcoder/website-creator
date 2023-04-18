@@ -52,9 +52,6 @@ export default class Creator extends React.Component<any, any> {
         eventEmitter.subscribe(Events.FORCE_SELECT_ELEMENT, block => {
             this.setState({selectedBlock: block})
         });
-        eventEmitter.subscribe(Events.UPDATE_CONTENT, data => {
-            this.setState({selectedBlock: block})
-        });
     }
 
     render() {
