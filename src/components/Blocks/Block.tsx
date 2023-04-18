@@ -15,6 +15,7 @@ import VimeoBlockComponent from "@/components/Blocks/VimeoBlockComponent";
 import SpotifyBlockComponent from "@/components/Blocks/SpotifyBlockComponent";
 import GoogleMapsBlockComponent from "@/components/Blocks/GoogleMapsBlockComponent";
 import GoogleCalendarBlockComponent from "@/components/Blocks/GoogleCalendarBlockComponent";
+import IframeBlockComponent from "@/components/Blocks/IframeBlockComponent";
 
 export default function (props: BlockProps) {
     const {block, selectedBlock, rwdMode, styleState} = props;
@@ -96,8 +97,7 @@ function getBlockContent(
         case BLOCK_TYPES.QUOTE:
             return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.IFRAME:
-
-            break;
+            return <IframeBlockComponent block={block}/>
         case BLOCK_TYPES.SPOTIFY:
             return <SpotifyBlockComponent block={block}/>
         case BLOCK_TYPES.PARAGRAPH_VARIABLE:

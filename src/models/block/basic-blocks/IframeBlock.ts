@@ -11,13 +11,6 @@ export class IframeBlock extends BlockModel {
         return new IframeBlock({...data, type: BLOCK_TYPES.IFRAME});
     }
 
-    getSelectorAttributes() {
-        return {
-            ...this.getStartingAttributes(),
-            src: this.attributes.src ?? '',
-        }
-    }
-
     getStartingAttributes() {
         return {
             src: '',
