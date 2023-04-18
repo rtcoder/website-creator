@@ -1,5 +1,9 @@
 .creatorArea {
   grid-area: creatorArea;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
   >*{
     height: 100%;
   }

@@ -35,6 +35,7 @@ export default class Creator extends React.Component<any, any> {
             this.setState({structure});
 
             eventEmitter.dispatch(Events.SELECT_ELEMENT, newBlock);
+            console.log(structure)
         });
         eventEmitter.subscribe(Events.DROP_ELEMENT, data => {
             const {element, targetId} = data;

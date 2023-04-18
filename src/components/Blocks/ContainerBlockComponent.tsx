@@ -31,12 +31,13 @@ export default function (props: BlockProps) {
     const classes = classNames({
         [styles.children]: true,
         [styles.dragover]: isDragover
-    })
+    });
+    const widthProperties = ['width', 'min-width', 'max-width'];
     return (
         <div className={classes}
              ref={drop}>
             {block.children.map(b =>
-                <div key={b.id}>
+                <div key={b.id} style={b.styles.getInheritedStyleWith(rwdMode, styleState, widthProperties)}>
                     <Block block={b} selectedBlock={selectedBlock} rwdMode={rwdMode}
                            styleState={styleState}/>
                 </div>)}

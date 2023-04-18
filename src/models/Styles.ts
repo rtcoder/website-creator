@@ -2,13 +2,14 @@ import {RWD_MODES, RWD_STYLE_NAMES, STYLES_RWD_INHERITANCE_ORDER} from "@/enums/
 import {STYLE_STATE_INHERITANCE_ORDER, STYLE_STATE_NAMES} from "@/enums/styleState";
 import {toCamelCase, toKebabCase} from "@/helpers/string-helpers";
 import {CSSProperties} from "react";
+import {PlainObj} from "@/interfaces/PlainObj";
 
 type rwdKeys = keyof typeof RWD_STYLE_NAMES;
 type rwdValues = (typeof RWD_STYLE_NAMES)[rwdKeys];
 
 export class Styles {
-    [key: rwdValues]: {
-        [key: STYLE_STATE_NAMES]: {
+    [rwd: rwdValues]: {
+        [state: STYLE_STATE_NAMES | string]: {
             [key: string]: string;
         };
     };
@@ -25,7 +26,35 @@ export class Styles {
         return styles[key] || '';
     }
 
-    getInheritedStyle(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES): CSSProperties {
+    getInheritedStyleWith(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES, properties: string[]): CSSProperties {
+        const styles = this.getFilteredProperties(property => properties.includes(property));
+        return this.getInheritedStyle(rwd, styleState, styles);
+    }
+
+    getInheritedStyleWithout(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES, properties: string[]): CSSProperties {
+        const styles = this.getFilteredProperties(property => !properties.includes(property));
+        return this.getInheritedStyle(rwd, styleState, styles);
+    }
+
+    private getFilteredProperties(filterFn: (prop: string) => boolean): CSSProperties {
+        const styles = {};
+        Object.keys(this).forEach(rwd => {
+            styles[rwd] = {};
+
+            Object.keys(this[rwd]).forEach(state => {
+                styles[rwd][state] = {};
+
+                Object.keys(this[rwd][state])
+                    .filter(property => filterFn(property))
+                    .forEach(prop => {
+                        styles[rwd][state][prop] = this[rwd][state][prop];
+                    })
+            })
+        });
+        return styles;
+    }
+
+    getInheritedStyle(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES, styles: PlainObj = this): CSSProperties {
 
         const rwdStyleName = RWD_STYLE_NAMES[rwd];
 
@@ -35,7 +64,7 @@ export class Styles {
         }
 
         for (const rwd of STYLES_RWD_INHERITANCE_ORDER) {
-            const s = this[rwd] || {};
+            const s = styles[rwd] || {};
             inheritedStyles.basic = {
                 ...inheritedStyles.basic,
                 ...(s.basic || {})

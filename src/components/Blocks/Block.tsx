@@ -16,6 +16,9 @@ import SpotifyBlockComponent from "@/components/Blocks/SpotifyBlockComponent";
 import GoogleMapsBlockComponent from "@/components/Blocks/GoogleMapsBlockComponent";
 import GoogleCalendarBlockComponent from "@/components/Blocks/GoogleCalendarBlockComponent";
 import IframeBlockComponent from "@/components/Blocks/IframeBlockComponent";
+import ImageBlockComponent from "@/components/Blocks/ImageBlockComponent";
+import VideoBlockComponent from "@/components/Blocks/VideoBlockComponent";
+import AudioBlockComponent from "@/components/Blocks/AudioBlockComponent";
 
 export default function (props: BlockProps) {
     const {block, selectedBlock, rwdMode, styleState} = props;
@@ -43,13 +46,14 @@ export default function (props: BlockProps) {
         [styles.singleBlock]: true,
         [styles.selected]: selectedBlock?.id === block.id
     });
+    const withoutProperties = ['width', 'min-width', 'max-width'];
 
     return (
         <div className={classes}
              ref={dragRef}
              onClick={toggleSelected}
-             style={block.styles.getInheritedStyle(rwdMode, styleState)}>
-            <div className="mask-layer"></div>
+             style={block.styles.getInheritedStyleWithout(rwdMode, styleState, withoutProperties)}>
+            <div className={styles.maskLayer}/>
             {/*${this.#getButtonsHtml()}*/}
             ${getBlockContent(block, selectedBlock, rwdMode, styleState)}
         </div>
@@ -75,19 +79,16 @@ function getBlockContent(
 
             break;
         case BLOCK_TYPES.IMAGE:
-
-            break;
+            return <ImageBlockComponent block={block}/>
         case BLOCK_TYPES.VIDEO:
-
-            break;
+            return <VideoBlockComponent block={block}/>
         case BLOCK_TYPES.BUTTON:
             return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.ICON:
 
             break;
         case BLOCK_TYPES.AUDIO:
-
-            break;
+            return <AudioBlockComponent block={block}/>
         case BLOCK_TYPES.YOUTUBE:
             return <YouTubeBlockComponent block={block}/>
         case BLOCK_TYPES.VIMEO:

@@ -1,0 +1,47 @@
+.mediaContainer {
+  width: 100%;
+  label {
+    display: flex;
+    position: relative;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  :is(img, video) {
+    width: 100%;
+  }
+
+  .loading {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20px;
+    border: 1px solid #09c;
+    background: rgba(0, 153, 204, .38);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 3px #2d2d2d;
+
+    .bar {
+      height: 100%;
+      background: #09c;
+    }
+  }
+
+  input[type=file] {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    max-height: inherit;
+    border-radius: inherit;
+    object-fit: inherit;
+    object-position: inherit;
+  }
+}
