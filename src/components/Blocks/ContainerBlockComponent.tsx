@@ -1,5 +1,6 @@
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
-import {eventEmitter, Events} from "@/helpers/EventEmitter";
+import {eventEmitter} from "@/services/EventEmitter";
+import {Events} from "@/interfaces/EventEmitter.interface";
 import {useDrop} from "react-dnd";
 import styles from "@/styles/Components/Blocks/Block.module.scss"
 import Block from "@/components/Blocks/Block";

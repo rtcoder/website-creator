@@ -2,7 +2,8 @@ import styles from "@/styles/Components/Blocks/Block.module.scss"
 import {RWD_MODES} from "@/enums/rwd";
 import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import {BLOCK_TYPES, BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
-import {eventEmitter, Events} from "@/helpers/EventEmitter";
+import {eventEmitter} from "@/services/EventEmitter";
+import {Events} from "@/interfaces/EventEmitter.interface";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
 import ContainerBlockComponent from "@/components/Blocks/ContainerBlockComponent";

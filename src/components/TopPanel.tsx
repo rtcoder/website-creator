@@ -2,7 +2,8 @@ import styles from '@/styles/Components/TopPanel.module.scss';
 import Icon from "@/components/Icon";
 import classNames from "@/helpers/classNames";
 import {RWD_MODES} from "@/enums/rwd";
-import {eventEmitter, Events} from "@/helpers/EventEmitter";
+import {eventEmitter} from "@/services/EventEmitter";
+import {Events} from "@/interfaces/EventEmitter.interface";
 import HelpModal from "@/components/HelpModal";
 import {useState} from "react";
 

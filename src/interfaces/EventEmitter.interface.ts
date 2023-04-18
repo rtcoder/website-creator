@@ -34,7 +34,7 @@ interface DropNewElementInterface {
 }
 
 
-interface EventEmitterInterface {
+export interface EventEmitterInterface {
     _events: PlainObj;
 
     dispatch(event: Events.RWD_CHANGED, data: RWD_MODES): void;
@@ -98,29 +98,4 @@ interface EventEmitterInterface {
     // subscribe(event: Events.RELOAD_EVENTS, callback: (data: BlockInterface) => void): void;
 
     unsubscribe(event: Events): void;
-}
-
-export const eventEmitter: EventEmitterInterface = {
-    _events: {},
-
-    dispatch(event: Events, data: any) {
-        if (!this._events[event]) {
-            return;
-        }
-        this._events[event].forEach(callback => callback(data))
-    },
-
-    subscribe(event: Events, callback: (data: any) => any) {
-        if (!this._events[event]) {
-            this._events[event] = [];
-        }
-        this._events[event].push(callback);
-    },
-
-    unsubscribe(event: Events) {
-        if (!this._events[event]) {
-            return;
-        }
-        delete this._events[event];
-    }
 }
