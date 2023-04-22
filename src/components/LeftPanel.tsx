@@ -10,6 +10,7 @@ import LeftSettingsPanel from "@/components/LeftPanel/LeftSettingsPanel";
 export default function () {
     return (
         <div className={styles.leftPanel}>
+            <LeftSettingsPanel/>
             <Tabs>
                 <TabList>
                     <Tab>

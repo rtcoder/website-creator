@@ -1,0 +1,89 @@
+.tabs {
+  height: 100%;
+
+  .tabPanel.selected {
+    height: calc(100% - 80px);
+    padding: 5px;
+
+    .searchForm {
+      display: flex;
+      flex-direction: row;
+      height: 40px;
+      align-items: center;
+    }
+
+    .iconsList {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100% - 40px);
+      overflow: auto;
+
+
+      .icons {
+        width: 100%;
+        display: grid;
+        column-gap: 10px;
+        row-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        max-height: calc(100% - 40px);
+
+        .iconItem {
+          width: 90px;
+          height: 100px;
+          background: #eaeaea;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          justify-self: center;
+          user-select: none;
+          border: 3px solid transparent;
+
+          &:hover,
+          &.selected {
+            background: #d3e606;
+          }
+
+          &.selected {
+            border-color: #aeb56f;
+          }
+
+          .iconPreview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+            width: 90px;
+            font-size: 30px;
+
+            .icon {
+              font-size: 40px;
+              width: 40px;
+            }
+          }
+
+          .iconName {
+            text-align: center;
+            font-size: 9px;
+          }
+        }
+      }
+
+      .showMoreButton {
+        text-align: center;
+        padding: 10px;
+        color: #09d;
+        cursor: pointer;
+        border: 1px solid #09d;
+        margin: 30px auto 0;
+        user-select: none;
+
+        &:hover {
+          color: #fff;
+          background-color: #09d;
+        }
+      }
+    }
+  }
+}
+
