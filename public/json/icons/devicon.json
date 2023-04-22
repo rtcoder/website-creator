@@ -1,0 +1,4738 @@
+{
+    "categories": [
+        {
+            "name": "3d",
+            "title": "3d"
+        },
+        {
+            "name": "algorithms",
+            "title": "algorithms"
+        },
+        {
+            "name": "analysis",
+            "title": "analysis"
+        },
+        {
+            "name": "analytics",
+            "title": "analytics"
+        },
+        {
+            "name": "android",
+            "title": "android"
+        },
+        {
+            "name": "animation",
+            "title": "animation"
+        },
+        {
+            "name": "api_wrapper",
+            "title": "api_wrapper"
+        },
+        {
+            "name": "app",
+            "title": "app"
+        },
+        {
+            "name": "apple",
+            "title": "apple"
+        },
+        {
+            "name": "applets",
+            "title": "applets"
+        },
+        {
+            "name": "application",
+            "title": "application"
+        },
+        {
+            "name": "architecture",
+            "title": "architecture"
+        },
+        {
+            "name": "arm",
+            "title": "arm"
+        },
+        {
+            "name": "ARM",
+            "title": "ARM"
+        },
+        {
+            "name": "audio",
+            "title": "audio"
+        },
+        {
+            "name": "auth",
+            "title": "auth"
+        },
+        {
+            "name": "autodesk",
+            "title": "autodesk"
+        },
+        {
+            "name": "automation",
+            "title": "automation"
+        },
+        {
+            "name": "blockchain",
+            "title": "blockchain"
+        },
+        {
+            "name": "brand",
+            "title": "brand"
+        },
+        {
+            "name": "browser",
+            "title": "browser"
+        },
+        {
+            "name": "build",
+            "title": "build"
+        },
+        {
+            "name": "c/c++",
+            "title": "c/c++"
+        },
+        {
+            "name": "c++",
+            "title": "c++"
+        },
+        {
+            "name": "chat",
+            "title": "chat"
+        },
+        {
+            "name": "cloud",
+            "title": "cloud"
+        },
+        {
+            "name": "cms",
+            "title": "cms"
+        },
+        {
+            "name": "code-quality",
+            "title": "code quality"
+        },
+        {
+            "name": "coding-style",
+            "title": "coding style"
+        },
+        {
+            "name": "collaboration",
+            "title": "collaboration"
+        },
+        {
+            "name": "command",
+            "title": "command"
+        },
+        {
+            "name": "compiler",
+            "title": "compiler"
+        },
+        {
+            "name": "computer",
+            "title": "computer"
+        },
+        {
+            "name": "computer-vision",
+            "title": "computer vision"
+        },
+        {
+            "name": "container",
+            "title": "container"
+        },
+        {
+            "name": "continuous-delivery",
+            "title": "continuous delivery"
+        },
+        {
+            "name": "cross-platform",
+            "title": "cross platform"
+        },
+        {
+            "name": "csharp",
+            "title": "csharp"
+        },
+        {
+            "name": "css",
+            "title": "css"
+        },
+        {
+            "name": "data",
+            "title": "data"
+        },
+        {
+            "name": "data-science",
+            "title": "data science"
+        },
+        {
+            "name": "database",
+            "title": "database"
+        },
+        {
+            "name": "db",
+            "title": "db"
+        },
+        {
+            "name": "deep-learning",
+            "title": "deep learning"
+        },
+        {
+            "name": "deploy",
+            "title": "deploy"
+        },
+        {
+            "name": "deployment",
+            "title": "deployment"
+        },
+        {
+            "name": "design",
+            "title": "design"
+        },
+        {
+            "name": "desktop",
+            "title": "desktop"
+        },
+        {
+            "name": "devops",
+            "title": "devops"
+        },
+        {
+            "name": "distribuition",
+            "title": "distribuition"
+        },
+        {
+            "name": "docker",
+            "title": "docker"
+        },
+        {
+            "name": "documentation",
+            "title": "documentation"
+        },
+        {
+            "name": "ecommerce",
+            "title": "ecommerce"
+        },
+        {
+            "name": "editor",
+            "title": "editor"
+        },
+        {
+            "name": "engine",
+            "title": "engine"
+        },
+        {
+            "name": "erc20",
+            "title": "erc20"
+        },
+        {
+            "name": "ethereum",
+            "title": "ethereum"
+        },
+        {
+            "name": "framework",
+            "title": "framework"
+        },
+        {
+            "name": "frontend",
+            "title": "frontend"
+        },
+        {
+            "name": "ftp",
+            "title": "ftp"
+        },
+        {
+            "name": "functional",
+            "title": "functional"
+        },
+        {
+            "name": "game",
+            "title": "game"
+        },
+        {
+            "name": "game-engine",
+            "title": "game engine"
+        },
+        {
+            "name": "git",
+            "title": "git"
+        },
+        {
+            "name": "gitops",
+            "title": "gitops"
+        },
+        {
+            "name": "go",
+            "title": "go"
+        },
+        {
+            "name": "google",
+            "title": "google"
+        },
+        {
+            "name": "graph",
+            "title": "graph"
+        },
+        {
+            "name": "graphic",
+            "title": "graphic"
+        },
+        {
+            "name": "graphics",
+            "title": "graphics"
+        },
+        {
+            "name": "hardware",
+            "title": "hardware"
+        },
+        {
+            "name": "hosting",
+            "title": "hosting"
+        },
+        {
+            "name": "html",
+            "title": "html"
+        },
+        {
+            "name": "iconset",
+            "title": "iconset"
+        },
+        {
+            "name": "ide",
+            "title": "ide"
+        },
+        {
+            "name": "infrastructure",
+            "title": "infrastructure"
+        },
+        {
+            "name": "infrastructure-as-code",
+            "title": "infrastructure as code"
+        },
+        {
+            "name": "integration",
+            "title": "integration"
+        },
+        {
+            "name": "ios",
+            "title": "ios"
+        },
+        {
+            "name": "iphone",
+            "title": "iphone"
+        },
+        {
+            "name": "java",
+            "title": "java"
+        },
+        {
+            "name": "javascript",
+            "title": "javascript"
+        },
+        {
+            "name": "js",
+            "title": "js"
+        },
+        {
+            "name": "kubernetes",
+            "title": "kubernetes"
+        },
+        {
+            "name": "language",
+            "title": "language"
+        },
+        {
+            "name": "latex2e",
+            "title": "latex2e"
+        },
+        {
+            "name": "latex3",
+            "title": "latex3"
+        },
+        {
+            "name": "library",
+            "title": "library"
+        },
+        {
+            "name": "linter",
+            "title": "linter"
+        },
+        {
+            "name": "linux",
+            "title": "linux"
+        },
+        {
+            "name": "localization",
+            "title": "localization"
+        },
+        {
+            "name": "logs",
+            "title": "logs"
+        },
+        {
+            "name": "machine-learning",
+            "title": "machine learning"
+        },
+        {
+            "name": "manager",
+            "title": "manager"
+        },
+        {
+            "name": "markup",
+            "title": "markup"
+        },
+        {
+            "name": "material-design",
+            "title": "material design"
+        },
+        {
+            "name": "mel",
+            "title": "mel"
+        },
+        {
+            "name": "metrics",
+            "title": "metrics"
+        },
+        {
+            "name": "microcontroller",
+            "title": "microcontroller"
+        },
+        {
+            "name": "mobile",
+            "title": "mobile"
+        },
+        {
+            "name": "modelling",
+            "title": "modelling"
+        },
+        {
+            "name": "monitoring",
+            "title": "monitoring"
+        },
+        {
+            "name": "multimedia",
+            "title": "multimedia"
+        },
+        {
+            "name": "networking",
+            "title": "networking"
+        },
+        {
+            "name": "nodejs",
+            "title": "nodejs"
+        },
+        {
+            "name": "object-oriented",
+            "title": "object oriented"
+        },
+        {
+            "name": "observability",
+            "title": "observability"
+        },
+        {
+            "name": "open-source",
+            "title": "open source"
+        },
+        {
+            "name": "organization",
+            "title": "organization"
+        },
+        {
+            "name": "organize",
+            "title": "organize"
+        },
+        {
+            "name": "orm",
+            "title": "orm"
+        },
+        {
+            "name": "os",
+            "title": "os"
+        },
+        {
+            "name": "package",
+            "title": "package"
+        },
+        {
+            "name": "php",
+            "title": "php"
+        },
+        {
+            "name": "pipeline",
+            "title": "pipeline"
+        },
+        {
+            "name": "platform",
+            "title": "platform"
+        },
+        {
+            "name": "pods",
+            "title": "pods"
+        },
+        {
+            "name": "pre-processor",
+            "title": "pre processor"
+        },
+        {
+            "name": "procedural",
+            "title": "procedural"
+        },
+        {
+            "name": "production-tool",
+            "title": "production tool"
+        },
+        {
+            "name": "production-tracking",
+            "title": "production tracking"
+        },
+        {
+            "name": "programming",
+            "title": "programming"
+        },
+        {
+            "name": "project-management",
+            "title": "project management"
+        },
+        {
+            "name": "prototype-based",
+            "title": "prototype based"
+        },
+        {
+            "name": "provisioning",
+            "title": "provisioning"
+        },
+        {
+            "name": "pymel",
+            "title": "pymel"
+        },
+        {
+            "name": "python",
+            "title": "python"
+        },
+        {
+            "name": "query",
+            "title": "query"
+        },
+        {
+            "name": "reactjs",
+            "title": "reactjs"
+        },
+        {
+            "name": "rest",
+            "title": "rest"
+        },
+        {
+            "name": "ruby",
+            "title": "ruby"
+        },
+        {
+            "name": "rust",
+            "title": "rust"
+        },
+        {
+            "name": "scripting",
+            "title": "scripting"
+        },
+        {
+            "name": "sdk",
+            "title": "sdk"
+        },
+        {
+            "name": "security",
+            "title": "security"
+        },
+        {
+            "name": "server",
+            "title": "server"
+        },
+        {
+            "name": "shell",
+            "title": "shell"
+        },
+        {
+            "name": "social",
+            "title": "social"
+        },
+        {
+            "name": "sql",
+            "title": "sql"
+        },
+        {
+            "name": "ssg",
+            "title": "ssg"
+        },
+        {
+            "name": "ssh",
+            "title": "ssh"
+        },
+        {
+            "name": "static site generator",
+            "title": "static site generator"
+        },
+        {
+            "name": "static-site-generator",
+            "title": "static site generator"
+        },
+        {
+            "name": "statistics",
+            "title": "statistics"
+        },
+        {
+            "name": "storage",
+            "title": "storage"
+        },
+        {
+            "name": "streaming",
+            "title": "streaming"
+        },
+        {
+            "name": "svn",
+            "title": "svn"
+        },
+        {
+            "name": "task-runner",
+            "title": "task runner"
+        },
+        {
+            "name": "test-runner",
+            "title": "test runner"
+        },
+        {
+            "name": "testing",
+            "title": "testing"
+        },
+        {
+            "name": "tex",
+            "title": "tex"
+        },
+        {
+            "name": "transpiler",
+            "title": "transpiler"
+        },
+        {
+            "name": "typesetting-system",
+            "title": "typesetting system"
+        },
+        {
+            "name": "ui",
+            "title": "ui"
+        },
+        {
+            "name": "vector",
+            "title": "vector"
+        },
+        {
+            "name": "version",
+            "title": "version"
+        },
+        {
+            "name": "version-control",
+            "title": "version control"
+        },
+        {
+            "name": "vfx",
+            "title": "vfx"
+        },
+        {
+            "name": "video",
+            "title": "video"
+        },
+        {
+            "name": "visualization",
+            "title": "visualization"
+        },
+        {
+            "name": "vuejs",
+            "title": "vuejs"
+        },
+        {
+            "name": "vuejs-library",
+            "title": "vuejs library"
+        },
+        {
+            "name": "web-application",
+            "title": "web application"
+        },
+        {
+            "name": "webdrive",
+            "title": "webdrive"
+        },
+        {
+            "name": "website",
+            "title": "website"
+        },
+        {
+            "name": "websockets",
+            "title": "websockets"
+        },
+        {
+            "name": "wiki",
+            "title": "wiki"
+        },
+        {
+            "name": "windows",
+            "title": "windows"
+        },
+        {
+            "name": "wrapper",
+            "title": "wrapper"
+        }
+    ],
+    "icons": [
+        {
+            "name": "adonisjs",
+            "icon": "devicon-adonisjs-original",
+            "categories": [
+                "nodejs",
+                "framework"
+            ]
+        },
+        {
+            "name": "adonisjs",
+            "icon": "devicon-adonisjs-original-wordmark",
+            "categories": [
+                "nodejs",
+                "framework"
+            ]
+        },
+        {
+            "name": "aftereffects",
+            "icon": "devicon-aftereffects-plain",
+            "categories": [
+                "video",
+                "editor"
+            ]
+        },
+        {
+            "name": "amazonwebservices",
+            "icon": "devicon-amazonwebservices-original",
+            "categories": [
+                "cloud",
+                "hosting",
+                "server"
+            ]
+        },
+        {
+            "name": "amazonwebservices",
+            "icon": "devicon-amazonwebservices-plain-wordmark",
+            "categories": [
+                "cloud",
+                "hosting",
+                "server"
+            ]
+        },
+        {
+            "name": "android",
+            "icon": "devicon-android-plain",
+            "categories": [
+                "os",
+                "mobile"
+            ]
+        },
+        {
+            "name": "android",
+            "icon": "devicon-android-plain-wordmark",
+            "categories": [
+                "os",
+                "mobile"
+            ]
+        },
+        {
+            "name": "androidstudio",
+            "icon": "devicon-androidstudio-plain",
+            "categories": [
+                "application",
+                "editor",
+                "ide",
+                "android",
+                "mobile"
+            ]
+        },
+        {
+            "name": "androidstudio",
+            "icon": "devicon-androidstudio-plain-wordmark",
+            "categories": [
+                "application",
+                "editor",
+                "ide",
+                "android",
+                "mobile"
+            ]
+        },
+        {
+            "name": "aarch64",
+            "icon": "devicon-aarch64-plain",
+            "categories": [
+                "architecture",
+                "programming",
+                "language",
+                "ARM"
+            ]
+        },
+        {
+            "name": "angularjs",
+            "icon": "devicon-angularjs-plain",
+            "categories": [
+                "framework",
+                "javascript"
+            ]
+        },
+        {
+            "name": "angularjs",
+            "icon": "devicon-angularjs-plain-wordmark",
+            "categories": [
+                "framework",
+                "javascript"
+            ]
+        },
+        {
+            "name": "ansible",
+            "icon": "devicon-ansible-plain",
+            "categories": [
+                "automation",
+                "provisioning",
+                "deployment",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "ansible",
+            "icon": "devicon-ansible-plain-wordmark",
+            "categories": [
+                "automation",
+                "provisioning",
+                "deployment",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "apache",
+            "icon": "devicon-apache-plain",
+            "categories": [
+                "php"
+            ]
+        },
+        {
+            "name": "apache",
+            "icon": "devicon-apache-plain-wordmark",
+            "categories": [
+                "php"
+            ]
+        },
+        {
+            "name": "apache",
+            "icon": "devicon-apache-line",
+            "categories": [
+                "php"
+            ]
+        },
+        {
+            "name": "apache",
+            "icon": "devicon-apache-line-wordmark",
+            "categories": [
+                "php"
+            ]
+        },
+        {
+            "name": "apachekafka",
+            "icon": "devicon-apachekafka-original",
+            "categories": [
+                "streaming",
+                "open-source"
+            ]
+        },
+        {
+            "name": "apachekafka",
+            "icon": "devicon-apachekafka-original-wordmark",
+            "categories": [
+                "streaming",
+                "open-source"
+            ]
+        },
+        {
+            "name": "appcelerator",
+            "icon": "devicon-appcelerator-original",
+            "categories": [
+                "app",
+                "mobile"
+            ]
+        },
+        {
+            "name": "appcelerator",
+            "icon": "devicon-appcelerator-plain-wordmark",
+            "categories": [
+                "app",
+                "mobile"
+            ]
+        },
+        {
+            "name": "apple",
+            "icon": "devicon-apple-original",
+            "categories": [
+                "brand",
+                "mobile"
+            ]
+        },
+        {
+            "name": "appwrite",
+            "icon": "devicon-appwrite-plain",
+            "categories": [
+                "cloud",
+                "platform",
+                "server"
+            ]
+        },
+        {
+            "name": "appwrite",
+            "icon": "devicon-appwrite-plain-wordmark",
+            "categories": [
+                "cloud",
+                "platform",
+                "server"
+            ]
+        },
+        {
+            "name": "arduino",
+            "icon": "devicon-arduino-plain",
+            "categories": [
+                "microcontroller",
+                "hardware"
+            ]
+        },
+        {
+            "name": "arduino",
+            "icon": "devicon-arduino-plain-wordmark",
+            "categories": [
+                "microcontroller",
+                "hardware"
+            ]
+        },
+        {
+            "name": "atom",
+            "icon": "devicon-atom-original",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "atom",
+            "icon": "devicon-atom-original-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "azure",
+            "icon": "devicon-azure-plain",
+            "categories": [
+                "cloud",
+                "devops"
+            ]
+        },
+        {
+            "name": "azure",
+            "icon": "devicon-azure-plain-wordmark",
+            "categories": [
+                "cloud",
+                "devops"
+            ]
+        },
+        {
+            "name": "babel",
+            "icon": "devicon-babel-plain",
+            "categories": [
+                "javascript",
+                "transpiler"
+            ]
+        },
+        {
+            "name": "backbonejs",
+            "icon": "devicon-backbonejs-plain",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "backbonejs",
+            "icon": "devicon-backbonejs-plain-wordmark",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "bamboo",
+            "icon": "devicon-bamboo-original",
+            "categories": [
+                "platform",
+                "integration",
+                "server"
+            ]
+        },
+        {
+            "name": "bamboo",
+            "icon": "devicon-bamboo-original-wordmark",
+            "categories": [
+                "platform",
+                "integration",
+                "server"
+            ]
+        },
+        {
+            "name": "bash",
+            "icon": "devicon-bash-plain",
+            "categories": [
+                "shell",
+                "command"
+            ]
+        },
+        {
+            "name": "behance",
+            "icon": "devicon-behance-plain",
+            "categories": [
+                "social",
+                "website"
+            ]
+        },
+        {
+            "name": "behance",
+            "icon": "devicon-behance-plain-wordmark",
+            "categories": [
+                "social",
+                "website"
+            ]
+        },
+        {
+            "name": "bitbucket",
+            "icon": "devicon-bitbucket-original",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "bitbucket",
+            "icon": "devicon-bitbucket-original-wordmark",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "bootstrap",
+            "icon": "devicon-bootstrap-plain",
+            "categories": [
+                "css",
+                "framework"
+            ]
+        },
+        {
+            "name": "bootstrap",
+            "icon": "devicon-bootstrap-plain-wordmark",
+            "categories": [
+                "css",
+                "framework"
+            ]
+        },
+        {
+            "name": "bulma",
+            "icon": "devicon-bulma-plain",
+            "categories": [
+                "css",
+                "framework"
+            ]
+        },
+        {
+            "name": "bower",
+            "icon": "devicon-bower-plain",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "bower",
+            "icon": "devicon-bower-plain-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "bower",
+            "icon": "devicon-bower-line",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "bower",
+            "icon": "devicon-bower-line-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "c",
+            "icon": "devicon-c-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "c",
+            "icon": "devicon-c-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "c",
+            "icon": "devicon-c-line",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "c",
+            "icon": "devicon-c-line-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "cakephp",
+            "icon": "devicon-cakephp-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "cakephp",
+            "icon": "devicon-cakephp-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "canva",
+            "icon": "devicon-canva-original",
+            "categories": [
+                "design"
+            ]
+        },
+        {
+            "name": "centos",
+            "icon": "devicon-centos-plain",
+            "categories": [
+                "server",
+                "linux"
+            ]
+        },
+        {
+            "name": "centos",
+            "icon": "devicon-centos-plain-wordmark",
+            "categories": [
+                "server",
+                "linux"
+            ]
+        },
+        {
+            "name": "ceylon",
+            "icon": "devicon-ceylon-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "chrome",
+            "icon": "devicon-chrome-plain",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "chrome",
+            "icon": "devicon-chrome-plain-wordmark",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "circleci",
+            "icon": "devicon-circleci-plain",
+            "categories": [
+                "integration",
+                "platform"
+            ]
+        },
+        {
+            "name": "circleci",
+            "icon": "devicon-circleci-plain-wordmark",
+            "categories": [
+                "integration",
+                "platform"
+            ]
+        },
+        {
+            "name": "clojure",
+            "icon": "devicon-clojure-line",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "clojure",
+            "icon": "devicon-clojure-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "cmake",
+            "icon": "devicon-cmake-plain",
+            "categories": [
+                "build"
+            ]
+        },
+        {
+            "name": "cmake",
+            "icon": "devicon-cmake-plain-wordmark",
+            "categories": [
+                "build"
+            ]
+        },
+        {
+            "name": "clojurescript",
+            "icon": "devicon-clojurescript-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "codecov",
+            "icon": "devicon-codecov-plain",
+            "categories": [
+                "platform",
+                "integration"
+            ]
+        },
+        {
+            "name": "codeigniter",
+            "icon": "devicon-codeigniter-plain",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "codeigniter",
+            "icon": "devicon-codeigniter-plain-wordmark",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "codepen",
+            "icon": "devicon-codepen-plain",
+            "categories": [
+                "social",
+                "website",
+                "editor"
+            ]
+        },
+        {
+            "name": "codepen",
+            "icon": "devicon-codepen-plain-wordmark",
+            "categories": [
+                "social",
+                "website",
+                "editor"
+            ]
+        },
+        {
+            "name": "coffeescript",
+            "icon": "devicon-coffeescript-original",
+            "categories": [
+                "javascript",
+                "language"
+            ]
+        },
+        {
+            "name": "coffeescript",
+            "icon": "devicon-coffeescript-original-wordmark",
+            "categories": [
+                "javascript",
+                "language"
+            ]
+        },
+        {
+            "name": "composer",
+            "icon": "devicon-composer-line",
+            "categories": [
+                "package",
+                "manager",
+                "php"
+            ]
+        },
+        {
+            "name": "composer",
+            "icon": "devicon-composer-line-wordmark",
+            "categories": [
+                "package",
+                "manager",
+                "php"
+            ]
+        },
+        {
+            "name": "confluence",
+            "icon": "devicon-confluence-original",
+            "categories": [
+                "collaboration",
+                "documentation",
+                "wiki"
+            ]
+        },
+        {
+            "name": "confluence",
+            "icon": "devicon-confluence-original-wordmark",
+            "categories": [
+                "collaboration",
+                "documentation",
+                "wiki"
+            ]
+        },
+        {
+            "name": "couchdb",
+            "icon": "devicon-couchdb-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "couchdb",
+            "icon": "devicon-couchdb-plain-wordmark",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "cplusplus",
+            "icon": "devicon-cplusplus-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "cplusplus",
+            "icon": "devicon-cplusplus-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "cplusplus",
+            "icon": "devicon-cplusplus-line",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "cplusplus",
+            "icon": "devicon-cplusplus-line-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "csharp",
+            "icon": "devicon-csharp-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "csharp",
+            "icon": "devicon-csharp-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "csharp",
+            "icon": "devicon-csharp-line",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "csharp",
+            "icon": "devicon-csharp-line-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "css3",
+            "icon": "devicon-css3-plain",
+            "categories": [
+                "language",
+                "programming"
+            ]
+        },
+        {
+            "name": "css3",
+            "icon": "devicon-css3-plain-wordmark",
+            "categories": [
+                "language",
+                "programming"
+            ]
+        },
+        {
+            "name": "cucumber",
+            "icon": "devicon-cucumber-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "cucumber",
+            "icon": "devicon-cucumber-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "crystal",
+            "icon": "devicon-crystal-original",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "crystal",
+            "icon": "devicon-crystal-original-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "d3js",
+            "icon": "devicon-d3js-plain",
+            "categories": []
+        },
+        {
+            "name": "dart",
+            "icon": "devicon-dart-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "dart",
+            "icon": "devicon-dart-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "debian",
+            "icon": "devicon-debian-plain",
+            "categories": [
+                "os",
+                "server"
+            ]
+        },
+        {
+            "name": "debian",
+            "icon": "devicon-debian-plain-wordmark",
+            "categories": [
+                "os",
+                "server"
+            ]
+        },
+        {
+            "name": "denojs",
+            "icon": "devicon-denojs-original",
+            "categories": [
+                "javascript",
+                "rust",
+                "language"
+            ]
+        },
+        {
+            "name": "denojs",
+            "icon": "devicon-denojs-original-wordmark",
+            "categories": [
+                "javascript",
+                "rust",
+                "language"
+            ]
+        },
+        {
+            "name": "devicon",
+            "icon": "devicon-devicon-plain",
+            "categories": [
+                "iconset"
+            ]
+        },
+        {
+            "name": "devicon",
+            "icon": "devicon-devicon-plain-wordmark",
+            "categories": [
+                "iconset"
+            ]
+        },
+        {
+            "name": "devicon",
+            "icon": "devicon-devicon-line",
+            "categories": [
+                "iconset"
+            ]
+        },
+        {
+            "name": "devicon",
+            "icon": "devicon-devicon-line-wordmark",
+            "categories": [
+                "iconset"
+            ]
+        },
+        {
+            "name": "django",
+            "icon": "devicon-django-plain",
+            "categories": []
+        },
+        {
+            "name": "django",
+            "icon": "devicon-django-plain-wordmark",
+            "categories": []
+        },
+        {
+            "name": "docker",
+            "icon": "devicon-docker-plain",
+            "categories": [
+                "platform",
+                "deploy"
+            ]
+        },
+        {
+            "name": "docker",
+            "icon": "devicon-docker-plain-wordmark",
+            "categories": [
+                "platform",
+                "deploy"
+            ]
+        },
+        {
+            "name": "doctrine",
+            "icon": "devicon-doctrine-plain",
+            "categories": []
+        },
+        {
+            "name": "doctrine",
+            "icon": "devicon-doctrine-plain-wordmark",
+            "categories": []
+        },
+        {
+            "name": "doctrine",
+            "icon": "devicon-doctrine-line",
+            "categories": []
+        },
+        {
+            "name": "doctrine",
+            "icon": "devicon-doctrine-line-wordmark",
+            "categories": []
+        },
+        {
+            "name": "dot net",
+            "icon": "devicon-dot-net-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "dot net",
+            "icon": "devicon-dot-net-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "dotnetcore",
+            "icon": "devicon-dotnetcore-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "drupal",
+            "icon": "devicon-drupal-plain",
+            "categories": [
+                "cms"
+            ]
+        },
+        {
+            "name": "drupal",
+            "icon": "devicon-drupal-plain-wordmark",
+            "categories": [
+                "cms"
+            ]
+        },
+        {
+            "name": "digitalocean",
+            "icon": "devicon-digitalocean-plain",
+            "categories": [
+                "cloud",
+                "hosting",
+                "database",
+                "storage"
+            ]
+        },
+        {
+            "name": "digitalocean",
+            "icon": "devicon-digitalocean-plain-wordmark",
+            "categories": [
+                "cloud",
+                "hosting",
+                "database",
+                "storage"
+            ]
+        },
+        {
+            "name": "discordjs",
+            "icon": "devicon-discordjs-plain",
+            "categories": [
+                "wrapper",
+                "api_wrapper",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "discordjs",
+            "icon": "devicon-discordjs-plain-wordmark",
+            "categories": [
+                "wrapper",
+                "api_wrapper",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "electron",
+            "icon": "devicon-electron-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "electron",
+            "icon": "devicon-electron-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "eleventy",
+            "icon": "devicon-eleventy-plain",
+            "categories": [
+                "ssg",
+                "static site generator"
+            ]
+        },
+        {
+            "name": "elixir",
+            "icon": "devicon-elixir-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "elixir",
+            "icon": "devicon-elixir-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "elm",
+            "icon": "devicon-elm-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "elm",
+            "icon": "devicon-elm-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "ember",
+            "icon": "devicon-ember-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "embeddedc",
+            "icon": "devicon-embeddedc-plain",
+            "categories": [
+                "language",
+                "programming"
+            ]
+        },
+        {
+            "name": "embeddedc",
+            "icon": "devicon-embeddedc-plain-wordmark",
+            "categories": [
+                "language",
+                "programming"
+            ]
+        },
+        {
+            "name": "erlang",
+            "icon": "devicon-erlang-plain",
+            "categories": []
+        },
+        {
+            "name": "erlang",
+            "icon": "devicon-erlang-plain-wordmark",
+            "categories": []
+        },
+        {
+            "name": "eslint",
+            "icon": "devicon-eslint-original",
+            "categories": [
+                "linter",
+                "javascript",
+                "code-quality",
+                "coding-style"
+            ]
+        },
+        {
+            "name": "eslint",
+            "icon": "devicon-eslint-original-wordmark",
+            "categories": [
+                "linter",
+                "javascript",
+                "code-quality",
+                "coding-style"
+            ]
+        },
+        {
+            "name": "express",
+            "icon": "devicon-express-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "express",
+            "icon": "devicon-express-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "facebook",
+            "icon": "devicon-facebook-plain",
+            "categories": [
+                "auth"
+            ]
+        },
+        {
+            "name": "feathersjs",
+            "icon": "devicon-feathersjs-original",
+            "categories": [
+                "framework",
+                "rest"
+            ]
+        },
+        {
+            "name": "figma",
+            "icon": "devicon-figma-plain",
+            "categories": [
+                "design"
+            ]
+        },
+        {
+            "name": "filezilla",
+            "icon": "devicon-filezilla-plain",
+            "categories": [
+                "ftp"
+            ]
+        },
+        {
+            "name": "filezilla",
+            "icon": "devicon-filezilla-plain-wordmark",
+            "categories": [
+                "ftp"
+            ]
+        },
+        {
+            "name": "firebase",
+            "icon": "devicon-firebase-plain",
+            "categories": [
+                "auth",
+                "hosting",
+                "storage",
+                "cloud"
+            ]
+        },
+        {
+            "name": "firebase",
+            "icon": "devicon-firebase-plain-wordmark",
+            "categories": [
+                "auth",
+                "hosting",
+                "storage",
+                "cloud"
+            ]
+        },
+        {
+            "name": "firefox",
+            "icon": "devicon-firefox-plain",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "firefox",
+            "icon": "devicon-firefox-plain-wordmark",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "flask",
+            "icon": "devicon-flask-original",
+            "categories": [
+                "python",
+                "framework"
+            ]
+        },
+        {
+            "name": "flask",
+            "icon": "devicon-flask-original-wordmark",
+            "categories": [
+                "python",
+                "framework"
+            ]
+        },
+        {
+            "name": "flutter",
+            "icon": "devicon-flutter-plain",
+            "categories": [
+                "framework",
+                "sdk"
+            ]
+        },
+        {
+            "name": "foundation",
+            "icon": "devicon-foundation-plain",
+            "categories": [
+                "framework",
+                "css"
+            ]
+        },
+        {
+            "name": "foundation",
+            "icon": "devicon-foundation-plain-wordmark",
+            "categories": [
+                "framework",
+                "css"
+            ]
+        },
+        {
+            "name": "fsharp",
+            "icon": "devicon-fsharp-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "gatling",
+            "icon": "devicon-gatling-plain",
+            "categories": [
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "gatling",
+            "icon": "devicon-gatling-plain-wordmark",
+            "categories": [
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "gatsby",
+            "icon": "devicon-gatsby-plain",
+            "categories": [
+                "reactjs",
+                "framework"
+            ]
+        },
+        {
+            "name": "gatsby",
+            "icon": "devicon-gatsby-plain-wordmark",
+            "categories": [
+                "reactjs",
+                "framework"
+            ]
+        },
+        {
+            "name": "rect",
+            "icon": "devicon-rect-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "gcc",
+            "icon": "devicon-gcc-plain",
+            "categories": [
+                "compiler",
+                "linux"
+            ]
+        },
+        {
+            "name": "gentoo",
+            "icon": "devicon-gentoo-plain-wordmark",
+            "categories": [
+                "linux",
+                "distribuition",
+                "desktop"
+            ]
+        },
+        {
+            "name": "gentoo",
+            "icon": "devicon-gentoo-plain",
+            "categories": [
+                "linux",
+                "distribuition",
+                "desktop"
+            ]
+        },
+        {
+            "name": "gimp",
+            "icon": "devicon-gimp-plain",
+            "categories": [
+                "graphic"
+            ]
+        },
+        {
+            "name": "git",
+            "icon": "devicon-git-plain",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "git",
+            "icon": "devicon-git-plain-wordmark",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "github",
+            "icon": "devicon-github-original",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "github",
+            "icon": "devicon-github-original-wordmark",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "gitlab",
+            "icon": "devicon-gitlab-plain",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "gitlab",
+            "icon": "devicon-gitlab-plain-wordmark",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "gitter",
+            "icon": "devicon-gitter-plain",
+            "categories": [
+                "social",
+                "chat"
+            ]
+        },
+        {
+            "name": "gitter",
+            "icon": "devicon-gitter-plain-wordmark",
+            "categories": [
+                "social",
+                "chat"
+            ]
+        },
+        {
+            "name": "go",
+            "icon": "devicon-go-original-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "go",
+            "icon": "devicon-go-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "go",
+            "icon": "devicon-go-line",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "google",
+            "icon": "devicon-google-plain",
+            "categories": [
+                "auth"
+            ]
+        },
+        {
+            "name": "google",
+            "icon": "devicon-google-plain-wordmark",
+            "categories": [
+                "auth"
+            ]
+        },
+        {
+            "name": "googlecloud",
+            "icon": "devicon-googlecloud-plain",
+            "categories": [
+                "google",
+                "cloud"
+            ]
+        },
+        {
+            "name": "googlecloud",
+            "icon": "devicon-googlecloud-plain-wordmark",
+            "categories": [
+                "google",
+                "cloud"
+            ]
+        },
+        {
+            "name": "gradle",
+            "icon": "devicon-gradle-plain",
+            "categories": [
+                "task-runner"
+            ]
+        },
+        {
+            "name": "gradle",
+            "icon": "devicon-gradle-plain-wordmark",
+            "categories": [
+                "task-runner"
+            ]
+        },
+        {
+            "name": "grafana",
+            "icon": "devicon-grafana-original",
+            "categories": [
+                "monitoring",
+                "analytics",
+                "metrics",
+                "logs",
+                "visualization",
+                "web-application"
+            ]
+        },
+        {
+            "name": "grafana",
+            "icon": "devicon-grafana-original-wordmark",
+            "categories": [
+                "monitoring",
+                "analytics",
+                "metrics",
+                "logs",
+                "visualization",
+                "web-application"
+            ]
+        },
+        {
+            "name": "grails",
+            "icon": "devicon-grails-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "graphql",
+            "icon": "devicon-graphql-plain",
+            "categories": [
+                "language",
+                "data",
+                "query"
+            ]
+        },
+        {
+            "name": "graphql",
+            "icon": "devicon-graphql-plain-wordmark",
+            "categories": [
+                "language",
+                "data",
+                "query"
+            ]
+        },
+        {
+            "name": "groovy",
+            "icon": "devicon-groovy-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "grunt",
+            "icon": "devicon-grunt-plain",
+            "categories": [
+                "task-runner",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "grunt",
+            "icon": "devicon-grunt-plain-wordmark",
+            "categories": [
+                "task-runner",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "grunt",
+            "icon": "devicon-grunt-line",
+            "categories": [
+                "task-runner",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "grunt",
+            "icon": "devicon-grunt-line-wordmark",
+            "categories": [
+                "task-runner",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "gulp",
+            "icon": "devicon-gulp-plain",
+            "categories": [
+                "task-runner",
+                "nodejs"
+            ]
+        },
+        {
+            "name": "godot",
+            "icon": "devicon-godot-plain",
+            "categories": [
+                "game-engine",
+                "open-source"
+            ]
+        },
+        {
+            "name": "godot",
+            "icon": "devicon-godot-plain-wordmark",
+            "categories": [
+                "game-engine",
+                "open-source"
+            ]
+        },
+        {
+            "name": "haskell",
+            "icon": "devicon-haskell-plain",
+            "categories": [
+                "language",
+                "functional"
+            ]
+        },
+        {
+            "name": "haskell",
+            "icon": "devicon-haskell-plain-wordmark",
+            "categories": [
+                "language",
+                "functional"
+            ]
+        },
+        {
+            "name": "handlebars",
+            "icon": "devicon-handlebars-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "handlebars",
+            "icon": "devicon-handlebars-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "haxe",
+            "icon": "devicon-haxe-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-original",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-original-wordmark",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-plain",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-plain-wordmark",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-line",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "heroku",
+            "icon": "devicon-heroku-line-wordmark",
+            "categories": [
+                "cloud"
+            ]
+        },
+        {
+            "name": "html5",
+            "icon": "devicon-html5-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "html5",
+            "icon": "devicon-html5-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "hugo",
+            "icon": "devicon-hugo-plain",
+            "categories": [
+                "framework",
+                "ssg",
+                "static-site-generator",
+                "go",
+                "html",
+                "css"
+            ]
+        },
+        {
+            "name": "hugo",
+            "icon": "devicon-hugo-plain-wordmark",
+            "categories": [
+                "framework",
+                "ssg",
+                "static-site-generator",
+                "go",
+                "html",
+                "css"
+            ]
+        },
+        {
+            "name": "ie10",
+            "icon": "devicon-ie10-original",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "ifttt",
+            "icon": "devicon-ifttt-original",
+            "categories": [
+                "automation",
+                "applets",
+                "programming"
+            ]
+        },
+        {
+            "name": "illustrator",
+            "icon": "devicon-illustrator-plain",
+            "categories": [
+                "editor",
+                "vector"
+            ]
+        },
+        {
+            "name": "illustrator",
+            "icon": "devicon-illustrator-line",
+            "categories": [
+                "editor",
+                "vector"
+            ]
+        },
+        {
+            "name": "inkscape",
+            "icon": "devicon-inkscape-plain",
+            "categories": [
+                "editor",
+                "vector"
+            ]
+        },
+        {
+            "name": "inkscape",
+            "icon": "devicon-inkscape-plain-wordmark",
+            "categories": [
+                "editor",
+                "vector"
+            ]
+        },
+        {
+            "name": "intellij",
+            "icon": "devicon-intellij-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "intellij",
+            "icon": "devicon-intellij-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "ionic",
+            "icon": "devicon-ionic-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "ionic",
+            "icon": "devicon-ionic-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "jamstack",
+            "icon": "devicon-jamstack-original",
+            "categories": [
+                "javascript",
+                "markup"
+            ]
+        },
+        {
+            "name": "jamstack",
+            "icon": "devicon-jamstack-plain-wordmark",
+            "categories": [
+                "javascript",
+                "markup"
+            ]
+        },
+        {
+            "name": "jasmine",
+            "icon": "devicon-jasmine-plain",
+            "categories": [
+                "testing"
+            ]
+        },
+        {
+            "name": "jasmine",
+            "icon": "devicon-jasmine-plain-wordmark",
+            "categories": [
+                "testing"
+            ]
+        },
+        {
+            "name": "java",
+            "icon": "devicon-java-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "java",
+            "icon": "devicon-java-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "javascript",
+            "icon": "devicon-javascript-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "jeet",
+            "icon": "devicon-jeet-plain",
+            "categories": [
+                "framework",
+                "css"
+            ]
+        },
+        {
+            "name": "jeet",
+            "icon": "devicon-jeet-plain-wordmark",
+            "categories": [
+                "framework",
+                "css"
+            ]
+        },
+        {
+            "name": "jest",
+            "icon": "devicon-jest-plain",
+            "categories": [
+                "testing",
+                "javascript"
+            ]
+        },
+        {
+            "name": "jenkins",
+            "icon": "devicon-jenkins-line",
+            "categories": [
+                "platform",
+                "integration",
+                "server"
+            ]
+        },
+        {
+            "name": "jenkins",
+            "icon": "devicon-jenkins-plain",
+            "categories": [
+                "platform",
+                "integration",
+                "server"
+            ]
+        },
+        {
+            "name": "jetbrains",
+            "icon": "devicon-jetbrains-plain",
+            "categories": [
+                "ide"
+            ]
+        },
+        {
+            "name": "jira",
+            "icon": "devicon-jira-plain",
+            "categories": [
+                "platform",
+                "organize"
+            ]
+        },
+        {
+            "name": "jira",
+            "icon": "devicon-jira-plain-wordmark",
+            "categories": [
+                "platform",
+                "organize"
+            ]
+        },
+        {
+            "name": "jquery",
+            "icon": "devicon-jquery-plain",
+            "categories": [
+                "library",
+                "javascript"
+            ]
+        },
+        {
+            "name": "jquery",
+            "icon": "devicon-jquery-plain-wordmark",
+            "categories": [
+                "library",
+                "javascript"
+            ]
+        },
+        {
+            "name": "julia",
+            "icon": "devicon-julia-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "julia",
+            "icon": "devicon-julia-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "jupyter",
+            "icon": "devicon-jupyter-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "jupyter",
+            "icon": "devicon-jupyter-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "kaggle",
+            "icon": "devicon-kaggle-original",
+            "categories": [
+                "platform",
+                "auth",
+                "machine-learning"
+            ]
+        },
+        {
+            "name": "kaggle",
+            "icon": "devicon-kaggle-original-wordmark",
+            "categories": [
+                "platform",
+                "auth",
+                "machine-learning"
+            ]
+        },
+        {
+            "name": "karma",
+            "icon": "devicon-karma-plain",
+            "categories": [
+                "testing",
+                "test-runner"
+            ]
+        },
+        {
+            "name": "kotlin",
+            "icon": "devicon-kotlin-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "kotlin",
+            "icon": "devicon-kotlin-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "knockout",
+            "icon": "devicon-knockout-plain-wordmark",
+            "categories": [
+                "framework",
+                "javascript"
+            ]
+        },
+        {
+            "name": "krakenjs",
+            "icon": "devicon-krakenjs-plain",
+            "categories": [
+                "nodejs",
+                "framework"
+            ]
+        },
+        {
+            "name": "krakenjs",
+            "icon": "devicon-krakenjs-plain-wordmark",
+            "categories": [
+                "nodejs",
+                "framework"
+            ]
+        },
+        {
+            "name": "kubernetes",
+            "icon": "devicon-kubernetes-plain",
+            "categories": [
+                "container",
+                "deployment"
+            ]
+        },
+        {
+            "name": "kubernetes",
+            "icon": "devicon-kubernetes-plain-wordmark",
+            "categories": [
+                "container",
+                "deployment"
+            ]
+        },
+        {
+            "name": "labview",
+            "icon": "devicon-labview-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "labview",
+            "icon": "devicon-labview-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "laravel",
+            "icon": "devicon-laravel-plain",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "laravel",
+            "icon": "devicon-laravel-plain-wordmark",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "latex",
+            "icon": "devicon-latex-original",
+            "categories": [
+                "latex3",
+                "latex2e",
+                "markup",
+                "tex",
+                "typesetting-system"
+            ]
+        },
+        {
+            "name": "less",
+            "icon": "devicon-less-plain-wordmark",
+            "categories": [
+                "css",
+                "pre-processor"
+            ]
+        },
+        {
+            "name": "linkedin",
+            "icon": "devicon-linkedin-plain",
+            "categories": [
+                "social",
+                "auth"
+            ]
+        },
+        {
+            "name": "linkedin",
+            "icon": "devicon-linkedin-plain-wordmark",
+            "categories": [
+                "social",
+                "auth"
+            ]
+        },
+        {
+            "name": "lua",
+            "icon": "devicon-lua-plain",
+            "categories": [
+                "programming",
+                "language",
+                "object-oriented",
+                "scripting",
+                "procedural",
+                "prototype-based",
+                "functional"
+            ]
+        },
+        {
+            "name": "lua",
+            "icon": "devicon-lua-plain-wordmark",
+            "categories": [
+                "programming",
+                "language",
+                "object-oriented",
+                "scripting",
+                "procedural",
+                "prototype-based",
+                "functional"
+            ]
+        },
+        {
+            "name": "linux",
+            "icon": "devicon-linux-plain",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "materialui",
+            "icon": "devicon-materialui-plain",
+            "categories": [
+                "framework",
+                "design",
+                "ui"
+            ]
+        },
+        {
+            "name": "matlab",
+            "icon": "devicon-matlab-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "matlab",
+            "icon": "devicon-matlab-line",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "magento",
+            "icon": "devicon-magento-original",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "magento",
+            "icon": "devicon-magento-original-wordmark",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "magento",
+            "icon": "devicon-magento-line",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "markdown",
+            "icon": "devicon-markdown-original",
+            "categories": [
+                "markup",
+                "language"
+            ]
+        },
+        {
+            "name": "maya",
+            "icon": "devicon-maya-plain",
+            "categories": [
+                "mel",
+                "pymel",
+                "python",
+                "3d",
+                "programming",
+                "vfx",
+                "graphic",
+                "graphics",
+                "game",
+                "animation"
+            ]
+        },
+        {
+            "name": "maya",
+            "icon": "devicon-maya-plain-wordmark",
+            "categories": [
+                "mel",
+                "pymel",
+                "python",
+                "3d",
+                "programming",
+                "vfx",
+                "graphic",
+                "graphics",
+                "game",
+                "animation"
+            ]
+        },
+        {
+            "name": "meteor",
+            "icon": "devicon-meteor-plain",
+            "categories": [
+                "javascript"
+            ]
+        },
+        {
+            "name": "meteor",
+            "icon": "devicon-meteor-plain-wordmark",
+            "categories": [
+                "javascript"
+            ]
+        },
+        {
+            "name": "minitab",
+            "icon": "devicon-minitab-plain",
+            "categories": [
+                "package",
+                "statistics"
+            ]
+        },
+        {
+            "name": "mocha",
+            "icon": "devicon-mocha-plain",
+            "categories": [
+                "testing"
+            ]
+        },
+        {
+            "name": "modx",
+            "icon": "devicon-modx-plain",
+            "categories": [
+                "cms",
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "modx",
+            "icon": "devicon-modx-plain-wordmark",
+            "categories": [
+                "cms",
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "mongodb",
+            "icon": "devicon-mongodb-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "mongodb",
+            "icon": "devicon-mongodb-plain-wordmark",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "moodle",
+            "icon": "devicon-moodle-plain",
+            "categories": [
+                "platform"
+            ]
+        },
+        {
+            "name": "moodle",
+            "icon": "devicon-moodle-plain-wordmark",
+            "categories": [
+                "platform"
+            ]
+        },
+        {
+            "name": "msdos",
+            "icon": "devicon-msdos-line",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "mysql",
+            "icon": "devicon-mysql-plain",
+            "categories": [
+                "database",
+                "language"
+            ]
+        },
+        {
+            "name": "mysql",
+            "icon": "devicon-mysql-plain-wordmark",
+            "categories": [
+                "database",
+                "language"
+            ]
+        },
+        {
+            "name": "neo4j",
+            "icon": "devicon-neo4j-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "neo4j",
+            "icon": "devicon-neo4j-plain-wordmark",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "nestjs",
+            "icon": "devicon-nestjs-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nestjs",
+            "icon": "devicon-nestjs-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "networkx",
+            "icon": "devicon-networkx-original",
+            "categories": [
+                "graph",
+                "library",
+                "python"
+            ]
+        },
+        {
+            "name": "nextjs",
+            "icon": "devicon-nextjs-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nextjs",
+            "icon": "devicon-nextjs-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nextjs",
+            "icon": "devicon-nextjs-line",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nextjs",
+            "icon": "devicon-nextjs-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nextjs",
+            "icon": "devicon-nextjs-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "nginx",
+            "icon": "devicon-nginx-original",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "nginx",
+            "icon": "devicon-nginx-original-wordmark",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "nginx",
+            "icon": "devicon-nginx-plain",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "nginx",
+            "icon": "devicon-nginx-plain-wordmark",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "nixos",
+            "icon": "devicon-nixos-plain",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "nixos",
+            "icon": "devicon-nixos-plain-wordmark",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "nodejs",
+            "icon": "devicon-nodejs-plain",
+            "categories": [
+                "javascript",
+                "language"
+            ]
+        },
+        {
+            "name": "nodejs",
+            "icon": "devicon-nodejs-plain-wordmark",
+            "categories": [
+                "javascript",
+                "language"
+            ]
+        },
+        {
+            "name": "nodewebkit",
+            "icon": "devicon-nodewebkit-plain",
+            "categories": []
+        },
+        {
+            "name": "nodewebkit",
+            "icon": "devicon-nodewebkit-plain-wordmark",
+            "categories": []
+        },
+        {
+            "name": "nodewebkit",
+            "icon": "devicon-nodewebkit-line",
+            "categories": []
+        },
+        {
+            "name": "nodewebkit",
+            "icon": "devicon-nodewebkit-line-wordmark",
+            "categories": []
+        },
+        {
+            "name": "npm",
+            "icon": "devicon-npm-original-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "nuget",
+            "icon": "devicon-nuget-original",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "nuget",
+            "icon": "devicon-nuget-original-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "numpy",
+            "icon": "devicon-numpy-original",
+            "categories": [
+                "library",
+                "python"
+            ]
+        },
+        {
+            "name": "numpy",
+            "icon": "devicon-numpy-original-wordmark",
+            "categories": [
+                "library",
+                "python"
+            ]
+        },
+        {
+            "name": "nuxtjs",
+            "icon": "devicon-nuxtjs-plain",
+            "categories": [
+                "js",
+                "javascript",
+                "framework",
+                "frontend",
+                "vuejs"
+            ]
+        },
+        {
+            "name": "nuxtjs",
+            "icon": "devicon-nuxtjs-plain-wordmark",
+            "categories": [
+                "js",
+                "javascript",
+                "framework",
+                "frontend",
+                "vuejs"
+            ]
+        },
+        {
+            "name": "objectivec",
+            "icon": "devicon-objectivec-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "opera",
+            "icon": "devicon-opera-plain",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "opera",
+            "icon": "devicon-opera-plain-wordmark",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "ocaml",
+            "icon": "devicon-ocaml-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "ocaml",
+            "icon": "devicon-ocaml-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "openal",
+            "icon": "devicon-openal-plain",
+            "categories": [
+                "library",
+                "audio",
+                "game",
+                "3d"
+            ]
+        },
+        {
+            "name": "opengl",
+            "icon": "devicon-opengl-plain",
+            "categories": [
+                "library",
+                "graphics",
+                "game",
+                "3d"
+            ]
+        },
+        {
+            "name": "opensuse",
+            "icon": "devicon-opensuse-plain",
+            "categories": [
+                "linux",
+                "distribuition",
+                "desktop"
+            ]
+        },
+        {
+            "name": "opensuse",
+            "icon": "devicon-opensuse-plain-wordmark",
+            "categories": [
+                "linux",
+                "distribuition",
+                "desktop"
+            ]
+        },
+        {
+            "name": "oracle",
+            "icon": "devicon-oracle-original",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "pandas",
+            "icon": "devicon-pandas-original",
+            "categories": [
+                "library",
+                "python"
+            ]
+        },
+        {
+            "name": "pandas",
+            "icon": "devicon-pandas-original-wordmark",
+            "categories": [
+                "library",
+                "python"
+            ]
+        },
+        {
+            "name": "perl",
+            "icon": "devicon-perl-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "phalcon",
+            "icon": "devicon-phalcon-plain",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "photoshop",
+            "icon": "devicon-photoshop-plain",
+            "categories": [
+                "editor",
+                "graphic"
+            ]
+        },
+        {
+            "name": "photoshop",
+            "icon": "devicon-photoshop-line",
+            "categories": [
+                "editor",
+                "graphic"
+            ]
+        },
+        {
+            "name": "php",
+            "icon": "devicon-php-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "phpstorm",
+            "icon": "devicon-phpstorm-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "phpstorm",
+            "icon": "devicon-phpstorm-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "podman",
+            "icon": "devicon-podman-plain",
+            "categories": [
+                "container",
+                "pods",
+                "docker"
+            ]
+        },
+        {
+            "name": "podman",
+            "icon": "devicon-podman-plain-wordmark",
+            "categories": [
+                "container",
+                "pods",
+                "docker"
+            ]
+        },
+        {
+            "name": "polygon",
+            "icon": "devicon-polygon-plain",
+            "categories": [
+                "ethereum",
+                "erc20",
+                "blockchain"
+            ]
+        },
+        {
+            "name": "postgresql",
+            "icon": "devicon-postgresql-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "postgresql",
+            "icon": "devicon-postgresql-plain-wordmark",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "premierepro",
+            "icon": "devicon-premierepro-plain",
+            "categories": [
+                "editor",
+                "video"
+            ]
+        },
+        {
+            "name": "processing",
+            "icon": "devicon-processing-plain",
+            "categories": [
+                "java",
+                "python",
+                "android",
+                "application",
+                "ide",
+                "framework"
+            ]
+        },
+        {
+            "name": "processing",
+            "icon": "devicon-processing-plain-wordmark",
+            "categories": [
+                "java",
+                "python",
+                "android",
+                "application",
+                "ide",
+                "framework"
+            ]
+        },
+        {
+            "name": "protractor",
+            "icon": "devicon-protractor-plain",
+            "categories": [
+                "framework",
+                "javascript"
+            ]
+        },
+        {
+            "name": "protractor",
+            "icon": "devicon-protractor-plain-wordmark",
+            "categories": [
+                "framework",
+                "javascript"
+            ]
+        },
+        {
+            "name": "putty",
+            "icon": "devicon-putty-plain",
+            "categories": [
+                "ssh",
+                "server"
+            ]
+        },
+        {
+            "name": "pycharm",
+            "icon": "devicon-pycharm-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "pycharm",
+            "icon": "devicon-pycharm-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "python",
+            "icon": "devicon-python-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "python",
+            "icon": "devicon-python-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "pytorch",
+            "icon": "devicon-pytorch-original",
+            "categories": [
+                "programming",
+                "framework",
+                "machine-learning",
+                "python"
+            ]
+        },
+        {
+            "name": "pytorch",
+            "icon": "devicon-pytorch-plain-wordmark",
+            "categories": [
+                "programming",
+                "framework",
+                "machine-learning",
+                "python"
+            ]
+        },
+        {
+            "name": "raspberrypi",
+            "icon": "devicon-raspberrypi-line",
+            "categories": [
+                "arm",
+                "computer"
+            ]
+        },
+        {
+            "name": "raspberrypi",
+            "icon": "devicon-raspberrypi-line-wordmark",
+            "categories": [
+                "arm",
+                "computer"
+            ]
+        },
+        {
+            "name": "phoenix",
+            "icon": "devicon-phoenix-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "phoenix",
+            "icon": "devicon-phoenix-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "qt",
+            "icon": "devicon-qt-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "r",
+            "icon": "devicon-r-original",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "r",
+            "icon": "devicon-r-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "rails",
+            "icon": "devicon-rails-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "rails",
+            "icon": "devicon-rails-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "react",
+            "icon": "devicon-react-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "react",
+            "icon": "devicon-react-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "redhat",
+            "icon": "devicon-redhat-plain",
+            "categories": [
+                "server",
+                "linux"
+            ]
+        },
+        {
+            "name": "redhat",
+            "icon": "devicon-redhat-plain-wordmark",
+            "categories": [
+                "server",
+                "linux"
+            ]
+        },
+        {
+            "name": "redis",
+            "icon": "devicon-redis-plain",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "redis",
+            "icon": "devicon-redis-plain-wordmark",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "redux",
+            "icon": "devicon-redux-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "rocksdb",
+            "icon": "devicon-rocksdb-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "ruby",
+            "icon": "devicon-ruby-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "ruby",
+            "icon": "devicon-ruby-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "rubymine",
+            "icon": "devicon-rubymine-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "rubymine",
+            "icon": "devicon-rubymine-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "rust",
+            "icon": "devicon-rust-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "safari",
+            "icon": "devicon-safari-plain",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "safari",
+            "icon": "devicon-safari-plain-wordmark",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "safari",
+            "icon": "devicon-safari-line-wordmark",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "safari",
+            "icon": "devicon-safari-line",
+            "categories": [
+                "browser"
+            ]
+        },
+        {
+            "name": "salesforce",
+            "icon": "devicon-salesforce-plain",
+            "categories": [
+                "platform",
+                "ecommerce"
+            ]
+        },
+        {
+            "name": "sdl",
+            "icon": "devicon-sdl-plain",
+            "categories": [
+                "library",
+                "cross-platform",
+                "multimedia",
+                "game"
+            ]
+        },
+        {
+            "name": "rstudio",
+            "icon": "devicon-rstudio-plain",
+            "categories": [
+                "editor",
+                "package",
+                "statistics"
+            ]
+        },
+        {
+            "name": "sass",
+            "icon": "devicon-sass-original",
+            "categories": [
+                "pre-processor",
+                "css"
+            ]
+        },
+        {
+            "name": "scala",
+            "icon": "devicon-scala-plain",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "scala",
+            "icon": "devicon-scala-plain-wordmark",
+            "categories": [
+                "programming",
+                "language"
+            ]
+        },
+        {
+            "name": "selenium",
+            "icon": "devicon-selenium-original",
+            "categories": [
+                "webdrive",
+                "automation"
+            ]
+        },
+        {
+            "name": "sequelize",
+            "icon": "devicon-sequelize-plain",
+            "categories": [
+                "database",
+                "language"
+            ]
+        },
+        {
+            "name": "sequelize",
+            "icon": "devicon-sequelize-plain-wordmark",
+            "categories": [
+                "database",
+                "language"
+            ]
+        },
+        {
+            "name": "shopware",
+            "icon": "devicon-shopware-original",
+            "categories": [
+                "cloud",
+                "platform"
+            ]
+        },
+        {
+            "name": "shopware",
+            "icon": "devicon-shopware-original-wordmark",
+            "categories": [
+                "cloud",
+                "platform"
+            ]
+        },
+        {
+            "name": "shotgrid",
+            "icon": "devicon-shotgrid-plain",
+            "categories": [
+                "web-application",
+                "autodesk",
+                "project-management",
+                "pipeline",
+                "production-tool",
+                "production-tracking"
+            ]
+        },
+        {
+            "name": "shotgrid",
+            "icon": "devicon-shotgrid-original-wordmark",
+            "categories": [
+                "web-application",
+                "autodesk",
+                "project-management",
+                "pipeline",
+                "production-tool",
+                "production-tracking"
+            ]
+        },
+        {
+            "name": "sketch",
+            "icon": "devicon-sketch-line",
+            "categories": [
+                "application"
+            ]
+        },
+        {
+            "name": "sketch",
+            "icon": "devicon-sketch-line-wordmark",
+            "categories": [
+                "application"
+            ]
+        },
+        {
+            "name": "slack",
+            "icon": "devicon-slack-plain",
+            "categories": [
+                "chat"
+            ]
+        },
+        {
+            "name": "slack",
+            "icon": "devicon-slack-plain-wordmark",
+            "categories": [
+                "chat"
+            ]
+        },
+        {
+            "name": "socketio",
+            "icon": "devicon-socketio-original",
+            "categories": [
+                "library",
+                "networking",
+                "websockets"
+            ]
+        },
+        {
+            "name": "socketio",
+            "icon": "devicon-socketio-original-wordmark",
+            "categories": [
+                "library",
+                "networking",
+                "websockets"
+            ]
+        },
+        {
+            "name": "solidity",
+            "icon": "devicon-solidity-plain",
+            "categories": [
+                "programming",
+                "language",
+                "blockchain"
+            ]
+        },
+        {
+            "name": "sourcetree",
+            "icon": "devicon-sourcetree-original",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "sourcetree",
+            "icon": "devicon-sourcetree-original-wordmark",
+            "categories": [
+                "version-control"
+            ]
+        },
+        {
+            "name": "spring",
+            "icon": "devicon-spring-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "spring",
+            "icon": "devicon-spring-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "spss",
+            "icon": "devicon-spss-plain",
+            "categories": [
+                "package",
+                "statistics"
+            ]
+        },
+        {
+            "name": "sqlalchemy",
+            "icon": "devicon-sqlalchemy-plain",
+            "categories": [
+                "python",
+                "orm"
+            ]
+        },
+        {
+            "name": "sqlalchemy",
+            "icon": "devicon-sqlalchemy-original-wordmark",
+            "categories": [
+                "python",
+                "orm"
+            ]
+        },
+        {
+            "name": "sqlite",
+            "icon": "devicon-sqlite-plain",
+            "categories": [
+                "sql",
+                "database",
+                "db"
+            ]
+        },
+        {
+            "name": "sqlite",
+            "icon": "devicon-sqlite-plain-wordmark",
+            "categories": [
+                "sql",
+                "database",
+                "db"
+            ]
+        },
+        {
+            "name": "subversion",
+            "icon": "devicon-subversion-original",
+            "categories": [
+                "svn",
+                "version"
+            ]
+        },
+        {
+            "name": "microsoftsqlserver",
+            "icon": "devicon-microsoftsqlserver-plain",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "microsoftsqlserver",
+            "icon": "devicon-microsoftsqlserver-plain-wordmark",
+            "categories": [
+                "database"
+            ]
+        },
+        {
+            "name": "ssh",
+            "icon": "devicon-ssh-original",
+            "categories": [
+                "security"
+            ]
+        },
+        {
+            "name": "ssh",
+            "icon": "devicon-ssh-original-wordmark",
+            "categories": [
+                "security"
+            ]
+        },
+        {
+            "name": "stylus",
+            "icon": "devicon-stylus-original",
+            "categories": [
+                "css",
+                "pre-processor"
+            ]
+        },
+        {
+            "name": "svelte",
+            "icon": "devicon-svelte-plain",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "svelte",
+            "icon": "devicon-svelte-plain-wordmark",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "swift",
+            "icon": "devicon-swift-plain",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "swift",
+            "icon": "devicon-swift-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "symfony",
+            "icon": "devicon-symfony-original",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "symfony",
+            "icon": "devicon-symfony-original-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "storybook",
+            "icon": "devicon-storybook-plain",
+            "categories": [
+                "framework",
+                "documentation",
+                "ui"
+            ]
+        },
+        {
+            "name": "storybook",
+            "icon": "devicon-storybook-plain-wordmark",
+            "categories": [
+                "framework",
+                "documentation",
+                "ui"
+            ]
+        },
+        {
+            "name": "tailwindcss",
+            "icon": "devicon-tailwindcss-original-wordmark",
+            "categories": [
+                "css",
+                "framework"
+            ]
+        },
+        {
+            "name": "tailwindcss",
+            "icon": "devicon-tailwindcss-plain",
+            "categories": [
+                "css",
+                "framework"
+            ]
+        },
+        {
+            "name": "tensorflow",
+            "icon": "devicon-tensorflow-original",
+            "categories": [
+                "library",
+                "machine-learning",
+                "deep-learning"
+            ]
+        },
+        {
+            "name": "tensorflow",
+            "icon": "devicon-tensorflow-original-wordmark",
+            "categories": [
+                "library",
+                "machine-learning",
+                "deep-learning"
+            ]
+        },
+        {
+            "name": "tensorflow",
+            "icon": "devicon-tensorflow-line",
+            "categories": [
+                "library",
+                "machine-learning",
+                "deep-learning"
+            ]
+        },
+        {
+            "name": "tensorflow",
+            "icon": "devicon-tensorflow-line-wordmark",
+            "categories": [
+                "library",
+                "machine-learning",
+                "deep-learning"
+            ]
+        },
+        {
+            "name": "terraform",
+            "icon": "devicon-terraform-plain",
+            "categories": [
+                "deployment",
+                "architecture",
+                "automation"
+            ]
+        },
+        {
+            "name": "terraform",
+            "icon": "devicon-terraform-plain-wordmark",
+            "categories": [
+                "deployment",
+                "architecture",
+                "automation"
+            ]
+        },
+        {
+            "name": "threejs",
+            "icon": "devicon-threejs-original",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "threejs",
+            "icon": "devicon-threejs-original-wordmark",
+            "categories": [
+                "javascript",
+                "framework"
+            ]
+        },
+        {
+            "name": "tomcat",
+            "icon": "devicon-tomcat-line",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "tomcat",
+            "icon": "devicon-tomcat-line-wordmark",
+            "categories": [
+                "server"
+            ]
+        },
+        {
+            "name": "tortoisegit",
+            "icon": "devicon-tortoisegit-plain",
+            "categories": [
+                "git"
+            ]
+        },
+        {
+            "name": "tortoisegit",
+            "icon": "devicon-tortoisegit-line",
+            "categories": [
+                "git"
+            ]
+        },
+        {
+            "name": "towergit",
+            "icon": "devicon-towergit-plain",
+            "categories": [
+                "git"
+            ]
+        },
+        {
+            "name": "towergit",
+            "icon": "devicon-towergit-plain-wordmark",
+            "categories": [
+                "git"
+            ]
+        },
+        {
+            "name": "travis",
+            "icon": "devicon-travis-plain",
+            "categories": [
+                "platform",
+                "integration"
+            ]
+        },
+        {
+            "name": "travis",
+            "icon": "devicon-travis-plain-wordmark",
+            "categories": [
+                "platform",
+                "integration"
+            ]
+        },
+        {
+            "name": "thealgorithms",
+            "icon": "devicon-thealgorithms-plain",
+            "categories": [
+                "organization",
+                "algorithms"
+            ]
+        },
+        {
+            "name": "thealgorithms",
+            "icon": "devicon-thealgorithms-plain-wordmark",
+            "categories": [
+                "organization",
+                "algorithms"
+            ]
+        },
+        {
+            "name": "trello",
+            "icon": "devicon-trello-plain",
+            "categories": [
+                "platform",
+                "organize"
+            ]
+        },
+        {
+            "name": "trello",
+            "icon": "devicon-trello-plain-wordmark",
+            "categories": [
+                "platform",
+                "organize"
+            ]
+        },
+        {
+            "name": "twitter",
+            "icon": "devicon-twitter-original",
+            "categories": [
+                "auth"
+            ]
+        },
+        {
+            "name": "typescript",
+            "icon": "devicon-typescript-plain",
+            "categories": [
+                "programming",
+                "transpiler"
+            ]
+        },
+        {
+            "name": "typo3",
+            "icon": "devicon-typo3-plain",
+            "categories": [
+                "cms",
+                "php"
+            ]
+        },
+        {
+            "name": "typo3",
+            "icon": "devicon-typo3-plain-wordmark",
+            "categories": [
+                "cms",
+                "php"
+            ]
+        },
+        {
+            "name": "ubuntu",
+            "icon": "devicon-ubuntu-plain",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "ubuntu",
+            "icon": "devicon-ubuntu-plain-wordmark",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "unity",
+            "icon": "devicon-unity-original",
+            "categories": [
+                "csharp",
+                "engine",
+                "game"
+            ]
+        },
+        {
+            "name": "unity",
+            "icon": "devicon-unity-original-wordmark",
+            "categories": [
+                "csharp",
+                "engine",
+                "game"
+            ]
+        },
+        {
+            "name": "unix",
+            "icon": "devicon-unix-original",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "unrealengine",
+            "icon": "devicon-unrealengine-original",
+            "categories": [
+                "c++",
+                "engine",
+                "game"
+            ]
+        },
+        {
+            "name": "unrealengine",
+            "icon": "devicon-unrealengine-original-wordmark",
+            "categories": [
+                "c++",
+                "engine",
+                "game"
+            ]
+        },
+        {
+            "name": "uwsgi",
+            "icon": "devicon-uwsgi-plain",
+            "categories": [
+                "hosting"
+            ]
+        },
+        {
+            "name": "vagrant",
+            "icon": "devicon-vagrant-plain",
+            "categories": [
+                "platform"
+            ]
+        },
+        {
+            "name": "vagrant",
+            "icon": "devicon-vagrant-plain-wordmark",
+            "categories": [
+                "platform"
+            ]
+        },
+        {
+            "name": "vim",
+            "icon": "devicon-vim-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "visualstudio",
+            "icon": "devicon-visualstudio-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "visualstudio",
+            "icon": "devicon-visualstudio-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "vuejs",
+            "icon": "devicon-vuejs-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "vuejs",
+            "icon": "devicon-vuejs-plain-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "vuejs",
+            "icon": "devicon-vuejs-line",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "vuejs",
+            "icon": "devicon-vuejs-line-wordmark",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "vuestorefront",
+            "icon": "devicon-vuestorefront-plain",
+            "categories": [
+                "framework"
+            ]
+        },
+        {
+            "name": "vscode",
+            "icon": "devicon-vscode-plain",
+            "categories": [
+                "editor",
+                "ide"
+            ]
+        },
+        {
+            "name": "vscode",
+            "icon": "devicon-vscode-plain-wordmark",
+            "categories": [
+                "editor",
+                "ide"
+            ]
+        },
+        {
+            "name": "webflow",
+            "icon": "devicon-webflow-original",
+            "categories": [
+                "cms",
+                "ecommerce"
+            ]
+        },
+        {
+            "name": "weblate",
+            "icon": "devicon-weblate-plain",
+            "categories": [
+                "localization"
+            ]
+        },
+        {
+            "name": "weblate",
+            "icon": "devicon-weblate-plain-wordmark",
+            "categories": [
+                "localization"
+            ]
+        },
+        {
+            "name": "webpack",
+            "icon": "devicon-webpack-plain",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "webpack",
+            "icon": "devicon-webpack-plain-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "webstorm",
+            "icon": "devicon-webstorm-plain",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "webstorm",
+            "icon": "devicon-webstorm-plain-wordmark",
+            "categories": [
+                "editor"
+            ]
+        },
+        {
+            "name": "windows8",
+            "icon": "devicon-windows8-original",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "windows8",
+            "icon": "devicon-windows8-original-wordmark",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "woocommerce",
+            "icon": "devicon-woocommerce-plain",
+            "categories": [
+                "ecommerce"
+            ]
+        },
+        {
+            "name": "woocommerce",
+            "icon": "devicon-woocommerce-plain-wordmark",
+            "categories": [
+                "ecommerce"
+            ]
+        },
+        {
+            "name": "wordpress",
+            "icon": "devicon-wordpress-plain",
+            "categories": [
+                "cms"
+            ]
+        },
+        {
+            "name": "wordpress",
+            "icon": "devicon-wordpress-plain-wordmark",
+            "categories": [
+                "cms"
+            ]
+        },
+        {
+            "name": "xamarin",
+            "icon": "devicon-xamarin-original",
+            "categories": [
+                "application",
+                "programming",
+                "editor",
+                "ide",
+                "ios",
+                "mobile",
+                "apple",
+                "android",
+                "windows"
+            ]
+        },
+        {
+            "name": "xamarin",
+            "icon": "devicon-xamarin-original-wordmark",
+            "categories": [
+                "application",
+                "programming",
+                "editor",
+                "ide",
+                "ios",
+                "mobile",
+                "apple",
+                "android",
+                "windows"
+            ]
+        },
+        {
+            "name": "xcode",
+            "icon": "devicon-xcode-plain",
+            "categories": [
+                "application",
+                "editor",
+                "ide",
+                "ios",
+                "iphone",
+                "mobile",
+                "apple"
+            ]
+        },
+        {
+            "name": "xd",
+            "icon": "devicon-xd-plain",
+            "categories": [
+                "design",
+                "editor",
+                "ui"
+            ]
+        },
+        {
+            "name": "xd",
+            "icon": "devicon-xd-line",
+            "categories": [
+                "design",
+                "editor",
+                "ui"
+            ]
+        },
+        {
+            "name": "yarn",
+            "icon": "devicon-yarn-plain",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "yarn",
+            "icon": "devicon-yarn-plain-wordmark",
+            "categories": [
+                "package",
+                "manager"
+            ]
+        },
+        {
+            "name": "yii",
+            "icon": "devicon-yii-plain",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "yii",
+            "icon": "devicon-yii-plain-wordmark",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "yunohost",
+            "icon": "devicon-yunohost-plain",
+            "categories": [
+                "os"
+            ]
+        },
+        {
+            "name": "zend",
+            "icon": "devicon-zend-plain",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "zend",
+            "icon": "devicon-zend-plain-wordmark",
+            "categories": [
+                "php",
+                "framework"
+            ]
+        },
+        {
+            "name": "zig",
+            "icon": "devicon-zig-original",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "zig",
+            "icon": "devicon-zig-plain-wordmark",
+            "categories": [
+                "language"
+            ]
+        },
+        {
+            "name": "pytest",
+            "icon": "devicon-pytest-plain",
+            "categories": [
+                "python",
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "pytest",
+            "icon": "devicon-pytest-plain-wordmark",
+            "categories": [
+                "python",
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "opencv",
+            "icon": "devicon-opencv-plain",
+            "categories": [
+                "library",
+                "c/c++",
+                "computer-vision"
+            ]
+        },
+        {
+            "name": "opencv",
+            "icon": "devicon-opencv-plain-wordmark",
+            "categories": [
+                "library",
+                "c/c++",
+                "computer-vision"
+            ]
+        },
+        {
+            "name": "fastapi",
+            "icon": "devicon-fastapi-plain",
+            "categories": [
+                "python",
+                "framework"
+            ]
+        },
+        {
+            "name": "fastapi",
+            "icon": "devicon-fastapi-plain-wordmark",
+            "categories": [
+                "python",
+                "framework"
+            ]
+        },
+        {
+            "name": "k3s",
+            "icon": "devicon-k3s-original",
+            "categories": [
+                "kubernetes",
+                "container",
+                "platform"
+            ]
+        },
+        {
+            "name": "k3s",
+            "icon": "devicon-k3s-plain-wordmark",
+            "categories": [
+                "kubernetes",
+                "container",
+                "platform"
+            ]
+        },
+        {
+            "name": "packer",
+            "icon": "devicon-packer-original",
+            "categories": [
+                "infrastructure",
+                "infrastructure-as-code",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "packer",
+            "icon": "devicon-packer-original-wordmark",
+            "categories": [
+                "infrastructure",
+                "infrastructure-as-code",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "anaconda",
+            "icon": "devicon-anaconda-original",
+            "categories": [
+                "python",
+                "data-science"
+            ]
+        },
+        {
+            "name": "anaconda",
+            "icon": "devicon-anaconda-original-wordmark",
+            "categories": [
+                "python",
+                "data-science"
+            ]
+        },
+        {
+            "name": "rspec",
+            "icon": "devicon-rspec-original",
+            "categories": [
+                "ruby",
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "rspec",
+            "icon": "devicon-rspec-original-wordmark",
+            "categories": [
+                "ruby",
+                "framework",
+                "testing"
+            ]
+        },
+        {
+            "name": "argocd",
+            "icon": "devicon-argocd-plain",
+            "categories": [
+                "gitops",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "argocd",
+            "icon": "devicon-argocd-plain-wordmark",
+            "categories": [
+                "gitops",
+                "continuous-delivery"
+            ]
+        },
+        {
+            "name": "prometheus",
+            "icon": "devicon-prometheus-original",
+            "categories": [
+                "monitoring",
+                "observability",
+                "analysis"
+            ]
+        },
+        {
+            "name": "prometheus",
+            "icon": "devicon-prometheus-original-wordmark",
+            "categories": [
+                "monitoring",
+                "observability",
+                "analysis"
+            ]
+        },
+        {
+            "name": "blender",
+            "icon": "devicon-blender-original",
+            "categories": [
+                "modelling",
+                "python",
+                "3d",
+                "animation"
+            ]
+        },
+        {
+            "name": "blender",
+            "icon": "devicon-blender-original-wordmark",
+            "categories": [
+                "modelling",
+                "python",
+                "3d",
+                "animation"
+            ]
+        },
+        {
+            "name": "dropwizard",
+            "icon": "devicon-dropwizard-plain",
+            "categories": [
+                "java",
+                "framework"
+            ]
+        },
+        {
+            "name": "vuetify",
+            "icon": "devicon-vuetify-line",
+            "categories": [
+                "css",
+                "framework",
+                "vuejs-library",
+                "material-design"
+            ]
+        },
+        {
+            "name": "vuetify",
+            "icon": "devicon-vuetify-plain",
+            "categories": [
+                "css",
+                "framework",
+                "vuejs-library",
+                "material-design"
+            ]
+        },
+        {
+            "name": "fedora",
+            "icon": "devicon-fedora-plain",
+            "categories": [
+                "linux",
+                "distribuition",
+                "desktop"
+            ]
+        }
+    ]
+}

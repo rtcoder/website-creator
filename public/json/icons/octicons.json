@@ -1,0 +1,1550 @@
+{
+    "categories": [],
+    "icons": [
+        {
+            "icon": "accessibility-inset",
+            "name":"accessibility inset",
+            "categories": []
+        },
+        {
+            "icon": "accessibility",
+            "name": "accessibility",
+            "categories": []
+        },
+        {
+            "icon": "alert-fill",
+            "name":"alert fill",
+            "categories": []
+        },
+        {
+            "icon": "alert",
+            "name": "alert",
+            "categories": []
+        },
+        {
+            "icon": "apps",
+            "name": "apps",
+            "categories": []
+        },
+        {
+            "icon": "archive",
+            "name": "archive",
+            "categories": []
+        },
+        {
+            "icon": "arrow-both",
+            "name":"arrow both",
+            "categories": []
+        },
+        {
+            "icon": "arrow-down-left",
+            "name":"arrow down left",
+            "categories": []
+        },
+        {
+            "icon": "arrow-down-right",
+            "name":"arrow down right",
+            "categories": []
+        },
+        {
+            "icon": "arrow-down",
+            "name":"arrow down",
+            "categories": []
+        },
+        {
+            "icon": "arrow-left",
+            "name":"arrow left",
+            "categories": []
+        },
+        {
+            "icon": "arrow-right",
+            "name":"arrow right",
+            "categories": []
+        },
+        {
+            "icon": "arrow-switch",
+            "name":"arrow switch",
+            "categories": []
+        },
+        {
+            "icon": "arrow-up-left",
+            "name":"arrow up left",
+            "categories": []
+        },
+        {
+            "icon": "arrow-up-right",
+            "name":"arrow up right",
+            "categories": []
+        },
+        {
+            "icon": "arrow-up",
+            "name":"arrow up",
+            "categories": []
+        },
+        {
+            "icon": "beaker",
+            "name": "beaker",
+            "categories": []
+        },
+        {
+            "icon": "bell-fill",
+            "name":"bell fill",
+            "categories": []
+        },
+        {
+            "icon": "bell-slash",
+            "name":"bell slash",
+            "categories": []
+        },
+        {
+            "icon": "bell",
+            "name": "bell",
+            "categories": []
+        },
+        {
+            "icon": "blocked",
+            "name": "blocked",
+            "categories": []
+        },
+        {
+            "icon": "bold",
+            "name": "bold",
+            "categories": []
+        },
+        {
+            "icon": "book",
+            "name": "book",
+            "categories": []
+        },
+        {
+            "icon": "bookmark-fill",
+            "name":"bookmark fill",
+            "categories": []
+        },
+        {
+            "icon": "bookmark-slash-fill",
+            "name":"bookmark slash fill",
+            "categories": []
+        },
+        {
+            "icon": "bookmark-slash",
+            "name":"bookmark slash",
+            "categories": []
+        },
+        {
+            "icon": "bookmark",
+            "name": "bookmark",
+            "categories": []
+        },
+        {
+            "icon": "briefcase",
+            "name": "briefcase",
+            "categories": []
+        },
+        {
+            "icon": "broadcast",
+            "name": "broadcast",
+            "categories": []
+        },
+        {
+            "icon": "browser",
+            "name": "browser",
+            "categories": []
+        },
+        {
+            "icon": "bug",
+            "name": "bug",
+            "categories": []
+        },
+        {
+            "icon": "cache",
+            "name": "cache",
+            "categories": []
+        },
+        {
+            "icon": "calendar",
+            "name": "calendar",
+            "categories": []
+        },
+        {
+            "icon": "check-circle-fill",
+            "name":"check circle fill",
+            "categories": []
+        },
+        {
+            "icon": "check-circle",
+            "name":"check circle",
+            "categories": []
+        },
+        {
+            "icon": "check",
+            "name": "check",
+            "categories": []
+        },
+        {
+            "icon": "checkbox",
+            "name": "checkbox",
+            "categories": []
+        },
+        {
+            "icon": "checklist",
+            "name": "checklist",
+            "categories": []
+        },
+        {
+            "icon": "chevron-down",
+            "name":"chevron down",
+            "categories": []
+        },
+        {
+            "icon": "chevron-left",
+            "name":"chevron left",
+            "categories": []
+        },
+        {
+            "icon": "chevron-right",
+            "name":"chevron right",
+            "categories": []
+        },
+        {
+            "icon": "chevron-up",
+            "name":"chevron up",
+            "categories": []
+        },
+        {
+            "icon": "circle-slash",
+            "name":"circle slash",
+            "categories": []
+        },
+        {
+            "icon": "circle",
+            "name": "circle",
+            "categories": []
+        },
+        {
+            "icon": "clock-fill",
+            "name":"clock fill",
+            "categories": []
+        },
+        {
+            "icon": "clock",
+            "name": "clock",
+            "categories": []
+        },
+        {
+            "icon": "cloud-offline",
+            "name":"cloud offline",
+            "categories": []
+        },
+        {
+            "icon": "cloud",
+            "name": "cloud",
+            "categories": []
+        },
+        {
+            "icon": "code-of-conduct",
+            "name":"code of conduct",
+            "categories": []
+        },
+        {
+            "icon": "code-review",
+            "name":"code review",
+            "categories": []
+        },
+        {
+            "icon": "code-square",
+            "name":"code square",
+            "categories": []
+        },
+        {
+            "icon": "code",
+            "name": "code",
+            "categories": []
+        },
+        {
+            "icon": "codescan-checkmark",
+            "name":"codescan checkmark",
+            "categories": []
+        },
+        {
+            "icon": "codescan",
+            "name": "codescan",
+            "categories": []
+        },
+        {
+            "icon": "codespaces",
+            "name": "codespaces",
+            "categories": []
+        },
+        {
+            "icon": "columns",
+            "name": "columns",
+            "categories": []
+        },
+        {
+            "icon": "command-palette",
+            "name":"command palette",
+            "categories": []
+        },
+        {
+            "icon": "comment-discussion",
+            "name":"comment discussion",
+            "categories": []
+        },
+        {
+            "icon": "comment",
+            "name": "comment",
+            "categories": []
+        },
+        {
+            "icon": "commit",
+            "name": "commit",
+            "categories": []
+        },
+        {
+            "icon": "container",
+            "name": "container",
+            "categories": []
+        },
+        {
+            "icon": "copilot-error",
+            "name":"copilot error",
+            "categories": []
+        },
+        {
+            "icon": "copilot-warning",
+            "name":"copilot warning",
+            "categories": []
+        },
+        {
+            "icon": "copilot",
+            "name": "copilot",
+            "categories": []
+        },
+        {
+            "icon": "copy",
+            "name": "copy",
+            "categories": []
+        },
+        {
+            "icon": "cpu",
+            "name": "cpu",
+            "categories": []
+        },
+        {
+            "icon": "credit-card",
+            "name":"credit card",
+            "categories": []
+        },
+        {
+            "icon": "cross-reference",
+            "name":"cross reference",
+            "categories": []
+        },
+        {
+            "icon": "dash",
+            "name": "dash",
+            "categories": []
+        },
+        {
+            "icon": "database",
+            "name": "database",
+            "categories": []
+        },
+        {
+            "icon": "dependabot",
+            "name": "dependabot",
+            "categories": []
+        },
+        {
+            "icon": "desktop-download",
+            "name":"desktop download",
+            "categories": []
+        },
+        {
+            "icon": "device-camera-video",
+            "name":"device camera video",
+            "categories": []
+        },
+        {
+            "icon": "device-camera",
+            "name":"device camera",
+            "categories": []
+        },
+        {
+            "icon": "device-desktop",
+            "name":"device desktop",
+            "categories": []
+        },
+        {
+            "icon": "device-mobile",
+            "name":"device mobile",
+            "categories": []
+        },
+        {
+            "icon": "diamond",
+            "name": "diamond",
+            "categories": []
+        },
+        {
+            "icon": "diff-added",
+            "name":"diff added",
+            "categories": []
+        },
+        {
+            "icon": "diff-ignored",
+            "name":"diff ignored",
+            "categories": []
+        },
+        {
+            "icon": "diff-modified",
+            "name":"diff modified",
+            "categories": []
+        },
+        {
+            "icon": "diff-removed",
+            "name":"diff removed",
+            "categories": []
+        },
+        {
+            "icon": "diff-renamed",
+            "name":"diff renamed",
+            "categories": []
+        },
+        {
+            "icon": "diff",
+            "name": "diff",
+            "categories": []
+        },
+        {
+            "icon": "discussion-closed",
+            "name":"discussion closed",
+            "categories": []
+        },
+        {
+            "icon": "discussion-duplicate",
+            "name":"discussion duplicate",
+            "categories": []
+        },
+        {
+            "icon": "discussion-outdated",
+            "name":"discussion outdated",
+            "categories": []
+        },
+        {
+            "icon": "dot-fill",
+            "name":"dot fill",
+            "categories": []
+        },
+        {
+            "icon": "dot",
+            "name": "dot",
+            "categories": []
+        },
+        {
+            "icon": "download",
+            "name": "download",
+            "categories": []
+        },
+        {
+            "icon": "duplicate",
+            "name": "duplicate",
+            "categories": []
+        },
+        {
+            "icon": "ellipsis",
+            "name": "ellipsis",
+            "categories": []
+        },
+        {
+            "icon": "eye-closed",
+            "name":"eye closed",
+            "categories": []
+        },
+        {
+            "icon": "eye",
+            "name": "eye",
+            "categories": []
+        },
+        {
+            "icon": "feed-discussion",
+            "name":"feed discussion",
+            "categories": []
+        },
+        {
+            "icon": "feed-forked",
+            "name":"feed forked",
+            "categories": []
+        },
+        {
+            "icon": "feed-heart",
+            "name":"feed heart",
+            "categories": []
+        },
+        {
+            "icon": "feed-merged",
+            "name":"feed merged",
+            "categories": []
+        },
+        {
+            "icon": "feed-person",
+            "name":"feed person",
+            "categories": []
+        },
+        {
+            "icon": "feed-repo",
+            "name":"feed repo",
+            "categories": []
+        },
+        {
+            "icon": "feed-rocket",
+            "name":"feed rocket",
+            "categories": []
+        },
+        {
+            "icon": "feed-star",
+            "name":"feed star",
+            "categories": []
+        },
+        {
+            "icon": "feed-tag",
+            "name":"feed tag",
+            "categories": []
+        },
+        {
+            "icon": "feed-trophy",
+            "name":"feed trophy",
+            "categories": []
+        },
+        {
+            "icon": "file-added",
+            "name":"file added",
+            "categories": []
+        },
+        {
+            "icon": "file-badge",
+            "name":"file badge",
+            "categories": []
+        },
+        {
+            "icon": "file-binary",
+            "name":"file binary",
+            "categories": []
+        },
+        {
+            "icon": "file-code",
+            "name":"file code",
+            "categories": []
+        },
+        {
+            "icon": "file-diff",
+            "name":"file diff",
+            "categories": []
+        },
+        {
+            "icon": "file-directory-fill",
+            "name":"file directory fill",
+            "categories": []
+        },
+        {
+            "icon": "file-directory-open-fill",
+            "name":"file directory open fill",
+            "categories": []
+        },
+        {
+            "icon": "file-directory",
+            "name":"file directory",
+            "categories": []
+        },
+        {
+            "icon": "file-media",
+            "name":"file media",
+            "categories": []
+        },
+        {
+            "icon": "file-moved",
+            "name":"file moved",
+            "categories": []
+        },
+        {
+            "icon": "file-removed",
+            "name":"file removed",
+            "categories": []
+        },
+        {
+            "icon": "file-submodule",
+            "name":"file submodule",
+            "categories": []
+        },
+        {
+            "icon": "file-symlink-file",
+            "name":"file symlink file",
+            "categories": []
+        },
+        {
+            "icon": "file-zip",
+            "name":"file zip",
+            "categories": []
+        },
+        {
+            "icon": "file",
+            "name": "file",
+            "categories": []
+        },
+        {
+            "icon": "filter",
+            "name": "filter",
+            "categories": []
+        },
+        {
+            "icon": "fiscal-host",
+            "name":"fiscal host",
+            "categories": []
+        },
+        {
+            "icon": "flame",
+            "name": "flame",
+            "categories": []
+        },
+        {
+            "icon": "fold-down",
+            "name":"fold down",
+            "categories": []
+        },
+        {
+            "icon": "fold-up",
+            "name":"fold up",
+            "categories": []
+        },
+        {
+            "icon": "fold",
+            "name": "fold",
+            "categories": []
+        },
+        {
+            "icon": "gear",
+            "name": "gear",
+            "categories": []
+        },
+        {
+            "icon": "gift",
+            "name": "gift",
+            "categories": []
+        },
+        {
+            "icon": "git-branch",
+            "name":"git branch",
+            "categories": []
+        },
+        {
+            "icon": "git-commit",
+            "name":"git commit",
+            "categories": []
+        },
+        {
+            "icon": "git-compare",
+            "name":"git compare",
+            "categories": []
+        },
+        {
+            "icon": "git-merge-queue",
+            "name":"git merge queue",
+            "categories": []
+        },
+        {
+            "icon": "git-merge",
+            "name":"git merge",
+            "categories": []
+        },
+        {
+            "icon": "git-pull-request-closed",
+            "name":"git pull request closed",
+            "categories": []
+        },
+        {
+            "icon": "git-pull-request-draft",
+            "name":"git pull request draft",
+            "categories": []
+        },
+        {
+            "icon": "git-pull-request",
+            "name":"git pull request",
+            "categories": []
+        },
+        {
+            "icon": "globe",
+            "name": "globe",
+            "categories": []
+        },
+        {
+            "icon": "goal",
+            "name": "goal",
+            "categories": []
+        },
+        {
+            "icon": "grabber",
+            "name": "grabber",
+            "categories": []
+        },
+        {
+            "icon": "graph",
+            "name": "graph",
+            "categories": []
+        },
+        {
+            "icon": "hash",
+            "name": "hash",
+            "categories": []
+        },
+        {
+            "icon": "heading",
+            "name": "heading",
+            "categories": []
+        },
+        {
+            "icon": "heart-fill",
+            "name":"heart fill",
+            "categories": []
+        },
+        {
+            "icon": "heart",
+            "name": "heart",
+            "categories": []
+        },
+        {
+            "icon": "history",
+            "name": "history",
+            "categories": []
+        },
+        {
+            "icon": "home-fill",
+            "name":"home fill",
+            "categories": []
+        },
+        {
+            "icon": "home",
+            "name": "home",
+            "categories": []
+        },
+        {
+            "icon": "horizontal-rule",
+            "name":"horizontal rule",
+            "categories": []
+        },
+        {
+            "icon": "hourglass",
+            "name": "hourglass",
+            "categories": []
+        },
+        {
+            "icon": "hubot",
+            "name": "hubot",
+            "categories": []
+        },
+        {
+            "icon": "id-badge",
+            "name":"id badge",
+            "categories": []
+        },
+        {
+            "icon": "image",
+            "name": "image",
+            "categories": []
+        },
+        {
+            "icon": "inbox",
+            "name": "inbox",
+            "categories": []
+        },
+        {
+            "icon": "infinity",
+            "name": "infinity",
+            "categories": []
+        },
+        {
+            "icon": "info",
+            "name": "info",
+            "categories": []
+        },
+        {
+            "icon": "issue-closed",
+            "name":"issue closed",
+            "categories": []
+        },
+        {
+            "icon": "issue-draft",
+            "name":"issue draft",
+            "categories": []
+        },
+        {
+            "icon": "issue-opened",
+            "name":"issue opened",
+            "categories": []
+        },
+        {
+            "icon": "issue-reopened",
+            "name":"issue reopened",
+            "categories": []
+        },
+        {
+            "icon": "issue-tracked-by",
+            "name":"issue tracked by",
+            "categories": []
+        },
+        {
+            "icon": "issue-tracks",
+            "name":"issue tracks",
+            "categories": []
+        },
+        {
+            "icon": "italic",
+            "name": "italic",
+            "categories": []
+        },
+        {
+            "icon": "iterations",
+            "name": "iterations",
+            "categories": []
+        },
+        {
+            "icon": "kebab-horizontal",
+            "name":"kebab horizontal",
+            "categories": []
+        },
+        {
+            "icon": "key-asterisk",
+            "name":"key asterisk",
+            "categories": []
+        },
+        {
+            "icon": "key",
+            "name": "key",
+            "categories": []
+        },
+        {
+            "icon": "law",
+            "name": "law",
+            "categories": []
+        },
+        {
+            "icon": "light-bulb",
+            "name":"light bulb",
+            "categories": []
+        },
+        {
+            "icon": "link-external",
+            "name":"link external",
+            "categories": []
+        },
+        {
+            "icon": "link",
+            "name": "link",
+            "categories": []
+        },
+        {
+            "icon": "list-ordered",
+            "name":"list ordered",
+            "categories": []
+        },
+        {
+            "icon": "list-unordered",
+            "name":"list unordered",
+            "categories": []
+        },
+        {
+            "icon": "location",
+            "name": "location",
+            "categories": []
+        },
+        {
+            "icon": "lock",
+            "name": "lock",
+            "categories": []
+        },
+        {
+            "icon": "log",
+            "name": "log",
+            "categories": []
+        },
+        {
+            "icon": "logo-gist",
+            "name":"logo gist",
+            "categories": []
+        },
+        {
+            "icon": "logo-github",
+            "name":"logo github",
+            "categories": []
+        },
+        {
+            "icon": "mail",
+            "name": "mail",
+            "categories": []
+        },
+        {
+            "icon": "mark-github",
+            "name":"mark github",
+            "categories": []
+        },
+        {
+            "icon": "markdown",
+            "name": "markdown",
+            "categories": []
+        },
+        {
+            "icon": "megaphone",
+            "name": "megaphone",
+            "categories": []
+        },
+        {
+            "icon": "mention",
+            "name": "mention",
+            "categories": []
+        },
+        {
+            "icon": "meter",
+            "name": "meter",
+            "categories": []
+        },
+        {
+            "icon": "milestone",
+            "name": "milestone",
+            "categories": []
+        },
+        {
+            "icon": "mirror",
+            "name": "mirror",
+            "categories": []
+        },
+        {
+            "icon": "moon",
+            "name": "moon",
+            "categories": []
+        },
+        {
+            "icon": "mortar-board",
+            "name":"mortar board",
+            "categories": []
+        },
+        {
+            "icon": "move-to-bottom",
+            "name":"move to bottom",
+            "categories": []
+        },
+        {
+            "icon": "move-to-end",
+            "name":"move to end",
+            "categories": []
+        },
+        {
+            "icon": "move-to-start",
+            "name":"move to start",
+            "categories": []
+        },
+        {
+            "icon": "move-to-top",
+            "name":"move to top",
+            "categories": []
+        },
+        {
+            "icon": "multi-select",
+            "name":"multi select",
+            "categories": []
+        },
+        {
+            "icon": "mute",
+            "name": "mute",
+            "categories": []
+        },
+        {
+            "icon": "no-entry-fill",
+            "name":"no entry fill",
+            "categories": []
+        },
+        {
+            "icon": "no-entry",
+            "name":"no entry",
+            "categories": []
+        },
+        {
+            "icon": "north-star",
+            "name":"north star",
+            "categories": []
+        },
+        {
+            "icon": "note",
+            "name": "note",
+            "categories": []
+        },
+        {
+            "icon": "number",
+            "name": "number",
+            "categories": []
+        },
+        {
+            "icon": "organization",
+            "name": "organization",
+            "categories": []
+        },
+        {
+            "icon": "package-dependencies",
+            "name":"package dependencies",
+            "categories": []
+        },
+        {
+            "icon": "package-dependents",
+            "name":"package dependents",
+            "categories": []
+        },
+        {
+            "icon": "package",
+            "name": "package",
+            "categories": []
+        },
+        {
+            "icon": "paintbrush",
+            "name": "paintbrush",
+            "categories": []
+        },
+        {
+            "icon": "paper-airplane",
+            "name":"paper airplane",
+            "categories": []
+        },
+        {
+            "icon": "paperclip",
+            "name": "paperclip",
+            "categories": []
+        },
+        {
+            "icon": "passkey-fill",
+            "name":"passkey fill",
+            "categories": []
+        },
+        {
+            "icon": "paste",
+            "name": "paste",
+            "categories": []
+        },
+        {
+            "icon": "pencil",
+            "name": "pencil",
+            "categories": []
+        },
+        {
+            "icon": "people",
+            "name": "people",
+            "categories": []
+        },
+        {
+            "icon": "person-add",
+            "name":"person add",
+            "categories": []
+        },
+        {
+            "icon": "person-fill",
+            "name":"person fill",
+            "categories": []
+        },
+        {
+            "icon": "person",
+            "name": "person",
+            "categories": []
+        },
+        {
+            "icon": "pin",
+            "name": "pin",
+            "categories": []
+        },
+        {
+            "icon": "play",
+            "name": "play",
+            "categories": []
+        },
+        {
+            "icon": "plug",
+            "name": "plug",
+            "categories": []
+        },
+        {
+            "icon": "plus-circle",
+            "name":"plus circle",
+            "categories": []
+        },
+        {
+            "icon": "plus",
+            "name": "plus",
+            "categories": []
+        },
+        {
+            "icon": "project-roadmap",
+            "name":"project roadmap",
+            "categories": []
+        },
+        {
+            "icon": "project-symlink",
+            "name":"project symlink",
+            "categories": []
+        },
+        {
+            "icon": "project-template",
+            "name":"project template",
+            "categories": []
+        },
+        {
+            "icon": "project",
+            "name": "project",
+            "categories": []
+        },
+        {
+            "icon": "pulse",
+            "name": "pulse",
+            "categories": []
+        },
+        {
+            "icon": "question",
+            "name": "question",
+            "categories": []
+        },
+        {
+            "icon": "quote",
+            "name": "quote",
+            "categories": []
+        },
+        {
+            "icon": "read",
+            "name": "read",
+            "categories": []
+        },
+        {
+            "icon": "rel-file-path",
+            "name":"rel file path",
+            "categories": []
+        },
+        {
+            "icon": "reply",
+            "name": "reply",
+            "categories": []
+        },
+        {
+            "icon": "repo-clone",
+            "name":"repo clone",
+            "categories": []
+        },
+        {
+            "icon": "repo-deleted",
+            "name":"repo deleted",
+            "categories": []
+        },
+        {
+            "icon": "repo-forked",
+            "name":"repo forked",
+            "categories": []
+        },
+        {
+            "icon": "repo-locked",
+            "name":"repo locked",
+            "categories": []
+        },
+        {
+            "icon": "repo-pull",
+            "name":"repo pull",
+            "categories": []
+        },
+        {
+            "icon": "repo-push",
+            "name":"repo push",
+            "categories": []
+        },
+        {
+            "icon": "repo-template",
+            "name":"repo template",
+            "categories": []
+        },
+        {
+            "icon": "repo",
+            "name": "repo",
+            "categories": []
+        },
+        {
+            "icon": "report",
+            "name": "report",
+            "categories": []
+        },
+        {
+            "icon": "rocket",
+            "name": "rocket",
+            "categories": []
+        },
+        {
+            "icon": "rows",
+            "name": "rows",
+            "categories": []
+        },
+        {
+            "icon": "rss",
+            "name": "rss",
+            "categories": []
+        },
+        {
+            "icon": "ruby",
+            "name": "ruby",
+            "categories": []
+        },
+        {
+            "icon": "screen-full",
+            "name":"screen full",
+            "categories": []
+        },
+        {
+            "icon": "screen-normal",
+            "name":"screen normal",
+            "categories": []
+        },
+        {
+            "icon": "search",
+            "name": "search",
+            "categories": []
+        },
+        {
+            "icon": "server",
+            "name": "server",
+            "categories": []
+        },
+        {
+            "icon": "share-android",
+            "name":"share android",
+            "categories": []
+        },
+        {
+            "icon": "share",
+            "name": "share",
+            "categories": []
+        },
+        {
+            "icon": "shield-check",
+            "name":"shield check",
+            "categories": []
+        },
+        {
+            "icon": "shield-lock",
+            "name":"shield lock",
+            "categories": []
+        },
+        {
+            "icon": "shield-slash",
+            "name":"shield slash",
+            "categories": []
+        },
+        {
+            "icon": "shield-x",
+            "name":"shield x",
+            "categories": []
+        },
+        {
+            "icon": "shield",
+            "name": "shield",
+            "categories": []
+        },
+        {
+            "icon": "sidebar-collapse",
+            "name":"sidebar collapse",
+            "categories": []
+        },
+        {
+            "icon": "sidebar-expand",
+            "name":"sidebar expand",
+            "categories": []
+        },
+        {
+            "icon": "sign-in",
+            "name":"sign in",
+            "categories": []
+        },
+        {
+            "icon": "sign-out",
+            "name":"sign out",
+            "categories": []
+        },
+        {
+            "icon": "single-select",
+            "name":"single select",
+            "categories": []
+        },
+        {
+            "icon": "skip-fill",
+            "name":"skip fill",
+            "categories": []
+        },
+        {
+            "icon": "skip",
+            "name": "skip",
+            "categories": []
+        },
+        {
+            "icon": "sliders",
+            "name": "sliders",
+            "categories": []
+        },
+        {
+            "icon": "smiley",
+            "name": "smiley",
+            "categories": []
+        },
+        {
+            "icon": "sort-asc",
+            "name":"sort asc",
+            "categories": []
+        },
+        {
+            "icon": "sort-desc",
+            "name":"sort desc",
+            "categories": []
+        },
+        {
+            "icon": "sparkle-fill",
+            "name":"sparkle fill",
+            "categories": []
+        },
+        {
+            "icon": "sponsor-tiers",
+            "name":"sponsor tiers",
+            "categories": []
+        },
+        {
+            "icon": "square-fill",
+            "name":"square fill",
+            "categories": []
+        },
+        {
+            "icon": "square",
+            "name": "square",
+            "categories": []
+        },
+        {
+            "icon": "squirrel",
+            "name": "squirrel",
+            "categories": []
+        },
+        {
+            "icon": "stack",
+            "name": "stack",
+            "categories": []
+        },
+        {
+            "icon": "star-fill",
+            "name":"star fill",
+            "categories": []
+        },
+        {
+            "icon": "star",
+            "name": "star",
+            "categories": []
+        },
+        {
+            "icon": "stop",
+            "name": "stop",
+            "categories": []
+        },
+        {
+            "icon": "stopwatch",
+            "name": "stopwatch",
+            "categories": []
+        },
+        {
+            "icon": "strikethrough",
+            "name": "strikethrough",
+            "categories": []
+        },
+        {
+            "icon": "sun",
+            "name": "sun",
+            "categories": []
+        },
+        {
+            "icon": "sync",
+            "name": "sync",
+            "categories": []
+        },
+        {
+            "icon": "tab-external",
+            "name":"tab external",
+            "categories": []
+        },
+        {
+            "icon": "tab",
+            "name": "tab",
+            "categories": []
+        },
+        {
+            "icon": "table",
+            "name": "table",
+            "categories": []
+        },
+        {
+            "icon": "tag",
+            "name": "tag",
+            "categories": []
+        },
+        {
+            "icon": "tasklist",
+            "name": "tasklist",
+            "categories": []
+        },
+        {
+            "icon": "telescope-fill",
+            "name":"telescope fill",
+            "categories": []
+        },
+        {
+            "icon": "telescope",
+            "name": "telescope",
+            "categories": []
+        },
+        {
+            "icon": "terminal",
+            "name": "terminal",
+            "categories": []
+        },
+        {
+            "icon": "three-bars",
+            "name":"three bars",
+            "categories": []
+        },
+        {
+            "icon": "thumbsdown",
+            "name": "thumbsdown",
+            "categories": []
+        },
+        {
+            "icon": "thumbsup",
+            "name": "thumbsup",
+            "categories": []
+        },
+        {
+            "icon": "tools",
+            "name": "tools",
+            "categories": []
+        },
+        {
+            "icon": "trash",
+            "name": "trash",
+            "categories": []
+        },
+        {
+            "icon": "triangle-down",
+            "name":"triangle down",
+            "categories": []
+        },
+        {
+            "icon": "triangle-left",
+            "name":"triangle left",
+            "categories": []
+        },
+        {
+            "icon": "triangle-right",
+            "name":"triangle right",
+            "categories": []
+        },
+        {
+            "icon": "triangle-up",
+            "name":"triangle up",
+            "categories": []
+        },
+        {
+            "icon": "trophy",
+            "name": "trophy",
+            "categories": []
+        },
+        {
+            "icon": "typography",
+            "name": "typography",
+            "categories": []
+        },
+        {
+            "icon": "unfold",
+            "name": "unfold",
+            "categories": []
+        },
+        {
+            "icon": "unlink",
+            "name": "unlink",
+            "categories": []
+        },
+        {
+            "icon": "unlock",
+            "name": "unlock",
+            "categories": []
+        },
+        {
+            "icon": "unmute",
+            "name": "unmute",
+            "categories": []
+        },
+        {
+            "icon": "unread",
+            "name": "unread",
+            "categories": []
+        },
+        {
+            "icon": "unverified",
+            "name": "unverified",
+            "categories": []
+        },
+        {
+            "icon": "upload",
+            "name": "upload",
+            "categories": []
+        },
+        {
+            "icon": "verified",
+            "name": "verified",
+            "categories": []
+        },
+        {
+            "icon": "versions",
+            "name": "versions",
+            "categories": []
+        },
+        {
+            "icon": "video",
+            "name": "video",
+            "categories": []
+        },
+        {
+            "icon": "webhook",
+            "name": "webhook",
+            "categories": []
+        },
+        {
+            "icon": "workflow",
+            "name": "workflow",
+            "categories": []
+        },
+        {
+            "icon": "x-circle-fill",
+            "name":"x circle fill",
+            "categories": []
+        },
+        {
+            "icon": "x-circle",
+            "name":"x circle",
+            "categories": []
+        },
+        {
+            "icon": "x",
+            "name": "x",
+            "categories": []
+        },
+        {
+            "icon": "zap",
+            "name": "zap",
+            "categories": []
+        },
+        {
+            "icon": "zoom-in",
+            "name":"zoom in",
+            "categories": []
+        }
+    ]
+}
