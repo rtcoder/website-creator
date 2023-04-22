@@ -1,22 +1,33 @@
 import React from "react";
 import EmbedBlockComponent from "@/components/Blocks/EmbedBlockComponent";
+import {setAttributes} from "@/store/structureSlice";
+import {connect} from "react-redux";
 
-export default class YouTubeBlockComponent extends EmbedBlockComponent {
+class YouTubeBlockComponent extends EmbedBlockComponent {
     sourceModifier(source) {
+        const {block} = this.props;
+        if (!source.length) {
+
+            this.props.setAttributes({blockId: block.id, attributes: {src: undefined}});
+
+            return;
+        }
         if (source.includes('youtube.com/watch')) {
             const [, ytId] = source.split('?v=');
-            return `https://www.youtube.com/embed/${ytId}`;
+            source = `https://www.youtube.com/embed/${ytId}`;
         } else if (source.includes('youtu.be/')) {
             const [, ytId] = source.split('youtu.be/');
-            return `https://www.youtube.com/embed/${ytId}`;
+            source = `https://www.youtube.com/embed/${ytId}`;
         } else if (source.includes('<iframe')) {
             const strPart = source.split(' ').find(part => part.startsWith('src'));
             if (strPart) {
-                return strPart.replace('src="', '').replace('"', '');
+                source = strPart.replace('src="', '').replace('"', '');
             }
         }
 
-        return source;
+        this.props.setAttributes({blockId: block.id, attributes: {src: source}});
     }
 }
 
+
+export default connect(null, {setAttributes})(YouTubeBlockComponent);

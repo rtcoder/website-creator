@@ -1,5 +1,5 @@
 import {BLOCK_TYPES, BlockType} from "@/helpers/blocks";
-import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockAttributesInterface, BlockInterface} from "@/interfaces/Block.interface";
 import {Styles} from "@/interfaces/Styles.interface";
 import {makeId} from "@/helpers/string-helpers";
 import {PlainObj} from "@/interfaces/PlainObj";
@@ -106,30 +106,30 @@ const getStartingStyle = (type: BlockType): Styles => ({
     },
     [BLOCK_TYPES.ICON_VARIABLE]: getIconStartingStyles(),
 }[type] || {});
-const getStartingAttributes = (type: BlockType): PlainObj => ({
+const getStartingAttributes = (type: BlockType): BlockAttributesInterface => ({
     [BLOCK_TYPES.BUTTON]: {
         type: 'button'
     },
     [BLOCK_TYPES.YOUTUBE]: {
         src: '',
-        frameborder: '0',
+        frameBorder: '0',
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-        allowfullscreen: ''
+        allowFullscreen: ''
     },
     [BLOCK_TYPES.VIMEO]: {
         src: '',
-        frameborder: '0',
+        frameBorder: '0',
         allow: 'autoplay; fullscreen; picture-in-picture',
-        allowfullscreen: ''
+        allowFullscreen: ''
     },
     [BLOCK_TYPES.IFRAME]: {
         src: '',
-        frameborder: '0',
+        frameBorder: '0',
     },
     [BLOCK_TYPES.SPOTIFY]: {
         src: '',
-        frameborder: '0',
-        allowfullscreen: '',
+        frameBorder: '0',
+        allowFullscreen: '',
         width: '100%',
         height: '100%',
         allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
@@ -137,11 +137,11 @@ const getStartingAttributes = (type: BlockType): PlainObj => ({
     },
     [BLOCK_TYPES.GOOGLE_MAPS]: {
         src: '',
-        allowfullscreen: '',
+        allowFullscreen: '',
         width: '100%',
         height: '100%',
         style: 'border:0;',
-        referrerpolicy: 'no-referrer-when-downgrade',
+        referrerPolicy: 'no-referrer-when-downgrade',
         loading: 'lazy'
     },
     [BLOCK_TYPES.GOOGLE_CALENDAR]: {
@@ -149,10 +149,10 @@ const getStartingAttributes = (type: BlockType): PlainObj => ({
         width: '100%',
         height: '100%',
         style: 'border:0;',
-        frameborder: '0',
+        frameBorder: '0',
         scrolling: 'no',
     },
-}[type] || {});
+}[type] as BlockAttributesInterface || {});
 const getStartingTextContent = (type: BlockType): string => ({
     [BLOCK_TYPES.PARAGRAPH]: 'Paragraf',
     [BLOCK_TYPES.HEADING]: 'Nagłówek',

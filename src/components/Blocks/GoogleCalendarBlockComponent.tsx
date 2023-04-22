@@ -1,16 +1,27 @@
 import React from "react";
 import EmbedBlockComponent from "@/components/Blocks/EmbedBlockComponent";
+import {setAttributes} from "@/store/structureSlice";
+import {connect} from "react-redux";
 
-export default class GoogleCalendarBlockComponent extends EmbedBlockComponent {
+class GoogleCalendarBlockComponent extends EmbedBlockComponent {
     sourceModifier(source) {
+        const {block} = this.props;
+        if (!source.length) {
+
+            this.props.setAttributes({blockId: block.id, attributes: {src: undefined}});
+
+            return;
+        }
         if (source.includes('<iframe')) {
             const strPart = source.split(' ').find(part => part.startsWith('src'));
             if (strPart) {
-                return strPart.replace('src="', '').replace('"', '');
+                source = strPart.replace('src="', '').replace('"', '');
             }
         }
 
-        return source;
+        this.props.setAttributes({blockId: block.id, attributes: {src: source}});
     }
 }
 
+
+export default connect(null, {setAttributes})(GoogleCalendarBlockComponent);

@@ -1,17 +1,16 @@
 import {BlockType} from "@/helpers/blocks";
-import {PlainObj} from "@/interfaces/PlainObj";
 import {BlockLinkInterface} from "@/interfaces/BlockLink.interface";
 import {IconType} from "@/components/Icon";
 import {WithStyles} from "@/interfaces/Styles.interface";
 
 export interface BlockInterface extends WithStyles {
-    id: string | null;
+    id: string;
     type: BlockType;
     tagName: string;
     children: BlockInterface[];
     textContent: string;
     settings: BlockSettingsInterface;
-    attributes: PlainObj;
+    attributes: BlockAttributesInterface;
     blockLink: BlockLinkInterface | null;
 }
 
@@ -22,4 +21,19 @@ export interface BlockSettingsInterface {
 export interface BlockSettingsIconInterface {
     type: IconType;
     name: string;
+}
+
+export interface BlockAttributesInterface {
+    scrolling?: string;
+    style?: string;
+    referrerPolicy?: string;
+    width?: string;
+    height?: string;
+    loading?: string;
+    src?: string;
+    frameBorder?: string;
+    allow?: string;
+    allowFullscreen?: string;
+    type?: string;
+
 }
