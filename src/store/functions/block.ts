@@ -23,3 +23,22 @@ export const setIconFn = (state: StructureState, {payload}) => {
         state.selectedBlock = updateBlockIcon(selectedBlock, icon);
     }
 };
+
+
+export const setTextContentFn = (state: StructureState, {payload}) => {
+    const {content, blockId} = payload;
+    console.log(payload)
+    const {structure, selectedBlock} = state;
+    const block = findByIdRecursive(structure, blockId);
+    if (!block) {
+        return;
+    }
+    block.textContent = content;
+
+    state.structure = updateBlockInStructure(structure, blockId, block);
+    if (selectedBlock && selectedBlock.id === blockId) {
+        selectedBlock.textContent = content
+        state.selectedBlock = selectedBlock;
+    }
+};
+

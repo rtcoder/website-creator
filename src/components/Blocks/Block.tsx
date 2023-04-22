@@ -42,9 +42,7 @@ export default function (props: BlockProps) {
     }, [dispatch]);
 
     const toggleSelected = (ev) => {
-        if (!ev.target.closest('[contenteditable]')) {
-            ev.stopPropagation();
-        }
+        ev.stopPropagation();
 
         selectBlock({block, force: !!ev.target.closest('[contenteditable]')});
     };

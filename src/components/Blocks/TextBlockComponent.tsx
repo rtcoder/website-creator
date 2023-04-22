@@ -1,14 +1,17 @@
 import {BlockInterface} from "@/interfaces/Block.interface";
 import React from "react";
+import {connect} from "react-redux";
+import {setTextContent} from "@/store/structureSlice";
 
 interface TextComponentPropsInterface {
     block: BlockInterface,
     multiline?: boolean,
     editable?: boolean
+    setTextContent: (data: { content: string; blockId: string }) => void
 }
 
-export default class TextBlockComponent extends React.Component<any, any> {
-    constructor(props: TextComponentPropsInterface) {
+class TextBlockComponent extends React.Component<any, any> {
+    constructor(private props: TextComponentPropsInterface) {
         super(props)
         this.state = {
             block: props.block,
@@ -32,14 +35,10 @@ export default class TextBlockComponent extends React.Component<any, any> {
 
     updateContent() {
         const {block} = this.state;
-        block.textContent = this.state.multiline
+        const val = this.state.multiline
             ? this.state.ref.current.innerHTML
             : this.state.ref.current.innerText.replaceAll('\n', ' ');
-
-        this.setState({
-            block,
-            html: block.textContent
-        });
+        this.props.setTextContent({blockId: block.id, content: val})
     }
 
     render() {
@@ -57,3 +56,5 @@ export default class TextBlockComponent extends React.Component<any, any> {
     }
 }
 
+
+export default connect(null, {setTextContent})(TextBlockComponent)
