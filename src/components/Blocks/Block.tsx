@@ -1,9 +1,5 @@
 import styles from "@/styles/Components/Blocks/Block.module.scss"
-import {RWD_MODES} from "@/enums/rwd";
-import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import {BLOCK_TYPES, BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
-import {eventEmitter} from "@/services/EventEmitter";
-import {Events} from "@/interfaces/EventEmitter.interface";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
 import ContainerBlockComponent from "@/components/Blocks/ContainerBlockComponent";
@@ -20,9 +16,17 @@ import IframeBlockComponent from "@/components/Blocks/IframeBlockComponent";
 import ImageBlockComponent from "@/components/Blocks/ImageBlockComponent";
 import VideoBlockComponent from "@/components/Blocks/VideoBlockComponent";
 import AudioBlockComponent from "@/components/Blocks/AudioBlockComponent";
+import IconBlockComponent from "@/components/Blocks/IconBlockComponent";
+import {getInheritedStyleWithout} from "@/helpers/block-styles";
+import {useDispatch, useSelector} from "react-redux";
+import {useCallback} from "react";
+import {setSelectedBlock} from "@/store/structureSlice";
 
 export default function (props: BlockProps) {
-    const {block, selectedBlock, rwdMode, styleState} = props;
+    const {block} = props;
+    const rwd = useSelector((state: any) => state.structure.rwdMode);
+    const styleState = useSelector((state: any) => state.structure.styleState);
+    const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
 
     const [{opacity}, dragRef] = useDrag({
         type: `${BLOCK_TYPES_HUMAN_NAMES[block.type]}`,
@@ -31,16 +35,18 @@ export default function (props: BlockProps) {
             opacity: monitor.isDragging() ? 0.5 : 1
         })
     });
+    const dispatch = useDispatch();
+
+    const selectBlock = useCallback((blk) => {
+        dispatch(setSelectedBlock(blk));
+    }, [dispatch]);
 
     const toggleSelected = (ev) => {
         if (!ev.target.closest('[contenteditable]')) {
             ev.stopPropagation();
         }
-        if (ev.target.closest('[contenteditable]')) {
-            eventEmitter.dispatch(Events.FORCE_SELECT_ELEMENT, block);
-            return;
-        }
-        eventEmitter.dispatch(Events.SELECT_ELEMENT, block);
+
+        selectBlock({block, force: !!ev.target.closest('[contenteditable]')});
     };
 
     const classes = classNames({
@@ -53,25 +59,19 @@ export default function (props: BlockProps) {
         <div className={classes}
              ref={dragRef}
              onClick={toggleSelected}
-             style={block.styles.getInheritedStyleWithout(rwdMode, styleState, withoutProperties)}>
+             style={getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties)}>
             <div className={styles.maskLayer}/>
             {/*${this.#getButtonsHtml()}*/}
-            ${getBlockContent(block, selectedBlock, rwdMode, styleState)}
+            {getBlockContent(block)}
         </div>
     )
 
 }
 
-function getBlockContent(
-    block: BlockInterface,
-    selectedBlock: BlockInterface | null,
-    rwdMode: RWD_MODES,
-    styleState: STYLE_STATE_NAMES
-) {
+function getBlockContent(block: BlockInterface) {
     switch (block.type) {
         case BLOCK_TYPES.CONTAINER:
-            return <ContainerBlockComponent block={block} selectedBlock={selectedBlock} rwdMode={rwdMode}
-                                            styleState={styleState}/>
+            return <ContainerBlockComponent id={block.id} children={block.children}/>
         case BLOCK_TYPES.PARAGRAPH:
             return <TextBlockComponent block={block} multiline={true} editable={true}/>
         case BLOCK_TYPES.HEADING:
@@ -86,8 +86,7 @@ function getBlockContent(
         case BLOCK_TYPES.BUTTON:
             return <TextBlockComponent block={block} editable={true}/>
         case BLOCK_TYPES.ICON:
-
-            break;
+            return <IconBlockComponent block={block}/>
         case BLOCK_TYPES.AUDIO:
             return <AudioBlockComponent block={block}/>
         case BLOCK_TYPES.YOUTUBE:

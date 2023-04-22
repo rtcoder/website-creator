@@ -1,114 +1,168 @@
-import {BLOCK_TYPES} from "@/helpers/blocks";
-import {ContainerBlock} from "@/models/block/basic-blocks/ContainerBlock";
-import {ParagraphBlock} from "@/models/block/basic-blocks/ParagraphBlock";
-import {HeadingBlock} from "@/models/block/basic-blocks/HeadingBlock";
-import {UlBlock} from "@/models/block/basic-blocks/UlBlock";
-import {ImageBlock} from "@/models/block/basic-blocks/ImageBlock";
-import {VideoBlock} from "@/models/block/basic-blocks/VideoBlock";
-import {ButtonBlock} from "@/models/block/basic-blocks/ButtonBlock";
-import {IconBlock} from "@/models/block/basic-blocks/IconBlock";
-import {AudioBlock} from "@/models/block/basic-blocks/AudioBlock";
-import {YoutubeBlock} from "@/models/block/embed-blocks/YoutubeBlock";
-import {VimeoBlock} from "@/models/block/embed-blocks/VimeoBlock";
-import {HrBlock} from "@/models/block/basic-blocks/HrBlock";
-import {QuoteBlock} from "@/models/block/basic-blocks/QuoteBlock";
-import {IframeBlock} from "@/models/block/basic-blocks/IframeBlock";
-import {SpotifyBlock} from "@/models/block/embed-blocks/SpotifyBlock";
-import {VariableParagraphBlock} from "@/models/block/variable-blocks/VariableParagraphBlock";
-import {VariableHeadingBlock} from "@/models/block/variable-blocks/VariableHeadingBlock";
-import {VariableImageBlock} from "@/models/block/variable-blocks/VariableImageBlock";
-import {VariableVideoBlock} from "@/models/block/variable-blocks/VariableVideoBlock";
-import {VariableAudioBlock} from "@/models/block/variable-blocks/VariableAudioBlock";
-import {VariableIconBlock} from "@/models/block/variable-blocks/VariableIconBlock";
-import {VariableQuoteBlock} from "@/models/block/variable-blocks/VariableQuoteBlock";
-import {GoogleMapsBlock} from "@/models/block/embed-blocks/GoogleMapsBlock";
-import {GoogleCalendarBlock} from "@/models/block/embed-blocks/GoogleCalendarBlock";
-import {BlockInterface, BlockPlainInterface} from "@/interfaces/Block.interface";
+import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {_mapBlock} from "@/helpers/block-type-helpers";
 
-export function mapBlock(block: Partial<BlockPlainInterface>, resetId = false): BlockInterface {
-    block = {...block};
-    if (resetId) {
-        block.id = null;
+export function findByIdRecursive(arr: BlockInterface[], id: string): BlockInterface | undefined {
+    let found: BlockInterface | undefined = arr.find(child => child.id === id);
+    if (found) {
+        return found;
     }
-    switch (block.type) {
-        case BLOCK_TYPES.CONTAINER:
-            block = ContainerBlock.create(block);
-            block.children = mapStructure(block.children, resetId);
-            break;
-        case BLOCK_TYPES.PARAGRAPH:
-            block = ParagraphBlock.create(block);
-            break;
-        case BLOCK_TYPES.HEADING:
-            block = HeadingBlock.create(block);
-            break;
-        case BLOCK_TYPES.UL:
-            block = UlBlock.create(block);
-            block.children = mapStructure(block.children, resetId);
-            break;
-        case BLOCK_TYPES.IMAGE:
-            block = ImageBlock.create(block);
-            break;
-        case BLOCK_TYPES.VIDEO:
-            block = VideoBlock.create(block);
-            break;
-        case BLOCK_TYPES.BUTTON:
-            block = ButtonBlock.create(block);
-            break;
-        case BLOCK_TYPES.ICON:
-            block = IconBlock.create(block);
-            break;
-        case BLOCK_TYPES.AUDIO:
-            block = AudioBlock.create(block);
-            break;
-        case BLOCK_TYPES.YOUTUBE:
-            block = YoutubeBlock.create(block);
-            break;
-        case BLOCK_TYPES.VIMEO:
-            block = VimeoBlock.create(block);
-            break;
-        case BLOCK_TYPES.HR:
-            block = HrBlock.create(block);
-            break;
-        case BLOCK_TYPES.QUOTE:
-            block = QuoteBlock.create(block);
-            break;
-        case BLOCK_TYPES.IFRAME:
-            block = IframeBlock.create(block);
-            break;
-        case BLOCK_TYPES.SPOTIFY:
-            block = SpotifyBlock.create(block);
-            break;
-        case BLOCK_TYPES.PARAGRAPH_VARIABLE:
-            block = VariableParagraphBlock.create(block);
-            break;
-        case BLOCK_TYPES.HEADING_VARIABLE:
-            block = VariableHeadingBlock.create(block);
-            break;
-        case BLOCK_TYPES.IMAGE_VARIABLE:
-            block = VariableImageBlock.create(block);
-            break;
-        case BLOCK_TYPES.VIDEO_VARIABLE:
-            block = VariableVideoBlock.create(block);
-            break;
-        case BLOCK_TYPES.AUDIO_VARIABLE:
-            block = VariableAudioBlock.create(block);
-            break;
-        case BLOCK_TYPES.ICON_VARIABLE:
-            block = VariableIconBlock.create(block);
-            break;
-        case BLOCK_TYPES.QUOTE_VARIABLE:
-            block = VariableQuoteBlock.create(block);
-            break;
-        case BLOCK_TYPES.GOOGLE_MAPS:
-            block = GoogleMapsBlock.create(block);
-            break;
-        case BLOCK_TYPES.GOOGLE_CALENDAR:
-            block = GoogleCalendarBlock.create(block);
-            break;
+    for (const child of arr) {
+        found = findByIdRecursive(child.children, id);
+        if (found) {
+            return found;
+        }
     }
-    return block as BlockInterface;
+    return;
 }
 
-export function mapStructure(structure, resetId = false) {
-    return structure.map(block => mapBlock(block, resetId));
+export function findIndexById(arr: BlockInterface[], id: string): number {
+    return arr.findIndex(child => child.id === id);
+}
+
+export function findById(arr: BlockInterface[], id: string): BlockInterface | undefined {
+    return arr.find(child => child.id === id);
+}
+
+/**
+ *
+ * @description returns removed object if any and new array without removed object
+ */
+export function removeRecursive(arr: BlockInterface[], id: string): { removed: BlockInterface | undefined; newArray: BlockInterface[] } {
+    const t = [...arr];
+    let removed = t.find(child => child.id === id);
+    const newArray = []
+    for (let idx in t) {
+        let child = t[idx];
+        if (!removed) {
+            let result = removeRecursive(child.children, id);
+            removed = result.removed;
+            child.children = result.newArray;
+        }
+        if (child.id !== id) {
+            newArray.push(child);
+        }
+    }
+    return {removed, newArray};
+}
+
+export function addAtIndex(arr: BlockInterface[], child: BlockInterface, index: number | null = null): BlockInterface[] {
+    const newArray = [...arr];
+    if (index === null) {
+        newArray.push(child);
+        return newArray;
+    }
+    newArray.splice(index, 0, child);
+    return newArray;
+}
+
+export function addAtIndexToTarget(arr: BlockInterface[], child: BlockInterface, targetId: string, index: number | null = null): BlockInterface[] {
+    return [...arr].map(block => {
+        block.children = block.id === targetId
+            ? addAtIndex(block.children, child, index)
+            : addAtIndexToTarget(block.children, child, targetId, index);
+
+        return block;
+    });
+}
+
+export function getBlockParent(arr: BlockInterface[], blockId: string): BlockInterface {
+    let found = null;
+    for (const block of arr) {
+        if (findById(block.children, blockId)) {
+            found = block;
+            break;
+        }
+        if (!found) {
+            found = getBlockParent(block.children, blockId);
+        }
+        if (found) {
+            return found;
+        }
+    }
+    return found;
+}
+
+export function moveBlock(arr: BlockInterface[], blockId: string, targetId: string | null, index: number | null = null): BlockInterface[] {
+    let newArray = [...arr];
+    if (blockId === targetId) {
+        return arr;
+    }
+    // block we want to move
+    const block = findByIdRecursive(arr, blockId);
+    if (!block) {
+        return arr;
+    }
+    const parent = getBlockParent(newArray, blockId);
+    // this is because if parent equals null means it is main structure
+    if ((parent?.id || null) === targetId) {
+        // @TODO zmiana kolejnosci elementow
+        return arr;
+    }
+    // target is main array, so we don't have to search parent item
+    if (targetId === null) {
+        return addAtIndex(this, block, index);
+    }
+    // if target parent is one of descendants then do nothing
+    if (findByIdRecursive(block.children, targetId)) {
+        return arr;
+    }
+    // removing block
+    const result = removeRecursive(newArray, blockId);
+    newArray = result.newArray;
+
+    // and pushing it to new target
+    newArray = addAtIndexToTarget(newArray, block, targetId, index)
+    return newArray;
+}
+
+export function addNewBlockAtIndex(arr: BlockInterface[], block: BlockInterface, targetId: string | null, index = null) {
+    let newArray = [...arr];
+    if (block.id === targetId) {
+        return newArray;
+    }
+    if (targetId === null) {
+        return addAtIndex(newArray, block, index);
+    }
+    newArray = addAtIndexToTarget(newArray, block, targetId, index);
+    return newArray;
+}
+
+export function duplicateBlock(arr: BlockInterface[], blockId: string): BlockInterface[] {
+    let newArray = [...arr];
+    const itemToDuplicate = findByIdRecursive(newArray, blockId);
+    if (!itemToDuplicate) {
+        return;
+    }
+    const duplicated = _mapBlock(itemToDuplicate, true);
+// if block found in main array then add duplicate and return modified array
+    if (findById(newArray, blockId)) {
+        const index = findIndexById(newArray, blockId);
+        return addAtIndex(newArray, duplicated, index + 1);
+    }
+
+    // find block parent
+    const parent = getBlockParent(newArray, blockId);
+    const index = findIndexById(parent.children, blockId);
+    // add element after found index and return modified array
+    return addAtIndexToTarget(newArray, duplicated, parent.id!, index + 1);
+}
+
+export function getBlockHumanReadableName(block: BlockInterface): string {
+    return BLOCK_TYPES_HUMAN_NAMES[block.type];
+}
+
+export const updateBlockInStructure = (
+    structure: BlockInterface[],
+    blockId: string,
+    newValue: BlockInterface
+): BlockInterface[] => {
+
+    return structure.map(block => {
+        if (block.id === blockId) {
+            return newValue;
+        }
+        block.children = updateBlockInStructure(block.children, blockId, newValue);
+        return block;
+    })
 }

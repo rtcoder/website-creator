@@ -1,40 +1,25 @@
-import {BLOCK_TYPES} from "@/helpers/blocks";
-import {Styles} from "@/models/Styles";
-import {Children} from "@/models/Children";
+import {BlockType} from "@/helpers/blocks";
 import {PlainObj} from "@/interfaces/PlainObj";
 import {BlockLinkInterface} from "@/interfaces/BlockLink.interface";
+import {IconType} from "@/components/Icon";
+import {WithStyles} from "@/interfaces/Styles.interface";
 
-export interface BlockInterface extends BlockPlainInterface {
-
-    getHumanName(): string;
-
-    getStartingStyle(): PlainObj;
-
-    setAttributes(attributes: PlainObj): void;
-
-    findChildByIdRecursive(id: string): BlockInterface | undefined;
-
-    findChildIndexById(id: string): number;
-
-    findChildById(id: string): BlockInterface | undefined;
-
-    removeChild(id: string): BlockInterface | undefined;
-
-    appendChild(child: BlockInterface): void;
-
-    appendChildAtIndex(child: BlockInterface, index: number | null): void;
-
-    appendChildAfter(child: BlockInterface, afterId: string): void;
-}
-
-export interface BlockPlainInterface {
+export interface BlockInterface extends WithStyles {
     id: string | null;
-    type: BLOCK_TYPES;
+    type: BlockType;
     tagName: string;
-    styles: Styles;
-    children: Children;
+    children: BlockInterface[];
     textContent: string;
-    settings: PlainObj;
+    settings: BlockSettingsInterface;
     attributes: PlainObj;
     blockLink: BlockLinkInterface | null;
+}
+
+export interface BlockSettingsInterface {
+    icon?: BlockSettingsIconInterface;
+}
+
+export interface BlockSettingsIconInterface {
+    type: IconType;
+    name: string;
 }

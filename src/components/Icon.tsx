@@ -1,10 +1,14 @@
 import styles from '@/styles/Components/Icon.module.scss';
 import classNames from "@/helpers/classNames";
+import {MouseEventHandler} from "react";
+import {ReactSVG} from "react-svg";
+
 
 export type IconType =
     'devicon'
     | 'icofont'
     | 'fontawesome'
+    | 'material'
     | 'material-outlined'
     | 'material-rounded'
     | 'material-sharp'
@@ -14,20 +18,22 @@ export type IconType =
 interface IconProps {
     type: IconType;
     name: string;
+    className?: string;
+    onClick?: MouseEventHandler;
 }
 
 export default function Icon(props: IconProps) {
+    if (!props.name || !props.type) {
+        return '';
+    }
     const getIcon = () => {
-        if (!props.name || !props.type) {
-            return '';
-        }
-        let content;
         switch (props.type) {
             case 'devicon':
             case 'icofont':
             case 'fontawesome':
                 return (<i className={props.name}></i>);
             case 'material-outlined':
+            case 'material':
                 return (<span
                     className={classNames(['material-symbols-outlined', styles.materialSymbolsOutlined])}>
                     {props.name}
@@ -43,13 +49,13 @@ export default function Icon(props: IconProps) {
                     {props.name}
                 </span>);
             case 'ionicons':
-                return fetch(`/assets/ionicons/svg/${props.name}.svg`).then(res => res.text());
             case 'octicons':
-                return fetch(`/assets/octicons/svg/${props.name}.svg`).then(res => res.text());
+                return (<ReactSVG src={`/assets/${props.type}/svg/${props.name}.svg`}/>);
         }
     }
-    const icon = getIcon();
+    const className = props.className || '';
     return (
-        <div className={styles.icon}>{icon}</div>
+        <div className={classNames([styles.icon, className])}
+             onClick={props.onClick}>{getIcon()}</div>
     )
 }

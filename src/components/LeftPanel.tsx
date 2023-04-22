@@ -2,17 +2,12 @@ import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import Icon from "@/components/Icon";
 import BlocksPanel from "@/components/LeftPanel/BlocksPanel";
 import styles from "@/styles/Components/LeftPanel.module.scss";
-import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import StylesPanel from "@/components/LeftPanel/StylesPanel";
 import StructurePanel from "@/components/LeftPanel/StructurePanel";
-
-interface LeftPanelProps {
-    styleState: STYLE_STATE_NAMES;
-}
-
-export default function (props: LeftPanelProps) {
+import LeftSettingsPanel from "@/components/LeftPanel/LeftSettingsPanel";
 
 
+export default function () {
     return (
         <div className={styles.leftPanel}>
             <Tabs>

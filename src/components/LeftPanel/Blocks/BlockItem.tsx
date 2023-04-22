@@ -1,11 +1,11 @@
-import {BLOCK_TYPES, BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
+import {BLOCK_TYPES_HUMAN_NAMES, BlockType} from "@/helpers/blocks";
 import Icon, {IconType} from "@/components/Icon";
 import styles from "@/styles/Components/LeftPanel/Blocks/BlockItem.module.scss"
 import {useDrag} from "react-dnd";
 
 export interface BlockItemProps {
     name: string;
-    type: BLOCK_TYPES;
+    type: BlockType;
 
     icon: {
         type: IconType;
@@ -14,13 +14,13 @@ export interface BlockItemProps {
 }
 
 export default function (props: BlockItemProps) {
-    const [{ opacity }, dragRef] = useDrag({
-            type: `${BLOCK_TYPES_HUMAN_NAMES[props.type]}`,
-            item: ()=>({ type:props.type, isNew:true }),
-            collect: (monitor) => ({
-                opacity: monitor.isDragging() ? 0.5 : 1
-            })
-        });
+    const [{opacity}, dragRef] = useDrag({
+        type: `${BLOCK_TYPES_HUMAN_NAMES[props.type]}`,
+        item: () => ({type: props.type, isNew: true}),
+        collect: (monitor) => ({
+            opacity: monitor.isDragging() ? 0.5 : 1
+        })
+    });
 
     return (
         <div className={styles.blockItem} ref={dragRef} style={{opacity}}>

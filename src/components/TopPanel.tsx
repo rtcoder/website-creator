@@ -2,32 +2,32 @@ import styles from '@/styles/Components/TopPanel.module.scss';
 import Icon from "@/components/Icon";
 import classNames from "@/helpers/classNames";
 import {RWD_MODES} from "@/enums/rwd";
-import {eventEmitter} from "@/services/EventEmitter";
-import {Events} from "@/interfaces/EventEmitter.interface";
 import HelpModal from "@/components/HelpModal";
-import {useState} from "react";
+import {useCallback, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {setRwdMode} from "@/store/structureSlice";
 
-interface TopPanelProps {
-    rwd: RWD_MODES;
-}
-
-export default function TopPanel(props: TopPanelProps) {
-    const changeRwd = (rwdName: RWD_MODES) => {
-        eventEmitter.dispatch(Events.RWD_CHANGED, rwdName);
-    }
+export default function () {
+    const rwd = useSelector((state: any) => state.structure.rwdMode);
     const [helpModalOpened, setHelpModalOpened] = useState(false);
-    const openHelpModal = () => {
-        setHelpModalOpened(true);
-    }
-    const closeHelpModal = () => {
-        setHelpModalOpened(false);
-    }
+    const dispatch = useDispatch();
+
+    const setRwd = useCallback((val) => {
+        dispatch(setRwdMode(val));
+    }, [dispatch]);
+
+    const openHelpModal = () => setHelpModalOpened(true);
+    const closeHelpModal = () => setHelpModalOpened(false);
+
+    const rwdModes: [RWD_MODES, string][] = [
+        [RWD_MODES.DESKTOP, 'desktop_windows'],
+        [RWD_MODES.TABLET, 'tablet_android'],
+        [RWD_MODES.MOBILE, 'smartphone'],
+    ];
+
     return (
         <div className={styles.topPanel}>
             <div className={styles.buttonsContainer}>
-                <div>
-                    <Icon type="material-outlined" name="border_clear"/>
-                </div>
                 <div onClick={openHelpModal}>
                     <Icon type="material-outlined" name="help"/>
                 </div>
@@ -37,20 +37,13 @@ export default function TopPanel(props: TopPanelProps) {
             </div>
 
             <div className={classNames([styles.rwd, styles.buttonsContainer])}>
-                <div onClick={() => changeRwd(RWD_MODES.DESKTOP)}
-                     className={props.rwd === RWD_MODES.DESKTOP ? styles.active : ''}>
-                    <Icon type="material-outlined" name="desktop_windows"/>
-                </div>
-                <div onClick={() => changeRwd(RWD_MODES.TABLET)}
-                     className={props.rwd === RWD_MODES.TABLET ? styles.active : ''}>
-                    <Icon type="material-outlined" name="tablet_android"/>
-                </div>
-                <div onClick={() => changeRwd(RWD_MODES.MOBILE)}
-                     className={props.rwd === RWD_MODES.MOBILE ? styles.active : ''}>
-                    <Icon type="material-outlined" name="smartphone"/>
-                </div>
+                {rwdModes.map(([mode, icon]) =>
+                    <div key={mode} onClick={() => setRwd(mode)} className={rwd === mode ? styles.active : ''}>
+                        <Icon type="material-outlined" name={icon}/>
+                    </div>
+                )}
             </div>
-            <div></div>
+            <div>save</div>
             <HelpModal opened={helpModalOpened} onClose={closeHelpModal}/>
         </div>
     );

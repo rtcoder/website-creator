@@ -1,16 +1,9 @@
-import {BlockInterface} from "@/interfaces/Block.interface";
 import {PlainObj} from "@/interfaces/PlainObj";
-import {RWD_MODES} from "@/enums/rwd";
-import {BLOCK_TYPES} from "@/helpers/blocks";
+import {PanelNames} from "@/services/LeftSettingsPanel.service";
 
 export enum Events {
-    RWD_CHANGED = 'rwdChanged',
-    DROP_ELEMENT = 'dropped',
-    DROP_NEW_ELEMENT = 'droppedNew',
     DELETE_ELEMENT = 'itemDeleted',
     DUPLICATE_ELEMENT = 'duplicateElement',
-    FORCE_SELECT_ELEMENT = 'forceSelectItem',
-    SELECT_ELEMENT = 'selectItem',
     SET_STYLES = 'setStyles',
     SET_STYLE_STATE = 'setStyleState',
     UPDATE_CONTENT = 'updateContent',
@@ -21,33 +14,12 @@ export enum Events {
     SET_TAG_NAME = 'setTagName',
     SET_LINK = 'setLink',
     RELOAD_EVENTS = 'reloadEvents',
-}
 
-interface DropElementInterface {
-    element: BlockInterface
-    targetId: string | null;
+    OPEN_SETTINGS_PANEL = 'openSettingsPanel',
 }
-
-interface DropNewElementInterface {
-    element: { type: BLOCK_TYPES };
-    targetId: string | null;
-}
-
 
 export interface EventEmitterInterface {
     _events: PlainObj;
-
-    dispatch(event: Events.RWD_CHANGED, data: RWD_MODES): void;
-
-    subscribe(event: Events.RWD_CHANGED, callback: (data: RWD_MODES) => void): void;
-
-    dispatch(event: Events.DROP_ELEMENT, data: DropElementInterface): void;
-
-    subscribe(event: Events.DROP_ELEMENT, callback: (data: DropElementInterface) => void): void;
-
-    dispatch(event: Events.DROP_NEW_ELEMENT, data: DropNewElementInterface): void;
-
-    subscribe(event: Events.DROP_NEW_ELEMENT, callback: (data: DropNewElementInterface) => void): void;
 
     // dispatch(event: Events.DELETE_ELEMENT, data: BlockInterface): void;
 
@@ -56,14 +28,6 @@ export interface EventEmitterInterface {
     // dispatch(event: Events.DUPLICATE_ELEMENT, data: BlockInterface): void;
 
     // subscribe(event: Events.DUPLICATE_ELEMENT, callback: (data: BlockInterface) => void): void;
-
-    dispatch(event: Events.FORCE_SELECT_ELEMENT, data: BlockInterface): void;
-
-    subscribe(event: Events.FORCE_SELECT_ELEMENT, callback: (data: BlockInterface) => void): void;
-
-    dispatch(event: Events.SELECT_ELEMENT, data: BlockInterface): void;
-
-    subscribe(event: Events.SELECT_ELEMENT, callback: (data: BlockInterface) => void): void;
 
     // dispatch(event: Events.SET_STYLES, data: BlockInterface): void;
 
@@ -96,6 +60,9 @@ export interface EventEmitterInterface {
     // dispatch(event: Events.RELOAD_EVENTS, data: BlockInterface): void;
 
     // subscribe(event: Events.RELOAD_EVENTS, callback: (data: BlockInterface) => void): void;
+    dispatch(event: Events.OPEN_SETTINGS_PANEL, data: PanelNames): void;
+
+    subscribe(event: Events.OPEN_SETTINGS_PANEL, callback: (data: PanelNames) => void): void;
 
     unsubscribe(event: Events): void;
 }
