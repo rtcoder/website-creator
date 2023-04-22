@@ -22,8 +22,8 @@ export default function ActionButtons(props) {
     }, [dispatch]);
     useEffect(() => {
         const container = ref.current as HTMLElement;
-        const parent=container.parentNode as HTMLElement;
-        const parentWidth =parent.getBoundingClientRect().width;
+        const parent = container.parentNode as HTMLElement;
+        const parentWidth = parent.getBoundingClientRect().width;
         const {left, width} = container.getBoundingClientRect();
         const creatorAreaLeftPos = 330;
         if (!container.classList.contains('left')) {
@@ -46,10 +46,10 @@ export default function ActionButtons(props) {
         }
     })
 
-    const classes=classNames({
-        [styles.actionButtons]:true,
-        [styles.left]:posLeft,
-        [styles.right]:posRight
+    const classes = classNames({
+        [styles.actionButtons]: true,
+        [styles.left]: posLeft,
+        [styles.right]: posRight
     })
     return (
         <div className={classes} ref={ref}>

@@ -47,6 +47,7 @@ export function removeRecursive(arr: BlockInterface[], id: string): { removed: B
 }
 
 export function addAtIndex(arr: BlockInterface[], child: BlockInterface, index: number | null = null): BlockInterface[] {
+    console.log({arr})
     const newArray = [...arr];
     if (index === null) {
         newArray.push(child);
@@ -99,17 +100,18 @@ export function moveBlock(arr: BlockInterface[], blockId: string, targetId: stri
         // @TODO zmiana kolejnosci elementow
         return arr;
     }
-    // target is main array, so we don't have to search parent item
-    if (targetId === null) {
-        return addAtIndex(this, block, index);
-    }
     // if target parent is one of descendants then do nothing
-    if (findByIdRecursive(block.children, targetId)) {
+    if (targetId && findByIdRecursive(block.children, targetId)) {
         return arr;
     }
     // removing block
     const result = removeRecursive(newArray, blockId);
     newArray = result.newArray;
+
+    // target is main array, so we don't have to search parent item
+    if (targetId === null) {
+        return addAtIndex(newArray, block, index);
+    }
 
     // and pushing it to new target
     newArray = addAtIndexToTarget(newArray, block, targetId, index)

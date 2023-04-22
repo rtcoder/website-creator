@@ -42,7 +42,16 @@ export default function ContainerBlockComponent(props: ContainerPropsInterface) 
                 _dropBlock({block: item, targetId: id});
             }
         }, canDrop: (item) => {
-            return !!(item.isNew || (item.id !== id && (id && !findByIdRecursive(item.children, id))))
+            return !!(
+                item.isNew
+                || (item.id !== id
+                    && (!id
+                        || (id
+                            && !findByIdRecursive(item.children, id)
+                        )
+                    )
+                )
+            )
         },
         collect: (monitor) => ({
             isDragover: monitor.isOver({shallow: false}) && monitor.canDrop()
