@@ -11,7 +11,6 @@ const updateBlockIcon = (block: BlockInterface, icon: BlockSettingsIconInterface
 })
 export const setIconFn = (state: StructureState, {payload}) => {
     const {icon, blockId} = payload;
-    console.log(payload)
     const {structure, selectedBlock} = state;
     const block = findByIdRecursive(structure, blockId);
     if (!block) {
@@ -27,7 +26,6 @@ export const setIconFn = (state: StructureState, {payload}) => {
 
 export const setTextContentFn = (state: StructureState, {payload}) => {
     const {content, blockId} = payload;
-    console.log(payload)
     const {structure, selectedBlock} = state;
     const block = findByIdRecursive(structure, blockId);
     if (!block) {
@@ -38,6 +36,30 @@ export const setTextContentFn = (state: StructureState, {payload}) => {
     state.structure = updateBlockInStructure(structure, blockId, block);
     if (selectedBlock && selectedBlock.id === blockId) {
         selectedBlock.textContent = content
+        state.selectedBlock = selectedBlock;
+    }
+};
+
+
+export const setAttributesFn = (state: StructureState, {payload}) => {
+    const {attributes, blockId} = payload;
+    console.log(payload)
+    const {structure, selectedBlock} = state;
+    const block = findByIdRecursive(structure, blockId);
+    if (!block) {
+        return;
+    }
+    block.attributes={
+        ...block.attributes,
+        ...attributes
+    }
+
+    state.structure = updateBlockInStructure(structure, blockId, block);
+    if (selectedBlock && selectedBlock.id === blockId) {
+        selectedBlock.attributes={
+            ...selectedBlock.attributes,
+            ...attributes
+        }
         state.selectedBlock = selectedBlock;
     }
 };

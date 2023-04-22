@@ -1,14 +1,11 @@
-import {BlockInterface} from "@/interfaces/Block.interface";
 import React from "react";
 import styles from "@/styles/Components/Blocks/MediaBlock.module.scss";
-import Icon from "@/components/Icon";
 import {upload} from "@/helpers/upload";
 
-export default class MediaUploadBlockComponent extends React.Component<any, any> {
-    constructor(props: { block: BlockInterface }) {
+export default abstract class MediaUploadBlockComponent extends React.Component<any, any> {
+    constructor(protected props) {
         super(props)
         this.state = {
-            block: props.block,
             inputRef: React.createRef(),
             mediaRef: React.createRef(),
             isUploading: false,
@@ -16,25 +13,20 @@ export default class MediaUploadBlockComponent extends React.Component<any, any>
         }
     }
 
-    getMediaComponent(): JSX.Element | string {
-        return '';
-    }
+    abstract getMediaComponent(): JSX.Element | string ;
+
+    abstract getAcceptType(): string ;
+
+    abstract getUploadIcon(): JSX.Element | string;
+
+    abstract onLocalLoadMedia(reader: FileReader): void;
+
+    abstract onLoadMediaRequest(request): void;
 
     private getUploadProgress() {
         return `${this.state.uploadProgress}%`;
     }
 
-    onLoadMedia(request) {
-        const result = request.response;
-        const {block} = this.state;
-
-        block.setAttributes({src: result.url});
-        this.setState({
-            block,
-            isUploading: false,
-            uploadProgress: 0
-        });
-    }
 
     private onChange(ev) {
         const [file] = ev.target.files;
@@ -49,7 +41,7 @@ export default class MediaUploadBlockComponent extends React.Component<any, any>
                 const value = ((loaded * 100) / total).toFixed(0);
                 this.setState({uploadProgress: value});
             },
-            onLoad: _ => this.onLoadMedia(request)
+            onLoad: _ => this.onLoadMediaRequest(request)
         });
 
         if (request.OPENED === request.readyState) {
@@ -59,29 +51,14 @@ export default class MediaUploadBlockComponent extends React.Component<any, any>
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
-            const {block} = this.state;
-            if (block.attributes.src && block.attributes.src.startsWith('http')) {
-                return;
-            }
-
-            block.setAttributes({src: reader.result});
-            this.setState({block});
-
+            this.onLocalLoadMedia(reader);
         };
-    }
-
-    getUploadIcon() {
-        return <Icon type="fontawesome" name="fa-sharp fa-regular fa-upload"/>
-    }
-
-    getAcceptType(): string {
-        return '*';
     }
 
     render() {
         return (
             <div className={styles.mediaContainer}>
-                {this.state.block.attributes.src ? this.getMediaComponent() : ''}
+                {this.props.block.attributes.src ? this.getMediaComponent() : ''}
 
                 {this.state.isUploading
                     ? <div className={styles.loading}>
@@ -89,11 +66,11 @@ export default class MediaUploadBlockComponent extends React.Component<any, any>
                     </div>
                     : ''}
 
-                {!this.state.block.attributes.src
-                    ? <label htmlFor={`file-${this.state.block.id}`}>
+                {!this.props.block.attributes.src
+                    ? <label htmlFor={`file-${this.props.block.id}`}>
                         <input ref={this.state.inputRef}
                                type="file"
-                               id={`file-${this.state.block.id}`}
+                               id={`file-${this.props.block.id}`}
                                onChange={this.onChange.bind(this)}
                                accept={this.getAcceptType()}/>
                         {this.getUploadIcon()}

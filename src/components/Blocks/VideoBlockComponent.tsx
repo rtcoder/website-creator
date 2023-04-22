@@ -1,22 +1,32 @@
 import React from "react";
 import Icon from "@/components/Icon";
+import {setAttributes} from "@/store/structureSlice";
+import {connect} from "react-redux";
 import MediaUploadBlockComponent from "@/components/Blocks/MediaUploadBlockComponent";
 
-export default class VideoBlockComponent extends MediaUploadBlockComponent {
-    onLoadMedia(request) {
-        const result = request.response;
-        const {block} = this.state;
+ class VideoBlockComponent extends MediaUploadBlockComponent {
+     onLoadMediaRequest(request) {
+         const result = request.response;
+         const {block} = this.props;
 
-        block.setAttributes({src: result.url, poster: result.thumbnails_urls[0]});
-        this.setState({
-            block,
-            isUploading: false,
-            uploadProgress: 0
-        });
-    }
+         this.props.setAttributes({blockId: block.id, attributes: {src: result.url, poster: result.thumbnails_urls[0]}});
+         super.setState({
+             isUploading: false,
+             uploadProgress: 0
+         });
+     }
 
-    getMediaComponent() {
-        return <video src={this.state.block.attributes.src} poster={this.state.block.attributes.poster} controls/>
+     onLocalLoadMedia(reader: FileReader): void {
+         const {block} = this.props;
+         if (block.attributes.src && block.attributes.src.startsWith('http')) {
+             return;
+         }
+         this.props.setAttributes({blockId: block.id, attributes: {src: reader.result}});
+     }
+
+
+     getMediaComponent() {
+        return <video src={this.props.block.attributes.src} poster={this.props.block.attributes.poster} controls/>
     }
 
     getUploadIcon() {
@@ -28,3 +38,4 @@ export default class VideoBlockComponent extends MediaUploadBlockComponent {
     }
 }
 
+export default connect(null, {setAttributes})(VideoBlockComponent);

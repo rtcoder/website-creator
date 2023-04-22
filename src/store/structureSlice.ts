@@ -9,7 +9,7 @@ import {
     setSelectedBlockFn,
     setStructureFn
 } from "@/store/functions/structure";
-import {setIconFn, setTextContentFn} from "@/store/functions/block";
+import {setAttributesFn, setIconFn, setTextContentFn} from "@/store/functions/block";
 
 export interface StructureState {
     structure: BlockInterface[];
@@ -36,6 +36,7 @@ const structureSlice = createSlice({
         dropNewBlock: dropNewBlockFn,
         setIcon: setIconFn,
         setTextContent: setTextContentFn,
+        setAttributes:setAttributesFn,
     }
 });
 
@@ -47,6 +48,7 @@ export const {
     dropNewBlock,
     setIcon,
     setTextContent,
+    setAttributes,
 }: { [k: string]: (action: PayloadAction) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

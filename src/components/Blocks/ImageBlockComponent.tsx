@@ -1,10 +1,31 @@
 import React from "react";
 import Icon from "@/components/Icon";
 import MediaUploadBlockComponent from "@/components/Blocks/MediaUploadBlockComponent";
+import {setAttributes} from "@/store/structureSlice";
+import {connect} from "react-redux";
 
-export default class ImageBlockComponent extends MediaUploadBlockComponent {
+class ImageBlockComponent extends MediaUploadBlockComponent {
+    onLoadMediaRequest(request) {
+        const result = request.response;
+        const {block} = this.props;
+
+        this.props.setAttributes({blockId: block.id, attributes: {src: result.url}});
+        super.setState({
+            isUploading: false,
+            uploadProgress: 0
+        });
+    }
+
+    onLocalLoadMedia(reader: FileReader): void {
+        const {block} = this.props;
+        if (block.attributes.src && block.attributes.src.startsWith('http')) {
+            return;
+        }
+        this.props.setAttributes({blockId: block.id, attributes: {src: reader.result}});
+    }
+
     getMediaComponent() {
-        return <img src={this.state.block.attributes.src} alt=""/>
+        return <img src={this.props.block.attributes.src} alt=""/>
     }
 
     getUploadIcon() {
@@ -16,3 +37,4 @@ export default class ImageBlockComponent extends MediaUploadBlockComponent {
     }
 }
 
+export default connect(null, {setAttributes})(ImageBlockComponent);

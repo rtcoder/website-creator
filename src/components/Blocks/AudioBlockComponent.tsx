@@ -1,11 +1,32 @@
 import React from "react";
 import Icon from "@/components/Icon";
 import MediaUploadBlockComponent from "@/components/Blocks/MediaUploadBlockComponent";
+import {setAttributes} from "@/store/structureSlice";
+import {connect} from "react-redux";
 
-export default class AudioBlockComponent extends MediaUploadBlockComponent {
+class AudioBlockComponent extends MediaUploadBlockComponent {
+
+    onLoadMediaRequest(request) {
+        const result = request.response;
+        const {block} = this.props;
+
+        this.props.setAttributes({blockId: block.id, attributes: {src: result.url}});
+        super.setState({
+            isUploading: false,
+            uploadProgress: 0
+        });
+    }
+
+    onLocalLoadMedia(reader: FileReader): void {
+        const {block} = this.props;
+        if (block.attributes.src && block.attributes.src.startsWith('http')) {
+            return;
+        }
+        this.props.setAttributes({blockId: block.id, attributes: {src: reader.result}});
+    }
 
     getMediaComponent() {
-        return <audio src={this.state.block.attributes.src} controls/>
+        return <audio src={this.props.block.attributes.src} controls/>
     }
 
     getUploadIcon() {
@@ -17,3 +38,4 @@ export default class AudioBlockComponent extends MediaUploadBlockComponent {
     }
 }
 
+export default connect(null, {setAttributes})(AudioBlockComponent);
