@@ -128,7 +128,7 @@ export function addNewBlockAtIndex(arr: BlockInterface[], block: BlockInterface,
     return newArray;
 }
 
-export function duplicateBlock(arr: BlockInterface[], blockId: string): BlockInterface[] {
+export function duplicateBlk(arr: BlockInterface[], blockId: string): BlockInterface[] {
     let newArray = [...arr];
     const itemToDuplicate = findByIdRecursive(newArray, blockId);
     if (!itemToDuplicate) {

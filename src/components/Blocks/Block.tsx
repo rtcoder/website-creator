@@ -1,4 +1,5 @@
 import styles from "@/styles/Components/Blocks/Block.module.scss"
+import stylesActionButtons from "@/components/ActionButtons/ActionButtons.module.scss"
 import {BLOCK_TYPES, BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
@@ -19,14 +20,17 @@ import AudioBlockComponent from "@/components/Blocks/AudioBlockComponent";
 import IconBlockComponent from "@/components/Blocks/IconBlockComponent";
 import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
-import {useCallback} from "react";
+import {useCallback, useRef, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
+import ActionButtons from "@/components/ActionButtons/ActionButtons";
 
-export default function (props: BlockProps) {
+export default function Block(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
+    const [isHovered, setIsHovered] = useState(false);
+    const dispatch = useDispatch();
 
     const [{opacity}, dragRef] = useDrag({
         type: `${BLOCK_TYPES_HUMAN_NAMES[block.type]}`,
@@ -35,21 +39,32 @@ export default function (props: BlockProps) {
             opacity: monitor.isDragging() ? 0.5 : 1
         })
     });
-    const dispatch = useDispatch();
 
     const selectBlock = useCallback((blk) => {
         dispatch(setSelectedBlock(blk));
     }, [dispatch]);
 
+    const onMouseOver = () => {
+        setIsHovered(true);
+    };
+    const onMouseLeave = () => {
+        setIsHovered(false);
+    };
     const toggleSelected = (ev) => {
         ev.stopPropagation();
+        const clickOnEditableChild = !!ev.target.closest('[contenteditable]');
+        const clickOnTextField = !!ev.target.closest('input');
+        const clickOnActionButton = !!ev.target.closest(`.${stylesActionButtons.actionButtons}`);
+        const force = clickOnEditableChild || clickOnTextField || clickOnActionButton;
 
-        selectBlock({block, force: !!ev.target.closest('[contenteditable]')});
+        selectBlock({block, force});
     };
+    const isSelected = () => selectedBlock?.id === block.id;
 
     const classes = classNames({
         [styles.singleBlock]: true,
-        [styles.selected]: selectedBlock?.id === block.id
+        [styles.selected]: isSelected(),
+        [styles.hovered]: isHovered,
     });
     const withoutProperties = ['width', 'min-width', 'max-width'];
 
@@ -57,9 +72,11 @@ export default function (props: BlockProps) {
         <div className={classes}
              ref={dragRef}
              onClick={toggleSelected}
+             onMouseOver={onMouseOver}
+             onMouseLeave={onMouseLeave}
              style={getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties)}>
             <div className={styles.maskLayer}/>
-            {/*${this.#getButtonsHtml()}*/}
+            {isSelected() ? <ActionButtons block={block}/> : ''}
             {getBlockContent(block)}
         </div>
     )

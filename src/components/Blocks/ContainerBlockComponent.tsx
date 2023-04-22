@@ -10,7 +10,12 @@ import {BlockInterface} from "@/interfaces/Block.interface";
 import {useCallback} from "react";
 import {dropBlock, dropNewBlock} from "@/store/structureSlice";
 
-export default function (props: { id: string | null; children: BlockInterface[] }) {
+interface ContainerPropsInterface {
+    id: string | null;
+    children: BlockInterface[];
+}
+
+export default function ContainerBlockComponent(props: ContainerPropsInterface) {
     const {id, children} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);

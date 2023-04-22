@@ -1,6 +1,7 @@
 import {StructureState} from "@/store/structureSlice";
-import {findByIdRecursive, updateBlockInStructure} from "@/helpers/block";
+import {duplicateBlk, findByIdRecursive, updateBlockInStructure} from "@/helpers/block";
 import {BlockInterface, BlockSettingsIconInterface} from "@/interfaces/Block.interface";
+import {PayloadAction} from "@reduxjs/toolkit";
 
 const updateBlockIcon = (block: BlockInterface, icon: BlockSettingsIconInterface): BlockInterface => ({
     ...block,
@@ -49,18 +50,26 @@ export const setAttributesFn = (state: StructureState, {payload}) => {
     if (!block) {
         return;
     }
-    block.attributes={
+    block.attributes = {
         ...block.attributes,
         ...attributes
     }
 
     state.structure = updateBlockInStructure(structure, blockId, block);
     if (selectedBlock && selectedBlock.id === blockId) {
-        selectedBlock.attributes={
+        selectedBlock.attributes = {
             ...selectedBlock.attributes,
             ...attributes
         }
         state.selectedBlock = selectedBlock;
     }
+};
+
+
+export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
+    console.log(payload)
+    const {structure, selectedBlock} = state;
+
+    state.structure = duplicateBlk(structure, payload.id);
 };
 

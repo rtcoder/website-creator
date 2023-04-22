@@ -4,12 +4,12 @@ import {RWD_MODES} from "@/enums/rwd";
 import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import {
     dropBlockFn,
-    dropNewBlockFn,
+    dropNewBlockFn, removeBlockFn,
     setRwdModeFn,
     setSelectedBlockFn,
     setStructureFn
 } from "@/store/functions/structure";
-import {setAttributesFn, setIconFn, setTextContentFn} from "@/store/functions/block";
+import {duplicateBlockFn, setAttributesFn, setIconFn, setTextContentFn} from "@/store/functions/block";
 
 export interface StructureState {
     structure: BlockInterface[];
@@ -34,6 +34,8 @@ const structureSlice = createSlice({
         setRwdMode: setRwdModeFn,
         dropBlock: dropBlockFn,
         dropNewBlock: dropNewBlockFn,
+        duplicateBlock: duplicateBlockFn,
+        removeBlock: removeBlockFn,
         setIcon: setIconFn,
         setTextContent: setTextContentFn,
         setAttributes:setAttributesFn,
@@ -46,6 +48,8 @@ export const {
     setRwdMode,
     dropBlock,
     dropNewBlock,
+    duplicateBlock,
+    removeBlock,
     setIcon,
     setTextContent,
     setAttributes,

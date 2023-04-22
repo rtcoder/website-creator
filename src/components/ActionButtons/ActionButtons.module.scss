@@ -1,0 +1,50 @@
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: calc(-40px - var(--border-top-width));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101;
+  background: #fff;
+  border: 1px solid #09c;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.actionButtons.left {
+  left: 0;
+  transform: none;
+}
+
+.actionButtons.right {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.actionButtons .itemButton {
+  background: #fff;
+  color: #09c;
+  margin: 0 3px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-variant: initial;
+}
+
+.actionButtons .itemButton:hover {
+  background: #ccc;
+}
+
+.actionButtons .itemButton.delete {
+  color: #f40;
+}
+
+

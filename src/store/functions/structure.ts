@@ -1,5 +1,5 @@
 import {StructureState} from "@/store/structureSlice";
-import {addNewBlockAtIndex, moveBlock} from "@/helpers/block";
+import {addNewBlockAtIndex, moveBlock, removeRecursive} from "@/helpers/block";
 import {makeBlock} from "@/helpers/block-type-helpers";
 import {PayloadAction} from "@reduxjs/toolkit";
 import {BlockInterface} from "@/interfaces/Block.interface";
@@ -45,4 +45,13 @@ export const dropNewBlockFn = (state: StructureState, {payload}: PayloadAction<B
     state.structure = addNewBlockAtIndex(structure, newBlock, targetId, null);
 
     state.selectedBlock = newBlock;
+};
+export const removeBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
+    const {structure, selectedBlock} = state;
+    const result = removeRecursive(structure, payload.id);
+    state.structure = result.newArray
+
+    if (selectedBlock && selectedBlock.id === payload.id) {
+        state.selectedBlock = null;
+    }
 };

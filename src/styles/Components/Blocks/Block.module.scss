@@ -36,6 +36,9 @@
   &.selected {
     outline: 2px solid #09c;
   }
+  &.hovered:has(.hovered){
+    outline: none;
+  }
 
   &.selected {
     box-shadow: 0 0 3px 3px #000;
