@@ -2,7 +2,7 @@ import Accordion from "@/components/construction/Accordion/Accordion";
 import {AccordionItemInterface} from "@/components/construction/Accordion/AccordionItem";
 import BlocksList from "@/components/LeftPanel/Blocks/BlocksList";
 import {BlockItemProps} from "@/components/LeftPanel/Blocks/BlockItem";
-import BlockTypes from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
 
 export default function () {
     const basicBlocks: BlockItemProps[] = [

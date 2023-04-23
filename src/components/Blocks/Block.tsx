@@ -23,7 +23,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
 import ActionButtons from "@/components/ActionButtons/ActionButtons";
-import BlockTypes from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
+import CONTAINER = BlockTypes.CONTAINER;
 
 export default function Block(props: BlockProps) {
     const {block} = props;

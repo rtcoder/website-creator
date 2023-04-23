@@ -1,32 +1,30 @@
-export = BlockTypes;
-export as namespace BlockTypes;
-declare namespace BlockTypes {
-    const CONTAINER = 0;
-    const PARAGRAPH = 1;
-    const HEADING = 2;
-    const UL = 3;
-    const IMAGE = 4;
-    const VIDEO = 5;
-    const BUTTON = 6;
-    const ICON = 7;
-    const AUDIO = 8;
-    const YOUTUBE = 9;
-    const VIMEO = 10;
-    const HR = 11;
-    const QUOTE = 12;
-    const IFRAME = 13;
-    const SPOTIFY = 14;
-    const PARAGRAPH_VARIABLE = 15;
-    const HEADING_VARIABLE = 16;
-    const IMAGE_VARIABLE = 17;
-    const VIDEO_VARIABLE = 18;
-    const AUDIO_VARIABLE = 19;
-    const ICON_VARIABLE = 20;
-    const QUOTE_VARIABLE = 21;
-    const GOOGLE_MAPS = 22;
-    const GOOGLE_CALENDAR = 23;
+export namespace BlockTypes {
+    export const CONTAINER = 0;
+    export const PARAGRAPH = 1;
+    export const HEADING = 2;
+    export const UL = 3;
+    export const IMAGE = 4;
+    export const VIDEO = 5;
+    export const BUTTON = 6;
+    export const ICON = 7;
+    export const AUDIO = 8;
+    export const YOUTUBE = 9;
+    export const VIMEO = 10;
+    export const HR = 11;
+    export const QUOTE = 12;
+    export const IFRAME = 13;
+    export const SPOTIFY = 14;
+    export const PARAGRAPH_VARIABLE = 15;
+    export const HEADING_VARIABLE = 16;
+    export const IMAGE_VARIABLE = 17;
+    export const VIDEO_VARIABLE = 18;
+    export const AUDIO_VARIABLE = 19;
+    export const ICON_VARIABLE = 20;
+    export const QUOTE_VARIABLE = 21;
+    export const GOOGLE_MAPS = 22;
+    export const GOOGLE_CALENDAR = 23;
 
-    type BlockType =
+    export type BlockType =
         | typeof CONTAINER
         | typeof PARAGRAPH
         | typeof HEADING
@@ -51,6 +49,4 @@ declare namespace BlockTypes {
         | typeof QUOTE_VARIABLE
         | typeof GOOGLE_MAPS
         | typeof GOOGLE_CALENDAR;
-
-
 }

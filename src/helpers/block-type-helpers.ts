@@ -2,7 +2,7 @@ import {BlockAttributesInterface, BlockInterface, BlockSettingsInterface} from "
 import {Styles} from "@/interfaces/Styles.interface";
 import {makeId} from "@/helpers/string-helpers";
 import {PartiallyRequired} from "@/types/utils";
-import BlockTypes from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
 
 const plainBlock: BlockInterface = {
     id: '',

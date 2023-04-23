@@ -3,7 +3,7 @@ import Icon from "@/components/Icon";
 import {ActionButtonsPropsInterface} from "@/interfaces/ActionButtons.interface";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";
-import BlockTypes from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
 
 export default function MediaActionButtons(props: ActionButtonsPropsInterface) {
 

@@ -1,4 +1,4 @@
-import BlockTypes from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
 
 export const BLOCK_VARIABLE_TYPES = [
     BlockTypes.PARAGRAPH_VARIABLE,
