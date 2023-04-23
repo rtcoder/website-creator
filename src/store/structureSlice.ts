@@ -53,6 +53,6 @@ export const {
     setIcon,
     setTextContent,
     setAttributes,
-}: { [k: string]: (action: PayloadAction) => AnyAction } = structureSlice.actions;
+}: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

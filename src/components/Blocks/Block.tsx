@@ -20,7 +20,7 @@ import AudioBlockComponent from "@/components/Blocks/AudioBlockComponent";
 import IconBlockComponent from "@/components/Blocks/IconBlockComponent";
 import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
-import {useCallback, useRef, useState} from "react";
+import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
 import ActionButtons from "@/components/ActionButtons/ActionButtons";
 import BlockTypes from "@/types/block-type";

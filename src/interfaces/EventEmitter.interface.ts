@@ -16,6 +16,7 @@ export enum Events {
     RELOAD_EVENTS = 'reloadEvents',
 
     OPEN_SETTINGS_PANEL = 'openSettingsPanel',
+    CLICK_UPLOAD_INPUT = 'clickUploadInput'
 }
 
 export interface EventEmitterInterface {
@@ -63,6 +64,9 @@ export interface EventEmitterInterface {
     dispatch(event: Events.OPEN_SETTINGS_PANEL, data: PanelNames): void;
 
     subscribe(event: Events.OPEN_SETTINGS_PANEL, callback: (data: PanelNames) => void): void;
+    dispatch(event: Events.CLICK_UPLOAD_INPUT): void;
+
+    subscribe(event: Events.CLICK_UPLOAD_INPUT, callback: () => void): void;
 
     unsubscribe(event: Events): void;
 }

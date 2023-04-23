@@ -4,12 +4,16 @@ import classNames from "@/helpers/classNames";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {duplicateBlock, removeBlock} from "@/store/structureSlice";
 import {useDispatch} from "react-redux";
+import ActionMoveButtons from "@/components/ActionButtons/ActionMoveButtons/ActionMoveButtons";
+import MediaActionButtons from "@/components/ActionButtons/MediaActionButtons/MediaActionButtons";
+import {ActionButtonsPropsInterface} from "@/interfaces/ActionButtons.interface";
 
-export default function ActionButtons(props) {
+export default function ActionButtons(props:ActionButtonsPropsInterface) {
     const dispatch = useDispatch();
     const ref = useRef(null);
     const [posLeft, setPosLeft] = useState(false);
     const [posRight, setPosRight] = useState(false);
+    const [posBottom, setPosBottom] = useState(false);
 
     const duplicate = useCallback(() => {
         dispatch(duplicateBlock(props.block));
@@ -24,8 +28,10 @@ export default function ActionButtons(props) {
         const container = ref.current as HTMLElement;
         const parent = container.parentNode as HTMLElement;
         const parentWidth = parent.getBoundingClientRect().width;
-        const {left, width} = container.getBoundingClientRect();
+        const {left, width, top} = container.getBoundingClientRect();
         const creatorAreaLeftPos = 330;
+        const creatorAreaTopPos = 50;
+
         if (!container.classList.contains('left')) {
             if (left < creatorAreaLeftPos) {
                 setPosLeft(true);
@@ -44,34 +50,28 @@ export default function ActionButtons(props) {
                 setPosRight(false);
             }
         }
+        if (!container.classList.contains('bottom')) {
+            if (top < creatorAreaTopPos) {
+                setPosBottom(true);
+            }
+        } else {
+            if (top >= creatorAreaTopPos) {
+                setPosBottom(false);
+            }
+        }
     })
 
     const classes = classNames({
         [styles.actionButtons]: true,
         [styles.left]: posLeft,
-        [styles.right]: posRight
+        [styles.right]: posRight,
+        [styles.bottom]: posBottom
     })
+
     return (
         <div className={classes} ref={ref}>
-            <Icon className={styles.itemButton}
-                  title="Przenieś w dół"
-                  type="material-outlined"
-                  name="expand_more"/>
-
-            <Icon className={styles.itemButton}
-                  title="Przenieś w górę"
-                  type="material-outlined"
-                  name="expand_less"/>
-
-            <Icon className={styles.itemButton}
-                  title="Przenieś w lewo"
-                  type="material-outlined"
-                  name="chevron_left"/>
-
-            <Icon className={styles.itemButton}
-                  title="Przenieś w prawo"
-                  type="material-outlined"
-                  name="chevron_right"/>
+            <ActionMoveButtons block={props.block}/>
+            <MediaActionButtons block={props.block}/>
 
             {/*${this.getAdditionalButtonsHtml()}*/}
             <Icon className={styles.itemButton}

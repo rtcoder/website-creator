@@ -20,6 +20,20 @@ export function findIndexById(arr: BlockInterface[], id: string): number {
     return arr.findIndex(child => child.id === id);
 }
 
+export function findIndexByIdRecursive(arr: BlockInterface[], id: string): number {
+    let found: number = arr.findIndex(child => child.id === id);
+    if (found > -1) {
+        return found;
+    }
+    for (const child of arr) {
+        found = findIndexByIdRecursive(child.children, id);
+        if (found > -1) {
+            return found;
+        }
+    }
+    return;
+}
+
 export function findById(arr: BlockInterface[], id: string): BlockInterface | undefined {
     return arr.find(child => child.id === id);
 }

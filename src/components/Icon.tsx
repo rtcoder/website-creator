@@ -19,6 +19,7 @@ interface IconProps {
     type: IconType;
     name: string;
     className?: string;
+    title?: string;
     onClick?: MouseEventHandler;
 }
 
@@ -56,6 +57,7 @@ export default function Icon(props: IconProps) {
     const className = props.className || '';
     return (
         <div className={classNames([styles.icon, className])}
+             title={props.title}
              onClick={props.onClick}>{getIcon()}</div>
     )
 }

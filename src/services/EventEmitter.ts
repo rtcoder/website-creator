@@ -3,14 +3,14 @@ import {EventEmitterInterface, Events} from "@/interfaces/EventEmitter.interface
 export const eventEmitter: EventEmitterInterface = {
     _events: {},
 
-    dispatch(event: Events, data: any) {
+    dispatch(event: Events, data?: any) {
         if (!this._events[event]) {
             return;
         }
         this._events[event].forEach(callback => callback(data))
     },
 
-    subscribe(event: Events, callback: (data: any) => any) {
+    subscribe(event: Events, callback: (data?: any) => any) {
         if (!this._events[event]) {
             this._events[event] = [];
         }

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "@/styles/Components/Blocks/MediaBlock.module.scss";
 import {upload} from "@/helpers/upload";
+import {eventEmitter} from "@/services/EventEmitter";
+import {Events} from "@/interfaces/EventEmitter.interface";
 
 export default abstract class MediaUploadBlockComponent extends React.Component<any, any> {
     constructor(protected props) {
@@ -23,10 +25,15 @@ export default abstract class MediaUploadBlockComponent extends React.Component<
 
     abstract onLoadMediaRequest(request): void;
 
+    componentDidMount() {
+        eventEmitter.subscribe(Events.CLICK_UPLOAD_INPUT, () => {
+            this.state.inputRef.current.click();
+        })
+    }
+
     private getUploadProgress() {
         return `${this.state.uploadProgress}%`;
     }
-
 
     private onChange(ev) {
         const [file] = ev.target.files;
