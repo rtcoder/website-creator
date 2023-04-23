@@ -47,7 +47,6 @@ export function removeRecursive(arr: BlockInterface[], id: string): { removed: B
 }
 
 export function addAtIndex(arr: BlockInterface[], child: BlockInterface, index: number | null = null): BlockInterface[] {
-    console.log({arr})
     const newArray = [...arr];
     if (index === null) {
         newArray.push(child);

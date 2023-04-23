@@ -44,7 +44,6 @@ export const setTextContentFn = (state: StructureState, {payload}) => {
 
 export const setAttributesFn = (state: StructureState, {payload}) => {
     const {attributes, blockId} = payload;
-    console.log(payload)
     const {structure, selectedBlock} = state;
     const block = findByIdRecursive(structure, blockId);
     if (!block) {
@@ -67,7 +66,6 @@ export const setAttributesFn = (state: StructureState, {payload}) => {
 
 
 export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
-    console.log(payload)
     const {structure, selectedBlock} = state;
 
     state.structure = duplicateBlk(structure, payload.id);

@@ -18,7 +18,6 @@ export default function (props: BlockProps) {
     }, [dispatch]);
     const openPanel = () => {
         leftSettingsPanelService.open(PanelNames.ICON_PANEL, data => {
-            console.log(data)
             selectBlockIcon({icon: data, blockId: props.block.id})
             selectBlock({block:props.block, force: true});
         })
