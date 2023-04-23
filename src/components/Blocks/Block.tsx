@@ -1,6 +1,6 @@
 import styles from "@/styles/Components/Blocks/Block.module.scss"
 import stylesActionButtons from "@/components/ActionButtons/ActionButtons.module.scss"
-import {BLOCK_TYPES, BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
+import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
 import ContainerBlockComponent from "@/components/Blocks/ContainerBlockComponent";
@@ -23,6 +23,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useRef, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
 import ActionButtons from "@/components/ActionButtons/ActionButtons";
+import BlockTypes from "@/types/block-type";
 
 export default function Block(props: BlockProps) {
     const {block} = props;
@@ -85,58 +86,58 @@ export default function Block(props: BlockProps) {
 
 function getBlockContent(block: BlockInterface) {
     switch (block.type) {
-        case BLOCK_TYPES.CONTAINER:
+        case BlockTypes.CONTAINER:
             return <ContainerBlockComponent id={block.id} children={block.children}/>
-        case BLOCK_TYPES.PARAGRAPH:
+        case BlockTypes.PARAGRAPH:
             return <TextBlockComponent block={block} multiline={true} editable={true}/>
-        case BLOCK_TYPES.HEADING:
+        case BlockTypes.HEADING:
             return <TextBlockComponent block={block} editable={true}/>
-        case BLOCK_TYPES.UL:
+        case BlockTypes.UL:
 
             break;
-        case BLOCK_TYPES.IMAGE:
+        case BlockTypes.IMAGE:
             return <ImageBlockComponent block={block}/>
-        case BLOCK_TYPES.VIDEO:
+        case BlockTypes.VIDEO:
             return <VideoBlockComponent block={block}/>
-        case BLOCK_TYPES.BUTTON:
+        case BlockTypes.BUTTON:
             return <TextBlockComponent block={block} editable={true}/>
-        case BLOCK_TYPES.ICON:
+        case BlockTypes.ICON:
             return <IconBlockComponent block={block}/>
-        case BLOCK_TYPES.AUDIO:
+        case BlockTypes.AUDIO:
             return <AudioBlockComponent block={block}/>
-        case BLOCK_TYPES.YOUTUBE:
+        case BlockTypes.YOUTUBE:
             return <YouTubeBlockComponent block={block}/>
-        case BLOCK_TYPES.VIMEO:
+        case BlockTypes.VIMEO:
             return <VimeoBlockComponent block={block}/>
-        case BLOCK_TYPES.HR:
+        case BlockTypes.HR:
             return <HrBlockComponent/>
-        case BLOCK_TYPES.QUOTE:
+        case BlockTypes.QUOTE:
             return <TextBlockComponent block={block} editable={true}/>
-        case BLOCK_TYPES.IFRAME:
+        case BlockTypes.IFRAME:
             return <IframeBlockComponent block={block}/>
-        case BLOCK_TYPES.SPOTIFY:
+        case BlockTypes.SPOTIFY:
             return <SpotifyBlockComponent block={block}/>
-        case BLOCK_TYPES.PARAGRAPH_VARIABLE:
+        case BlockTypes.PARAGRAPH_VARIABLE:
             return <TextBlockComponent block={block}/>
-        case BLOCK_TYPES.HEADING_VARIABLE:
+        case BlockTypes.HEADING_VARIABLE:
             return <TextBlockComponent block={block}/>
-        case BLOCK_TYPES.IMAGE_VARIABLE:
+        case BlockTypes.IMAGE_VARIABLE:
 
             break;
-        case BLOCK_TYPES.VIDEO_VARIABLE:
+        case BlockTypes.VIDEO_VARIABLE:
 
             break;
-        case BLOCK_TYPES.AUDIO_VARIABLE:
+        case BlockTypes.AUDIO_VARIABLE:
 
             break;
-        case BLOCK_TYPES.ICON_VARIABLE:
+        case BlockTypes.ICON_VARIABLE:
 
             break;
-        case BLOCK_TYPES.QUOTE_VARIABLE:
+        case BlockTypes.QUOTE_VARIABLE:
             return <TextBlockComponent block={block}/>
-        case BLOCK_TYPES.GOOGLE_MAPS:
+        case BlockTypes.GOOGLE_MAPS:
             return <GoogleMapsBlockComponent block={block}/>
-        case BLOCK_TYPES.GOOGLE_CALENDAR:
+        case BlockTypes.GOOGLE_CALENDAR:
             return <GoogleCalendarBlockComponent block={block}/>
     }
     return '';

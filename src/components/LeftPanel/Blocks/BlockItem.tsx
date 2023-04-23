@@ -1,7 +1,8 @@
-import {BLOCK_TYPES_HUMAN_NAMES, BlockType} from "@/helpers/blocks";
+import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import Icon, {IconType} from "@/components/Icon";
 import styles from "@/styles/Components/LeftPanel/Blocks/BlockItem.module.scss"
 import {useDrag} from "react-dnd";
+import {BlockType} from "@/types/block-type";
 
 export interface BlockItemProps {
     name: string;

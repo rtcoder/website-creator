@@ -1,7 +1,7 @@
-import {BlockType} from "@/helpers/blocks";
 import {BlockLinkInterface} from "@/interfaces/BlockLink.interface";
 import {IconType} from "@/components/Icon";
 import {WithStyles} from "@/interfaces/Styles.interface";
+import {BlockType} from "@/types/block-type";
 
 export interface BlockInterface extends WithStyles {
     id: string;

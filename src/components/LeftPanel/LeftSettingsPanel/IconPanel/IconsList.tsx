@@ -3,7 +3,6 @@ import {fetchJson} from "@/helpers/fetch";
 import styles from "./IconsList.module.scss";
 import Icon from "@/components/Icon";
 import classNames from "@/helpers/classNames";
-import {BLOCK_TYPES} from "@/helpers/blocks";
 
 interface IconsListInterface {
     categories: {

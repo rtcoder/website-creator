@@ -1,45 +1,44 @@
-import {BLOCK_TYPES, BlockType} from "@/helpers/blocks";
-import {BlockAttributesInterface, BlockInterface} from "@/interfaces/Block.interface";
+import {BlockAttributesInterface, BlockInterface, BlockSettingsInterface} from "@/interfaces/Block.interface";
 import {Styles} from "@/interfaces/Styles.interface";
 import {makeId} from "@/helpers/string-helpers";
-import {PlainObj} from "@/interfaces/PlainObj";
 import {PartiallyRequired} from "@/types/utils";
+import BlockTypes from "@/types/block-type";
 
 const plainBlock: BlockInterface = {
-    id: null,
-    type: BLOCK_TYPES.CONTAINER,
+    id: '',
+    type: BlockTypes.CONTAINER,
     tagName: '',
-    styles: {},
+    styles: {} as Styles,
     children: [],
     textContent: '',
-    settings: {},
-    attributes: {},
+    settings: {} as BlockSettingsInterface,
+    attributes: {} as BlockAttributesInterface,
     blockLink: null,
 }
 
-const getTagName = (type: BlockType): string => ({
-    [BLOCK_TYPES.CONTAINER]: 'div',
-    [BLOCK_TYPES.PARAGRAPH]: 'p',
-    [BLOCK_TYPES.HEADING]: 'h1',
-    [BLOCK_TYPES.UL]: 'ul',
-    [BLOCK_TYPES.IMAGE]: 'img',
-    [BLOCK_TYPES.VIDEO]: 'video',
-    [BLOCK_TYPES.BUTTON]: 'button',
-    [BLOCK_TYPES.AUDIO]: 'audio',
-    [BLOCK_TYPES.YOUTUBE]: 'iframe',
-    [BLOCK_TYPES.VIMEO]: 'iframe',
-    [BLOCK_TYPES.HR]: 'hr',
-    [BLOCK_TYPES.QUOTE]: 'q',
-    [BLOCK_TYPES.IFRAME]: 'iframe',
-    [BLOCK_TYPES.SPOTIFY]: 'iframe',
-    [BLOCK_TYPES.PARAGRAPH_VARIABLE]: 'p',
-    [BLOCK_TYPES.HEADING_VARIABLE]: 'h1',
-    [BLOCK_TYPES.IMAGE_VARIABLE]: 'img',
-    [BLOCK_TYPES.VIDEO_VARIABLE]: 'video',
-    [BLOCK_TYPES.AUDIO_VARIABLE]: 'audio',
-    [BLOCK_TYPES.QUOTE_VARIABLE]: 'q',
-    [BLOCK_TYPES.GOOGLE_MAPS]: 'iframe',
-    [BLOCK_TYPES.GOOGLE_CALENDAR]: 'iframe',
+const getTagName = (type: BlockTypes.BlockType): string => ({
+    [BlockTypes.CONTAINER]: 'div',
+    [BlockTypes.PARAGRAPH]: 'p',
+    [BlockTypes.HEADING]: 'h1',
+    [BlockTypes.UL]: 'ul',
+    [BlockTypes.IMAGE]: 'img',
+    [BlockTypes.VIDEO]: 'video',
+    [BlockTypes.BUTTON]: 'button',
+    [BlockTypes.AUDIO]: 'audio',
+    [BlockTypes.YOUTUBE]: 'iframe',
+    [BlockTypes.VIMEO]: 'iframe',
+    [BlockTypes.HR]: 'hr',
+    [BlockTypes.QUOTE]: 'q',
+    [BlockTypes.IFRAME]: 'iframe',
+    [BlockTypes.SPOTIFY]: 'iframe',
+    [BlockTypes.PARAGRAPH_VARIABLE]: 'p',
+    [BlockTypes.HEADING_VARIABLE]: 'h1',
+    [BlockTypes.IMAGE_VARIABLE]: 'img',
+    [BlockTypes.VIDEO_VARIABLE]: 'video',
+    [BlockTypes.AUDIO_VARIABLE]: 'audio',
+    [BlockTypes.QUOTE_VARIABLE]: 'q',
+    [BlockTypes.GOOGLE_MAPS]: 'iframe',
+    [BlockTypes.GOOGLE_CALENDAR]: 'iframe',
 }[type] || '');
 
 const getIconStartingStyles = () => {
@@ -73,10 +72,10 @@ const getContainerStartingStyles = () => {
     };
 }
 
-const getStartingStyle = (type: BlockType): Styles => ({
-    [BLOCK_TYPES.CONTAINER]: getContainerStartingStyles(),
-    [BLOCK_TYPES.UL]: getContainerStartingStyles(),
-    [BLOCK_TYPES.BUTTON]: {
+const getStartingStyle = (type: BlockTypes.BlockType): Styles => ({
+    [BlockTypes.CONTAINER]: getContainerStartingStyles(),
+    [BlockTypes.UL]: getContainerStartingStyles(),
+    [BlockTypes.BUTTON]: {
         all: {
             basic: {
                 'background-color': 'rgb(239, 239, 239)',
@@ -85,8 +84,8 @@ const getStartingStyle = (type: BlockType): Styles => ({
             }
         }
     },
-    [BLOCK_TYPES.ICON]: getIconStartingStyles(),
-    [BLOCK_TYPES.HR]: {
+    [BlockTypes.ICON]: getIconStartingStyles(),
+    [BlockTypes.HR]: {
         all: {
             basic: {
                 height: '1px',
@@ -96,7 +95,7 @@ const getStartingStyle = (type: BlockType): Styles => ({
             }
         }
     },
-    [BLOCK_TYPES.SPOTIFY]: {
+    [BlockTypes.SPOTIFY]: {
         all: {
             basic: {
                 display: 'grid',
@@ -104,29 +103,29 @@ const getStartingStyle = (type: BlockType): Styles => ({
             }
         }
     },
-    [BLOCK_TYPES.ICON_VARIABLE]: getIconStartingStyles(),
+    [BlockTypes.ICON_VARIABLE]: getIconStartingStyles(),
 }[type] || {});
-const getStartingAttributes = (type: BlockType): BlockAttributesInterface => ({
-    [BLOCK_TYPES.BUTTON]: {
+const getStartingAttributes = (type: BlockTypes.BlockType): BlockAttributesInterface => ({
+    [BlockTypes.BUTTON]: {
         type: 'button'
     },
-    [BLOCK_TYPES.YOUTUBE]: {
+    [BlockTypes.YOUTUBE]: {
         src: '',
         frameBorder: '0',
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
         allowFullscreen: ''
     },
-    [BLOCK_TYPES.VIMEO]: {
+    [BlockTypes.VIMEO]: {
         src: '',
         frameBorder: '0',
         allow: 'autoplay; fullscreen; picture-in-picture',
         allowFullscreen: ''
     },
-    [BLOCK_TYPES.IFRAME]: {
+    [BlockTypes.IFRAME]: {
         src: '',
         frameBorder: '0',
     },
-    [BLOCK_TYPES.SPOTIFY]: {
+    [BlockTypes.SPOTIFY]: {
         src: '',
         frameBorder: '0',
         allowFullscreen: '',
@@ -135,7 +134,7 @@ const getStartingAttributes = (type: BlockType): BlockAttributesInterface => ({
         allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
         loading: 'lazy'
     },
-    [BLOCK_TYPES.GOOGLE_MAPS]: {
+    [BlockTypes.GOOGLE_MAPS]: {
         src: '',
         allowFullscreen: '',
         width: '100%',
@@ -144,7 +143,7 @@ const getStartingAttributes = (type: BlockType): BlockAttributesInterface => ({
         referrerPolicy: 'no-referrer-when-downgrade',
         loading: 'lazy'
     },
-    [BLOCK_TYPES.GOOGLE_CALENDAR]: {
+    [BlockTypes.GOOGLE_CALENDAR]: {
         src: '',
         width: '100%',
         height: '100%',
@@ -153,14 +152,14 @@ const getStartingAttributes = (type: BlockType): BlockAttributesInterface => ({
         scrolling: 'no',
     },
 }[type] as BlockAttributesInterface || {});
-const getStartingTextContent = (type: BlockType): string => ({
-    [BLOCK_TYPES.PARAGRAPH]: 'Paragraf',
-    [BLOCK_TYPES.HEADING]: 'Nagłówek',
-    [BLOCK_TYPES.BUTTON]: 'Przycisk',
-    [BLOCK_TYPES.QUOTE]: 'Cytat',
-    [BLOCK_TYPES.PARAGRAPH_VARIABLE]: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis eros posuere erat aliquet mattis facilisis rutrum.',
-    [BLOCK_TYPES.HEADING_VARIABLE]: 'Nagłówek',
-    [BLOCK_TYPES.QUOTE_VARIABLE]: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum venenatis libero, vitae lacinia arcu ullamcorper a. Vivamus mattis pellentesque dolor quis venenatis.',
+const getStartingTextContent = (type: BlockTypes.BlockType): string => ({
+    [BlockTypes.PARAGRAPH]: 'Paragraf',
+    [BlockTypes.HEADING]: 'Nagłówek',
+    [BlockTypes.BUTTON]: 'Przycisk',
+    [BlockTypes.QUOTE]: 'Cytat',
+    [BlockTypes.PARAGRAPH_VARIABLE]: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis eros posuere erat aliquet mattis facilisis rutrum.',
+    [BlockTypes.HEADING_VARIABLE]: 'Nagłówek',
+    [BlockTypes.QUOTE_VARIABLE]: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum venenatis libero, vitae lacinia arcu ullamcorper a. Vivamus mattis pellentesque dolor quis venenatis.',
 }[type] || '');
 
 export function makeBlock(blockWithType: PartiallyRequired<BlockInterface, 'type'>): BlockInterface {
