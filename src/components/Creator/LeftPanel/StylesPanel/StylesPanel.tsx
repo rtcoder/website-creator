@@ -27,18 +27,18 @@ export default function () {
         })
     }
     const stylesSections: [title: string, id: string, component: JSX.Element][] = [
-        ['Układ elementów', 'layout', (<>d</>)],
-        ['Tło', 'background', (<>d</>)],
+        // ['Układ elementów', 'layout', (<>d</>)],
+        // ['Tło', 'background', (<>d</>)],
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
-        ['Obraz', 'image', (<>d</>)],
-        ['Ramka', 'border', (<>d</>)],
+        // ['Obraz', 'image', (<>d</>)],
+        // ['Ramka', 'border', (<>d</>)],
         ['Zaokrąglenie narożników', 'border-radius', (<>d</>)],
-        ['Styl tekstu', 'text', (<>d</>)],
-        ['Kolumny tekstu', 'text-columns', (<>d</>)],
-        ['Cytat', 'quote', (<>d</>)],
-        ['Marginesy', 'margin-padding', (<>d</>)],
-        ['Filtry', 'filter', (<>d</>)],
-        ['Animacje', 'animations', (<>d</>)],
+        // ['Styl tekstu', 'text', (<>d</>)],
+        // ['Kolumny tekstu', 'text-columns', (<>d</>)],
+        // ['Cytat', 'quote', (<>d</>)],
+        // ['Marginesy', 'margin-padding', (<>d</>)],
+        // ['Filtry', 'filter', (<>d</>)],
+        // ['Animacje', 'animations', (<>d</>)],
     ]
     const getItemStyles = (): AccordionItemInterface[] => {
         return stylesSections

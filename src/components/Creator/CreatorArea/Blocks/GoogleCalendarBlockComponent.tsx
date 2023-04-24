@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "@/components/Creator/Blocks/EmbedBlockComponent";
+import EmbedBlockComponent from "@/components/Creator/CreatorArea/Blocks/EmbedBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class SpotifyBlockComponent extends EmbedBlockComponent {
+class GoogleCalendarBlockComponent extends EmbedBlockComponent {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -17,8 +17,6 @@ class SpotifyBlockComponent extends EmbedBlockComponent {
             if (strPart) {
                 source = strPart.replace('src="', '').replace('"', '');
             }
-        } else if (!source.includes('embed/')) {
-            source = source.replace('spotify.com', 'spotify.com/embed');
         }
 
         this.props.setAttributes({blockId: block.id, attributes: {src: source}});
@@ -26,4 +24,4 @@ class SpotifyBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(SpotifyBlockComponent);
+export default connect(null, {setAttributes})(GoogleCalendarBlockComponent);

@@ -1,5 +1,5 @@
 import TopPanel from "./TopPanel/TopPanel";
-import CreatorArea from "./CreatorArea";
+import CreatorArea from "./CreatorArea/CreatorArea";
 import React, {useCallback, useEffect} from "react";
 import LeftPanel from "./LeftPanel/LeftPanel";
 import styles from "./Creator.module.scss";

@@ -4,8 +4,8 @@ import classNames from "@/helpers/classNames";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {duplicateBlock, removeBlock} from "@/store/structureSlice";
 import {useDispatch} from "react-redux";
-import ActionMoveButtons from "@/components/Creator/ActionButtons/ActionMoveButtons/ActionMoveButtons";
-import MediaActionButtons from "@/components/Creator/ActionButtons/MediaActionButtons/MediaActionButtons";
+import ActionMoveButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionMoveButtons/ActionMoveButtons";
+import MediaActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/MediaActionButtons/MediaActionButtons";
 import {ActionButtonsPropsInterface} from "@/interfaces/ActionButtons.interface";
 
 export default function ActionButtons(props:ActionButtonsPropsInterface) {

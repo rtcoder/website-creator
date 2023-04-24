@@ -2,7 +2,6 @@ import {BlockInterface} from "@/interfaces/Block.interface";
 import React from "react";
 import styles from "@/styles/Components/Blocks/EmbedBlock.module.scss"
 import classNames from "@/helpers/classNames";
-import {setAttributes} from "@/store/structureSlice";
 
 export default abstract class EmbedBlockComponent extends React.Component<any, any> {
     constructor(private props: { block: BlockInterface }) {

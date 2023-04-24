@@ -1,10 +1,11 @@
 import React from "react";
 import Icon from "@/components/Creator/Icon";
-import MediaUploadBlockComponent from "@/components/Creator/Blocks/MediaUploadBlockComponent";
+import MediaUploadBlockComponent from "@/components/Creator/CreatorArea/Blocks/MediaUploadBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class ImageBlockComponent extends MediaUploadBlockComponent {
+class AudioBlockComponent extends MediaUploadBlockComponent {
+
     onLoadMediaRequest(request) {
         const result = request.response;
         const {block} = this.props;
@@ -25,16 +26,16 @@ class ImageBlockComponent extends MediaUploadBlockComponent {
     }
 
     getMediaComponent() {
-        return <img src={this.props.block.attributes.src} alt=""/>
+        return <audio src={this.props.block.attributes.src} controls/>
     }
 
     getUploadIcon() {
-        return <Icon type="material-sharp" name="add_photo_alternate"/>
+        return <Icon type="material-sharp" name="audio_file"/>
     }
 
     getAcceptType(): string {
-        return 'image/*';
+        return 'audio/*';
     }
 }
 
-export default connect(null, {setAttributes})(ImageBlockComponent);
+export default connect(null, {setAttributes})(AudioBlockComponent);

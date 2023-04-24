@@ -1,16 +1,15 @@
 import React from "react";
 import Icon from "@/components/Creator/Icon";
-import MediaUploadBlockComponent from "@/components/Creator/Blocks/MediaUploadBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
+import MediaUploadBlockComponent from "@/components/Creator/CreatorArea/Blocks/MediaUploadBlockComponent";
 
-class AudioBlockComponent extends MediaUploadBlockComponent {
-
+class VideoBlockComponent extends MediaUploadBlockComponent {
     onLoadMediaRequest(request) {
         const result = request.response;
         const {block} = this.props;
 
-        this.props.setAttributes({blockId: block.id, attributes: {src: result.url}});
+        this.props.setAttributes({blockId: block.id, attributes: {src: result.url, poster: result.thumbnails_urls[0]}});
         super.setState({
             isUploading: false,
             uploadProgress: 0
@@ -25,17 +24,18 @@ class AudioBlockComponent extends MediaUploadBlockComponent {
         this.props.setAttributes({blockId: block.id, attributes: {src: reader.result}});
     }
 
+
     getMediaComponent() {
-        return <audio src={this.props.block.attributes.src} controls/>
+        return <video src={this.props.block.attributes.src} poster={this.props.block.attributes.poster} controls/>
     }
 
     getUploadIcon() {
-        return <Icon type="material-sharp" name="audio_file"/>
+        return <Icon type="fontawesome" name="fa-sharp fa-light fa-video-plus"/>
     }
 
     getAcceptType(): string {
-        return 'audio/*';
+        return 'video/*';
     }
 }
 
-export default connect(null, {setAttributes})(AudioBlockComponent);
+export default connect(null, {setAttributes})(VideoBlockComponent);

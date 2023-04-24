@@ -1,6 +1,6 @@
 import styles from "./CreatorArea.module.scss";
 import React from "react";
-import ContainerBlockComponent from "@/components/Creator/Blocks/ContainerBlockComponent";
+import ContainerBlockComponent from "@/components/Creator/CreatorArea/Blocks/ContainerBlockComponent";
 import {useSelector} from "react-redux";
 
 export default function () {

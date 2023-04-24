@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "@/components/Creator/Blocks/EmbedBlockComponent";
+import EmbedBlockComponent from "@/components/Creator/CreatorArea/Blocks/EmbedBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class GoogleCalendarBlockComponent extends EmbedBlockComponent {
+class YouTubeBlockComponent extends EmbedBlockComponent {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -12,7 +12,13 @@ class GoogleCalendarBlockComponent extends EmbedBlockComponent {
 
             return;
         }
-        if (source.includes('<iframe')) {
+        if (source.includes('youtube.com/watch')) {
+            const [, ytId] = source.split('?v=');
+            source = `https://www.youtube.com/embed/${ytId}`;
+        } else if (source.includes('youtu.be/')) {
+            const [, ytId] = source.split('youtu.be/');
+            source = `https://www.youtube.com/embed/${ytId}`;
+        } else if (source.includes('<iframe')) {
             const strPart = source.split(' ').find(part => part.startsWith('src'));
             if (strPart) {
                 source = strPart.replace('src="', '').replace('"', '');
@@ -24,4 +30,4 @@ class GoogleCalendarBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(GoogleCalendarBlockComponent);
+export default connect(null, {setAttributes})(YouTubeBlockComponent);

@@ -1,28 +1,28 @@
 import styles from "@/styles/Components/Blocks/Block.module.scss"
-import stylesActionButtons from "@/components/Creator/ActionButtons/ActionButtons.module.scss"
+import stylesActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons.module.scss"
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
-import ContainerBlockComponent from "@/components/Creator/Blocks/ContainerBlockComponent";
+import ContainerBlockComponent from "@/components/Creator/CreatorArea/Blocks/ContainerBlockComponent";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockProps} from "@/interfaces/BlockProps.interface";
-import TextBlockComponent from "@/components/Creator/Blocks/TextBlockComponent";
-import HrBlockComponent from "@/components/Creator/Blocks/HrBlockComponent";
-import YouTubeBlockComponent from "@/components/Creator/Blocks/YouTubeBlockComponent";
-import VimeoBlockComponent from "@/components/Creator/Blocks/VimeoBlockComponent";
-import SpotifyBlockComponent from "@/components/Creator/Blocks/SpotifyBlockComponent";
-import GoogleMapsBlockComponent from "@/components/Creator/Blocks/GoogleMapsBlockComponent";
-import GoogleCalendarBlockComponent from "@/components/Creator/Blocks/GoogleCalendarBlockComponent";
-import IframeBlockComponent from "@/components/Creator/Blocks/IframeBlockComponent";
-import ImageBlockComponent from "@/components/Creator/Blocks/ImageBlockComponent";
-import VideoBlockComponent from "@/components/Creator/Blocks/VideoBlockComponent";
-import AudioBlockComponent from "@/components/Creator/Blocks/AudioBlockComponent";
-import IconBlockComponent from "@/components/Creator/Blocks/IconBlockComponent";
+import TextBlockComponent from "@/components/Creator/CreatorArea/Blocks/TextBlockComponent";
+import HrBlockComponent from "@/components/Creator/CreatorArea/Blocks/HrBlockComponent";
+import YouTubeBlockComponent from "@/components/Creator/CreatorArea/Blocks/YouTubeBlockComponent";
+import VimeoBlockComponent from "@/components/Creator/CreatorArea/Blocks/VimeoBlockComponent";
+import SpotifyBlockComponent from "@/components/Creator/CreatorArea/Blocks/SpotifyBlockComponent";
+import GoogleMapsBlockComponent from "@/components/Creator/CreatorArea/Blocks/GoogleMapsBlockComponent";
+import GoogleCalendarBlockComponent from "@/components/Creator/CreatorArea/Blocks/GoogleCalendarBlockComponent";
+import IframeBlockComponent from "@/components/Creator/CreatorArea/Blocks/IframeBlockComponent";
+import ImageBlockComponent from "@/components/Creator/CreatorArea/Blocks/ImageBlockComponent";
+import VideoBlockComponent from "@/components/Creator/CreatorArea/Blocks/VideoBlockComponent";
+import AudioBlockComponent from "@/components/Creator/CreatorArea/Blocks/AudioBlockComponent";
+import IconBlockComponent from "@/components/Creator/CreatorArea/Blocks/IconBlockComponent";
 import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
-import ActionButtons from "@/components/Creator/ActionButtons/ActionButtons";
+import ActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons";
 import {BlockTypes} from "@/types/block-type";
 
 
