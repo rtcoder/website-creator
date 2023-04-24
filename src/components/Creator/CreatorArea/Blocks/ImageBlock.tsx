@@ -1,10 +1,10 @@
 import React from "react";
 import Icon from "@/components/construction/Icon/Icon";
-import MediaUploadBlockComponent from "./MediaBlock/MediaUploadBlockComponent";
+import MediaUploadBlock from "./MediaBlock/MediaUploadBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class ImageBlockComponent extends MediaUploadBlockComponent {
+class ImageBlock extends MediaUploadBlock {
     onLoadMediaRequest(request) {
         const result = request.response;
         const {block} = this.props;
@@ -37,4 +37,4 @@ class ImageBlockComponent extends MediaUploadBlockComponent {
     }
 }
 
-export default connect(null, {setAttributes})(ImageBlockComponent);
+export default connect(null, {setAttributes})(ImageBlock);

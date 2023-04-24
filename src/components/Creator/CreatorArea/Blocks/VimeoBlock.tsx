@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "./EmbedBlock/EmbedBlockComponent";
+import EmbedBlock from "./EmbedBlock/EmbedBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class VimeoBlockComponent extends EmbedBlockComponent {
+class VimeoBlock extends EmbedBlock {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -27,4 +27,4 @@ class VimeoBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(VimeoBlockComponent);
+export default connect(null, {setAttributes})(VimeoBlock);

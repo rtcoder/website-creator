@@ -1,7 +1,7 @@
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import {useDrop} from "react-dnd";
-import styles from "@/styles/Components/Blocks/Block.module.scss"
-import BlockComponent from "@/components/Creator/CreatorArea/Blocks/BlockComponent/BlockComponent";
+import styles from "@/components/Creator/CreatorArea/Blocks/Block/Block.module.scss"
+import Block from "@/components/Creator/CreatorArea/Blocks/Block/Block";
 import classNames from "@/helpers/classNames";
 import {findByIdRecursive} from "@/helpers/block";
 import {getInheritedStyleWith} from "@/helpers/block-styles";
@@ -15,7 +15,7 @@ interface ContainerPropsInterface {
     children: BlockInterface[];
 }
 
-export default function ContainerBlockComponent(props: ContainerPropsInterface) {
+export default function ContainerBlock(props: ContainerPropsInterface) {
     const {id, children} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
@@ -68,7 +68,7 @@ export default function ContainerBlockComponent(props: ContainerPropsInterface) 
              ref={drop}>
             {children.map(b =>
                 <div key={b.id} style={getInheritedStyleWith(b.styles, rwd, styleState, widthProperties)}>
-                    <BlockComponent block={b}/>
+                    <Block block={b}/>
                 </div>)}
         </div>
     )

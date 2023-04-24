@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "./EmbedBlock/EmbedBlockComponent";
+import EmbedBlock from "./EmbedBlock/EmbedBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class IframeBlockComponent extends EmbedBlockComponent {
+class IframeBlock extends EmbedBlock {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -17,4 +17,4 @@ class IframeBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(IframeBlockComponent);
+export default connect(null, {setAttributes})(IframeBlock);

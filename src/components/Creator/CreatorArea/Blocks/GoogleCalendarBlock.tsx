@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "./EmbedBlock/EmbedBlockComponent";
+import EmbedBlock from "./EmbedBlock/EmbedBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class GoogleCalendarBlockComponent extends EmbedBlockComponent {
+class GoogleCalendarBlock extends EmbedBlock {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -24,4 +24,4 @@ class GoogleCalendarBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(GoogleCalendarBlockComponent);
+export default connect(null, {setAttributes})(GoogleCalendarBlock);

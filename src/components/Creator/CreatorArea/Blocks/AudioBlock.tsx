@@ -1,10 +1,10 @@
 import React from "react";
 import Icon from "@/components/construction/Icon/Icon";
-import MediaUploadBlockComponent from "./MediaBlock/MediaUploadBlockComponent";
+import MediaUploadBlock from "./MediaBlock/MediaUploadBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class AudioBlockComponent extends MediaUploadBlockComponent {
+class AudioBlock extends MediaUploadBlock {
 
     onLoadMediaRequest(request) {
         const result = request.response;
@@ -38,4 +38,4 @@ class AudioBlockComponent extends MediaUploadBlockComponent {
     }
 }
 
-export default connect(null, {setAttributes})(AudioBlockComponent);
+export default connect(null, {setAttributes})(AudioBlock);

@@ -10,7 +10,7 @@ interface TextComponentPropsInterface {
     setTextContent: (data: { content: string; blockId: string }) => void
 }
 
-class TextBlockComponent extends React.Component<any, any> {
+class TextBlock extends React.Component<any, any> {
     constructor(private props: TextComponentPropsInterface) {
         super(props)
         this.state = {
@@ -57,4 +57,4 @@ class TextBlockComponent extends React.Component<any, any> {
 }
 
 
-export default connect(null, {setTextContent})(TextBlockComponent)
+export default connect(null, {setTextContent})(TextBlock)

@@ -1,23 +1,23 @@
-import styles from "./BlockComponent.module.scss"
+import styles from "./Block.module.scss"
 import stylesActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons.module.scss"
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
-import ContainerBlockComponent from "@/components/Creator/CreatorArea/Blocks/ContainerBlockComponent";
+import ContainerBlock from "@/components/Creator/CreatorArea/Blocks/ContainerBlock";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {BlockProps} from "@/interfaces/BlockProps.interface";
-import TextBlockComponent from "@/components/Creator/CreatorArea/Blocks/TextBlockComponent";
-import HrBlockComponent from "@/components/Creator/CreatorArea/Blocks/HrBlockComponent";
-import YouTubeBlockComponent from "@/components/Creator/CreatorArea/Blocks/YouTubeBlockComponent";
-import VimeoBlockComponent from "@/components/Creator/CreatorArea/Blocks/VimeoBlockComponent";
-import SpotifyBlockComponent from "@/components/Creator/CreatorArea/Blocks/SpotifyBlockComponent";
-import GoogleMapsBlockComponent from "@/components/Creator/CreatorArea/Blocks/GoogleMapsBlockComponent";
-import GoogleCalendarBlockComponent from "@/components/Creator/CreatorArea/Blocks/GoogleCalendarBlockComponent";
-import IframeBlockComponent from "@/components/Creator/CreatorArea/Blocks/IframeBlockComponent";
-import ImageBlockComponent from "@/components/Creator/CreatorArea/Blocks/ImageBlockComponent";
-import VideoBlockComponent from "@/components/Creator/CreatorArea/Blocks/VideoBlockComponent";
-import AudioBlockComponent from "@/components/Creator/CreatorArea/Blocks/AudioBlockComponent";
-import IconBlockComponent from "../IconBlock/IconBlockComponent";
+import TextBlock from "@/components/Creator/CreatorArea/Blocks/TextBlock";
+import HrBlock from "@/components/Creator/CreatorArea/Blocks/HrBlock";
+import YouTubeBlock from "@/components/Creator/CreatorArea/Blocks/YouTubeBlock";
+import VimeoBlock from "@/components/Creator/CreatorArea/Blocks/VimeoBlock";
+import SpotifyBlock from "@/components/Creator/CreatorArea/Blocks/SpotifyBlock";
+import GoogleMapsBlock from "@/components/Creator/CreatorArea/Blocks/GoogleMapsBlock";
+import GoogleCalendarBlock from "@/components/Creator/CreatorArea/Blocks/GoogleCalendarBlock";
+import IframeBlock from "@/components/Creator/CreatorArea/Blocks/IframeBlock";
+import ImageBlock from "@/components/Creator/CreatorArea/Blocks/ImageBlock";
+import VideoBlock from "@/components/Creator/CreatorArea/Blocks/VideoBlock";
+import AudioBlock from "@/components/Creator/CreatorArea/Blocks/AudioBlock";
+import IconBlock from "../IconBlock/IconBlock";
 import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
@@ -26,7 +26,7 @@ import ActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons
 import {BlockTypes} from "@/types/block-type";
 
 
-export default function BlockComponent(props: BlockProps) {
+export default function Block(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
@@ -98,40 +98,40 @@ export default function BlockComponent(props: BlockProps) {
 function getBlockContent(block: BlockInterface) {
     switch (block.type) {
         case BlockTypes.CONTAINER:
-            return <ContainerBlockComponent id={block.id} children={block.children}/>
+            return <ContainerBlock id={block.id} children={block.children}/>
         case BlockTypes.PARAGRAPH:
-            return <TextBlockComponent block={block} multiline={true} editable={true}/>
+            return <TextBlock block={block} multiline={true} editable={true}/>
         case BlockTypes.HEADING:
-            return <TextBlockComponent block={block} editable={true}/>
+            return <TextBlock block={block} editable={true}/>
         case BlockTypes.UL:
 
             break;
         case BlockTypes.IMAGE:
-            return <ImageBlockComponent block={block}/>
+            return <ImageBlock block={block}/>
         case BlockTypes.VIDEO:
-            return <VideoBlockComponent block={block}/>
+            return <VideoBlock block={block}/>
         case BlockTypes.BUTTON:
-            return <TextBlockComponent block={block} editable={true}/>
+            return <TextBlock block={block} editable={true}/>
         case BlockTypes.ICON:
-            return <IconBlockComponent block={block}/>
+            return <IconBlock block={block}/>
         case BlockTypes.AUDIO:
-            return <AudioBlockComponent block={block}/>
+            return <AudioBlock block={block}/>
         case BlockTypes.YOUTUBE:
-            return <YouTubeBlockComponent block={block}/>
+            return <YouTubeBlock block={block}/>
         case BlockTypes.VIMEO:
-            return <VimeoBlockComponent block={block}/>
+            return <VimeoBlock block={block}/>
         case BlockTypes.HR:
-            return <HrBlockComponent/>
+            return <HrBlock/>
         case BlockTypes.QUOTE:
-            return <TextBlockComponent block={block} editable={true}/>
+            return <TextBlock block={block} editable={true}/>
         case BlockTypes.IFRAME:
-            return <IframeBlockComponent block={block}/>
+            return <IframeBlock block={block}/>
         case BlockTypes.SPOTIFY:
-            return <SpotifyBlockComponent block={block}/>
+            return <SpotifyBlock block={block}/>
         case BlockTypes.PARAGRAPH_VARIABLE:
-            return <TextBlockComponent block={block}/>
+            return <TextBlock block={block}/>
         case BlockTypes.HEADING_VARIABLE:
-            return <TextBlockComponent block={block}/>
+            return <TextBlock block={block}/>
         case BlockTypes.IMAGE_VARIABLE:
 
             break;
@@ -145,11 +145,11 @@ function getBlockContent(block: BlockInterface) {
 
             break;
         case BlockTypes.QUOTE_VARIABLE:
-            return <TextBlockComponent block={block}/>
+            return <TextBlock block={block}/>
         case BlockTypes.GOOGLE_MAPS:
-            return <GoogleMapsBlockComponent block={block}/>
+            return <GoogleMapsBlock block={block}/>
         case BlockTypes.GOOGLE_CALENDAR:
-            return <GoogleCalendarBlockComponent block={block}/>
+            return <GoogleCalendarBlock block={block}/>
     }
     return '';
 }

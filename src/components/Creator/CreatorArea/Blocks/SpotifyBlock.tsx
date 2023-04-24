@@ -1,9 +1,9 @@
 import React from "react";
-import EmbedBlockComponent from "./EmbedBlock/EmbedBlockComponent";
+import EmbedBlock from "./EmbedBlock/EmbedBlock";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 
-class SpotifyBlockComponent extends EmbedBlockComponent {
+class SpotifyBlock extends EmbedBlock {
     sourceModifier(source) {
         const {block} = this.props;
         if (!source.length) {
@@ -26,4 +26,4 @@ class SpotifyBlockComponent extends EmbedBlockComponent {
 }
 
 
-export default connect(null, {setAttributes})(SpotifyBlockComponent);
+export default connect(null, {setAttributes})(SpotifyBlock);
