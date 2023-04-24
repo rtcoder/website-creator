@@ -1,21 +1,24 @@
-import {AnyAction, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {AnyAction, createSlice} from '@reduxjs/toolkit';
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {RWD_MODES} from "@/enums/rwd";
 import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import {
     dropBlockFn,
-    dropNewBlockFn, removeBlockFn,
+    dropNewBlockFn,
+    removeBlockFn,
     setRwdModeFn,
     setSelectedBlockFn,
     setStructureFn
 } from "@/store/functions/structure";
 import {duplicateBlockFn, setAttributesFn, setIconFn, setTextContentFn} from "@/store/functions/block";
+import {addHiddenBlockIdToArrayFn, removeHiddenBlockIdFromArrayFn} from "@/store/functions/structure-preview";
 
 export interface StructureState {
     structure: BlockInterface[];
     selectedBlock: BlockInterface | null;
     rwdMode: RWD_MODES;
     styleState: STYLE_STATE_NAMES;
+    hiddenBlocksIds: string[];
 }
 
 const initialState: StructureState = {
@@ -23,6 +26,7 @@ const initialState: StructureState = {
     selectedBlock: null,
     rwdMode: RWD_MODES.DESKTOP,
     styleState: STYLE_STATE_NAMES.BASIC,
+    hiddenBlocksIds: [],
 };
 
 const structureSlice = createSlice({
@@ -38,7 +42,9 @@ const structureSlice = createSlice({
         removeBlock: removeBlockFn,
         setIcon: setIconFn,
         setTextContent: setTextContentFn,
-        setAttributes:setAttributesFn,
+        setAttributes: setAttributesFn,
+        addHiddenBlockIdToArray: addHiddenBlockIdToArrayFn,
+        removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn
     }
 });
 
@@ -53,6 +59,8 @@ export const {
     setIcon,
     setTextContent,
     setAttributes,
+    addHiddenBlockIdToArray,
+    removeHiddenBlockIdFromArray,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

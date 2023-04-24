@@ -3,7 +3,7 @@ import Icon from "@/components/Icon";
 import BlocksPanel from "@/components/LeftPanel/BlocksPanel";
 import styles from "@/styles/Components/LeftPanel.module.scss";
 import StylesPanel from "@/components/LeftPanel/StylesPanel";
-import StructurePanel from "@/components/LeftPanel/StructurePanel";
+import StructurePanel from "@/components/LeftPanel/StructurePanel/StructurePanel";
 import LeftSettingsPanel from "@/components/LeftPanel/LeftSettingsPanel";
 
 

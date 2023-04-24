@@ -24,13 +24,14 @@ import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
 import ActionButtons from "@/components/ActionButtons/ActionButtons";
 import {BlockTypes} from "@/types/block-type";
-import CONTAINER = BlockTypes.CONTAINER;
+
 
 export default function Block(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
+    const hiddenBlocksIds = useSelector((state: any) => state.structure.hiddenBlocksIds);
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch();
 
@@ -45,7 +46,9 @@ export default function Block(props: BlockProps) {
     const selectBlock = useCallback((blk) => {
         dispatch(setSelectedBlock(blk));
     }, [dispatch]);
-
+    const isHidden = () => {
+        return hiddenBlocksIds.includes(block.id)
+    }
     const onMouseOver = () => {
         setIsHovered(true);
     };
@@ -67,9 +70,12 @@ export default function Block(props: BlockProps) {
         [styles.singleBlock]: true,
         [styles.selected]: isSelected(),
         [styles.hovered]: isHovered,
+        [styles.minimized]: isHidden()
     });
     const withoutProperties = ['width', 'min-width', 'max-width'];
-
+    const shouldShowActionButtons = () => {
+        return isSelected() && !isHidden()
+    }
     return (
         <div className={classes}
              ref={dragRef}
@@ -77,8 +83,12 @@ export default function Block(props: BlockProps) {
              onMouseOver={onMouseOver}
              onMouseLeave={onMouseLeave}
              style={getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties)}>
-            <div className={styles.maskLayer}/>
-            {isSelected() ? <ActionButtons block={block}/> : ''}
+
+            <div className={styles.maskLayer}
+                 title={BLOCK_TYPES_HUMAN_NAMES[block.type]}>
+                {BLOCK_TYPES_HUMAN_NAMES[block.type]}
+            </div>
+            {shouldShowActionButtons() ? <ActionButtons block={block}/> : ''}
             {getBlockContent(block)}
         </div>
     )

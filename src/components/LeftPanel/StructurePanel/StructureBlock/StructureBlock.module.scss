@@ -1,0 +1,65 @@
+.structureBlock {
+  width: 100%;
+  margin: 5px 0;
+  height: 30px;
+
+  &.expanded {
+    height: auto;
+  }
+
+  &.selected {
+    &>.row {
+      border-color: #19b6ff;
+      background-color: #2b94c5;
+      color: #fff;
+    }
+  }
+  &:has(.selected) {
+    &>.row{
+      border-color: #19b6ff;
+    }
+  }
+.hidden{
+
+}
+  .row {
+    display: grid;
+    grid-template-columns: 20px auto 60px;
+    grid-template-rows: 100%;
+    grid-template-areas: "expander name buttons";
+    align-items: center;
+    height: 30px;
+    background: #dee2e6;
+    border: 2px solid #949495;
+    padding: 0 5px;
+    user-select: none;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+
+    .expander {
+      grid-area: expander;
+      cursor: pointer;
+    }
+
+    .name {
+      grid-area: name;
+      cursor: pointer;
+    }
+    .buttons{
+      grid-area:buttons;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      .icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .children {
+    padding-left: 10px;
+    width: 100%;
+    position: relative;
+  }
+}

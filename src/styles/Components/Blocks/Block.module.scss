@@ -22,26 +22,27 @@
     outline: none;
   }
 
-  &[minimized] {
-    pointer-events: none;
-    height: 40px !important;
-    overflow: hidden;
-
-    & > .mask-layer {
-      display: flex;
-    }
-  }
-
   &.hovered,
   &.selected {
     outline: 2px solid #09c;
   }
-  &.hovered:has(.hovered){
+
+  &.hovered:has(.hovered) {
     outline: none;
   }
 
   &.selected {
     box-shadow: 0 0 3px 3px #000;
+  }
+
+  &.minimized {
+    //pointer-events: none;
+    height: 40px !important;
+    overflow: hidden;
+
+    & > .maskLayer {
+      display: flex;
+    }
   }
 
   & > p {
