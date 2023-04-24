@@ -1,6 +1,6 @@
 import styles from "@/styles/Components/Blocks/IconBlock.module.scss"
 import {BlockProps} from "@/interfaces/BlockProps.interface";
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import {leftSettingsPanelService, PanelNames} from "@/services/LeftSettingsPanel.service";
 import {useCallback} from "react";
 import {setIcon, setSelectedBlock} from "@/store/structureSlice";

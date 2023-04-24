@@ -1,7 +1,7 @@
 import React, {FormEvent} from "react";
 import {fetchJson} from "@/helpers/fetch";
 import styles from "./IconsList.module.scss";
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
 
 interface IconsListInterface {

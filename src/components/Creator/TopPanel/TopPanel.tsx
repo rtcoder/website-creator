@@ -1,5 +1,5 @@
 import styles from './TopPanel.module.scss';
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
 import {RWD_MODES} from "@/enums/rwd";
 import HelpModal from "@/components/Creator/HelpModal";

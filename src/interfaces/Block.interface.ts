@@ -1,5 +1,5 @@
 import {BlockLinkInterface} from "@/interfaces/BlockLink.interface";
-import {IconType} from "@/components/Creator/Icon";
+import {IconType} from "@/components/construction/Icon/Icon";
 import {WithStyles} from "@/interfaces/Styles.interface";
 import {BlockTypes} from "@/types/block-type";
 

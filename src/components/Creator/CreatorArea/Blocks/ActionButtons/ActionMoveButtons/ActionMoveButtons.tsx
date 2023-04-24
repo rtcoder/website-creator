@@ -1,5 +1,5 @@
 import styles from '../ActionButtons.module.scss'
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import {useSelector} from "react-redux";
 import {findIndexByIdRecursive, getBlockParent} from "@/helpers/block";
 import {BlockInterface} from "@/interfaces/Block.interface";

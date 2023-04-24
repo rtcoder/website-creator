@@ -1,5 +1,5 @@
 import styles from './ActionButtons.module.scss'
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
 import {useCallback, useEffect, useRef, useState} from "react";
 import {duplicateBlock, removeBlock} from "@/store/structureSlice";

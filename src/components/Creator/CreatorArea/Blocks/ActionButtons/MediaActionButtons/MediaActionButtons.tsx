@@ -1,5 +1,5 @@
 import styles from '../ActionButtons.module.scss'
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import {ActionButtonsPropsInterface} from "@/interfaces/ActionButtons.interface";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";

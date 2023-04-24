@@ -3,7 +3,7 @@ import React from "react";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";
 import {leftSettingsPanelService, PanelNames} from "@/services/LeftSettingsPanel.service";
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 
 
 export default abstract class PanelAbstract extends React.Component<any, any> {

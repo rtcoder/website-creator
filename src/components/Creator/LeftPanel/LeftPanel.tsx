@@ -1,5 +1,5 @@
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import BlocksPanel from "@/components/Creator/LeftPanel/BlocksPanel/BlocksPanel";
 import styles from "./LeftPanel.module.scss";
 import StylesPanel from "@/components/Creator/LeftPanel/StylesPanel/StylesPanel";

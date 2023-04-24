@@ -2,7 +2,7 @@ import styles from './StructureBlock.module.scss'
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import {useCallback, useEffect, useRef, useState} from "react";
 import classNames from "@/helpers/classNames";
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 import {useDispatch, useSelector} from "react-redux";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {

@@ -1,5 +1,5 @@
 import styles from "./NoBlock.module.scss"
-import Icon from "@/components/Creator/Icon";
+import Icon from "@/components/construction/Icon/Icon";
 export default function (){
     return (
         <div className={styles.noBlock}>

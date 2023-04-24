@@ -1,5 +1,5 @@
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
-import Icon, {IconType} from "@/components/Creator/Icon";
+import Icon, {IconType} from "@/components/construction/Icon/Icon";
 import styles from "@/styles/Components/LeftPanel/Blocks/BlockItem.module.scss"
 import {useDrag} from "react-dnd";
 import {BlockType} from "@/types/block-type";

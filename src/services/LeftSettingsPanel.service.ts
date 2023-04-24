@@ -1,4 +1,4 @@
-import {IconType} from "@/components/Creator/Icon";
+import {IconType} from "@/components/construction/Icon/Icon";
 import {PlainObj} from "@/interfaces/PlainObj";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";
