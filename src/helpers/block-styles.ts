@@ -60,12 +60,14 @@ export function getInheritedStyle(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES,
 }
 
 export function getInheritedStyleWith(styles: Styles, rwd: RWD_MODES, styleState: STYLE_STATE_NAMES, properties: string[]): CSSProperties {
+    properties = properties.map(prop => toKebabCase(prop));
     return getInheritedStyle(rwd, styleState,
         getFilteredProperties(styles, property => properties.includes(property))
     );
 }
 
 export function getInheritedStyleWithout(styles: Styles, rwd: RWD_MODES, styleState: STYLE_STATE_NAMES, properties: string[]): CSSProperties {
+    properties = properties.map(prop => toKebabCase(prop));
     return getInheritedStyle(rwd, styleState,
         getFilteredProperties(styles, property => !properties.includes(property))
     );
@@ -104,7 +106,7 @@ export function getProperty(styles: Styles, key: string, rwd: RWD_MODES, styleSt
     return _styles[key] || '';
 }
 
-export function setStyleValue(styles: Styles, rwdMode: RWD_MODES, styleState: STYLE_STATE_NAMES, propName: string, value: string) {
+export function setStyleValue(styles: Styles, rwdMode: RWD_MODES, styleState: STYLE_STATE_NAMES, propName: string, value: string): Styles {
     const _styles = Object.assign({}, styles);
 
     const styleNameForRwdMode = RWD_STYLE_NAMES[rwdMode]
@@ -130,4 +132,5 @@ export function setStyleValue(styles: Styles, rwdMode: RWD_MODES, styleState: ST
     if (!Object.keys(_styles[styleNameForRwdMode])) {
         delete _styles[styleNameForRwdMode];
     }
+    return _styles;
 }

@@ -2,6 +2,10 @@ import {StructureState} from "@/store/structureSlice";
 import {duplicateBlk, findByIdRecursive, updateBlockInStructure} from "@/helpers/block";
 import {BlockInterface, BlockSettingsIconInterface} from "@/interfaces/Block.interface";
 import {PayloadAction} from "@reduxjs/toolkit";
+import {setStyleValue} from "@/helpers/block-styles";
+import {RWD_MODES} from "@/enums/rwd";
+import {STYLE_STATE_NAMES} from "@/enums/styleState";
+import {toKebabCase} from "@/helpers/string-helpers";
 
 const updateBlockIcon = (block: BlockInterface, icon: BlockSettingsIconInterface): BlockInterface => ({
     ...block,
@@ -71,3 +75,26 @@ export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction
     state.structure = duplicateBlk(structure, payload.id);
 };
 
+export interface SetStylesPropertyPayloadInterface {
+    property: string;
+    value: string;
+    rwd: RWD_MODES;
+    styleState: STYLE_STATE_NAMES;
+    blockId: string;
+}
+
+export const setStylesPropertyFn = (state: StructureState, {payload}: PayloadAction<SetStylesPropertyPayloadInterface>) => {
+    const {property, value, rwd, styleState, blockId} = payload;
+    const {structure, selectedBlock} = state;
+    const block = findByIdRecursive(structure, blockId);
+    if (!block) {
+        return;
+    }
+    block.styles = setStyleValue(block.styles, rwd, styleState, toKebabCase(property), value);
+
+    state.structure = updateBlockInStructure(structure, blockId, block);
+    if (selectedBlock && selectedBlock.id === blockId) {
+        selectedBlock.styles = setStyleValue(selectedBlock.styles, rwd, styleState, toKebabCase(property), value);
+        state.selectedBlock = selectedBlock;
+    }
+};

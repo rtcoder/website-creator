@@ -1,7 +1,7 @@
 import Accordion from "@/components/construction/Accordion/Accordion";
 import {AccordionItemInterface} from "@/components/construction/Accordion/AccordionItem";
-import BlocksList from "@/components/Creator/LeftPanel/Blocks/BlocksList";
-import {BlockItemProps} from "@/components/Creator/LeftPanel/Blocks/BlockItem";
+import BlocksList from "@/components/Creator/LeftPanel/BlocksPanel/BlocksList";
+import {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem";
 import {BlockTypes} from "@/types/block-type";
 
 export default function () {

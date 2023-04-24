@@ -1,4 +1,4 @@
-import BlockItem, {BlockItemProps} from "@/components/Creator/LeftPanel/Blocks/BlockItem";
+import BlockItem, {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem";
 import styles from '@/styles/Components/LeftPanel/Blocks/BlocksList.module.scss'
 interface BlocksListProps {
     items: BlockItemProps[];

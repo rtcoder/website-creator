@@ -1,8 +1,8 @@
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import Icon from "@/components/Creator/Icon";
-import BlocksPanel from "@/components/Creator/LeftPanel/BlocksPanel";
+import BlocksPanel from "@/components/Creator/LeftPanel/BlocksPanel/BlocksPanel";
 import styles from "./LeftPanel.module.scss";
-import StylesPanel from "@/components/Creator/LeftPanel/StylesPanel";
+import StylesPanel from "@/components/Creator/LeftPanel/StylesPanel/StylesPanel";
 import StructurePanel from "@/components/Creator/LeftPanel/StructurePanel/StructurePanel";
 import LeftSettingsPanel from "@/components/Creator/LeftPanel/LeftSettingsPanel/LeftSettingsPanel";
 
@@ -11,7 +11,7 @@ export default function () {
     return (
         <div className={styles.leftPanel}>
             <LeftSettingsPanel/>
-            <Tabs>
+            <Tabs defaultIndex={1}>
                 <TabList>
                     <Tab>
                         <Icon type="material-outlined" name="deployed_code"/>

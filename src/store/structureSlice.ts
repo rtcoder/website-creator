@@ -10,7 +10,13 @@ import {
     setSelectedBlockFn,
     setStructureFn
 } from "@/store/functions/structure";
-import {duplicateBlockFn, setAttributesFn, setIconFn, setTextContentFn} from "@/store/functions/block";
+import {
+    duplicateBlockFn,
+    setAttributesFn,
+    setIconFn,
+    setStylesPropertyFn,
+    setTextContentFn
+} from "@/store/functions/block";
 import {addHiddenBlockIdToArrayFn, removeHiddenBlockIdFromArrayFn} from "@/store/functions/structure-preview";
 
 export interface StructureState {
@@ -44,7 +50,8 @@ const structureSlice = createSlice({
         setTextContent: setTextContentFn,
         setAttributes: setAttributesFn,
         addHiddenBlockIdToArray: addHiddenBlockIdToArrayFn,
-        removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn
+        removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn,
+        setStylesProperty: setStylesPropertyFn,
     }
 });
 
@@ -61,6 +68,7 @@ export const {
     setAttributes,
     addHiddenBlockIdToArray,
     removeHiddenBlockIdFromArray,
+    setStylesProperty,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

@@ -1,0 +1,12 @@
+.inputRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+
+    select{
+        margin-top: 20px;
+        border-left: none!important;
+    }
+}

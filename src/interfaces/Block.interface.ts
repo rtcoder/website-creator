@@ -1,11 +1,11 @@
 import {BlockLinkInterface} from "@/interfaces/BlockLink.interface";
 import {IconType} from "@/components/Creator/Icon";
 import {WithStyles} from "@/interfaces/Styles.interface";
-import {BlockType} from "@/types/block-type";
+import {BlockTypes} from "@/types/block-type";
 
 export interface BlockInterface extends WithStyles {
     id: string;
-    type: BlockType;
+    type: BlockTypes.BlockType;
     tagName: string;
     children: BlockInterface[];
     textContent: string;

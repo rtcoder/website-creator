@@ -1,0 +1,94 @@
+.formInputContainer {
+  width: 100%;
+  padding-top: 20px;
+  position: relative;
+  --inputHeight:30px;
+
+  label.formInputLabel {
+    position: absolute;
+    bottom: 0;
+    height: var(--inputHeight);
+    line-height: var(--inputHeight);
+    padding-left: 5px;
+    left: 0;
+    font-size: 13px;
+    transition: all 0.2s ease-out;
+    white-space: nowrap;
+    z-index: -1;
+    overflow: hidden;
+    color: #000;
+  }
+
+  .overlay {
+    width: 100%;
+    height: var(--inputHeight);
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    border: 1px solid #cdcdcd;
+
+    &:before, &:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 0 solid #0c63e4;
+      transition: all 0.2s ease-out;
+    }
+
+    &:before {
+      border-bottom: none;
+      border-right: none;
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      border-top: none;
+      border-left: none;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  input.formInput {
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 5px;
+    height: var(--inputHeight);
+    font-size: 17px;
+    position: relative;
+    outline: none;
+
+    &:focus {
+      //border-color: #0c63e4;
+      &~.overlay{
+        &:before,
+        &:after {
+          border-width: 2px;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          border-color: #0c63e4;
+        }
+      }
+      &~label{
+        color: #0c63e4;
+      }
+    }
+
+    &:focus,
+    &:not([value=""]) {
+      & ~ label {
+        bottom:var(--inputHeight);
+        font-size: 12px;
+        height: 15px;
+        line-height: 15px;
+      }
+    }
+    &[value=""]:not(:focus){
+      & ~ label {
+        color: #7e7e7e;
+      }
+    }
+  }
+}
