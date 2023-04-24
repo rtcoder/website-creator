@@ -1,4 +1,4 @@
-import styles from '@/styles/construction/Accordion/Accordion.module.scss'
+import styles from './Accordion.module.scss'
 import AccordionItem, {AccordionItemInterface} from "@/components/construction/Accordion/AccordionItem";
 
 interface AccordionProps {

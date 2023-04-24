@@ -1,5 +1,5 @@
 import classNames from "@/helpers/classNames";
-import styles from '@/styles/construction/Modal/Modal.module.scss'
+import styles from './Modal.module.scss'
 import React, {ReactNode} from "react";
 import ModalHead from "@/components/construction/Modal/ModalHead";
 

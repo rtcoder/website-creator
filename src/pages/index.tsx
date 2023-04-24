@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Creator from "@/components/Creator";
+import Creator from "@/components/Creator/Creator";
 import {Provider} from "react-redux";
 import {store} from "@/store/store";
 

@@ -1,7 +1,7 @@
-import styles from '@/styles/construction/Accordion/AccordionItem.module.scss'
+import styles from './AccordionItem.module.scss'
 import {useState} from "react";
 import classNames from "@/helpers/classNames";
-import Icon from "@/components/Icon";
+import Icon from "@/components/Creator/Icon";
 
 export interface AccordionItemInterface {
     title: string;

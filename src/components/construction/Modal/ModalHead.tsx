@@ -1,5 +1,5 @@
-import styles from '@/styles/construction/Modal/ModalHead.module.scss'
-import Icon from "@/components/Icon";
+import styles from './ModalHead.module.scss'
+import Icon from "@/components/Creator/Icon";
 
 export default function ModalHead({children, onClose}) {
     return (

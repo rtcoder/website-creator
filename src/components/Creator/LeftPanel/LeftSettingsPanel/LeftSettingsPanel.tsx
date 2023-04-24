@@ -1,0 +1,13 @@
+import IconPanel from "@/components/Creator/LeftPanel/LeftSettingsPanel/IconPanel/IconPanel";
+import {useSelector} from "react-redux";
+import {BlockTypes} from "@/types/block-type";
+
+export default function () {
+    const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
+
+    return (
+        <>
+            {selectedBlock && selectedBlock.type === BlockTypes.ICON ? <IconPanel/> : ''}
+        </>
+    )
+}
