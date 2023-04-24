@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "@/components/construction/Icon/Icon";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
-import MediaUploadBlockComponent from "@/components/Creator/CreatorArea/Blocks/MediaUploadBlockComponent";
+import MediaUploadBlockComponent from "./MediaBlock/MediaUploadBlockComponent";
 
 class VideoBlockComponent extends MediaUploadBlockComponent {
     onLoadMediaRequest(request) {

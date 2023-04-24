@@ -1,5 +1,5 @@
 import React from "react";
-import EmbedBlockComponent from "@/components/Creator/CreatorArea/Blocks/EmbedBlockComponent";
+import EmbedBlockComponent from "./EmbedBlock/EmbedBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 

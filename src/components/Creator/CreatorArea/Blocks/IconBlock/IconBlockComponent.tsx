@@ -1,4 +1,4 @@
-import styles from "@/styles/Components/Blocks/IconBlock.module.scss"
+import styles from "./IconBlock.module.scss"
 import {BlockProps} from "@/interfaces/BlockProps.interface";
 import Icon from "@/components/construction/Icon/Icon";
 import {leftSettingsPanelService, PanelNames} from "@/services/LeftSettingsPanel.service";

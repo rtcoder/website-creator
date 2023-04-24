@@ -1,4 +1,4 @@
-import styles from "@/styles/Components/Blocks/Block.module.scss"
+import styles from "./BlockComponent.module.scss"
 import stylesActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons.module.scss"
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
@@ -17,7 +17,7 @@ import IframeBlockComponent from "@/components/Creator/CreatorArea/Blocks/Iframe
 import ImageBlockComponent from "@/components/Creator/CreatorArea/Blocks/ImageBlockComponent";
 import VideoBlockComponent from "@/components/Creator/CreatorArea/Blocks/VideoBlockComponent";
 import AudioBlockComponent from "@/components/Creator/CreatorArea/Blocks/AudioBlockComponent";
-import IconBlockComponent from "@/components/Creator/CreatorArea/Blocks/IconBlockComponent";
+import IconBlockComponent from "../IconBlock/IconBlockComponent";
 import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
@@ -26,7 +26,7 @@ import ActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons
 import {BlockTypes} from "@/types/block-type";
 
 
-export default function Block(props: BlockProps) {
+export default function BlockComponent(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);

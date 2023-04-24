@@ -1,4 +1,4 @@
-import styles from "@/styles/Components/LeftPanel/LeftSettingsPanel.module.scss"
+import styles from "./LeftSettingsPanel.module.scss"
 import React from "react";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";

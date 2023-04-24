@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "@/components/construction/Icon/Icon";
-import MediaUploadBlockComponent from "@/components/Creator/CreatorArea/Blocks/MediaUploadBlockComponent";
+import MediaUploadBlockComponent from "./MediaBlock/MediaUploadBlockComponent";
 import {setAttributes} from "@/store/structureSlice";
 import {connect} from "react-redux";
 

@@ -1,7 +1,7 @@
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import {useDrop} from "react-dnd";
 import styles from "@/styles/Components/Blocks/Block.module.scss"
-import Block from "@/components/Creator/CreatorArea/Blocks/Block";
+import BlockComponent from "@/components/Creator/CreatorArea/Blocks/BlockComponent/BlockComponent";
 import classNames from "@/helpers/classNames";
 import {findByIdRecursive} from "@/helpers/block";
 import {getInheritedStyleWith} from "@/helpers/block-styles";
@@ -68,7 +68,7 @@ export default function ContainerBlockComponent(props: ContainerPropsInterface) 
              ref={drop}>
             {children.map(b =>
                 <div key={b.id} style={getInheritedStyleWith(b.styles, rwd, styleState, widthProperties)}>
-                    <Block block={b}/>
+                    <BlockComponent block={b}/>
                 </div>)}
         </div>
     )

@@ -1,5 +1,5 @@
-import BlockItem, {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem";
-import styles from '@/styles/Components/LeftPanel/Blocks/BlocksList.module.scss'
+import BlockItem, {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem/BlockItem";
+import styles from './BlocksList.module.scss'
 interface BlocksListProps {
     items: BlockItemProps[];
 }

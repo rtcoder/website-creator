@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/Components/Blocks/MediaBlock.module.scss";
+import styles from "./MediaBlock.module.scss";
 import {upload} from "@/helpers/upload";
 import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";
