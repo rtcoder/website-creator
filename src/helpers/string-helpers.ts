@@ -20,3 +20,9 @@ export function toCamelCase(str: string): string {
             return index === 0 ? word.toLowerCase() : word.toUpperCase();
         }).replace(/\s+/g, '');
 }
+
+export const getAlphabetArray = (length = 26): string[] => {
+    const arr = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    arr.length = length;
+    return arr;
+}

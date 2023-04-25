@@ -11,6 +11,7 @@ import {SetStylesPropertyPayloadInterface} from "@/store/functions/block";
 import BorderRadius from "@/components/Creator/LeftPanel/StylesPanel/BorderRadius/BorderRadius";
 import Padding from "@/components/Creator/LeftPanel/StylesPanel/Padding/Padding";
 import Margin from "@/components/Creator/LeftPanel/StylesPanel/Margin/Margin";
+import Layout from "@/components/Creator/LeftPanel/StylesPanel/Layout/Layout";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -30,7 +31,7 @@ export default function () {
         })
     }
     const stylesSections: [title: string, id: string, component: JSX.Element][] = [
-        // ['Układ elementów', 'layout', (<>d</>)],
+        ['Układ elementów', 'layout', (<Layout onChange={styleChange}/> )],
         // ['Tło', 'background', (<>d</>)],
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
         // ['Obraz', 'image', (<>d</>)],

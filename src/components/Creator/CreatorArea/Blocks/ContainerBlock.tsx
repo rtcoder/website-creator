@@ -61,13 +61,13 @@ export default function ContainerBlock(props: ContainerPropsInterface) {
         [styles.children]: true,
         [styles.dragover]: isDragover
     });
-    const widthProperties = ['width', 'min-width', 'max-width'];
+    const withProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom','margin-left', 'margin-right'];
 
     return (
         <div className={classes}
              ref={drop}>
             {children.map(b =>
-                <div key={b.id} style={getInheritedStyleWith(b.styles, rwd, styleState, widthProperties)}>
+                <div key={b.id} style={getInheritedStyleWith(b.styles, rwd, styleState, withProperties)}>
                     <Block block={b}/>
                 </div>)}
         </div>

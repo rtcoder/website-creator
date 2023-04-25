@@ -72,7 +72,7 @@ export default function Block(props: BlockProps) {
         [styles.hovered]: isHovered,
         [styles.minimized]: isHidden()
     });
-    const withoutProperties = ['width', 'min-width', 'max-width'];
+    const withoutProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom','margin-left', 'margin-right'];
     const shouldShowActionButtons = () => {
         return isSelected() && !isHidden()
     }

@@ -14,20 +14,20 @@
   --animation-delay: initial;
   --animation-direction: initial;
 
-  &:hover {
-    outline: 2px dotted #636363;
+  &[style*="align-items: stretch"] {
+    .singleBlock {
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  :has(.structure-item:hover) {
-    outline: none;
-  }
-
+  &:hover,
   &.hovered,
   &.selected {
     outline: 2px solid #09c;
   }
 
-  &.hovered:has(.hovered) {
+  .hovered:has(.hovered) {
     outline: none;
   }
 
@@ -111,6 +111,14 @@
 
     &:has(.dragover) {
       background: transparent;
+    }
+  }
+
+  > div {
+    margin: 10px 0;
+
+    > .singleBlock {
+      margin: 0;
     }
   }
 }
