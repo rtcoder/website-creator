@@ -9,6 +9,8 @@ import {useCallback} from "react";
 import {setStylesProperty} from "@/store/structureSlice";
 import {SetStylesPropertyPayloadInterface} from "@/store/functions/block";
 import BorderRadius from "@/components/Creator/LeftPanel/StylesPanel/BorderRadius/BorderRadius";
+import Padding from "@/components/Creator/LeftPanel/StylesPanel/Padding/Padding";
+import Margin from "@/components/Creator/LeftPanel/StylesPanel/Margin/Margin";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -33,11 +35,12 @@ export default function () {
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
         // ['Obraz', 'image', (<>d</>)],
         // ['Ramka', 'border', (<>d</>)],
-        ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/> )],
+        ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/>)],
         // ['Styl tekstu', 'text', (<>d</>)],
         // ['Kolumny tekstu', 'text-columns', (<>d</>)],
         // ['Cytat', 'quote', (<>d</>)],
-        // ['Marginesy', 'margin-padding', (<>d</>)],
+        ['Marginesy zewnętrzne', 'margin', (<Margin onChange={styleChange}/>)],
+        ['Marginesy wewnętrzne', 'padding', (<Padding onChange={styleChange}/>)],
         // ['Filtry', 'filter', (<>d</>)],
         // ['Animacje', 'animations', (<>d</>)],
     ]

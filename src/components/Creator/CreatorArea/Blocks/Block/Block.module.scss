@@ -101,6 +101,10 @@
   flex-wrap: inherit;
   min-height: 50px;
   padding: 5px;
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
 
   &.dragover {
     background: #3bb956;
