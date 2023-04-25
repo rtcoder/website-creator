@@ -1,7 +1,7 @@
 import {forwardRef, HTMLInputTypeAttribute, useEffect, useState} from "react";
 import styles from "./Input.module.scss"
 
-interface InputProps {
+interface Props {
     label?: string;
     onChange: (value: string) => void;
     accept?: string | undefined;
@@ -38,7 +38,7 @@ interface InputProps {
     width?: number | string | undefined;
 }
 
-export const Input = forwardRef(function (props: InputProps, ref) {
+export const Input = forwardRef(function (props: Props, ref) {
     const {label, type, value, onChange, ...otherProps} = props;
     const [val, setValue] = useState(value)
     const handleChange = ev => {

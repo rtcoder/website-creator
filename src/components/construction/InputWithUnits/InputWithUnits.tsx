@@ -3,7 +3,7 @@ import {useEffect, useRef, useState} from "react";
 import styles from "./InputWithUnits.module.scss"
 import {Input} from "@/components/construction/Input/Input";
 
-interface InputWithUnitsPropsInterface {
+interface Props {
     label?: string;
     value?: string | number;
     units: Units[];
@@ -11,7 +11,7 @@ interface InputWithUnitsPropsInterface {
 }
 
 const ALL_UNITS = ['px', 'pt', 'pc', 'in', 'mm', 'cm', '%', 'em', 'rem', 'vw', 'vh', 'vmin', 'vmax'];
-export default function (props: InputWithUnitsPropsInterface) {
+export default function (props: Props) {
     const propsValue = String(props.value || '');
     const [inputValue, setInputValue] = useState('');
     const [unitsValue, setUnitsValue] = useState('');

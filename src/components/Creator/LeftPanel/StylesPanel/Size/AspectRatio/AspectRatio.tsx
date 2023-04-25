@@ -1,14 +1,13 @@
 import {useEffect, useRef, useState} from "react";
 import {Input} from "@/components/construction/Input/Input";
 
-interface AspectRatioPropsInterface {
-    value?: string | number;
+interface Props {
+    value: string;
     onChange: (value: string) => void;
 }
 
-const ALL_UNITS = ['px', 'pt', 'pc', 'in', 'mm', 'cm', '%', 'em', 'rem', 'vw', 'vh', 'vmin', 'vmax'];
-export default function (props: AspectRatioPropsInterface) {
-    const propsValue = String(props.value || '');
+export default function (props: Props) {
+    const propsValue = props.value;
     const [inputValue, setInputValue] = useState('');
     const inputRef = useRef(null);
 

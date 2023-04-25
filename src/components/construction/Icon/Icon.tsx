@@ -15,7 +15,7 @@ export type IconType =
     | 'ionicons'
     | 'octicons';
 
-interface IconProps {
+interface Props {
     type: IconType;
     name: string;
     className?: string;
@@ -23,7 +23,7 @@ interface IconProps {
     onClick?: MouseEventHandler;
 }
 
-export default function Icon(props: IconProps) {
+export default function Icon(props: Props) {
     if (!props.name || !props.type) {
         return '';
     }

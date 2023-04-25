@@ -12,12 +12,12 @@ import {
     setSelectedBlock
 } from "@/store/structureSlice";
 
-interface StructureBlockPropsInterface {
+interface Props {
     block: BlockInterface;
     expandParent?: () => void
 }
 
-export default function StructureBlock(props: StructureBlockPropsInterface) {
+export default function StructureBlock(props: Props) {
     const [expanded, setExpanded] = useState(false);
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const hiddenBlocksIds = useSelector((state: any) => state.structure.hiddenBlocksIds);
