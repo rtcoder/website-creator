@@ -8,6 +8,7 @@ import Size from "@/components/Creator/LeftPanel/StylesPanel/Size/Size";
 import {useCallback} from "react";
 import {setStylesProperty} from "@/store/structureSlice";
 import {SetStylesPropertyPayloadInterface} from "@/store/functions/block";
+import BorderRadius from "@/components/Creator/LeftPanel/StylesPanel/BorderRadius/BorderRadius";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -32,7 +33,7 @@ export default function () {
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
         // ['Obraz', 'image', (<>d</>)],
         // ['Ramka', 'border', (<>d</>)],
-        ['Zaokrąglenie narożników', 'border-radius', (<>d</>)],
+        ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/> )],
         // ['Styl tekstu', 'text', (<>d</>)],
         // ['Kolumny tekstu', 'text-columns', (<>d</>)],
         // ['Cytat', 'quote', (<>d</>)],

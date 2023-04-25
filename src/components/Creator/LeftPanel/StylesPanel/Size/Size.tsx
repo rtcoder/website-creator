@@ -29,7 +29,6 @@ export default function (props: Props) {
             rwd, styleState,
             ['width', 'height', 'minWidth', 'maxWidth', 'minHeight', 'maxHeight', 'aspectRatio']
         ) as any;
-        console.log(style)
         setAspectRatio(style.aspectRatio || '');
         setWidth(style.width);
         setMaxWidth(style.maxWidth);
