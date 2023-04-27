@@ -5,8 +5,9 @@
   width: 100%;
   overflow: hidden;
 
-  select {
+  .select {
     width: 60px;
+    flex: 0 0 60px;
     margin-top: 20px;
     border-left: none !important;
   }
