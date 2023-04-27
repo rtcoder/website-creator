@@ -1,0 +1,113 @@
+.colorPicker {
+  width: 30px;
+  height: 30px;
+  position: relative;
+    background-image: url("./img/transparent.png");
+  border-radius: 3px;
+
+  .colorSquare {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .fixedLayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+
+    .colorPickerContainer {
+      display: flex;
+      flex-direction: column;
+      width: 260px;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+
+      .pickerContainer {
+        display: flex;
+        flex-direction: column;
+
+        > .canvasContainer {
+          width: 250px;
+          height: 125px;
+          position: relative;
+
+          > canvas {
+            width: 250px;
+            height: 125px;
+            cursor: crosshair;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid #ccc;
+          }
+        }
+
+        .middleContainer {
+          display: flex;
+          flex-direction: row;
+          height: 60px;
+          align-items: center;
+          justify-content: space-between;
+
+          .colorPreview {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            background-image: url('./img/transparent.png');
+            border: 1px solid #ccc;
+            overflow: hidden;
+
+            .color {
+              width: inherit;
+              height: inherit;
+            }
+          }
+
+          .barsContainer {
+            width: calc(100% - 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: inherit;
+
+            .canvasContainer {
+              height: 20px;
+              width: 210px;
+              position: relative;
+
+              canvas {
+                height: 20px;
+                width: 210px;
+                border: 1px solid #ccc;
+                cursor: crosshair;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                &.opacity {
+                  background-image: url('./img/transparent.png');
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

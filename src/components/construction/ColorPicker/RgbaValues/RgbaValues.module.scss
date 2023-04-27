@@ -1,0 +1,26 @@
+.rgbaContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  margin: 10px 0;
+
+  .rgbaColor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .value {
+      border: 1px solid #707070;
+      width: 40px;
+      padding: 2px;
+      color: #353535;
+    }
+
+    .name {
+      padding-top: 5px;
+      color: #707070;
+    }
+  }
+}

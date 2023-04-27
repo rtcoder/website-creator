@@ -1,0 +1,30 @@
+.colorsHistory {
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    > div {
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        background-image: url('../img/transparent.png');
+        background-color: transparent;
+        background-size: 40%;
+
+        > div {
+            background-color: inherit;
+            width: inherit;
+            height: inherit;
+        }
+
+        &:hover {
+            transform: scale(1.1)
+        }
+    }
+}
