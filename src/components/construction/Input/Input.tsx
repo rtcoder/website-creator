@@ -3,7 +3,7 @@ import styles from "./Input.module.scss"
 
 interface Props {
     label?: string;
-    onChange: (value: string) => void;
+    onChange: (value) => void;
     accept?: string | undefined;
     alt?: string | undefined;
     autoComplete?: string | undefined;
@@ -56,6 +56,7 @@ export const Input = forwardRef(function (props: Props, ref) {
                    className={styles.formInput}
                    onKeyUp={handleChange}
                    onChange={handleChange}
+                   onInput={handleChange}
                    ref={ref}/>
             <div className={styles.overlay}/>
             <label className={styles.formInputLabel}>{label}</label>
