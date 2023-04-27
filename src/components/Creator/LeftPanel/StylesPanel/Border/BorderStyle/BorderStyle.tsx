@@ -19,11 +19,9 @@ export default function (props: Props) {
     }
     const styleValues = ['solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset', 'none', 'hidden']
     return (
-        <div style={{paddingTop: '20px'}}>
-            <Select onChange={onChange} label="Wybierz styl">
-                <Option value="">Brak</Option>
-                {styleValues.map(val => <Option value={val} key={val} selected={val === value}>{val}</Option>)}
-            </Select>
-        </div>
+        <Select onChange={onChange} label="Wybierz styl">
+            <Option value="">Brak</Option>
+            {styleValues.map(val => <Option value={val} key={val} selected={val === value}>{val}</Option>)}
+        </Select>
     )
 }

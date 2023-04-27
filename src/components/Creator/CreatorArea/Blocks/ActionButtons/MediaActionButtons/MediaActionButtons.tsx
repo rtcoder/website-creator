@@ -12,7 +12,7 @@ export default function MediaActionButtons(props: ActionButtonsPropsInterface) {
     }
 
     const clickChangeMedia = () => {
-        eventEmitter.dispatch(Events.CLICK_UPLOAD_INPUT)
+        eventEmitter.dispatch(Events.CLICK_UPLOAD_INPUT, props.block.id)
     }
 
     return showButtons() ? (<>

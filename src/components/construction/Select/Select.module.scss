@@ -1,6 +1,7 @@
 .selectContainer {
   width: 100%;
   user-select: none;
+  padding-top: 20px;
   --selectHeight: 30px;
 
   &.open {

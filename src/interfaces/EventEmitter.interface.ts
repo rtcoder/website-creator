@@ -31,9 +31,9 @@ export interface EventEmitterInterface {
     dispatch(event: Events.OPEN_SETTINGS_PANEL, data: PanelNames): void;
 
     subscribe(event: Events.OPEN_SETTINGS_PANEL, callback: (data: PanelNames) => void): void;
-    dispatch(event: Events.CLICK_UPLOAD_INPUT): void;
+    dispatch(event: Events.CLICK_UPLOAD_INPUT, blockId:string): void;
 
-    subscribe(event: Events.CLICK_UPLOAD_INPUT, callback: () => void): void;
+    subscribe(event: Events.CLICK_UPLOAD_INPUT, callback: (blockId:string) => void): void;
 
     unsubscribe(event: Events): void;
 }

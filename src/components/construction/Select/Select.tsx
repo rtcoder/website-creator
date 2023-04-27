@@ -71,9 +71,10 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
         }
     }
     useEffect(() => {
-        setSelected(
-            props.children.flat().find(child => child.props.selected)
-        )
+        const selectedChild=   props.children.flat().find(child => child.props.selected);
+        if(selectedChild) {
+            setSelected(selectedChild)
+        }
     }, [props.children])
     return (
         <div className={classNames({

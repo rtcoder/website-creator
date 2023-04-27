@@ -26,8 +26,10 @@ export default abstract class MediaUploadBlock extends React.Component<any, any>
     abstract onLoadMediaRequest(request): void;
 
     componentDidMount() {
-        eventEmitter.subscribe(Events.CLICK_UPLOAD_INPUT, () => {
-            this.state.inputRef.current.click();
+        eventEmitter.subscribe(Events.CLICK_UPLOAD_INPUT, blockId => {
+            if (this.props.block.id === blockId) {
+                this.state.inputRef.current.click();
+            }
         })
     }
 
