@@ -6,16 +6,18 @@
     display: flex;
     flex-direction: row;
   }
+
   .stylesFormField {
     width: 100%;
     padding: 3px;
 
-    select{
-      border:1px solid #cdcdcd;
+    select {
+      border: 1px solid #cdcdcd;
       padding: 3px;
       height: 30px;
       font-size: 17px;
       outline: none;
+      width: 100%;
     }
   }
 

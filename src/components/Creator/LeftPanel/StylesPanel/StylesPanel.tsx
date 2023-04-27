@@ -12,6 +12,7 @@ import BorderRadius from "@/components/Creator/LeftPanel/StylesPanel/BorderRadiu
 import Padding from "@/components/Creator/LeftPanel/StylesPanel/Padding/Padding";
 import Margin from "@/components/Creator/LeftPanel/StylesPanel/Margin/Margin";
 import Layout from "@/components/Creator/LeftPanel/StylesPanel/Layout/Layout";
+import Border from "@/components/Creator/LeftPanel/StylesPanel/Border/Border";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -22,6 +23,7 @@ export default function () {
         dispatch(setStylesProperty(data));
     }, [dispatch]);
     const styleChange = (value: string, property: string) => {
+        console.log({property, value});
         updateStyle({
             property,
             value,
@@ -31,11 +33,11 @@ export default function () {
         })
     }
     const stylesSections: [title: string, id: string, component: JSX.Element][] = [
-        ['Układ elementów', 'layout', (<Layout onChange={styleChange}/> )],
+        ['Układ elementów', 'layout', (<Layout onChange={styleChange}/>)],
         // ['Tło', 'background', (<>d</>)],
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
         // ['Obraz', 'image', (<>d</>)],
-        // ['Ramka', 'border', (<>d</>)],
+        ['Ramka', 'border', (<Border onChange={styleChange}/>)],
         ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/>)],
         // ['Styl tekstu', 'text', (<>d</>)],
         // ['Kolumny tekstu', 'text-columns', (<>d</>)],

@@ -10,7 +10,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-const ALL_UNITS = ['px', 'pt', 'pc', 'in', 'mm', 'cm', '%', 'em', 'rem', 'vw', 'vh', 'vmin', 'vmax'];
+const ALL_UNITS = ['px', 'pt', 'pc', 'in', 'mm', 'cm', '%', 'rem', 'em', 'vw', 'vh', 'vmin', 'vmax'];
 export default function (props: Props) {
     const propsValue = String(props.value || '');
     const [inputValue, setInputValue] = useState('');
