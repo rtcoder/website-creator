@@ -42,7 +42,7 @@ export default function (props: Props) {
         'All': 'Ramka',
     }
 
-    const borderUnits: Units[] = ['px', 'pt', '%', 'em', 'rem'];
+    const borderUnits: Units[] = ['px', 'pt', 'em', 'rem'];
 
     useEffect(() => {
         const style = getInheritedStyleWith(

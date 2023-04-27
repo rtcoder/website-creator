@@ -1,4 +1,5 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
+import {Option, Select} from "@/components/construction/Select";
 
 interface Props {
     value: string;
@@ -8,23 +9,21 @@ interface Props {
 export default function (props: Props) {
     const propsValue = props.value;
     const [value, setVal] = useState('');
-    const selectRef = useRef(null);
 
     useEffect(() => {
         setVal(propsValue);
     }, [propsValue])
-    const onChange = () => {
-        const unitsVal = selectRef.current.value;
-        setVal(unitsVal);
-        props.onChange(unitsVal);
+    const onChange = (val) => {
+        setVal(val);
+        props.onChange(val);
     }
     const styleValues = ['solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset', 'none', 'hidden']
     return (
         <div style={{paddingTop: '20px'}}>
-            <select value={value} ref={selectRef} onChange={onChange}>
-                <option value="">Wybierz styl</option>
-                {styleValues.map(val => <option value={val} key={val}>{val}</option>)}
-            </select>
+            <Select onChange={onChange} label="Wybierz styl">
+                <Option value="">Brak</Option>
+                {styleValues.map(val => <Option value={val} key={val} selected={val === value}>{val}</Option>)}
+            </Select>
         </div>
     )
 }
