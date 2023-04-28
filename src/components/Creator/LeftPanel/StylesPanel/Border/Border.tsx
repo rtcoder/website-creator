@@ -54,18 +54,18 @@ export default function (props: Props) {
                 'borderRightWidth', 'borderRightStyle', 'borderRightColor']
         ) as any;
         setBorder({
-            borderTopWidth: style.borderTopWidth,
-            borderTopStyle: style.borderTopStyle,
-            borderTopColor: style.borderTopColor,
-            borderLeftWidth: style.borderLeftWidth,
-            borderLeftStyle: style.borderLeftStyle,
-            borderLeftColor: style.borderLeftColor,
-            borderBottomWidth: style.borderBottomWidth,
-            borderBottomStyle: style.borderBottomStyle,
-            borderBottomColor: style.borderBottomColor,
-            borderRightWidth: style.borderRightWidth,
-            borderRightStyle: style.borderRightStyle,
-            borderRightColor: style.borderRightColor,
+            borderTopWidth: style.borderTopWidth || '',
+            borderTopStyle: style.borderTopStyle || '',
+            borderTopColor: style.borderTopColor || '',
+            borderLeftWidth: style.borderLeftWidth || '',
+            borderLeftStyle: style.borderLeftStyle || '',
+            borderLeftColor: style.borderLeftColor || '',
+            borderBottomWidth: style.borderBottomWidth || '',
+            borderBottomStyle: style.borderBottomStyle || '',
+            borderBottomColor: style.borderBottomColor || '',
+            borderRightWidth: style.borderRightWidth || '',
+            borderRightStyle: style.borderRightStyle || '',
+            borderRightColor: style.borderRightColor || '',
         })
     }, [selectedBlock, rwd, styleState])
     const getSelectorSideClasses = side => classNames({
@@ -110,7 +110,13 @@ export default function (props: Props) {
                                  onChange={e => change(selectedSide, 'Style', e)}/>
                 </div>
                 <div className={styles.stylesFormField}
-                     style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'flex-end', width:'30px'}}>
+                     style={{
+                         display: 'flex',
+                         flexDirection: 'row',
+                         justifyContent: 'center',
+                         alignItems: 'flex-end',
+                         width: '30px'
+                     }}>
                     <ColorPicker value={getProp(selectedSide, 'Color')}
                                  onChange={e => change(selectedSide, 'Color', e)}/>
                 </div>

@@ -12,17 +12,22 @@ export default function (props: Props) {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
-    const [objectPosition,setObjectPosition] = useState('');
-    const [objectFit,setObjectFit] = useState('');
-    const objPosXRef=useRef(null);
-    const objPosYRef=useRef(null);
+    const [objectPosition, setObjectPosition] = useState('');
+    const [objectPositionX, setObjectPositionX] = useState('');
+    const [objectPositionY, setObjectPositionY] = useState('');
+    const [objectFit, setObjectFit] = useState('');
+    const objPosXRef = useRef(null);
+    const objPosYRef = useRef(null);
     useEffect(() => {
         const style = getInheritedStyleWith(
             selectedBlock.styles,
             rwd, styleState,
             ['objectFit', 'objectPosition'],
         ) as any;
+        const [posX, posY] = (style.objectPosition || ' ').split(' ');
         setObjectPosition(style.objectPosition);
+        setObjectPositionX(posX)
+        setObjectPositionY(posY)
         setObjectFit(style.objectFit);
     }, [selectedBlock, rwd, styleState])
     const changeObjectFit = (value: any | null) => {
@@ -32,9 +37,11 @@ export default function (props: Props) {
         props.onChange(value, 'objectPosition');
     }
     const changeObjectPositionX = (value: any | null) => {
+        setObjectPositionX(value);
         changeObjectPosition(`${value} ${objPosYRef.current.value}`)
     }
     const changeObjectPositionY = (value: any | null) => {
+        setObjectPositionY(value);
         changeObjectPosition(`${objPosXRef.current.value} ${value}`)
     }
     return (
@@ -52,16 +59,16 @@ export default function (props: Props) {
             <div className={styles.stylesFormRow}>
                 <div className={styles.stylesFormField}>
                     <Select label="Wyrównanie w osi X" onChange={changeObjectPositionX} ref={objPosXRef}>
-                        <Option value="left" selected={objectFit === 'left'}>Do lewej</Option>
-                        <Option value="center" selected={objectFit === 'center'}>Do środka</Option>
-                        <Option value="right" selected={objectFit === 'right'}>Do prawej</Option>
+                        <Option value="left" selected={objectPositionX === 'left'}>Do lewej</Option>
+                        <Option value="center" selected={objectPositionX === 'center'}>Do środka</Option>
+                        <Option value="right" selected={objectPositionX === 'right'}>Do prawej</Option>
                     </Select>
                 </div>
                 <div className={styles.stylesFormField}>
                     <Select label="Wyrównanie w osi Y" onChange={changeObjectPositionY} ref={objPosYRef}>
-                        <Option value="top" selected={objectFit === 'top'}>Do góry</Option>
-                        <Option value="center" selected={objectFit === 'center'}>Do środka</Option>
-                        <Option value="bottom" selected={objectFit === 'bottom'}>Do dołu</Option>
+                        <Option value="top" selected={objectPositionY === 'top'}>Do góry</Option>
+                        <Option value="center" selected={objectPositionY === 'center'}>Do środka</Option>
+                        <Option value="bottom" selected={objectPositionY === 'bottom'}>Do dołu</Option>
                     </Select>
                 </div>
             </div>
