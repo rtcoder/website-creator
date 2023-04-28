@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Option, Select} from "@/components/construction/Select";
+import style from "./BorderStyle.module.scss"
 
 interface Props {
     value: string;
@@ -17,11 +18,13 @@ export default function (props: Props) {
         setVal(val);
         props.onChange(val);
     }
-    const styleValues = ['solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset', 'none', 'hidden']
+    const styleValues = ['solid', 'dotted', 'dashed', 'double', 'groove', 'ridge', 'inset', 'outset']
     return (
         <Select onChange={onChange} label="Wybierz styl">
-            <Option value="">Brak</Option>
-            {styleValues.map(val => <Option value={val} key={val} selected={val === value}>{val}</Option>)}
+            <Option value="none">Brak</Option>
+            {styleValues.map(val => <Option value={val} key={val} selected={val === value}>
+                <div className={style.optionStyle} style={{borderStyle: val}}/>
+            </Option>)}
         </Select>
     )
 }

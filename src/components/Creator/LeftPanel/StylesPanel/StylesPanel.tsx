@@ -15,6 +15,7 @@ import Layout from "@/components/Creator/LeftPanel/StylesPanel/Layout/Layout";
 import Border from "@/components/Creator/LeftPanel/StylesPanel/Border/Border";
 import Quote from "@/components/Creator/LeftPanel/StylesPanel/Quote/Quote";
 import Image from "@/components/Creator/LeftPanel/StylesPanel/Image/Image";
+import TextColumns from "@/components/Creator/LeftPanel/StylesPanel/TextColumns/TextColumns";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -42,7 +43,7 @@ export default function () {
         ['Ramka', 'border', (<Border onChange={styleChange}/>)],
         ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/>)],
         // ['Styl tekstu', 'text', (<>d</>)],
-        // ['Kolumny tekstu', 'text-columns', (<>d</>)],
+        ['Kolumny tekstu', 'text-columns', (<TextColumns onChange={styleChange}/>)],
         ['Cytat', 'quote', (<Quote onChange={styleChange}/>)],
         ['Marginesy zewnętrzne', 'margin', (<Margin onChange={styleChange}/>)],
         ['Marginesy wewnętrzne', 'padding', (<Padding onChange={styleChange}/>)],

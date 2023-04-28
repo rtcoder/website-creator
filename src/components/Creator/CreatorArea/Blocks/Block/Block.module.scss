@@ -47,6 +47,13 @@
 
   & > p {
     margin: 0;
+    column-count: inherit;
+    column-width: inherit;
+    column-gap: inherit;
+    column-rule: inherit;
+    column-rule-color: inherit;
+    column-rule-style: inherit;
+    column-rule-width: inherit;
   }
 
   [contenteditable] {

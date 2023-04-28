@@ -45,19 +45,22 @@ export default function (props: ColorPickerProps) {
     const onChange = (color: Rgba) => {
         props.onChange(colorArrayToString(color));
     }
-    const setColorValue = color => {
+    const setColorValue = (color, change = true) => {
         setCurrentColor(color);
-        onChange(color);
+        if(change) {
+            onChange(color);
+        }
     }
     const init = () => {
-        if(!props.value){
+        if (!props.value) {
+            setColor(any2rgba(props.value), false);
             return;
         }
         setColor(any2rgba(props.value));
     }
-    const setColor = (color: Rgba) => {
+    const setColor = (color: Rgba, change = true) => {
         console.log(color)
-        setColorValue(color);
+        setColorValue(color, change);
         const hue = getHueFromRgba(color);
         const canvasSelectCursorWidth = canvasSelectCursorRef.current.width;
         const canvasOpacityCursorWidth = canvasOpacityCursorRef.current.width;

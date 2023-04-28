@@ -3,7 +3,7 @@ import styles from "./Input.module.scss"
 
 interface Props {
     label?: string;
-    onChange: (value) => void;
+    onChange: (ev: any, value: string) => void;
     accept?: string | undefined;
     alt?: string | undefined;
     autoComplete?: string | undefined;
@@ -43,7 +43,7 @@ export const Input = forwardRef(function (props: Props, ref) {
     const [val, setValue] = useState(value)
     const handleChange = ev => {
         setValue(ev.target.value)
-        onChange(ev);
+        onChange(ev, ev.target.value);
     }
     useEffect(() => {
         setValue(value)

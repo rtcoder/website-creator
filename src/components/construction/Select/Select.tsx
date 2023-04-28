@@ -15,7 +15,7 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
     });
 
     const [selected, setSelected] = useState(
-        props.children.flat().find(child => child.props.selected)
+        props.children.flat().find(child => child.props.selected) || props.children[0]
     );
     const clickOption = option => {
         option.props.onClick?.(option.props.value);
@@ -45,14 +45,16 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
         return getChildrenOptions()
             .map((opt, index) =>
                 <option key={makeId(3)}
-                        value={opt.props.value}>{opt.props.children}</option>
+                        value={opt.props.value}/>
             )
     }
     const show = () => {
-        const {top, left, height, width} = (selectRef.current as HTMLElement).getBoundingClientRect();
+        const element = selectRef.current as HTMLElement;
+        const {top, left, height, width} = element.getBoundingClientRect();
         const listHeight = 250;
+        const marginTop = +document.defaultView.getComputedStyle(element).marginTop.replace(/[^\d.]+/gi, '')
         const topPos = top + height + listHeight > window.innerHeight
-            ? top - listHeight
+            ? top - listHeight + marginTop +(!props.label ? 25 : 0)
             : top + height;
 
         setListStyle({
@@ -71,8 +73,8 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
         }
     }
     useEffect(() => {
-        const selectedChild=   props.children.flat().find(child => child.props.selected);
-        if(selectedChild) {
+        const selectedChild = props.children.flat().find(child => child.props.selected);
+        if (selectedChild) {
             setSelected(selectedChild)
         }
     }, [props.children])
@@ -83,11 +85,12 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
             [styles.hasSelected]: !!selected,
             [props.className || '']: true
         })} ref={selectRef}>
-            <select ref={ref} value={selected?.props.value}>
+            <select ref={ref} value={selected?.props.value} onChange={e => {
+            }}>
                 {getPureOptions()}
             </select>
             <div className={styles.selectedValue} onClick={show}>
-                <div className={styles.selectLabel}>{props.label}</div>
+                {props.label?<div className={styles.selectLabel}>{props.label}</div>:''}
                 {selected?.props.children}
             </div>
             <div className={styles.overlayContainer} onClick={layerClick}>
