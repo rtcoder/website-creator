@@ -1,5 +1,5 @@
 import Accordion from "@/components/construction/Accordion/Accordion";
-import {AccordionItemInterface} from "@/components/construction/Accordion/AccordionItem";
+import AccordionItem from "@/components/construction/Accordion/AccordionItem";
 import BlocksList from "@/components/Creator/LeftPanel/BlocksPanel/BlocksList/BlocksList";
 import {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem/BlockItem";
 import {BlockTypes} from "@/types/block-type";
@@ -48,22 +48,17 @@ export default function () {
         {name: 'Cytat', type: BlockTypes.QUOTE_VARIABLE, icon: {name: 'fa-duotone fa-quotes', type: 'fontawesome'}},
     ];
 
-    const items: AccordionItemInterface[] = [
-        {
-            title: 'Podstawowe',
-            content: <BlocksList items={basicBlocks}/>
-        },
-        {
-            title: 'Osadzanie',
-            content: <BlocksList items={embedBlocks}/>
-        },
-        {
-            title: 'Dynamiczne zmienne',
-            content: <BlocksList items={variableBlocks}/>
-        },
-    ];
-
     return (
-        <Accordion items={items}/>
+        <Accordion>
+            <AccordionItem title="Podstawowe">
+                <BlocksList items={basicBlocks}/>
+            </AccordionItem>
+            <AccordionItem title="Osadzanie">
+                <BlocksList items={embedBlocks}/>
+            </AccordionItem>
+            <AccordionItem title="Dynamiczne zmienne">
+                <BlocksList items={variableBlocks}/>
+            </AccordionItem>
+        </Accordion>
     )
 }

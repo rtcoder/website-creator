@@ -59,7 +59,6 @@ export default function (props: ColorPickerProps) {
         setColor(any2rgba(props.value));
     }
     const setColor = (color: Rgba, change = true) => {
-        console.log(color)
         setColorValue(color, change);
         const hue = getHueFromRgba(color);
         const canvasSelectCursorWidth = canvasSelectCursorRef.current.width;

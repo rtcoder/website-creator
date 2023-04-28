@@ -34,7 +34,6 @@ export default function (props: ColorPickerHistoryProps) {
     useEffect(() => {
         addColorToHistory(props.color);
     }, [props.color])
-    console.log("rendering...",props.color);
 
     return (
         <div className={styles.colorsHistory}>

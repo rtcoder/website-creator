@@ -1,33 +1,66 @@
 .accordionItem {
+  --transition-duration: 0.5s;
+  --transition-function: linear;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, .125);
+  height: 40px;
+  overflow: hidden;
+  box-shadow: 0 3px 1px -2px rgb(0, 0, 0, .20), 0 2px 2px rgb(0, 0, 0, .14), 0 1px 5px rgb(0, 0, 0, .12);
+  background-color: #fff;
+  transition: all var(--transition-duration) var(--transition-function);
+
+  &:first-of-type {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+
+  &:last-of-type {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &:has( + .open) {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
 
   &.open {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    & + .accordionItem {
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+
     .accordionItemHeader {
       color: #0c63e4;
       background-color: #e7f1ff;
+      height: 60px;
       box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 
       .accordionItemHeaderArrow {
         transform: rotate(180deg);
       }
     }
-
-    .accordionItemContent {
-      transition: max-height 0.3s ease-in;
-      max-height: 1000px;
-    }
   }
 
   .accordionItemHeader {
     width: 100%;
     height: 40px;
-    padding: 0.5rem 1.25rem;
+    padding: 0 24px;
     user-select: none;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: height var(--transition-duration) var(--transition-function),
+    background-color var(--transition-duration) var(--transition-function),
+    color var(--transition-duration) var(--transition-function);
 
     .accordionItemHeaderName {
       width: 100%;
@@ -40,14 +73,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: transform 0.3s ease;
+      transition: transform var(--transition-duration) var(--transition-function);
     }
   }
 
   .accordionItemContent {
     width: 100%;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    padding: 5px;
+    transition: max-height var(--transition-duration) var(--transition-function),
+    padding var(--transition-duration) var(--transition-function);
   }
 }

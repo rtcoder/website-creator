@@ -2,7 +2,8 @@
   width: 100%;
   padding-top: 20px;
   position: relative;
-  --inputHeight:30px;
+  z-index: 1;
+  --inputHeight: 30px;
 
   label.formInputLabel {
     position: absolute;
@@ -62,7 +63,7 @@
 
     &:focus {
       //border-color: #0c63e4;
-      &~.overlay{
+      & ~ .overlay {
         &:before,
         &:after {
           border-width: 2px;
@@ -71,7 +72,8 @@
           border-color: #0c63e4;
         }
       }
-      &~label{
+
+      & ~ label {
         color: #0c63e4;
       }
     }
@@ -79,13 +81,14 @@
     &:focus,
     &:not([value=""]) {
       & ~ label {
-        bottom:var(--inputHeight);
+        bottom: var(--inputHeight);
         font-size: 12px;
         height: 15px;
         line-height: 15px;
       }
     }
-    &[value=""]:not(:focus){
+
+    &[value=""]:not(:focus) {
       & ~ label {
         color: #7e7e7e;
       }

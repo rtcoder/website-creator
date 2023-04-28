@@ -38,7 +38,6 @@ export default function (props: Props) {
         setLeftChar(left);
         setRightChar(right);
 
-        console.log([left, right])
         if (`${left}${right}`.trim().length > 0) {
             props.onChange(`'${left}' '${right}'`, 'quotes');
         } else {
