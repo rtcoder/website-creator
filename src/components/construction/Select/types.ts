@@ -1,6 +1,6 @@
 export interface OptionProps {
     value: string | number | null;
-    onClick?: (value: string | number | null) => void;
+    onClick?: (value: any | null) => void;
     children?: any;
     selected?: boolean;
     disabled?: boolean;
@@ -9,6 +9,6 @@ export interface OptionProps {
 export interface SelectProps {
     children: any;
     label?: string;
-    onChange?: (value: string | number | null) => void;
+    onChange?: (value: any | null) => void;
     className?: string;
 }

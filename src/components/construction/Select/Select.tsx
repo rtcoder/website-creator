@@ -7,6 +7,7 @@ import classNames from "@/helpers/classNames";
 
 export const Select = forwardRef(function (props: SelectProps, ref) {
     const selectRef = useRef(null);
+    const listRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
     const [listStyle, setListStyle] = useState({
         width: '',
@@ -50,11 +51,12 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
     }
     const show = () => {
         const element = selectRef.current as HTMLElement;
+        const list = listRef.current as HTMLElement;
         const {top, left, height, width} = element.getBoundingClientRect();
-        const listHeight = 250;
+        const listHeight = list.getBoundingClientRect().height;
         const marginTop = +document.defaultView.getComputedStyle(element).marginTop.replace(/[^\d.]+/gi, '')
         const topPos = top + height + listHeight > window.innerHeight
-            ? top - listHeight + marginTop +(!props.label ? 25 : 0)
+            ? top - listHeight + marginTop - (!props.label ? 25 : 0)
             : top + height;
 
         setListStyle({
@@ -85,16 +87,17 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
             [styles.hasSelected]: !!selected,
             [props.className || '']: true
         })} ref={selectRef}>
-            <select ref={ref} value={selected?.props.value} onChange={e => {
-            }}>
+            <select ref={ref} value={selected?.props.value} onChange={e => null}>
                 {getPureOptions()}
             </select>
             <div className={styles.selectedValue} onClick={show}>
-                {props.label?<div className={styles.selectLabel}>{props.label}</div>:''}
-                {selected?.props.children}
+                {props.label ? <div className={styles.selectLabel}>{props.label}</div> : ''}
+                <div className={styles.valueText}>
+                    {selected?.props.children}
+                </div>
             </div>
             <div className={styles.overlayContainer} onClick={layerClick}>
-                <div className={styles.selectList} style={listStyle}>
+                <div className={styles.selectList} style={listStyle} ref={listRef}>
                     {getOptions()}
                 </div>
             </div>

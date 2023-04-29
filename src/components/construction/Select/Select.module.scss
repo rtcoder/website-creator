@@ -6,7 +6,9 @@
 
   &.open {
     .overlayContainer {
-      display: block;
+      width: 100vw;
+      height: 100vh;
+      visibility: visible;
     }
 
     .selectedValue {
@@ -41,13 +43,11 @@
   .selectedValue {
     width: 100%;
     height: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 25px 0 15px;
-    cursor: pointer;
+    line-height: 30px;
     position: relative;
     border: 1px solid #ccc;;
+    z-index: 1;
+    background: #fff;
 
     &:hover {
       background: #f5f5f5;
@@ -63,8 +63,23 @@
       border-bottom: var(--size) solid var(--color);
       border-right: var(--size) solid var(--color);
       right: 10px;
+      top: 7px;
       position: absolute;
       transform: rotate(45deg);
+      cursor: pointer;
+    }
+
+    .valueText {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: inherit;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 0 25px 0 15px;
+      cursor: pointer;
     }
 
     .selectLabel {
@@ -84,11 +99,12 @@
 
   .overlayContainer {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    overflow: hidden;
+    width: 0;
+    height: 0;
     top: 0;
     left: 0;
-    display: none;
+    visibility: hidden;
     z-index: 1000;
 
     .selectList {
