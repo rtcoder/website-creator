@@ -30,9 +30,6 @@ export default function (props: Props) {
         setObjectPositionY(posY)
         setObjectFit(style.objectFit);
     }, [selectedBlock, rwd, styleState])
-    const changeObjectFit = (value: any | null) => {
-        props.onChange(value, 'objectFit');
-    }
     const changeObjectPosition = (value: any | null) => {
         props.onChange(value, 'objectPosition');
     }
@@ -48,7 +45,7 @@ export default function (props: Props) {
         <div className={styles.stylesFormGroup}>
             <div className={styles.stylesFormRow}>
                 <div className={styles.stylesFormField}>
-                    <Select label="Rozmiar" onChange={changeObjectFit}>
+                    <Select label="Rozmiar" onChange={e => props.onChange(e, 'objectFit')}>
                         <Option value="fill" selected={objectFit === 'fill'}>Automatyczny</Option>
                         <Option value="contain" selected={objectFit === 'contain'}>Dopasuj</Option>
                         <Option value="cover" selected={objectFit === 'cover'}>Wypełnij</Option>

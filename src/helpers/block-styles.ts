@@ -106,7 +106,7 @@ export function getProperty(styles: Styles, key: string, rwd: RWD_MODES, styleSt
     return _styles[key] || '';
 }
 
-export function setStyleValue(styles: Styles, rwdMode: RWD_MODES, styleState: STYLE_STATE_NAMES, propName: string, value: string): Styles {
+export function setStyleValue(styles: Styles, rwdMode: RWD_MODES, styleState: STYLE_STATE_NAMES, propName: string, value: string | null): Styles {
     const _styles = Object.assign({}, styles);
 
     const styleNameForRwdMode = RWD_STYLE_NAMES[rwdMode]

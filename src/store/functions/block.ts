@@ -77,7 +77,7 @@ export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction
 
 export interface SetStylesPropertyPayloadInterface {
     property: string;
-    value: string;
+    value: string|null;
     rwd: RWD_MODES;
     styleState: STYLE_STATE_NAMES;
     blockId: string;
