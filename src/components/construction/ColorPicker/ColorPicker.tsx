@@ -47,7 +47,7 @@ export default function (props: ColorPickerProps) {
     }
     const setColorValue = (color, change = true) => {
         setCurrentColor(color);
-        if(change) {
+        if (change) {
             onChange(color);
         }
     }
@@ -86,7 +86,9 @@ export default function (props: ColorPickerProps) {
         init();
     }, [])
     useEffect(() => {
-        init();
+        if (colorArrayToString(any2rgba(props.value)) !== colorArrayToString(currentColor)) {
+            init();
+        }
     }, [props.value])
     const mouseUpAll = () => {
         setIsMouseDown(false);

@@ -4,7 +4,6 @@ interface Props {
     active?: boolean;
     color?: 'primary' | 'accent' | 'warning' | 'danger';
     value?: string | number;
-    name?: string;
     disabled?: boolean;
     className?: string;
     children: any;
