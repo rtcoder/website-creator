@@ -2,11 +2,19 @@
   display: flex;
   flex-direction: column;
 
-  .stylesFormRow {
+  .stylesFormRow,
+  .stylesFormColumn {
     display: flex;
-    flex-direction: row;
     margin-bottom: 10px;
     align-items: center;
+  }
+
+  .stylesFormRow {
+    flex-direction: row;
+  }
+
+  .stylesFormColumn {
+    flex-direction: column;
   }
 
   .stylesFormField {

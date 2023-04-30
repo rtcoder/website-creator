@@ -12,6 +12,8 @@
   border-radius: 50px;
   overflow: hidden;
   max-width: calc(100vw - 340px);
+  text-shadow:none !important;
+  text-decoration: none!important;
 
   &.left {
     left: 0;

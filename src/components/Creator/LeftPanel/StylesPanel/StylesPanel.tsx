@@ -17,6 +17,7 @@ import Quote from "@/components/Creator/LeftPanel/StylesPanel/Quote/Quote";
 import Image from "@/components/Creator/LeftPanel/StylesPanel/Image/Image";
 import TextColumns from "@/components/Creator/LeftPanel/StylesPanel/TextColumns/TextColumns";
 import Text from "@/components/Creator/LeftPanel/StylesPanel/Text/Text";
+import TextShadow from "@/components/Creator/LeftPanel/StylesPanel/TextShadow/TextShadow";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -39,9 +40,6 @@ export default function () {
     const stylesSections: [title: string, id: string, component: JSX.Element][] = [
         // ['Tło', 'background', (<>d</>)],
         ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
-        ['Zaokrąglenie narożników', 'border-radius', (<BorderRadius onChange={styleChange}/>)],
-        // ['Styl tekstu', 'text', (<>d</>)],
-        ['Kolumny tekstu', 'text-columns', (<TextColumns onChange={styleChange}/>)],
         ['Marginesy wewnętrzne', 'padding', (<Padding onChange={styleChange}/>)],
         // ['Filtry', 'filter', (<>d</>)],
         // ['Animacje', 'animations', (<>d</>)],
@@ -75,6 +73,9 @@ export default function () {
                         </AccordionItem> : ''}
                         {canShow('text-columns') ? <AccordionItem title="Kolumny tekstu">
                             <TextColumns onChange={styleChange}/>
+                        </AccordionItem> : ''}
+                        {canShow('text-shadow') ? <AccordionItem title="Cień tekstu">
+                            <TextShadow onChange={styleChange}/>
                         </AccordionItem> : ''}
                         {canShow('quote') ? <AccordionItem title="Cytat">
                             <Quote onChange={styleChange}/>

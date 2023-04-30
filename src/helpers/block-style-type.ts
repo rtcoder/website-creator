@@ -5,16 +5,16 @@ type BlockTypeStyleOptionsType = {
 }
 const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
     [BlockTypes.CONTAINER]: [
-        'layout', 'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
+        'layout', 'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.PARAGRAPH]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.HEADING]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.UL]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.IMAGE]: [
         'background', 'size', 'image', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
@@ -23,10 +23,10 @@ const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
         'background', 'size', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.BUTTON]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.ICON]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.AUDIO]: ['background', 'size', 'border', 'border-radius', 'margin', 'padding', 'animations',
     ],
@@ -40,7 +40,7 @@ const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
         'size', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.QUOTE]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'quote', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'quote', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.IFRAME]: [
         'background', 'size', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
@@ -49,10 +49,10 @@ const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
         'background', 'size', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.PARAGRAPH_VARIABLE]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.HEADING_VARIABLE]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.IMAGE_VARIABLE]: [
         'background', 'size', 'image', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
@@ -64,10 +64,10 @@ const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
         'background', 'size', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.ICON_VARIABLE]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.QUOTE_VARIABLE]: [
-        'background', 'size', 'border', 'border-radius', 'text', 'text-columns', 'quote', 'margin', 'padding', 'filter', 'animations',
+        'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'quote', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.GOOGLE_MAPS]: [
         'background', 'size', 'border', 'border-radius', 'margin', 'padding', 'filter', 'animations',

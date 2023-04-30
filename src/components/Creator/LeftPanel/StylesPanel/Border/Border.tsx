@@ -115,7 +115,8 @@ export default function (props: Props) {
                          flexDirection: 'row',
                          justifyContent: 'center',
                          alignItems: 'flex-end',
-                         width: '30px'
+                         width: '30px',
+                         alignSelf: 'flex-end'
                      }}>
                     <ColorPicker value={getProp(selectedSide, 'Color')}
                                  onChange={e => change(selectedSide, 'Color', e)}/>

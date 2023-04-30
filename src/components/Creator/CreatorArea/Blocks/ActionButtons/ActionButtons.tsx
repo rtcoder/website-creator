@@ -29,7 +29,7 @@ export default function ActionButtons(props:ActionButtonsPropsInterface) {
         const parent = container.parentNode as HTMLElement;
         const parentWidth = parent.getBoundingClientRect().width;
         const {left, width, top} = container.getBoundingClientRect();
-        const creatorAreaLeftPos = 330;
+        const creatorAreaLeftPos = 380;
         const creatorAreaTopPos = 50;
 
         if (!container.classList.contains('left')) {
