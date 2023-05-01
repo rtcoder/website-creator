@@ -73,13 +73,7 @@ export default function (props: Props) {
                                  onChange={e => props.onChange(e, 'columnRuleStyle')}/>
                 </div>
                 <div className={styles.stylesFormField}
-                     style={{
-                         display: 'flex',
-                         flexDirection: 'row',
-                         justifyContent: 'center',
-                         alignItems: 'flex-end',
-                         width: '30px'
-                     }}>
+                     style={{width: '30px'}}>
                     <ColorPicker value={columnRuleColor}
                                  onChange={e => props.onChange(e, 'columnRuleColor')}/>
                 </div>

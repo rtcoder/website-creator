@@ -110,14 +110,7 @@ export default function (props: Props) {
                                  onChange={e => change(selectedSide, 'Style', e)}/>
                 </div>
                 <div className={styles.stylesFormField}
-                     style={{
-                         display: 'flex',
-                         flexDirection: 'row',
-                         justifyContent: 'center',
-                         alignItems: 'flex-end',
-                         width: '30px',
-                         alignSelf: 'flex-end'
-                     }}>
+                     style={{width: '30px'}}>
                     <ColorPicker value={getProp(selectedSide, 'Color')}
                                  onChange={e => change(selectedSide, 'Color', e)}/>
                 </div>

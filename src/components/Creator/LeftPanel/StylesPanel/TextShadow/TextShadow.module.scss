@@ -1,6 +1,17 @@
-.letterPreview{
+.letterPreview {
   font-size: 40px;
   width: 100%;
   text-align: center;
   padding: 5px;
+}
+
+.closeIcon {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: #f00;
+  }
 }

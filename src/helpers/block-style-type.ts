@@ -5,7 +5,7 @@ type BlockTypeStyleOptionsType = {
 }
 const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
     [BlockTypes.CONTAINER]: [
-        'layout', 'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'margin', 'padding', 'filter', 'animations',
+        'layout', 'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
     ],
     [BlockTypes.PARAGRAPH]: [
         'background', 'size', 'border', 'border-radius', 'text', 'text-shadow', 'text-columns', 'margin', 'padding', 'filter', 'animations',

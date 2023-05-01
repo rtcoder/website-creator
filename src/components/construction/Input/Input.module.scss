@@ -93,5 +93,15 @@
         color: #7e7e7e;
       }
     }
+
+    &.hasError{
+      border-color:red;
+      & ~ .overlay {
+        &:before,
+        &:after {
+          border-color: #f00;
+        }
+      }
+    }
   }
 }

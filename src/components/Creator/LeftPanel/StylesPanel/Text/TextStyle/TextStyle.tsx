@@ -113,14 +113,7 @@ export default function (props: Props) {
                         </Select>
                     </div>
                     <div className={styles.stylesFormField}
-                         style={{
-                             display: 'flex',
-                             flexDirection: 'row',
-                             justifyContent: 'center',
-                             alignItems: 'flex-end',
-                             width: '30px',
-                             alignSelf: 'flex-end'
-                         }}>
+                         style={{width: '30px'}}>
                         <ColorPicker value={textDecorationColor}
                                      onChange={e => props.onChange(e, 'textDecorationColor')}/>
                     </div>

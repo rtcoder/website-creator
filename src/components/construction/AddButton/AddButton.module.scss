@@ -1,0 +1,19 @@
+.addButton {
+  text-align: center;
+  padding: 5px 15px;
+  border: 2px solid #2a6681;
+  background: #09c;
+  color: #fff;
+  width: 130px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-radius: 3px;
+  cursor: pointer;
+  align-items: center;
+
+  &:hover {
+    background: #2a6681;
+  }
+}

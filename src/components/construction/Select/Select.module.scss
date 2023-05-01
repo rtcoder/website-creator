@@ -4,7 +4,7 @@
   padding-top: 20px;
   --selectHeight: 30px;
 
-  &.open {
+  &.open:not(.hasOnlyOneOption) {
     .overlayContainer {
       width: 100vw;
       height: 100vh;
@@ -36,6 +36,22 @@
         font-size: 12px;
         height: 15px;
         line-height: 15px;
+      }
+    }
+  }
+
+  &.hasOnlyOneOption {
+    .selectedValue {
+      &:hover {
+        background: #fff;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      .valueText {
+        cursor: default;
       }
     }
   }

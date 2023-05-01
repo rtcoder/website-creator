@@ -50,6 +50,9 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
             )
     }
     const show = () => {
+        if (getOptions().length <= 1) {
+            // return
+        }
         const element = selectRef.current as HTMLElement;
         const list = listRef.current as HTMLElement;
         const {top, left, height, width} = element.getBoundingClientRect();
@@ -85,6 +88,7 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
             [styles.selectContainer]: true,
             [styles.open]: isOpen,
             [styles.hasSelected]: !!selected,
+            [styles.hasOnlyOneOption]: getOptions().length <= 1,
             [props.className || '']: true
         })} ref={selectRef}>
             <select ref={ref} value={selected?.props.value} onChange={e => null}>

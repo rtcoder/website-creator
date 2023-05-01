@@ -17,16 +17,29 @@ export default function AccordionItem(props: AccordionItemInterface) {
     const toggleOpen = () => {
         !isOpen ? openPanel() : closePanel()
     };
+    const [timeout, _setTimeout] = useState<NodeJS.Timeout>(null);
     const openPanel = () => {
         props.onOpen?.();
         const openedHeaderHeight = 60;
         const contentHeight = (contentRef.current as HTMLElement).getBoundingClientRect().height;
         panelRef.current.style.height = `${openedHeaderHeight + contentHeight}px`;
         setIsOpen(true)
+        _setTimeout(setTimeout(() => {
+            panelRef.current.style.height = `auto`;
+            clearTimeout(timeout)
+            _setTimeout(null)
+        }, 600))
     }
     const closePanel = () => {
-        panelRef.current.style.removeProperty('height');
-        setIsOpen(false);
+        const openedHeaderHeight = 60;
+        const contentHeight = (contentRef.current as HTMLElement).getBoundingClientRect().height;
+        panelRef.current.style.height = `${openedHeaderHeight + contentHeight}px`;
+        _setTimeout(setTimeout(() => {
+            panelRef.current.style.removeProperty('height');
+            clearTimeout(timeout)
+            _setTimeout(null)
+            setIsOpen(false);
+        }, 1))
     }
     useEffect(() => {
         props.opened ? openPanel() : closePanel()

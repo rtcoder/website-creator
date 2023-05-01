@@ -7,6 +7,7 @@
     display: flex;
     margin-bottom: 10px;
     align-items: center;
+    width: 100%;
   }
 
   .stylesFormRow {
@@ -20,6 +21,11 @@
   .stylesFormField {
     width: 100%;
     padding: 3px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    align-items: flex-end;
+    justify-content: center;
 
     select {
       border: 1px solid #cdcdcd;

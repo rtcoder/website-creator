@@ -2,22 +2,25 @@ import styles from "@/components/Creator/LeftPanel/StylesPanel/StylesPanel.modul
 import {useEffect, useState} from "react";
 import {getInheritedStyleWith} from "@/helpers/block-styles";
 import {useSelector} from "react-redux";
-import CartesianCoordinateSystem from "@/components/construction/CartesianCoordinateSystem/CartesianCoordinateSystem";
 import stylesTextShadow from './TextShadow.module.scss'
-import {Input} from "@/components/construction/Input/Input";
+import ColorPicker from "@/components/construction/ColorPicker/ColorPicker";
+import InputWithUnits from "@/components/construction/InputWithUnits/InputWithUnits";
+import {Units} from "@/types/units";
+import Icon from "@/components/construction/Icon/Icon";
+import AddButton from "@/components/construction/AddButton/AddButton";
 
-type Shadow = { x: number, y: number, blur: number, color: string };
+type Shadow = { x: string, y: string, blur: string, color: string };
 
 interface Props {
     onChange: (value: string | null, property: string) => void
 }
 
 export default function (props: Props) {
-    const emptyShadow: Shadow = {x: 0, y: 0, blur: 0, color: '#f30'};
+    const emptyShadow: Shadow = {x: '0px', y: '0px', blur: '0px', color: '#000'};
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
-    const [shadowArray, setShadowArray] = useState<Shadow[]>([emptyShadow]);
+    const [shadowArray, setShadowArray] = useState<Shadow[]>([]);
     const getShadowValues = shadow => {
         if (!shadow) {
             return [];
@@ -28,10 +31,10 @@ export default function (props: Props) {
         while (i < splitVal.length) {
             let singleVal = '';
             if (splitVal[i].includes('rgba')) {
-                singleVal = `${splitVal[i]}, ${splitVal[i + 1]}, ${splitVal[i + 2]}, ${splitVal[i + 3]}`;
+                singleVal = `${splitVal[i].trim()}, ${splitVal[i + 1].trim()}, ${splitVal[i + 2].trim()}, ${splitVal[i + 3].trim()}`;
                 i = i + 4;
             } else if (splitVal[i].includes('rgb')) {
-                singleVal = `${splitVal[i]}, ${splitVal[i + 1]}, ${splitVal[i + 2]}`;
+                singleVal = `${splitVal[i].trim()}, ${splitVal[i + 1].trim()}, ${splitVal[i + 2].trim()}`;
                 i = i + 3;
             } else {
                 singleVal = splitVal[i];
@@ -50,11 +53,8 @@ export default function (props: Props) {
             || shadow.startsWith('lch')
             || shadow.startsWith('#');
     }
-    const mapShadowArrayToString = (shadowArr: Shadow[]) => {
-        return shadowArr.map(({x, y, blur, color}) => {
-            return `${x}px ${y}px ${blur}px ${color}`
-        }).join(', ')
-    }
+    const mapShadowArrayToString = (shadowArr: Shadow[]) =>
+        shadowArr.map(({x, y, blur, color}) => `${x} ${y} ${blur} ${color}`).join(', ');
 
     const mapShadowStringToArray = shadowString => {
         const shadow = getShadowValues(shadowString);
@@ -66,9 +66,6 @@ export default function (props: Props) {
             } else {
                 [color, x, y, blur] = shadowString.match(matchRegex);
             }
-            x = x.replace(/[^\d.\-]+/, '');
-            y = y.replace(/[^\d.\-]+/, '');
-            blur = blur.replace(/[^\d.\-]+/, '');
             return {
                 x, y, blur, color
             }
@@ -85,38 +82,30 @@ export default function (props: Props) {
         );
 
     }, [selectedBlock, rwd, styleState])
-    useEffect(() => {
-        if (!shadowArray.length) {
-            setShadowArray([...[emptyShadow]]);
-        }
-    }, [shadowArray])
 
     const updateShadow = (prop: string, value: string, index: number) => {
         if (!shadowArray[index]) {
             return
         }
         if (['x', 'y', 'blur'].includes(prop)) {
-            if (!value) {
-                value = '0';
+            if (!value.length) {
+                value = '0px';
             }
         }
         shadowArray[index][prop] = value;
         setShadowArray([...shadowArray]);
         props.onChange(mapShadowArrayToString(shadowArray), 'textShadow');
     }
-    const updatePosition = (position, index) => {
-        if (!shadowArray[index]) {
-            return
-        }
-
-        shadowArray[index].x = position.x;
-        shadowArray[index].y = position.y;
+    const addShadow = () => {
+        setShadowArray([...shadowArray, emptyShadow]);
+        props.onChange(mapShadowArrayToString([...shadowArray, emptyShadow]), 'textShadow');
+    }
+    const removeShadow = index => {
+        shadowArray.splice(index, 1);
         setShadowArray([...shadowArray]);
         props.onChange(mapShadowArrayToString(shadowArray), 'textShadow');
     }
-    const addShadow = ()=>{
-        setShadowArray([...shadowArray, emptyShadow])
-    }
+    const units: Units[] = ['px']
     return (
         <div className={styles.stylesFormGroup}>
             <div className={styles.stylesFormRow}>
@@ -125,25 +114,35 @@ export default function (props: Props) {
                 </div>
             </div>
             {shadowArray.map(({x, y, blur, color}, index) =>
-                <div className={styles.stylesFormRow} key={index}>
-                    <div className={styles.stylesFormColumn}>
-                        <Input type="number" max={20} min={-20}
-                               onChange={(ev, val) => updateShadow('x', val, index)}
-                               value={x} label="X"/>
-                        <Input type="number" max={20} min={-20}
-                               onChange={(ev, val) => updateShadow('y', val, index)}
-                               value={y} label="Y"/>
-                        <Input type="number" max={20} min={0}
-                               onChange={(ev, val) => updateShadow('blur', val, index)}
-                               value={blur} label="Rozmycie"/>
+                <div className={styles.stylesFormColumn} key={index}>
+                    <div className={styles.stylesFormRow}>
+                        <div className={styles.stylesFormField}>
+                            <InputWithUnits units={units} value={x} min={-20} max={20} label="X"
+                                            type="number" onChange={e => updateShadow('x', e, index)}/>
+                        </div>
+                        <div className={styles.stylesFormField}>
+                            <InputWithUnits units={units} value={y} min={-20} max={20} label="Y"
+                                            type="number" onChange={e => updateShadow('y', e, index)}/>
+                        </div>
                     </div>
-                    <div className={styles.stylesFormField}>
-                        <CartesianCoordinateSystem maxRange={20} size={80} coordinates={{x, y}}
-                                                   onChange={pos => updatePosition(pos, index)}/>
+                    <div className={styles.stylesFormRow}>
+                        <div className={styles.stylesFormField}>
+                            <InputWithUnits units={units} value={blur} min={0} max={20} label="Rozmycie"
+                                            type="number" onChange={e => updateShadow('blur', e, index)}/>
+                        </div>
+                        <div className={styles.stylesFormField}
+                             style={{width: '30px'}}>
+                            <ColorPicker value={color} onChange={e => updateShadow('color', e, index)}/>
+                        </div>
+                        <div className={styles.stylesFormField}
+                             style={{width: '30px'}}>
+                            <Icon type="material" name="close" className={stylesTextShadow.closeIcon}
+                                  onClick={_ => removeShadow(index)}/>
+                        </div>
                     </div>
                 </div>
             )}
-            <div onClick={addShadow}>dodaj</div>
+            <AddButton onClick={addShadow}>Dodaj cień</AddButton>
         </div>
     )
 }

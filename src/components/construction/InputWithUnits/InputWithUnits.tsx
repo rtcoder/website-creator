@@ -1,5 +1,5 @@
 import {Units} from "@/types/units";
-import {useEffect, useRef, useState} from "react";
+import {HTMLInputTypeAttribute, useEffect, useRef, useState} from "react";
 import styles from "./InputWithUnits.module.scss"
 import {Input} from "@/components/construction/Input/Input";
 import {Option, Select} from "@/components/construction/Select";
@@ -7,6 +7,15 @@ import {Option, Select} from "@/components/construction/Select";
 interface Props {
     label?: string;
     value?: string | number;
+    type?: HTMLInputTypeAttribute | undefined;
+    max?: number | string | undefined;
+    maxLength?: number | undefined;
+    min?: number | string | undefined;
+    minLength?: number | undefined;
+    placeholder?: string | undefined;
+    readOnly?: boolean | undefined;
+    required?: boolean | undefined;
+    disabled?: boolean | undefined;
     units: Units[];
     onChange: (value: string) => void;
 }
@@ -25,8 +34,8 @@ export default function (props: Props) {
         setInputValue(val);
         setUnitsValue(unit || '');
     }, [propsValue])
-    const onChange = () => {
-        const inputVal = inputRef.current.value.replace(/[^0-9\.]/g, "");
+    const onChangeValue = () => {
+        const inputVal = inputRef.current.value.replace(/[^0-9\.\-]/g, "");
         inputRef.current.value = inputVal;
         const unitsVal = selectRef.current.value;
         const val = `${inputVal}${unitsVal}`;
@@ -34,16 +43,19 @@ export default function (props: Props) {
     }
     const onInputValueChanged = () => {
         setInputValue(inputRef.current.value.replace(/[^0-9\.]/g, ""));
-        onChange();
+        onChangeValue();
     }
     const onSelectValueChanged = (val) => {
         setUnitsValue(val);
         selectRef.current.value = val;
-        onChange();
+        onChangeValue();
     }
+    const {units, onChange, value, ...restProps} = props;
     return (
         <div className={styles.inputRow}>
-            <Input type="text" value={inputValue} ref={inputRef} label={props.label} onChange={onInputValueChanged}/>
+            <Input value={inputValue} ref={inputRef}
+                   {...restProps}
+                   onChange={onInputValueChanged}/>
             <Select onChange={onSelectValueChanged} className={styles.select} ref={selectRef}>
                 {props.units.map(unit => <Option value={unit} key={unit}
                                                  selected={unitsValue === unit}>{unit}</Option>)}
