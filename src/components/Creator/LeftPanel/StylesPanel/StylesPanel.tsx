@@ -18,6 +18,7 @@ import Image from "@/components/Creator/LeftPanel/StylesPanel/Image/Image";
 import TextColumns from "@/components/Creator/LeftPanel/StylesPanel/TextColumns/TextColumns";
 import Text from "@/components/Creator/LeftPanel/StylesPanel/Text/Text";
 import TextShadow from "@/components/Creator/LeftPanel/StylesPanel/TextShadow/TextShadow";
+import Background from "@/components/Creator/LeftPanel/StylesPanel/Background/Background";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -37,55 +38,35 @@ export default function () {
             blockId: selectedBlock.id,
         })
     }
-    const stylesSections: [title: string, id: string, component: JSX.Element][] = [
-        // ['Tło', 'background', (<>d</>)],
-        ['Wymiary', 'size', (<Size onChange={styleChange}/>)],
-        ['Marginesy wewnętrzne', 'padding', (<Padding onChange={styleChange}/>)],
-        // ['Filtry', 'filter', (<>d</>)],
-        // ['Animacje', 'animations', (<>d</>)],
+    const stylesSections: [title: string, id: string, component: JSX.Element][] = []
+    const sections: [id: string, component: JSX.Element][] = [
+        ['layout', <AccordionItem key={'layout'} title="Układ elementów"><Layout onChange={styleChange}/></AccordionItem>],
+        ['background', <AccordionItem key={'background'} title="Tło"><Background onChange={styleChange}/></AccordionItem>],
+        ['size', <AccordionItem key={'size'} title="Wymiary"><Size onChange={styleChange}/></AccordionItem>],
+        ['image', <AccordionItem key={'image'} title="Obraz"><Image onChange={styleChange}/></AccordionItem>],
+        ['border', <AccordionItem key={'border'} title="Ramka"><Border onChange={styleChange}/></AccordionItem>],
+        ['border-radius', <AccordionItem key={'border-radius'} title="Zaokrąglenie narożników"><BorderRadius onChange={styleChange}/></AccordionItem>],
+        ['text', <AccordionItem key={'text'} title="Styl tekstu"><Text onChange={styleChange}/></AccordionItem>],
+        ['text-columns', <AccordionItem key={'text-columns'} title="Kolumny tekstu"><TextColumns onChange={styleChange}/></AccordionItem>],
+        ['text-shadow', <AccordionItem key={'text-shadow'} title="Cień tekstu"><TextShadow onChange={styleChange}/></AccordionItem>],
+        ['quote', <AccordionItem key={'quote'} title="Cytat"><Quote onChange={styleChange}/></AccordionItem>],
+        ['margin', <AccordionItem key={'margin'} title="Marginesy zewnętrzne"><Margin onChange={styleChange}/></AccordionItem>],
+        ['padding', <AccordionItem key={'padding'} title="Marginesy wewnętrzne"><Padding onChange={styleChange}/></AccordionItem>],
+        // ['filter', <AccordionItem key={'filter'} title="Filtry"><Layout onChange={styleChange}/></AccordionItem>],
+        // ['animations', <AccordionItem key={'animations'} title="Animacje"><Layout onChange={styleChange}/></AccordionItem>],
     ]
-    const canShow = (id) => {
+    const canShow = ([id,c]) => {
         return shouldShowStyleForBlockType(selectedBlock.type, id);
     }
+    const getComponent = ([id, component]) => component;
+    const getSections = () => sections.filter(canShow).map(getComponent);
     return (
         <div>
             {selectedBlock
                 ? (<>
                     <StyleStateSwitch/>
                     <Accordion>
-                        {canShow('layout') ? <AccordionItem title="Układ elementów">
-                            <Layout onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('size') ? <AccordionItem title="Wymiary">
-                            <Size onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('image') ? <AccordionItem title="Obraz">
-                            <Image onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('border') ? <AccordionItem title="Ramka">
-                            <Border onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('border-radius') ? <AccordionItem title="Zaokrąglenie narożników">
-                            <BorderRadius onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('text') ? <AccordionItem title="Styl tekstu">
-                            <Text onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('text-columns') ? <AccordionItem title="Kolumny tekstu">
-                            <TextColumns onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('text-shadow') ? <AccordionItem title="Cień tekstu">
-                            <TextShadow onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('quote') ? <AccordionItem title="Cytat">
-                            <Quote onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('margin') ? <AccordionItem title="Marginesy zewnętrzne">
-                            <Margin onChange={styleChange}/>
-                        </AccordionItem> : ''}
-                        {canShow('padding') ? <AccordionItem title="Marginesy wewnętrzne">
-                            <Padding onChange={styleChange}/>
-                        </AccordionItem> : ''}
+                        {getSections()}
                     </Accordion>
                 </>)
                 : <NoBlock/>
