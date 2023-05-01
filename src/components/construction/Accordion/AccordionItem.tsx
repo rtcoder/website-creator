@@ -19,6 +19,9 @@ export default function AccordionItem(props: AccordionItemInterface) {
     };
     const [timeout, _setTimeout] = useState<NodeJS.Timeout>(null);
     const openPanel = () => {
+        if (isOpen) {
+            return;
+        }
         props.onOpen?.();
         const openedHeaderHeight = 60;
         const contentHeight = (contentRef.current as HTMLElement).getBoundingClientRect().height;
@@ -31,6 +34,9 @@ export default function AccordionItem(props: AccordionItemInterface) {
         }, 600))
     }
     const closePanel = () => {
+        if (!isOpen) {
+            return;
+        }
         const openedHeaderHeight = 60;
         const contentHeight = (contentRef.current as HTMLElement).getBoundingClientRect().height;
         panelRef.current.style.height = `${openedHeaderHeight + contentHeight}px`;
@@ -43,6 +49,7 @@ export default function AccordionItem(props: AccordionItemInterface) {
     }
     useEffect(() => {
         props.opened ? openPanel() : closePanel()
+        console.log(props.opened)
     }, [props.opened])
     return (
         <div className={classNames({[styles.accordionItem]: true, [styles.open]: isOpen})} ref={panelRef}>
