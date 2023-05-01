@@ -3,6 +3,7 @@ export type Rgba = [red: number, green: number, blue: number, alpha: number];
 export type MousePos = { x: number, y: number };
 export type ColorPickerProps = {
     value: string;
+    defaultValue?: string;
     onChange: (value: string) => void;
 }
 

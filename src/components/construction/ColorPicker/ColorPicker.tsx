@@ -53,7 +53,7 @@ export default function (props: ColorPickerProps) {
     }
     const init = () => {
         if (!props.value) {
-            setColor(any2rgba(props.value), false);
+            setColor(any2rgba(props.defaultValue || props.value), false);
             return;
         }
         setColor(any2rgba(props.value));
