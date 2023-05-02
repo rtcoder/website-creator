@@ -1,4 +1,4 @@
-import {forwardRef, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import styles from "./BackgroundImage.module.scss";
 import Icon from "@/components/construction/Icon/Icon";
 
@@ -8,7 +8,7 @@ interface Props {
     value?: string;
 }
 
-export const BackgroundImage = forwardRef(function (props: Props, ref) {
+export default function (props: Props, ref) {
     const [file, setFile] = useState<string>(null)
 
     const readFile = file => {
@@ -30,7 +30,7 @@ export const BackgroundImage = forwardRef(function (props: Props, ref) {
         [...ev.target.files].forEach(readFile);
         ev.target.value = '';
     }
-    const removeImage=()=>{
+    const removeImage = () => {
         setFile(null);
         props.onChange('');
     }
@@ -52,4 +52,4 @@ export const BackgroundImage = forwardRef(function (props: Props, ref) {
             <Icon type="material" name="close" className={styles.icon} onClick={removeImage}/>
         </div>
     )
-});
+}

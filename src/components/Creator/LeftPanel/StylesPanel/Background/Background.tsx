@@ -4,7 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {getInheritedStyleWith} from "@/helpers/block-styles";
 import {useSelector} from "react-redux";
 import ColorPicker from "@/components/construction/ColorPicker/ColorPicker";
-import {BackgroundImage} from "@/components/Creator/LeftPanel/StylesPanel/Background/BackgroundImage/BackgroundImage";
+import BackgroundImage from "@/components/Creator/LeftPanel/StylesPanel/Background/BackgroundImage/BackgroundImage";
 
 interface Props {
     onChange: (value: string | null, property: string) => void
