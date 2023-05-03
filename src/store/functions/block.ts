@@ -70,7 +70,7 @@ export const setAttributesFn = (state: StructureState, {payload}) => {
 
 
 export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
-    const {structure, selectedBlock} = state;
+    const {structure} = state;
 
     state.structure = duplicateBlk(structure, payload.id);
 };

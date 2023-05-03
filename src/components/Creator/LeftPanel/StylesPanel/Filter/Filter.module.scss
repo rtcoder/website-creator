@@ -1,0 +1,14 @@
+.singleFilter {
+  border-bottom: 1px solid #ccc;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+
+  &:hover {
+    color: #f00;
+  }
+}

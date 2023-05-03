@@ -1,7 +1,7 @@
 import styles from './ActionButtons.module.scss'
 import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
-import {useCallback, useEffect, useRef} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {duplicateBlock, removeBlock} from "@/store/structureSlice";
 import {useDispatch, useSelector} from "react-redux";
 import ActionMoveButtons from "@/components/Creator/CreatorArea/ActionButtons/ActionMoveButtons/ActionMoveButtons";
@@ -13,13 +13,13 @@ export default function ActionButtons() {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const pageYOffset = useSelector((state: any) => state.structure.pageYOffset);
 
-    const duplicate = useCallback(() => {
-        dispatch(duplicateBlock(selectedBlock));
+    const duplicate = useCallback((block) => {
+        dispatch(duplicateBlock({...block}));
     }, [dispatch]);
 
-    const deleteBlk = useCallback(() => {
+    const deleteBlk = useCallback((block) => {
         if (confirm('Are you sure you want to delete this block?')) {
-            dispatch(removeBlock(selectedBlock));
+            dispatch(removeBlock({...block}));
         }
     }, [dispatch]);
 
@@ -55,9 +55,6 @@ export default function ActionButtons() {
     useEffect(() => {
         setComponentPosition();
     }, [selectedBlock, pageYOffset])
-    useEffect(() => {
-        console.log(pageYOffset)
-    }, [pageYOffset])
 
     return (
         <> {selectedBlock
@@ -65,7 +62,6 @@ export default function ActionButtons() {
                 <ActionMoveButtons block={selectedBlock}/>
                 <MediaActionButtons block={selectedBlock}/>
 
-                {/*${this.getAdditionalButtonsHtml()}*/}
                 <Icon className={styles.itemButton}
                       title="Ustawienia"
                       type="material-outlined"
@@ -75,7 +71,7 @@ export default function ActionButtons() {
                       title="Duplikuj"
                       type="material-outlined"
                       name="content_copy"
-                      onClick={duplicate}/>
+                      onClick={()=>duplicate(selectedBlock)}/>
 
                 <Icon className={styles.itemButton}
                       title="Przenieś"
@@ -86,7 +82,7 @@ export default function ActionButtons() {
                       title="Usuń"
                       type="material-outlined"
                       name="close"
-                      onClick={deleteBlk}/>
+                      onClick={()=>deleteBlk(selectedBlock)}/>
             </div> : ''}</>
     )
 }
