@@ -1,6 +1,6 @@
 .creator {
   display: grid;
-  grid-template-columns: 380px calc(100% - 330px);
+  grid-template-columns: 380px calc(100% - 380px);
   grid-template-rows: 50px calc(100vh - 50px);
   grid-template-areas:
     "topPanel topPanel"

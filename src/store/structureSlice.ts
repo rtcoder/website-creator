@@ -18,6 +18,7 @@ import {
     setTextContentFn
 } from "@/store/functions/block";
 import {addHiddenBlockIdToArrayFn, removeHiddenBlockIdFromArrayFn} from "@/store/functions/structure-preview";
+import {setPageYOffsetFn} from "@/store/functions/window";
 
 export interface StructureState {
     structure: BlockInterface[];
@@ -25,6 +26,7 @@ export interface StructureState {
     rwdMode: RWD_MODES;
     styleState: STYLE_STATE_NAMES;
     hiddenBlocksIds: string[];
+    pageYOffset: number[];
 }
 
 const initialState: StructureState = {
@@ -33,6 +35,7 @@ const initialState: StructureState = {
     rwdMode: RWD_MODES.DESKTOP,
     styleState: STYLE_STATE_NAMES.BASIC,
     hiddenBlocksIds: [],
+    pageYOffset: [0],
 };
 
 const structureSlice = createSlice({
@@ -52,6 +55,7 @@ const structureSlice = createSlice({
         addHiddenBlockIdToArray: addHiddenBlockIdToArrayFn,
         removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn,
         setStylesProperty: setStylesPropertyFn,
+        setPageYOffset: setPageYOffsetFn,
     }
 });
 
@@ -69,6 +73,7 @@ export const {
     addHiddenBlockIdToArray,
     removeHiddenBlockIdFromArray,
     setStylesProperty,
+    setPageYOffset,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

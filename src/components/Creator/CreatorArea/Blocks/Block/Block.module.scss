@@ -1,15 +1,12 @@
 .singleBlock {
   position: relative;
   box-sizing: border-box;
-  filter: none !important;
   animation: none !important;
   animation-delay: initial !important;
   animation-direction: initial !important;
   display: flex;
   margin: 10px 0;
 
-  --border-top-width: 0px;
-  --filter: none;
   --animation: none;
   --animation-delay: initial;
   --animation-direction: initial;
@@ -37,11 +34,17 @@
 
   &.minimized {
     //pointer-events: none;
+    filter: none !important;
     height: 40px !important;
     overflow: hidden;
+    border: none !important;
 
     & > .maskLayer {
       display: flex;
+    }
+
+    & > :not(.maskLayer) {
+      display: none;
     }
   }
 

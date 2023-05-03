@@ -1,10 +1,9 @@
 .actionButtons {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: calc(-40px - var(--border-top-width));
+  position: fixed;
+  height: 40px;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 101;
   background: #fff;
   border: 1px solid #09c;
@@ -12,29 +11,8 @@
   border-radius: 50px;
   overflow: hidden;
   max-width: calc(100vw - 340px);
-  text-shadow:none !important;
-  text-decoration: none!important;
-
-  &.left {
-    left: 0;
-    transform: none;
-    &.right {
-    left: 0;
-      right: 0;
-    width: fit-content;
-  }
-  }
-
-  &.right {
-    right: 0;
-    left: auto;
-    transform: none;
-  }
-
-  &.bottom {
-    bottom: -40px;
-    top: auto;
-  }
+  text-shadow: none !important;
+  text-decoration: none !important;
 
   .itemButton {
     background: #fff;
@@ -49,6 +27,7 @@
     border-radius: 20px;
     cursor: pointer;
     font-variant: initial;
+
     &:hover {
       background: #ccc;
     }

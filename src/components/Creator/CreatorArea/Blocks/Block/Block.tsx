@@ -1,5 +1,4 @@
 import styles from "./Block.module.scss"
-import stylesActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons.module.scss"
 import {BLOCK_TYPES_HUMAN_NAMES} from "@/helpers/blocks";
 import classNames from "@/helpers/classNames";
 import {useDrag} from "react-dnd";
@@ -22,7 +21,6 @@ import {getInheritedStyleWithout} from "@/helpers/block-styles";
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
-import ActionButtons from "@/components/Creator/CreatorArea/Blocks/ActionButtons/ActionButtons";
 import {BlockTypes} from "@/types/block-type";
 
 
@@ -59,8 +57,7 @@ export default function Block(props: BlockProps) {
         ev.stopPropagation();
         const clickOnEditableChild = !!ev.target.closest('[contenteditable]');
         const clickOnTextField = !!ev.target.closest('input');
-        const clickOnActionButton = !!ev.target.closest(`.${stylesActionButtons.actionButtons}`);
-        const force = clickOnEditableChild || clickOnTextField || clickOnActionButton;
+        const force = clickOnEditableChild || clickOnTextField;
 
         selectBlock({block, force});
     };
@@ -72,23 +69,20 @@ export default function Block(props: BlockProps) {
         [styles.hovered]: isHovered,
         [styles.minimized]: isHidden()
     });
-    const withoutProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom','margin-left', 'margin-right'];
-    const shouldShowActionButtons = () => {
-        return isSelected() && !isHidden()
-    }
+    const withoutProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right'];
     return (
         <div className={classes}
              ref={dragRef}
              onClick={toggleSelected}
              onMouseOver={onMouseOver}
              onMouseLeave={onMouseLeave}
+             data-id={block.id}
              style={getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties)}>
 
             <div className={styles.maskLayer}
                  title={BLOCK_TYPES_HUMAN_NAMES[block.type]}>
                 {BLOCK_TYPES_HUMAN_NAMES[block.type]}
             </div>
-            {shouldShowActionButtons() ? <ActionButtons block={block}/> : ''}
             {getBlockContent(block)}
         </div>
     )

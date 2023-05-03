@@ -39,22 +39,14 @@ export function getInheritedStyle(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES,
         }
     }
 
-    if (finalStyles['border-top-width'] && finalStyles['border-top-style']) {
-        finalStyles['--border-top-width'] = finalStyles['border-top-width'];
-    } else if (!finalStyles['border-top-width'] && finalStyles['border-top-style']) {
-        finalStyles['--border-top-width'] = '1px';
-    }
-    if (finalStyles['filter']) {
-        finalStyles['--filter'] = finalStyles['filter'];
-    }
     if (finalStyles['animation']) {
         finalStyles['--animation'] = finalStyles['animation'];
     }
-    if (finalStyles['animation-delay']) {
-        finalStyles['--animation-delay'] = finalStyles['animation-delay'];
+    if (finalStyles['animationDelay']) {
+        finalStyles['--animation-delay'] = finalStyles['animationDelay'];
     }
-    if (finalStyles['animation-direction']) {
-        finalStyles['--animation-direction'] = finalStyles['animation-direction'];
+    if (finalStyles['animationDirection']) {
+        finalStyles['--animation-direction'] = finalStyles['animationDirection'];
     }
     return finalStyles;
 }
