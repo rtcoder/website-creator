@@ -236,8 +236,9 @@ export const getPreviewStyle = (color) => ({
     boxShadow: `0 0 4px 0 ${colorArrayToString(color)}`
 })
 const getNumberArrayFromStringColor = (color: String, type: string): number[] => {
-    return color.replace(`${type}(`, '')
-        .replace(')', '')
+    return color.trim()
+        .replace(`${type}(`, '')
+        .replace(/\)$/, '')
         .split(',')
         .map(value => value.trim())
         .map(str => str.replace(/[^\d.]+/gi, ''))

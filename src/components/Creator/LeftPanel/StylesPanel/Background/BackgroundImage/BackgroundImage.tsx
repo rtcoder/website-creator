@@ -22,7 +22,7 @@ export default function (props: Props, ref) {
     }
     const getUrlFromStringValue = val => {
         if (val.startsWith('url(')) {
-            return val.replace('url(', '').replace(')', '')
+            return val.replace('url(', '').replace(/\)$/, '')
         }
         return val;
     }
