@@ -28,7 +28,6 @@ export default function Block(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
-    const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const hiddenBlocksIds = useSelector((state: any) => state.structure.hiddenBlocksIds);
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch();
@@ -61,11 +60,9 @@ export default function Block(props: BlockProps) {
 
         selectBlock({block, force});
     };
-    const isSelected = () => selectedBlock?.id === block.id;
 
     const classes = classNames({
         [styles.singleBlock]: true,
-        [styles.selected]: isSelected(),
         [styles.hovered]: isHovered,
         [styles.minimized]: isHidden()
     });
