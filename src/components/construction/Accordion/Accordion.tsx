@@ -1,6 +1,6 @@
 import styles from './Accordion.module.scss'
-import AccordionItem, {AccordionItemInterface} from "@/components/construction/Accordion/AccordionItem";
-import {useEffect, useState} from "react";
+import AccordionItem from "@/components/construction/Accordion/AccordionItem";
+import {useState} from "react";
 
 interface Props {
     children: any;
@@ -8,7 +8,7 @@ interface Props {
 
 export default function (props: Props) {
     const [openedItem, setOpenedItem] = useState(
-        props.children.flat().find(child => child.props?.opened)?.props.title||''
+        props.children.flat().find(child => child.props?.opened)?.props.title || ''
     )
 
     const getChildrenItems = () => {
@@ -32,13 +32,9 @@ export default function (props: Props) {
                 </AccordionItem>
             })
     }
-    useEffect(()=>{
-        setOpenedItem(
-            props.children.flat().find(child => child.props?.opened)?.props.title||''
-        )
-    },[props.children])
     return (
         <div className={styles.accordion}>
+            {openedItem}
             {getItems()}
         </div>
     )
