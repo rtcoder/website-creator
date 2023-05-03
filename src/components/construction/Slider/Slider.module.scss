@@ -1,0 +1,104 @@
+.slider {
+  $color: #09c;
+  width: 100%;
+  position: relative;
+  padding: 10px 15px;
+  user-select: none;
+
+  .labelContainer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .sliderContainer {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+
+    .trackContainer {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      overflow: hidden;
+
+      .tracks {
+        position: relative;
+        width: 100%;
+        height: 5px;
+
+        .inactiveTrackContainer {
+          top: 0;
+          left: 0;
+          position: absolute;
+          background-color: rgba($color, 0.5);
+          width: 100%;
+          height: 5px;
+        }
+
+        .activeTrackContainer {
+          top: 0;
+          left: 0;
+          position: absolute;
+          background-color: $color;
+          height: 5px;
+        }
+      }
+
+      .ticksContainer {
+        width: 100%;
+        height: 5px;
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .ticksList {
+          position: relative;
+          width: 100%;
+          height: 5px;
+
+          .tick {
+            background: #000;
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.active {
+              background: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    .thumb {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-15px, -50%);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .thumbPoint {
+        background-color: $color;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
