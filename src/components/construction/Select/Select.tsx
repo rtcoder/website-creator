@@ -29,7 +29,7 @@ const Select = forwardRef(function (props: SelectProps, ref: ForwardedRef<HTMLSe
     const getChildrenOptions = () => {
         return props.children
             .flat()
-            .filter((child) => child?.type.name === 'Option');
+            .filter((child) => child?.type.name === Option.name);
     }
     const getOptions = () => {
         return getChildrenOptions()

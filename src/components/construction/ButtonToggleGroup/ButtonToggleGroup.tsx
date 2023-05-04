@@ -26,7 +26,7 @@ export default function ButtonToggleGroup(props: Props) {
     const getChildrenButtons = () => {
         return props.children
             .flat()
-            .filter((child) => child?.type.name === 'ButtonToggle');
+            .filter((child) => child?.type.name === ButtonToggle.name);
     }
     const getPropsValue = (): Value[] | undefined => {
         if (props.value === undefined) {

@@ -11,7 +11,7 @@ export default function Accordion(props: Props) {
         console.log(AccordionItem.name)
         return (Array.isArray(props.children) ? props.children : [props.children])
             .flat()
-            .filter((child) => child?.type?.displayName === 'AccordionItem');
+            .filter((child) => child?.type?.name === AccordionItem.name);
     }
 
     const [openedItem, setOpenedItem] = useState(
