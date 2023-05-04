@@ -10,7 +10,7 @@ export interface AccordionItemInterface {
     onOpen?: () => void;
 }
 
-export default function AccordionItem(props: AccordionItemInterface) {
+const AccordionItem = function AccordionItem(props: AccordionItemInterface) {
     const contentRef = useRef(null);
     const panelRef = useRef(null);
     const [isOpen, setIsOpen] = useState(props.opened || false);
@@ -66,3 +66,5 @@ export default function AccordionItem(props: AccordionItemInterface) {
         </div>
     )
 }
+AccordionItem.displayName = 'AccordionItem';
+export default AccordionItem;
