@@ -7,7 +7,7 @@ import StructurePanel from "@/components/Creator/LeftPanel/StructurePanel/Struct
 import LeftSettingsPanel from "@/components/Creator/LeftPanel/LeftSettingsPanel/LeftSettingsPanel";
 
 
-export default function () {
+export default function LeftPanel() {
     return (
         <div className={styles.leftPanel}>
             <Tabs defaultIndex={1}>

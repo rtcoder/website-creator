@@ -15,7 +15,7 @@ interface Props {
     onChange: (value: string | null, property: string) => void
 }
 
-export default function (props: Props) {
+export default function TextShadow(props: Props) {
     const emptyShadow: Shadow = {x: '0px', y: '0px', blur: '0px', color: '#000'};
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);

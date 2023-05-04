@@ -17,7 +17,7 @@ interface Props {
     onChange?: (value: Value | null) => void;
 }
 
-export default function (props: Props) {
+export default function ButtonToggleGroup(props: Props) {
     const classes = classNames({
         [styles.buttonToggleGroup]: true,
         [props.className || '']: true,

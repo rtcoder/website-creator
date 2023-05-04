@@ -7,7 +7,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-export default function (props: Props) {
+export default function BorderStyle(props: Props) {
     const propsValue = props.value;
     const [value, setVal] = useState('');
 

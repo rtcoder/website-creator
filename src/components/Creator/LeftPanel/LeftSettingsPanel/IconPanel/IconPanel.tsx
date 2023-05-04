@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {BlockSettingsIconInterface} from "@/interfaces/Block.interface";
 import {setIcon} from "@/store/structureSlice";
 
-export default function () {
+export default function IconPanel() {
     const iconTypes = ['Material', 'FontAwesome', 'Ionicons', 'IcoFont', 'DevIcon', 'OctIcons'];
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const [selectedIcon, setSelectedIcon] = useState<BlockSettingsIconInterface>(null);

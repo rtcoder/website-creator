@@ -21,7 +21,7 @@ interface Props {
 }
 
 const ALL_UNITS: Units[] = ['px', 'pt', 'pc', 'in', 'mm', 'cm', '%', 'rem', 'em', 'vw', 'vh', 'vmin', 'vmax', 'deg', 'ms', 's'];
-export default function (props: Props) {
+export default function InputWithUnits(props: Props) {
     const propsValue = String(props.value || '');
     const [inputValue, setInputValue] = useState('');
     const [unitsValue, setUnitsValue] = useState('');

@@ -4,7 +4,7 @@ interface Props {
     onChange: (value: string, property: string) => void
 }
 
-export default function (props: Props) {
+export default function FlexWrap(props: Props) {
     const flexWrapValues = ['nowrap', 'wrap', 'wrap-reverse'];
     const label = 'Zawijanie elementów';
     return (

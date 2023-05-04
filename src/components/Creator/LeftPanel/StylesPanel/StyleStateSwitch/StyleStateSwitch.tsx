@@ -5,7 +5,7 @@ import {useCallback} from "react";
 import {setStyleState} from "@/store/structureSlice";
 import {STYLE_STATE_NAMES} from "@/enums/styleState";
 
-export default function () {
+export default function StyleStateSwitch() {
     const styleState = useSelector((state: any) => state.structure.styleState);
     const dispatch = useDispatch();
 

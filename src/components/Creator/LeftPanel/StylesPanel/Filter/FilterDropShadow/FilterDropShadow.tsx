@@ -11,7 +11,7 @@ interface Props {
 
 }
 
-export default function (props: Props) {
+export default function FilterDropShadow(props: Props) {
 const [value,setValue] =useState(props.value);
     const onChange = (v, index) => {
         const val = value;

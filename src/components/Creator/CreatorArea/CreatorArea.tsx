@@ -6,7 +6,7 @@ import {setPageYOffset} from "@/store/structureSlice";
 import BlockSelectionBorder from "@/components/Creator/CreatorArea/BlockSelectionBorder/BlockSelectionBorder";
 import ActionButtons from "@/components/Creator/CreatorArea/ActionButtons/ActionButtons";
 
-export default function () {
+export default function CreatorArea() {
     const structure = useSelector((state: any) => state.structure.structure);
     const dispatch = useDispatch();
     const _setPageYOffset = useCallback((data: number) => {
@@ -17,7 +17,7 @@ export default function () {
     }
     return (
         <div className={styles.creatorArea} onScroll={onScroll}>
-            <ContainerBlock id={null} children={structure}/>
+            <ContainerBlock id={null} blocks={structure}/>
             <ActionButtons/>
             <BlockSelectionBorder/>
         </div>

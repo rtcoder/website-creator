@@ -4,7 +4,7 @@ interface Props {
     onChange: (value: string, property: string) => void
 }
 
-export default function (props: Props) {
+export default function FlexDirection(props: Props) {
     const flexDirectionValues = ['column', 'column-reverse', 'row', 'row-reverse'];
     const label = 'Kierunek ułożenia elementów';
     return (

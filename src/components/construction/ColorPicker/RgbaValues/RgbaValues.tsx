@@ -2,7 +2,7 @@ import styles from "./RgbaValues.module.scss"
 import {ColorPickerRgbaValuesProps} from "@/components/construction/ColorPicker/types";
 
 
-export default function (props: ColorPickerRgbaValuesProps) {
+export default function RgbaValues(props: ColorPickerRgbaValuesProps) {
 
     return (
         <div className={styles.rgbaContainer}>

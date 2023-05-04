@@ -8,7 +8,7 @@ interface Props {
     value?: string;
 }
 
-export default function (props: Props, ref) {
+export default function BackgroundImage(props: Props, ref) {
     const [file, setFile] = useState<string>(null)
 
     const readFile = file => {

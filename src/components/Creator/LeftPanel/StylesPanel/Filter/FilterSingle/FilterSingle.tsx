@@ -10,7 +10,7 @@ interface Props {
 }
 
 type FilterDefaults = [id: string, name: string, unit: Units, min: number, max: number];
-export default function (props: Props) {
+export default function FilterSingle(props: Props) {
     const [filterDefaults, setFilterDefaults] = useState<{ min: number, max: number }>(null);
     const [label, setLabel] = useState<string>(null);
     const [unit, setUnit] = useState<Units>(null);

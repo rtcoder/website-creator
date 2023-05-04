@@ -10,7 +10,7 @@ interface Props {
     onChange?: (coordinates: Coordinates) => void
 }
 
-export default function (props: Props) {
+export default function CartesianCoordinateSystem(props: Props) {
     const [coordinates, setCoordinates] = useState<Coordinates>({x: 0, y: 0});
     const canvasRef = useRef(null);
     const [isMouseDown, setIsMouseDown] = useState(false);

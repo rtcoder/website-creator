@@ -22,7 +22,7 @@ import Background from "@/components/Creator/LeftPanel/StylesPanel/Background/Ba
 import Filter from "@/components/Creator/LeftPanel/StylesPanel/Filter/Filter";
 import Animations from "@/components/Creator/LeftPanel/StylesPanel/Animations/Animations";
 
-export default function () {
+export default function StylesPanel() {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);

@@ -6,7 +6,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-export default function (props: Props) {
+export default function AspectRatio(props: Props) {
     const propsValue = props.value;
     const [inputValue, setInputValue] = useState('');
     const inputRef = useRef(null);

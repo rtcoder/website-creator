@@ -4,7 +4,7 @@ import {ColorPickerHistoryProps, Rgba} from "@/components/construction/ColorPick
 import {getPreviewStyle} from "@/components/construction/ColorPicker/functions";
 
 
-export default function (props: ColorPickerHistoryProps) {
+export default function ColorHistory(props: ColorPickerHistoryProps) {
     const [colorsHistory, setColorsHistory] = useState<Rgba[]>([]);
     const isColorInHistory = ([red, green, blue, alpha]: Rgba): boolean => {
         return !!colorsHistory.find(([r, g, b, a]) => r === red && g === green && b === blue && a === alpha);

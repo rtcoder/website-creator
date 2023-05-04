@@ -6,10 +6,11 @@ import {Units} from "@/types/units";
 import {useEffect, useState} from "react";
 import AspectRatio from "@/components/Creator/LeftPanel/StylesPanel/Size/AspectRatio/AspectRatio";
 
-interface Props{
-    onChange:(value:string,property:string) => void
+interface Props {
+    onChange: (value: string, property: string) => void
 }
-export default function (props: Props) {
+
+export default function Size(props: Props) {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);

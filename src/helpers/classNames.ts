@@ -3,7 +3,7 @@ interface ClassedObject {
 }
 
 type classesParam = ClassedObject | string[];
-export default function (classes: classesParam): string {
+export default function classNames(classes: classesParam): string {
     if (Array.isArray(classes)) {
         return classes.join(' ').trim();
     }

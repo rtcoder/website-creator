@@ -50,7 +50,7 @@ const filtersDefaultValues: [id: string, value: any][] = [
     ['saturate', 0],
     ['sepia', 0],
 ];
-export default function (props: Props) {
+export default function Filter(props: Props) {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);

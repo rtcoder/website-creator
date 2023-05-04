@@ -89,7 +89,7 @@ export default function Block(props: BlockProps) {
 function getBlockContent(block: BlockInterface) {
     switch (block.type) {
         case BlockTypes.CONTAINER:
-            return <ContainerBlock id={block.id} children={block.children}/>
+            return <ContainerBlock id={block.id} blocks={block.children}/>
         case BlockTypes.PARAGRAPH:
             return <TextBlock block={block} multiline={true} editable={true}/>
         case BlockTypes.HEADING:

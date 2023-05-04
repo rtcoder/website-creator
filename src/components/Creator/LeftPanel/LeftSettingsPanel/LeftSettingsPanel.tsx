@@ -4,7 +4,7 @@ import Accordion from "@/components/construction/Accordion/Accordion";
 import NoBlock from "@/components/Creator/LeftPanel/NoBlock/NoBlock";
 import AccordionItem from "@/components/construction/Accordion/AccordionItem";
 
-export default function () {
+export default function LeftSettingsPanel() {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
 
     return (

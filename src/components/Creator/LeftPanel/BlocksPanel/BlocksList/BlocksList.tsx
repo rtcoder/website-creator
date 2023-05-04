@@ -4,7 +4,7 @@ interface BlocksListProps {
     items: BlockItemProps[];
 }
 
-export default function (props: BlocksListProps) {
+export default function BlocksList(props: BlocksListProps) {
     return (
         <div className={styles.blocksList}>
             {props.items.map(({name, type, icon}) =>

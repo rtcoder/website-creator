@@ -6,7 +6,7 @@ interface Props {
     children: any;
 }
 
-export default function (props: Props) {
+export default function Accordion(props: Props) {
     const getChildrenItems = () => {
         return (Array.isArray(props.children)?props.children:[props.children])
             .flat()

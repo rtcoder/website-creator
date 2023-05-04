@@ -6,7 +6,7 @@ import {useCallback} from "react";
 import {setIcon, setSelectedBlock} from "@/store/structureSlice";
 import {useDispatch} from "react-redux";
 
-export default function (props: BlockProps) {
+export default function IconBlock(props: BlockProps) {
     const dispatch = useDispatch();
 
     const selectBlock = useCallback((blk) => {

@@ -12,7 +12,7 @@ interface Props {
     onClick?: MouseEventHandler;
 }
 
-export default function (props: Props) {
+export default function Button(props: Props) {
     const classes = classNames({
         [styles.button]: true,
         [styles.active]: !!props.active,

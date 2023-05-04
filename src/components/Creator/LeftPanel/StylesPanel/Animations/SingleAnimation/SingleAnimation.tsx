@@ -16,7 +16,7 @@ interface Props {
     onChange: (value: ValueType) => void
 }
 
-export default function (props: Props) {
+export default function SingleAnimation(props: Props) {
     const [duration, setDuration] = useState<string>(props.duration)
     const [delay, setDelay] = useState<string>(props.delay)
     const [direction, setDirection] = useState<string>(props.direction)

@@ -14,7 +14,7 @@ export interface BlockItemProps {
     }
 }
 
-export default function (props: BlockItemProps) {
+export default function BlockItem(props: BlockItemProps) {
     const [{opacity}, dragRef] = useDrag({
         type: `${BLOCK_TYPES_HUMAN_NAMES[props.type]}`,
         item: () => ({type: props.type, isNew: true}),

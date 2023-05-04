@@ -7,7 +7,7 @@ import {useCallback, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setRwdMode} from "@/store/structureSlice";
 
-export default function () {
+export default function TopPanel() {
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const [helpModalOpened, setHelpModalOpened] = useState(false);
     const dispatch = useDispatch();

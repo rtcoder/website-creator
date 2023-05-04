@@ -5,7 +5,7 @@ interface Props {
     onChange: (value: string, property: string) => void
 }
 
-export default function (props: Props) {
+export default function Layout(props: Props) {
     return (
         <div className={styles.stylesFormGroup}>
             <Flex onChange={props.onChange}/>

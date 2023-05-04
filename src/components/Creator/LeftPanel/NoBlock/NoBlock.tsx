@@ -1,6 +1,7 @@
 import styles from "./NoBlock.module.scss"
 import Icon from "@/components/construction/Icon/Icon";
-export default function (){
+
+export default function NoBlock() {
     return (
         <div className={styles.noBlock}>
             <span>Zaznacz blok</span>

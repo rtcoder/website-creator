@@ -23,7 +23,7 @@ import ColorHistory from "@/components/construction/ColorPicker/ColorHistory/Col
 import RgbaValues from "@/components/construction/ColorPicker/RgbaValues/RgbaValues";
 
 
-export default function (props: ColorPickerProps) {
+export default function ColorPicker(props: ColorPickerProps) {
     const canvasOpacityRef = useRef(null);
     const canvasOpacityCursorRef = useRef(null);
     const canvasSelectRef = useRef(null);

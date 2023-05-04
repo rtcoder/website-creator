@@ -8,7 +8,7 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import {setStructure} from "@/store/structureSlice";
 import {useDispatch} from "react-redux";
 
-export default function () {
+export default function Creator() {
     const dispatch = useDispatch();
     const setStructureValue = useCallback((data) => {
         dispatch(setStructure(data));

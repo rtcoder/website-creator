@@ -12,11 +12,11 @@ import {dropBlock, dropNewBlock} from "@/store/structureSlice";
 
 interface ContainerPropsInterface {
     id: string | null;
-    children: BlockInterface[];
+    blocks: BlockInterface[];
 }
 
 export default function ContainerBlock(props: ContainerPropsInterface) {
-    const {id, children} = props;
+    const {id, blocks} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
     const dispatch = useDispatch();
@@ -66,7 +66,7 @@ export default function ContainerBlock(props: ContainerPropsInterface) {
     return (
         <div className={classes}
              ref={drop}>
-            {children.map(b =>
+            {blocks.map(b =>
                 <div key={b.id} style={getInheritedStyleWith(b.styles, rwd, styleState, withProperties)}>
                     <Block block={b}/>
                 </div>)}

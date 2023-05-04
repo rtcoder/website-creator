@@ -2,7 +2,7 @@ import styles from './BlockSelectionBorder.module.scss'
 import {useEffect, useRef} from "react";
 import {useSelector} from "react-redux";
 
-export default function () {
+export default function BlockSelectionBorder() {
     const ref = useRef(null);
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const pageYOffset = useSelector((state: any) => state.structure.pageYOffset);

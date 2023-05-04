@@ -4,7 +4,7 @@ import BlocksList from "@/components/Creator/LeftPanel/BlocksPanel/BlocksList/Bl
 import {BlockItemProps} from "@/components/Creator/LeftPanel/BlocksPanel/BlockItem/BlockItem";
 import {BlockTypes} from "@/types/block-type";
 
-export default function () {
+export default function BlocksPanel() {
     const basicBlocks: BlockItemProps[] = [
         {name: 'Kontener', type: BlockTypes.CONTAINER, icon: {name: 'crop_3_2', type: 'material-outlined'}},
         {name: 'Nagłówek', type: BlockTypes.HEADING, icon: {name: 'format_h1', type: 'material-outlined'}},

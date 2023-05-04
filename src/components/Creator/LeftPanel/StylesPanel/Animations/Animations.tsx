@@ -28,7 +28,7 @@ const allAnimationsNames: [id: string, name: string][] = [
     ['shake', 'Potrząsanie'],
     ['spin', 'Obrót'],
 ];
-export default function (props: Props) {
+export default function Animations(props: Props) {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
@@ -116,7 +116,7 @@ export default function (props: Props) {
             iterations,
         });
     }
-    const getAnimationName =animationId=>allAnimationsNames.find(([id,name])=>id===animationId)?.[1]||'';
+    const getAnimationName = animationId => allAnimationsNames.find(([id, name]) => id === animationId)?.[1] || '';
     const getAnimationsList = () => {
         return animations.map((id, index) => {
                 return (<div className={styles.stylesFormRow} key={id}>

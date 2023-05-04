@@ -13,7 +13,7 @@ interface Props {
     onChange?: (value:  number) => void;
 }
 
-export default function (props: Props) {
+export default function Slider(props: Props) {
     const [isMouseDown, setIsMouseDown] = useState(false);
     const [value, setValue] = useState(props.value || 0);
 

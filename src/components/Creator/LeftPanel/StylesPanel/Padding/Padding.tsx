@@ -9,7 +9,7 @@ interface Props {
     onChange: (value: string, property: string) => void
 }
 
-export default function (props: Props) {
+export default function Padding(props: Props) {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const rwd = useSelector((state: any) => state.structure.rwdMode);
     const styleState = useSelector((state: any) => state.structure.styleState);
