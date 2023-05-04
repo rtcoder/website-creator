@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "react";
-import {Input} from "@/components/construction/Input/Input";
+import Input from "@/components/construction/Input/Input";
 
 interface Props {
     value: string;

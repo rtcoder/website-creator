@@ -1,7 +1,7 @@
 import {Units} from "@/types/units";
 import {HTMLInputTypeAttribute, useEffect, useRef, useState} from "react";
 import styles from "./InputWithUnits.module.scss"
-import {Input} from "@/components/construction/Input/Input";
+import Input from "@/components/construction/Input/Input";
 import {Option, Select} from "@/components/construction/Select";
 
 interface Props {

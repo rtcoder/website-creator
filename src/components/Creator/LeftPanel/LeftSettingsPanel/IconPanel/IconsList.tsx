@@ -4,7 +4,7 @@ import styles from "./IconsList.module.scss";
 import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
 import {Option, Select} from "@/components/construction/Select";
-import {Input} from "@/components/construction/Input/Input";
+import Input from "@/components/construction/Input/Input";
 
 interface IconsListInterface {
     categories: {

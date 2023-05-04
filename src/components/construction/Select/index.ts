@@ -1,6 +1,6 @@
-import {Select} from "./Select";
+import Select from "./Select";
 import Option from "./Option/Option";
-import {SelectProps,OptionProps} from './types'
+import {OptionProps, SelectProps} from './types'
 
 export {
     Select,

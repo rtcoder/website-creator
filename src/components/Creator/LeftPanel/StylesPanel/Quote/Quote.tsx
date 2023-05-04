@@ -2,7 +2,7 @@ import {useSelector} from "react-redux";
 import styles from "../StylesPanel.module.scss"
 import {getInheritedStyleWith} from "@/helpers/block-styles";
 import {useEffect, useRef, useState} from "react";
-import {Input} from "@/components/construction/Input/Input";
+import Input from "@/components/construction/Input/Input";
 
 interface Props {
     onChange: (value: string | null, property: string) => void

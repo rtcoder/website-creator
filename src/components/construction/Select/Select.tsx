@@ -4,7 +4,7 @@ import Option from "@/components/construction/Select/Option/Option";
 import {OptionProps, SelectProps} from "@/components/construction/Select/types";
 import classNames from "@/helpers/classNames";
 
-export const Select = forwardRef(function (props: SelectProps, ref: ForwardedRef<HTMLSelectElement>) {
+const Select = forwardRef(function (props: SelectProps, ref: ForwardedRef<HTMLSelectElement>) {
     const selectRef = useRef(null);
     const listRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -110,3 +110,5 @@ export const Select = forwardRef(function (props: SelectProps, ref: ForwardedRef
         </div>
     )
 })
+Select.displayName = 'Select';
+export default Select

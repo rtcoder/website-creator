@@ -39,7 +39,7 @@ interface Props {
     width?: number | string | undefined;
 }
 
-export const Input = forwardRef(function (props: Props, ref) {
+const Input = forwardRef(function (props: Props, ref) {
     const {label, type, value, onChange, ...otherProps} = props;
     const [val, setValue] = useState(value);
     const [invalid, setInvalid] = useState(false);
@@ -108,3 +108,5 @@ export const Input = forwardRef(function (props: Props, ref) {
         </div>
     )
 });
+Input.displayName = 'Input';
+export default Input;

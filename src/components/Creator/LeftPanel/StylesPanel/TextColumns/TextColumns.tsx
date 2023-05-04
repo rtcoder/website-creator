@@ -1,6 +1,6 @@
 import styles from "@/components/Creator/LeftPanel/StylesPanel/StylesPanel.module.scss";
 import InputWithUnits from "@/components/construction/InputWithUnits/InputWithUnits";
-import {Input} from "@/components/construction/Input/Input";
+import Input from "@/components/construction/Input/Input";
 import {Units} from "@/types/units";
 import BorderStyle from "@/components/Creator/LeftPanel/StylesPanel/Border/BorderStyle/BorderStyle";
 import ColorPicker from "@/components/construction/ColorPicker/ColorPicker";
