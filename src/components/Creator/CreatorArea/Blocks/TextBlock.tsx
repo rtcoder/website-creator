@@ -11,7 +11,7 @@ interface TextComponentPropsInterface {
 }
 
 class TextBlock extends React.Component<any, any> {
-    constructor(private props: TextComponentPropsInterface) {
+    constructor(props: TextComponentPropsInterface) {
         super(props)
         this.state = {
             block: props.block,
@@ -57,4 +57,4 @@ class TextBlock extends React.Component<any, any> {
 }
 
 
-export default connect(null, {setTextContent})(TextBlock)
+export default connect(null, {setTextContent})(TextBlock as any) as any;

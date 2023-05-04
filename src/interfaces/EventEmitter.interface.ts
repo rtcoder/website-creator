@@ -1,5 +1,4 @@
 import {PlainObj} from "@/interfaces/PlainObj";
-import {PanelNames} from "@/services/LeftSettingsPanel.service";
 
 export enum Events {
     ADD_SPECIAL_CHAR_TO_CONTENT = 'addSpecialCharacter',
@@ -20,9 +19,9 @@ export interface EventEmitterInterface {
     // subscribe(event: Events.SET_TAG_NAME, callback: (data: BlockInterface) => void): void;
     // dispatch(event: Events.SET_LINK, data: BlockInterface): void;
     // subscribe(event: Events.SET_LINK, callback: (data: BlockInterface) => void): void;
-    dispatch(event: Events.CLICK_UPLOAD_INPUT, blockId:string): void;
+    dispatch(event: Events.CLICK_UPLOAD_INPUT, blockId: string): void;
 
-    subscribe(event: Events.CLICK_UPLOAD_INPUT, callback: (blockId:string) => void): void;
+    subscribe(event: Events.CLICK_UPLOAD_INPUT, callback: (blockId: string) => void): void;
 
     unsubscribe(event: Events): void;
 }

@@ -65,7 +65,7 @@ export function getFilteredProperties(styles: Styles, filterFn: (prop: StyleProp
             _styles[rwd][state] = {};
 
             Object.keys(styles[rwd]![state])
-                .filter((property: StyleProperties) => filterFn(property))
+                .filter((property: any) => filterFn(property))
                 .forEach(prop => {
                     _styles[rwd][state][prop] = styles[rwd]![state]![prop];
                 })

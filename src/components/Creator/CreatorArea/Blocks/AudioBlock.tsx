@@ -38,4 +38,4 @@ class AudioBlock extends MediaUploadBlock {
     }
 }
 
-export default connect(null, {setAttributes})(AudioBlock);
+export default connect(null, {setAttributes})(AudioBlock as any) as any;

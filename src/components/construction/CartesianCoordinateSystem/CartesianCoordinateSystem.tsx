@@ -12,7 +12,7 @@ interface Props {
 
 export default function CartesianCoordinateSystem(props: Props) {
     const [coordinates, setCoordinates] = useState<Coordinates>({x: 0, y: 0});
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<any>(null);
     const [isMouseDown, setIsMouseDown] = useState(false);
     const maxRange = props.maxRange || props.size / 2;
     const setCoords = value => {

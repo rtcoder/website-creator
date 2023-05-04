@@ -46,7 +46,7 @@ export default function Slider(props: Props) {
         const maxRange = props.max - props.min;
 
         let value = ((percent / 100) * maxRange) + props.min;
-        value = round(value, step).toFixed(getStepFractionalDigitsCount()) as number;
+        value = +round(value, step).toFixed(getStepFractionalDigitsCount()) as number;
         return value;
     }
     const getPositionByValue = (val: number): number => {

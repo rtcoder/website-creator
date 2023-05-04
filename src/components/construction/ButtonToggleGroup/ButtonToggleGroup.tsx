@@ -5,7 +5,7 @@ import ButtonToggle from "@/components/construction/ButtonToggleGroup/ButtonTogg
 import {makeId} from "@/helpers/string-helpers";
 
 type ValueType = string | number;
-type Value = ValueType[] | Value;
+type Value = ValueType[] | ValueType;
 type ValuesArr = ValueType[];
 
 interface Props {
@@ -33,7 +33,7 @@ export default function ButtonToggleGroup(props: Props) {
             return undefined;
         }
         if (!isMultiple()) {
-            return props.value
+            return [props.value] as Value[]
         }
         return Array.isArray(props.value)
             ? props.value

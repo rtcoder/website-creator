@@ -1,5 +1,5 @@
 export type Rgb = [red: number, green: number, blue: number];
-export type Rgba = [red: number, green: number, blue: number, alpha: number];
+export type Rgba =  [...Rgb, number];
 export type MousePos = { x: number, y: number };
 export type ColorPickerProps = {
     value: string;

@@ -1,4 +1,4 @@
-export interface OptionProps {
+export type OptionProps = {
     value: string | number | null;
     onClick?: (value: any | null) => void;
     children?: any;
@@ -6,7 +6,7 @@ export interface OptionProps {
     disabled?: boolean;
 }
 
-export interface SelectProps {
+export type SelectProps = {
     children: any;
     label?: string;
     onChange?: (value: any | null) => void;

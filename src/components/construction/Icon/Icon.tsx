@@ -25,7 +25,7 @@ interface Props {
 
 export default function Icon(props: Props) {
     if (!props.name || !props.type) {
-        return '';
+        return <></>;
     }
     const getIcon = () => {
         switch (props.type) {

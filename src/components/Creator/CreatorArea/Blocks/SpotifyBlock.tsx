@@ -26,4 +26,4 @@ class SpotifyBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(SpotifyBlock);
+export default connect(null, {setAttributes})(SpotifyBlock as any) as any;

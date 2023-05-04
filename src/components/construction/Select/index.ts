@@ -5,6 +5,8 @@ import {OptionProps, SelectProps} from './types'
 export {
     Select,
     Option,
+}
+export type {
     SelectProps,
     OptionProps
 }

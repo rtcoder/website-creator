@@ -13,7 +13,7 @@ export type StyleRwd = {
 }
 
 export type StyleGroup = {
-    [key: StyleProperties]: string;
+    [K in StyleProperties]?: string;
 }
 
 

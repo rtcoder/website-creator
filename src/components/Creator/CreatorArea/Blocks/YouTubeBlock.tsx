@@ -30,4 +30,4 @@ class YouTubeBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(YouTubeBlock);
+export default connect(null, {setAttributes})(YouTubeBlock as any) as any;

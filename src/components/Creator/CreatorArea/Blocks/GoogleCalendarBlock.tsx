@@ -24,4 +24,4 @@ class GoogleCalendarBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(GoogleCalendarBlock);
+export default connect(null, {setAttributes})(GoogleCalendarBlock as any) as any;

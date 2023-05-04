@@ -37,4 +37,4 @@ class ImageBlock extends MediaUploadBlock {
     }
 }
 
-export default connect(null, {setAttributes})(ImageBlock);
+export default connect(null, {setAttributes})(ImageBlock as any) as any;

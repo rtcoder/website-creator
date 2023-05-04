@@ -17,7 +17,7 @@ export default function AccordionItem(props: AccordionItemInterface) {
     const toggleOpen = () => {
         !isOpen ? openPanel() : closePanel()
     };
-    const [timeout, _setTimeout] = useState<NodeJS.Timeout>(null);
+    const [timeout, _setTimeout] = useState<any>(null);
     const openPanel = () => {
         if (isOpen) {
             return;

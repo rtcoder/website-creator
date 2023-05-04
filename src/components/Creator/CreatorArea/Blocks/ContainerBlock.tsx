@@ -31,7 +31,7 @@ export default function ContainerBlock(props: ContainerPropsInterface) {
 
     const [{isDragover}, drop] = useDrop({
         accept: Object.values(BLOCK_TYPES_HUMAN_NAMES),
-        drop: (item, monitor) => {
+        drop: (item: any, monitor) => {
             if (!monitor.isOver({shallow: true})) {
                 return;
             }
@@ -41,7 +41,7 @@ export default function ContainerBlock(props: ContainerPropsInterface) {
             } else {
                 _dropBlock({block: item, targetId: id});
             }
-        }, canDrop: (item) => {
+        }, canDrop: (item: any) => {
             return !!(
                 item.isNew
                 || (item.id !== id
@@ -61,7 +61,7 @@ export default function ContainerBlock(props: ContainerPropsInterface) {
         [styles.children]: true,
         [styles.dragover]: isDragover
     });
-    const withProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom','margin-left', 'margin-right'];
+    const withProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right'];
 
     return (
         <div className={classes}

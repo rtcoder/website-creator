@@ -80,14 +80,15 @@ export const hwb2rgb = (hwb): Rgb => {
         Math.round(b * 255)
     ]
 };
-export const lch2lab = ([l, c, h]) => {
-
+export const lch2lab = (lch) => {
+    const [l, c, h] = lch;
     const a = Math.cos(h * 0.01745329251) * c
     const b = Math.sin(h * 0.01745329251) * c
 
     return [l, a, b]
 }
-export const hsl2rgb = ([h, s, l]) => {
+export const hsl2rgb = (hsl): Rgb => {
+    const [h, s, l] = hsl;
     let r, g, b;
 
     if (s == 0) {
@@ -108,7 +109,7 @@ export const hsl2rgb = ([h, s, l]) => {
         g = hue2rgb(p, q, h);
         b = hue2rgb(p, q, h - 1 / 3);
     }
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)] as Rgb;
 }
 export const hex2hsb = (hex: string) => {
     const hsb = rgb2hsb(hex2rgb(hex));
@@ -235,7 +236,7 @@ export const getPreviewStyle = (color) => ({
     backgroundColor: colorArrayToString(color),
     boxShadow: `0 0 4px 0 ${colorArrayToString(color)}`
 })
-const getNumberArrayFromStringColor = (color: String, type: string): number[] => {
+const getNumberArrayFromStringColor = (color: string, type: string): number[] => {
     return color.trim()
         .replace(`${type}(`, '')
         .replace(/\)$/, '')
@@ -246,30 +247,30 @@ const getNumberArrayFromStringColor = (color: String, type: string): number[] =>
 }
 export const any2rgba = (color: string): Rgba => {
     if (color.startsWith('rgba')) {
-        return getNumberArrayFromStringColor(color, 'rgba');
+        return getNumberArrayFromStringColor(color, 'rgba') as Rgba;
     }
     if (color.startsWith('rgb')) {
-        const rgb: Rgb = getNumberArrayFromStringColor(color, 'rgb');
-        return [...rgb, 1];
+        const rgb = getNumberArrayFromStringColor(color, 'rgb');
+        return [...rgb, 1] as Rgba;
     }
     if (color.startsWith('#')) {
-        return [...hex2rgb(color), 1];
+        return [...hex2rgb(color), 1] as Rgba;
     }
     if (color.startsWith('hsl')) {
         const hsl = getNumberArrayFromStringColor(color, 'hsl');
-        return [...hsl2rgb(hsl), 1];
+        return [...hsl2rgb(hsl), 1] as Rgba;
     }
     if (color.startsWith('hwb')) {
         const hwb = getNumberArrayFromStringColor(color, 'hwb');
-        return [...hwb2rgb(hwb), 1];
+        return [...hwb2rgb(hwb), 1] as Rgba;
     }
     if (color.startsWith('lab')) {
         const lab = getNumberArrayFromStringColor(color, 'lab');
-        return [...lab2rgb(lab), 1];
+        return [...lab2rgb(lab), 1] as Rgba;
     }
     if (color.startsWith('lch')) {
         const lch = getNumberArrayFromStringColor(color, 'lch');
-        return [...lab2rgb(lch2lab(lch)), 1];
+        return [...lab2rgb(lch2lab(lch)), 1] as Rgba;
     }
 
     return [0, 0, 0, 1]

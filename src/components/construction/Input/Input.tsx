@@ -39,17 +39,17 @@ interface Props {
     width?: number | string | undefined;
 }
 
-const Input = forwardRef(function (props: Props, ref) {
+const Input = forwardRef(function (props: Props, ref:any) {
     const {label, type, value, onChange, ...otherProps} = props;
     const [val, setValue] = useState(value);
     const [invalid, setInvalid] = useState(false);
 
     const numberValidator = ev => {
         if (props.type === "number") {
-            if (props.max && +ev.target.value > props.max) {
+            if (props.max && +ev.target.value > +props.max) {
                 return false
             }
-            if (props.min && +ev.target.value < props.min) {
+            if (props.min && +ev.target.value < +props.min) {
                 return false;
             }
         }

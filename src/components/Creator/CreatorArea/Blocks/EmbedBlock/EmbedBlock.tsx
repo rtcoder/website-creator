@@ -4,7 +4,7 @@ import styles from "./EmbedBlock.module.scss"
 import classNames from "@/helpers/classNames";
 
 export default abstract class EmbedBlock extends React.Component<any, any> {
-    constructor(private props: { block: BlockInterface }) {
+    constructor(props: { block: BlockInterface }) {
         super(props)
         this.state = {
             inputRef: React.createRef(),

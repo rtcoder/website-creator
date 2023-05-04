@@ -17,4 +17,4 @@ class IframeBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(IframeBlock);
+export default connect(null, {setAttributes})(IframeBlock as any) as any;

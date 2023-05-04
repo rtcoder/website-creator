@@ -27,7 +27,7 @@ interface IconsListPropsInterface {
 }
 
 export default class IconsList extends React.Component<any, any> {
-    protected constructor(private props: IconsListPropsInterface) {
+    constructor(props: IconsListPropsInterface) {
         super(props);
         this.state = {
             icons: [],

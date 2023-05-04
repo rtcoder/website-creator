@@ -27,4 +27,4 @@ class VimeoBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(VimeoBlock);
+export default connect(null, {setAttributes})(VimeoBlock as any) as any;

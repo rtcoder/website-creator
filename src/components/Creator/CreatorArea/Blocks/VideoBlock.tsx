@@ -38,4 +38,4 @@ class VideoBlock extends MediaUploadBlock {
     }
 }
 
-export default connect(null, {setAttributes})(VideoBlock);
+export default connect(null, {setAttributes})(VideoBlock as any) as any;

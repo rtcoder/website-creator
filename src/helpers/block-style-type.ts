@@ -1,9 +1,6 @@
 import {BlockTypes} from "@/types/block-type";
 
-type BlockTypeStyleOptionsType = {
-    [k: BlockTypes.BlockType]: string[]
-}
-const BlockTypeStyleOptions: BlockTypeStyleOptionsType = {
+const BlockTypeStyleOptions = {
     [BlockTypes.CONTAINER]: [
         'layout', 'background', 'size', 'border', 'border-radius', 'text', 'margin', 'padding', 'filter', 'animations',
     ],

@@ -23,9 +23,12 @@ export default function TextAlign(props: Props) {
         ) as any;
         setTextAlign(style.textAlign);
     }, [selectedBlock, rwd, styleState])
+    const change = value => {
+        props.onChange(value, 'textAlign');
+    }
     return (
         <div className={styles.stylesFormRow}>
-            <ButtonToggleGroup onChange={e=>props.onChange(e,'textAlign')} value={textAlign}>
+            <ButtonToggleGroup onChange={change} value={textAlign}>
                 <ButtonToggle value="left">
                     <Icon type="material" name="format_align_left"/>
                 </ButtonToggle>

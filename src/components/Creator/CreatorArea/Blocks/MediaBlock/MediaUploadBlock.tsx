@@ -5,7 +5,7 @@ import {eventEmitter} from "@/services/EventEmitter";
 import {Events} from "@/interfaces/EventEmitter.interface";
 
 export default abstract class MediaUploadBlock extends React.Component<any, any> {
-    constructor(protected props) {
+    constructor(props) {
         super(props)
         this.state = {
             inputRef: React.createRef(),

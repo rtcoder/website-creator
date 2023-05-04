@@ -24,4 +24,4 @@ class GoogleMapsBlock extends EmbedBlock {
 }
 
 
-export default connect(null, {setAttributes})(GoogleMapsBlock);
+export default connect(null, {setAttributes})(GoogleMapsBlock as any) as any;

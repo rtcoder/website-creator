@@ -43,14 +43,14 @@ export default function ActionMoveButtons(props) {
                             ? <Icon className={styles.itemButton}
                                     title="Przenieś w dół"
                                     type="material-outlined"
-                                    name="expand_more"/> : ''}
+                                    name="expand_more"/> : <></>}
 
                         {showMoveTopButton()
                             ? <Icon className={styles.itemButton}
                                     title="Przenieś w górę"
                                     type="material-outlined"
-                                    name="expand_less"/> : ''}
-                    </>) : ''}
+                                    name="expand_less"/> : <></>}
+                    </>) : <></>}
 
                 {showMoveHorizontalButtons()
                     ? (<>
@@ -58,14 +58,14 @@ export default function ActionMoveButtons(props) {
                             ? <Icon className={styles.itemButton}
                                     title="Przenieś w lewo"
                                     type="material-outlined"
-                                    name="chevron_left"/> : ''}
+                                    name="chevron_left"/> : <></>}
 
                         {showMoveBottomButton()
                             ? <Icon className={styles.itemButton}
                                     title="Przenieś w prawo"
                                     type="material-outlined"
-                                    name="chevron_right"/> : ''}
-                    </>) : ''}
+                                    name="chevron_right"/> : <></>}
+                    </>) : <></>}
             </>)
         : (<></>)
 }
