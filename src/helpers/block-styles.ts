@@ -39,15 +39,6 @@ export function getInheritedStyle(rwd: RWD_MODES, styleState: STYLE_STATE_NAMES,
         }
     }
 
-    if (finalStyles['animation']) {
-        finalStyles['--animation'] = finalStyles['animation'];
-    }
-    if (finalStyles['animationDelay']) {
-        finalStyles['--animation-delay'] = finalStyles['animationDelay'];
-    }
-    if (finalStyles['animationDirection']) {
-        finalStyles['--animation-direction'] = finalStyles['animationDirection'];
-    }
     return finalStyles;
 }
 

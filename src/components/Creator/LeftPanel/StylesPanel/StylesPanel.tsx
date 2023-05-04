@@ -20,6 +20,7 @@ import Text from "@/components/Creator/LeftPanel/StylesPanel/Text/Text";
 import TextShadow from "@/components/Creator/LeftPanel/StylesPanel/TextShadow/TextShadow";
 import Background from "@/components/Creator/LeftPanel/StylesPanel/Background/Background";
 import Filter from "@/components/Creator/LeftPanel/StylesPanel/Filter/Filter";
+import Animations from "@/components/Creator/LeftPanel/StylesPanel/Animations/Animations";
 
 export default function () {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -54,7 +55,7 @@ export default function () {
         ['margin', <AccordionItem key={'margin'} title="Marginesy zewnętrzne"><Margin onChange={styleChange}/></AccordionItem>],
         ['padding', <AccordionItem key={'padding'} title="Marginesy wewnętrzne"><Padding onChange={styleChange}/></AccordionItem>],
         ['filter', <AccordionItem key={'filter'} title="Filtry"><Filter onChange={styleChange}/></AccordionItem>],
-        // ['animations', <AccordionItem key={'animations'} title="Animacje"><Layout onChange={styleChange}/></AccordionItem>],
+        ['animations', <AccordionItem key={'animations'} title="Animacje"><Animations onChange={styleChange}/></AccordionItem>],
     ]
     const canShow = ([id,c]) => {
         return shouldShowStyleForBlockType(selectedBlock.type, id);

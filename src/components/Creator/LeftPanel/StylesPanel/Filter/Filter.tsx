@@ -66,16 +66,16 @@ export default function (props: Props) {
     }
     const addFilterUnits = value => {
         return [...value].map(([id, val]) => {
-            if(id === 'drop-shadow' ){
-                return  [id, val.map((v,index)=>{
-                    if(index===3){
+            if (id === 'drop-shadow') {
+                return [id, val.map((v, index) => {
+                    if (index === 3) {
                         return v;
                     }
                     return `${parseInt(v)}px`
                 }).join(' ')]
             }
             const [, unit] = filterDefaultUnits.find(([f_id, _unit]) => f_id === id)!
-            return  [id, `${val}${unit}`]
+            return [id, `${val}${unit}`]
         });
     }
     const mapFiltersToArray = (value: string): SelectedFilter[] => {
@@ -110,6 +110,9 @@ export default function (props: Props) {
     }, [selectedBlock, rwd, styleState])
 
     const addFilter = (filterId: string) => {
+        if (!filterId) {
+            return;
+        }
         const [, defaultValue] = filtersDefaultValues.find(([id, _]) => id === filterId);
         const newFilter: SelectedFilter = [filterId, defaultValue];
         setSelectedFilters([...selectedFilters, newFilter]);

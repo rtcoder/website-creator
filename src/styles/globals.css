@@ -1,7 +1,7 @@
 @import "icons-set.styles.css";
 @import "table.css";
 @import "react-tabs.css";
-
+@import "animations.css";
 
 * {
     box-sizing: border-box;

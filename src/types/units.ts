@@ -13,3 +13,5 @@ export declare type Units =
     | 'vmin'
     | 'vmax'
     | 'deg'
+    | 's'
+    | 'ms'

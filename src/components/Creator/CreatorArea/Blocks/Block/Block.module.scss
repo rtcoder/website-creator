@@ -1,15 +1,8 @@
 .singleBlock {
   position: relative;
   box-sizing: border-box;
-  animation: none !important;
-  animation-delay: initial !important;
-  animation-direction: initial !important;
   display: flex;
   margin: 10px 0;
-
-  --animation: none;
-  --animation-delay: initial;
-  --animation-direction: initial;
 
   &[style*="align-items: stretch"] {
     .singleBlock {
@@ -21,10 +14,13 @@
   &:hover,
   &.hovered {
     outline: 2px solid #09c;
+    animation: none !important;
   }
+
   &.minimized {
     //pointer-events: none;
     filter: none !important;
+    animation: none !important;
     height: 40px !important;
     overflow: hidden;
     border: none !important;
