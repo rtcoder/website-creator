@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {setAttributes} from "@/store/structureSlice";
 import Input from "@/components/construction/Input/Input";
-import {deepCloneStructure, getAllStructureAnchors} from "@/helpers/block";
+import {getAllStructureAnchors} from "@/helpers/block";
 
 export default function Anchor() {
     const selectedBlock: BlockInterface = useSelector((state: any) => state.structure.selectedBlock);
@@ -19,9 +19,9 @@ export default function Anchor() {
         setAnchor(value);
         const allAnchors = getAllStructureAnchors([...structure]);
         if (allAnchors.includes(value)) {
-            console.log(allAnchors,value)
+            console.log(allAnchors, value)
             setShowErrorMessage(true);
-        }else {
+        } else {
             setShowErrorMessage(false);
             _setAttributes({blockId: selectedBlock?.id, attributes: {id: value || undefined}})
         }
@@ -32,8 +32,8 @@ export default function Anchor() {
     }, [selectedBlock])
     return (
         <>
-        <Input value={anchor} onChange={(ev, val) => updateAnchor(val)} label="Nazwa kotwicy"/>
-            {showErrorMessage?'Podana nazwa kotwicy już istnieje':''}
+            <Input value={anchor} onChange={(ev, val) => updateAnchor(val)} label="Nazwa kotwicy"/>
+            {showErrorMessage ? 'Podana nazwa kotwicy już istnieje' : ''}
         </>
     )
 }

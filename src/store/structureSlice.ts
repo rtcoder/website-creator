@@ -16,6 +16,7 @@ import {
     setAttributesFn,
     setIconFn,
     setStylesPropertyFn,
+    setTagNameFn,
     setTextContentFn
 } from "@/store/functions/block";
 import {addHiddenBlockIdToArrayFn, removeHiddenBlockIdFromArrayFn} from "@/store/functions/structure-preview";
@@ -58,6 +59,7 @@ const structureSlice = createSlice({
         removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn,
         setStylesProperty: setStylesPropertyFn,
         setPageYOffset: setPageYOffsetFn,
+        setTagName: setTagNameFn
     }
 });
 
@@ -77,6 +79,7 @@ export const {
     removeHiddenBlockIdFromArray,
     setStylesProperty,
     setPageYOffset,
+    setTagName,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

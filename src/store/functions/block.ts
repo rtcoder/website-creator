@@ -28,7 +28,6 @@ export const setIconFn = (state: StructureState, {payload}) => {
     }
 };
 
-
 export const setTextContentFn = (state: StructureState, {payload}) => {
     const {content, blockId} = payload;
     const {structure, selectedBlock} = state;
@@ -44,7 +43,6 @@ export const setTextContentFn = (state: StructureState, {payload}) => {
         state.selectedBlock = selectedBlock;
     }
 };
-
 
 export const setAttributesFn = (state: StructureState, {payload}) => {
     const {attributes, blockId} = payload;
@@ -68,7 +66,6 @@ export const setAttributesFn = (state: StructureState, {payload}) => {
     }
 };
 
-
 export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
     const {structure} = state;
 
@@ -77,7 +74,7 @@ export const duplicateBlockFn = (state: StructureState, {payload}: PayloadAction
 
 export interface SetStylesPropertyPayloadInterface {
     property: string;
-    value: string|null;
+    value: string | null;
     rwd: RWD_MODES;
     styleState: STYLE_STATE_NAMES;
     blockId: string;
@@ -95,6 +92,21 @@ export const setStylesPropertyFn = (state: StructureState, {payload}: PayloadAct
     state.structure = updateBlockInStructure(structure, blockId, block);
     if (selectedBlock && selectedBlock.id === blockId) {
         selectedBlock.styles = setStyleValue(selectedBlock.styles, rwd, styleState, toKebabCase(property), value);
+        state.selectedBlock = selectedBlock;
+    }
+};
+
+export const setTagNameFn = (state: StructureState, {payload}) => {
+    const {tagName, blockId} = payload;
+    const {structure, selectedBlock} = state;
+    const block = findByIdRecursive(structure, blockId);
+    if (!block) {
+        return;
+    }
+    block.tagName = tagName;
+    state.structure = updateBlockInStructure(structure, blockId, block);
+    if (selectedBlock && selectedBlock.id === blockId) {
+        selectedBlock.tagName = tagName;
         state.selectedBlock = selectedBlock;
     }
 };
