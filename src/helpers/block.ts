@@ -181,3 +181,23 @@ export const updateBlockInStructure = (
         return block;
     })
 }
+
+export function deepCloneStructure(structure: BlockInterface[]): BlockInterface[] {
+    return structure.map(block => {
+        return {
+            ...block,
+            children: deepCloneStructure(block.children)
+        }
+    })
+}
+
+export function getAllStructureAnchors(structure: BlockInterface[]) {
+    const anchors = [];
+    structure.forEach(block => {
+        anchors.push(
+            (block.attributes.id || ''),
+            ...getAllStructureAnchors(block.children)
+        );
+    })
+    return anchors.filter(v => parseInt(v) >= 0 || !!v)
+}
