@@ -8,10 +8,10 @@ interface Props {
 
 export default function Accordion(props: Props) {
     const getChildrenItems = () => {
-        console.log(props.children)
+        console.log(AccordionItem.name)
         return (Array.isArray(props.children) ? props.children : [props.children])
             .flat()
-            .filter((child) => child?.type?.name === 'AccordionItem');
+            .filter((child) => child?.type?.displayName === 'AccordionItem');
     }
 
     const [openedItem, setOpenedItem] = useState(
