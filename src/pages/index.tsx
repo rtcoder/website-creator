@@ -1,8 +1,11 @@
 import Head from 'next/head'
-import Creator from "@/components/Creator/Creator";
 import {Provider} from "react-redux";
 import {store} from "@/store/store";
+import dynamic from "next/dynamic";
 
+const Creator = dynamic(() => import('../components/Creator/Creator'), {
+    ssr: false
+})
 export default function Home() {
     return (
         <>
