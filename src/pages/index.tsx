@@ -1,11 +1,15 @@
 import Head from 'next/head'
+import Creator from "@/components/Creator/Creator";
 import {Provider} from "react-redux";
 import {store} from "@/store/store";
 import dynamic from "next/dynamic";
-
-const Creator = dynamic(() => import('../components/Creator/Creator'), {
-    ssr: false
+const NoSsrCreator=()=>{
+    return <Creator/>
+}
+const MyCreator = dynamic(() => Promise.resolve(NoSsrCreator), {
+    ssr: false,
 })
+
 export default function Home() {
     return (
         <>
@@ -17,7 +21,7 @@ export default function Home() {
             </Head>
             <main>
                 <Provider store={store}>
-                    <Creator/>
+                    <MyCreator/>
                 </Provider>
             </main>
         </>
