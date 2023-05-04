@@ -110,3 +110,18 @@ export const setTagNameFn = (state: StructureState, {payload}) => {
         state.selectedBlock = selectedBlock;
     }
 };
+
+export const setLinkFn = (state: StructureState, {payload}) => {
+    const {link, blockId} = payload;
+    const {structure, selectedBlock} = state;
+    const block = findByIdRecursive(structure, blockId);
+    if (!block) {
+        return;
+    }
+    block.blockLink = link;
+    state.structure = updateBlockInStructure(structure, blockId, block);
+    if (selectedBlock && selectedBlock.id === blockId) {
+        selectedBlock.blockLink = link;
+        state.selectedBlock = selectedBlock;
+    }
+};

@@ -15,6 +15,7 @@ import {
     duplicateBlockFn,
     setAttributesFn,
     setIconFn,
+    setLinkFn,
     setStylesPropertyFn,
     setTagNameFn,
     setTextContentFn
@@ -59,7 +60,8 @@ const structureSlice = createSlice({
         removeHiddenBlockIdFromArray: removeHiddenBlockIdFromArrayFn,
         setStylesProperty: setStylesPropertyFn,
         setPageYOffset: setPageYOffsetFn,
-        setTagName: setTagNameFn
+        setTagName: setTagNameFn,
+        setLink: setLinkFn
     }
 });
 
@@ -80,6 +82,7 @@ export const {
     setStylesProperty,
     setPageYOffset,
     setTagName,
+    setLink,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

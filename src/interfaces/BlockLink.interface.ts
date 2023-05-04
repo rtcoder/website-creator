@@ -1,4 +1,4 @@
-export enum BLOCK_LINK_TYPES {
+export enum LINK_TYPES {
     URL = 0,
     EMAIL = 1,
     TEL = 2,
@@ -7,6 +7,9 @@ export enum BLOCK_LINK_TYPES {
 }
 
 export interface BlockLinkInterface {
-    type: BLOCK_LINK_TYPES;
+    type: LINK_TYPES;
     value: string;
+    target: LinkTarget;
 }
+
+export type LinkTarget = '_blank' | '_self';

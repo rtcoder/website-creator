@@ -1,4 +1,4 @@
-import {BlockAttributesInterface, BlockInterface, BlockSettingsInterface} from "@/interfaces/Block.interface";
+import {BlockAttributesInterface, BlockInterface, BlockSettingsInterface, TagName} from "@/interfaces/Block.interface";
 import {Styles} from "@/interfaces/Styles.interface";
 import {makeId} from "@/helpers/string-helpers";
 import {PartiallyRequired} from "@/types/utils";
@@ -7,7 +7,7 @@ import {BlockTypes} from "@/types/block-type";
 const plainBlock: BlockInterface = {
     id: '',
     type: BlockTypes.CONTAINER,
-    tagName: '',
+    tagName: 'div',
     styles: {} as Styles,
     children: [],
     textContent: '',
@@ -16,7 +16,7 @@ const plainBlock: BlockInterface = {
     blockLink: null,
 }
 
-const getTagName = (type: BlockTypes.BlockType): string => ({
+const getTagName = (type: BlockTypes.BlockType): TagName => ({
     [BlockTypes.CONTAINER]: 'div',
     [BlockTypes.PARAGRAPH]: 'p',
     [BlockTypes.HEADING]: 'h1',
@@ -39,7 +39,7 @@ const getTagName = (type: BlockTypes.BlockType): string => ({
     [BlockTypes.QUOTE_VARIABLE]: 'q',
     [BlockTypes.GOOGLE_MAPS]: 'iframe',
     [BlockTypes.GOOGLE_CALENDAR]: 'iframe',
-}[type] || '');
+}[type] as TagName);
 
 const getIconStartingStyles = () => {
     return {
