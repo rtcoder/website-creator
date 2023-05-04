@@ -3,6 +3,8 @@ import {fetchJson} from "@/helpers/fetch";
 import styles from "./IconsList.module.scss";
 import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
+import {Option, Select} from "@/components/construction/Select";
+import {Input} from "@/components/construction/Input/Input";
 
 interface IconsListInterface {
     categories: {
@@ -32,7 +34,7 @@ export default class IconsList extends React.Component<any, any> {
             iconsToShow: [],
             categories: [],
             page: 1,
-            perPage: 100,
+            perPage: 50,
             iconsType: props.type,
             searchInputRef: React.createRef(),
             categoriesSelectRef: React.createRef(),
@@ -72,9 +74,7 @@ export default class IconsList extends React.Component<any, any> {
         return fetchJson<IconsListInterface>(`/json/icons/${this.state.iconsType}.json`);
     }
 
-    private searchIcons(ev?: FormEvent, page = 1) {
-        ev?.preventDefault();
-        ev?.stopPropagation();
+    private searchIcons( page = 1) {
         this.setState({page});
         const {
             perPage,
@@ -104,8 +104,8 @@ export default class IconsList extends React.Component<any, any> {
         });
     }
 
-    private loadNextPage(ev) {
-        this.searchIcons(ev, this.state.page + 1);
+    private loadNextPage() {
+        this.searchIcons(this.state.page + 1);
     }
 
     private toggleSelected(icon) {
@@ -120,18 +120,18 @@ export default class IconsList extends React.Component<any, any> {
 
     render() {
         return (<>
-            {this.state.selectedIcon?.name}
             <div className={styles.searchForm}>
-                <input type="text"
+                <Input type="text"
                        ref={this.state.searchInputRef}
-                       placeholder="Szukaj"
-                       onInput={ev => this.searchIcons(ev)}/>
+                       label="Szukaj"
+                       onChange={(ev,val) => this.searchIcons()}/>
 
-                <select ref={this.state.categoriesSelectRef}
-                        onChange={ev => this.searchIcons(ev)}>
-                    <option value="">Wybierz</option>
-                    {this.state.categories.map(({name, title}) => <option key={name} value={name}>{title}</option>)}
-                </select>
+                <Select ref={this.state.categoriesSelectRef}
+                        label="Kategoria"
+                        onChange={v => this.searchIcons()}>
+                    <Option value="">Wybierz</Option>
+                    {this.state.categories.map(({name, title}) => <Option key={name} value={name}>{title}</Option>)}
+                </Select>
             </div>
 
             <div className={styles.iconsList} ref={this.state.iconsContainerRef}>
@@ -152,7 +152,7 @@ export default class IconsList extends React.Component<any, any> {
 
                 {this.state.displayShowMoreButton
                     ? <div className={styles.showMoreButton}
-                           onClick={ev => this.loadNextPage(ev)}>
+                           onClick={this.loadNextPage}>
                         Pokaż więcej
                     </div> : ''}
             </div>

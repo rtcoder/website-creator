@@ -31,7 +31,6 @@ export default function () {
         dispatch(setStylesProperty(data));
     }, [dispatch]);
     const styleChange = (value: string, property: string) => {
-        console.log({property, value});
         updateStyle({
             property,
             value: value || null,
@@ -40,7 +39,6 @@ export default function () {
             blockId: selectedBlock.id,
         })
     }
-    const stylesSections: [title: string, id: string, component: JSX.Element][] = []
     const sections: [id: string, component: JSX.Element][] = [
         ['layout', <AccordionItem key={'layout'} title="Układ elementów"><Layout onChange={styleChange}/></AccordionItem>],
         ['background', <AccordionItem key={'background'} title="Tło"><Background onChange={styleChange}/></AccordionItem>],

@@ -78,12 +78,11 @@ export const Input = forwardRef(function (props: Props, ref) {
     }
 
     const handleChange = ev => {
-        const valid = validate(ev);console.log(ev.target.value,'fff')
+        const valid = validate(ev);
         setInvalid(!valid)
         setValue(ev.target.value);
         if (valid) {
             onChange(ev, ev.target.value);
-            console.log(ev.target.value)
         }
     }
     useEffect(() => {
@@ -98,10 +97,10 @@ export const Input = forwardRef(function (props: Props, ref) {
         <div className={styles.formInputContainer}>
             <input {...otherProps}
                    type={type || 'text'}
-                   value={val}
+                   value={val || ''}
                    className={classes}
-                onKeyUp={handleChange}
-                onChange={handleChange}
+                   onKeyUp={handleChange}
+                   onChange={handleChange}
                    onInput={handleChange}
                    ref={ref}/>
             <div className={styles.overlay}/>

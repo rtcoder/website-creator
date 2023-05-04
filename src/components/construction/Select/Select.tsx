@@ -1,11 +1,10 @@
 import styles from './Select.module.scss'
-import {forwardRef, useEffect, useRef, useState} from "react";
+import {ForwardedRef, forwardRef, useEffect, useRef, useState} from "react";
 import Option from "@/components/construction/Select/Option/Option";
 import {OptionProps, SelectProps} from "@/components/construction/Select/types";
-import {makeId} from "@/helpers/string-helpers";
 import classNames from "@/helpers/classNames";
 
-export const Select = forwardRef(function (props: SelectProps, ref) {
+export const Select = forwardRef(function (props: SelectProps, ref: ForwardedRef<HTMLSelectElement>) {
     const selectRef = useRef(null);
     const listRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +17,10 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
     const [selected, setSelected] = useState(
         props.children.flat().find(child => child.props.selected) || props.children[0]
     );
-    const clickOption = option => {
+    const clickOption = (option, index) => {
+        if (ref) {
+            ((ref as any).current as HTMLSelectElement).selectedIndex = index;
+        }
         option.props.onClick?.(option.props.value);
         setSelected(option);
         props.onChange?.(option.props.value)
@@ -34,8 +36,8 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
             .map((opt, index) => {
                 const {onClick, value, ...restProps} = opt.props as OptionProps
                 return (
-                    <Option key={makeId(3)}
-                            onClick={e => clickOption(opt)}
+                    <Option key={index + value}
+                            onClick={e => clickOption(opt, index)}
                             {...restProps}
                             value={value}
                             selected={selected?.props.value === value}/>
@@ -45,7 +47,7 @@ export const Select = forwardRef(function (props: SelectProps, ref) {
     const getPureOptions = () => {
         return getChildrenOptions()
             .map((opt, index) =>
-                <option key={makeId(3)}
+                <option key={opt.props.value + index}
                         value={opt.props.value}/>
             )
     }

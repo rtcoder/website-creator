@@ -4,6 +4,7 @@ import {makeBlock} from "@/helpers/block-type-helpers";
 import {PayloadAction} from "@reduxjs/toolkit";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {RWD_MODES} from "@/enums/rwd";
+import {STYLE_STATE_NAMES} from "@/enums/styleState";
 
 interface SetSelectedBlockPayload {
     force: boolean;
@@ -32,6 +33,10 @@ export const setSelectedBlockFn = (state: StructureState, {payload}: PayloadActi
 export const setRwdModeFn = (state: StructureState, {payload}: PayloadAction<RWD_MODES>) => {
     state.rwdMode = payload;
 };
+
+export const setStyleStateFn = (state: StructureState, {payload}: PayloadAction<STYLE_STATE_NAMES>) => {
+    state.styleState = payload || STYLE_STATE_NAMES.BASIC;
+}
 
 export const dropBlockFn = (state: StructureState, {payload}: PayloadAction<BlockWithTargetPayload>) => {
     const {block, targetId} = payload;

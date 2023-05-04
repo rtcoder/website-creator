@@ -10,7 +10,6 @@ import LeftSettingsPanel from "@/components/Creator/LeftPanel/LeftSettingsPanel/
 export default function () {
     return (
         <div className={styles.leftPanel}>
-            <LeftSettingsPanel/>
             <Tabs defaultIndex={1}>
                 <TabList>
                     <Tab>
@@ -25,6 +24,10 @@ export default function () {
                         <Icon type="material-outlined" name="account_tree"/>
                         Struktura
                     </Tab>
+                    <Tab>
+                        <Icon type="material-outlined" name="build"/>
+                        Ustawienia
+                    </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -35,6 +38,9 @@ export default function () {
                 </TabPanel>
                 <TabPanel>
                     <StructurePanel/>
+                </TabPanel>
+                <TabPanel>
+                    <LeftSettingsPanel/>
                 </TabPanel>
             </Tabs>
         </div>

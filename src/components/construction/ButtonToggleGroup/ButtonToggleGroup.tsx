@@ -4,7 +4,7 @@ import classNames from "@/helpers/classNames";
 import ButtonToggle from "@/components/construction/ButtonToggleGroup/ButtonToggle/ButtonToggle";
 import {makeId} from "@/helpers/string-helpers";
 
-type ValueType = string | number ;
+type ValueType = string | number;
 type Value = ValueType[] | Value;
 type ValuesArr = ValueType[];
 
@@ -13,6 +13,7 @@ interface Props {
     children: any;
     value: Value;
     multi?: boolean;
+    required?: boolean;
     onChange?: (value: Value | null) => void;
 }
 
@@ -42,7 +43,7 @@ export default function (props: Props) {
         const children = getChildrenButtons();
         const values = getPropsValue();
 
-        const filterFn = values !== undefined
+        const filterFn = values !== undefined && values !== null
             ? child => values!.includes(child.props.value)
             : child => child.props.active;
 
@@ -58,7 +59,7 @@ export default function (props: Props) {
         getSelectedValuesFromChildren()
     );
     const handleClick = el => {
-        const value =  el.props.value;
+        const value = el.props.value;
         if (selectedHasValue(value)) {
             selected.splice(
                 findValueIndexInSelected(value),
@@ -71,6 +72,9 @@ export default function (props: Props) {
                 selected.length = 0;
                 selected.push(value);
             }
+        }
+        if (props.required && !selected.length) {
+            selected.push(value);
         }
         el.props.onClick?.();
         setSelected([...selected]);
@@ -99,11 +103,11 @@ export default function (props: Props) {
                 )
             })
     }
-    useEffect(()=>{
+    useEffect(() => {
         setSelected(
             getSelectedValuesFromChildren()
         )
-    },[props.value])
+    }, [props.value])
     return (
         <div className={classes}>
             {getOptions()}

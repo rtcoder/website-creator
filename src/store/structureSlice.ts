@@ -8,7 +8,8 @@ import {
     removeBlockFn,
     setRwdModeFn,
     setSelectedBlockFn,
-    setStructureFn
+    setStructureFn,
+    setStyleStateFn
 } from "@/store/functions/structure";
 import {
     duplicateBlockFn,
@@ -45,6 +46,7 @@ const structureSlice = createSlice({
         setStructure: setStructureFn,
         setSelectedBlock: setSelectedBlockFn,
         setRwdMode: setRwdModeFn,
+        setStyleState: setStyleStateFn,
         dropBlock: dropBlockFn,
         dropNewBlock: dropNewBlockFn,
         duplicateBlock: duplicateBlockFn,
@@ -63,6 +65,7 @@ export const {
     setStructure,
     setSelectedBlock,
     setRwdMode,
+    setStyleState,
     dropBlock,
     dropNewBlock,
     duplicateBlock,

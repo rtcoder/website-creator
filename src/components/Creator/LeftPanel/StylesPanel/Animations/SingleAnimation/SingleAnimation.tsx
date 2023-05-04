@@ -75,8 +75,7 @@ export default function (props: Props) {
                                 <Option value="alternate" selected={direction === 'alternate'}>Do przodu i do
                                     tyłu</Option>
                                 <Option value="alternate-reverse" selected={direction === 'alternate-reverse'}>Do tyłu i
-                                    do
-                                    przodu</Option>
+                                    do przodu</Option>
                             </Select>
                         </div>
                     </div>

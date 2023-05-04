@@ -19,6 +19,9 @@ export default function AccordionItem(props: AccordionItemInterface) {
     };
     const [timeout, _setTimeout] = useState<NodeJS.Timeout>(null);
     const openPanel = () => {
+        if (isOpen) {
+            return;
+        }
         props.onOpen?.();
         const openedHeaderHeight = 60;
         const contentHeight = (contentRef.current as HTMLElement).getBoundingClientRect().height;

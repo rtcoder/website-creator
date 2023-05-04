@@ -1,63 +1,9 @@
 .leftSettingsPanel {
-  position: absolute;
   width: 100%;
-  height: 100%;
   background: #fff;
   display: flex;
   z-index: 9;
   flex-direction: column;
-
-  .panelHeader {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    background: #e7f1ff;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
-    color: #0c63e4;
-
-    .icons {
-      width: 50px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-
-      .closeButton, .saveButton {
-        font-size: 20px;
-        z-index: 1;
-        width: 20px;
-        height: 20px;
-        border-radius: 30px;
-        color: #fff;
-        cursor: pointer;
-
-        &:hover {
-          background: transparent;
-        }
-      }
-
-      .closeButton {
-        border: 1px solid #991616;
-        background: #991616;
-
-        &:hover {
-          color: #991616;
-        }
-      }
-
-      .saveButton {
-        border: 1px solid #3bb956;
-        background: #3bb956;
-
-        &:hover {
-          color: #3bb956;
-        }
-      }
-    }
-  }
 
   .panelContainer {
     position: relative;

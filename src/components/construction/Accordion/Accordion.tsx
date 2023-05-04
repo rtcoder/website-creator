@@ -7,15 +7,16 @@ interface Props {
 }
 
 export default function (props: Props) {
-    const [openedItem, setOpenedItem] = useState(
-        props.children.flat().find(child => child.props?.opened)?.props.title || ''
-    )
-
     const getChildrenItems = () => {
-        return props.children
+        return (Array.isArray(props.children)?props.children:[props.children])
             .flat()
             .filter((child) => child?.type?.name === 'AccordionItem');
     }
+
+    const [openedItem, setOpenedItem] = useState(
+        getChildrenItems().find(child => child.props?.opened)?.props.title || ''
+    )
+
     const handleOpen = (item) => {
         item.props.onOpen?.();
         setOpenedItem(item?.props.title);
@@ -34,7 +35,6 @@ export default function (props: Props) {
     }
     return (
         <div className={styles.accordion}>
-            {openedItem}
             {getItems()}
         </div>
     )

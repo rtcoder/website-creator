@@ -28,9 +28,8 @@ export default function (props: BlockProps) {
             {props.block.settings.icon
                 ? <Icon type={props.block.settings.icon.type}
                         name={props.block.settings.icon.name}
-                        onClick={openPanel}
                         className={styles.icon}/>
-                : <div onClick={openPanel}>open</div>}
+                : <div >open</div>}
         </div>
     )
 
