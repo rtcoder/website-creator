@@ -172,11 +172,24 @@ export default function ColorPicker(props: ColorPickerProps) {
     }
     const show = () => {
         setIsShown(true)
+        setPosition();
     }
     const hide = (e) => {
         if (e.target.classList.contains(styles.fixedLayer)) {
             setIsShown(false)
         }
+    }
+    const setPosition = () => {
+        const {top, left, width, height} = (colorSquareRef.current as HTMLElement).getBoundingClientRect();
+        const colorPickerContainer = (colorPickerContainerRef.current as HTMLElement);
+        const pickerHeight = 335;
+
+        if (top + height - pickerHeight >= 0) {
+            colorPickerContainer.style.top = `${top + height - pickerHeight}px`
+        } else {
+            colorPickerContainer.style.top = `${top}px`
+        }
+        colorPickerContainer.style.left = `${left + width}px`
     }
 
     return (
