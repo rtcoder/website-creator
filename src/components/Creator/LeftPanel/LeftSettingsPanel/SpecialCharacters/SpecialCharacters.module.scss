@@ -1,0 +1,28 @@
+.list {
+  width: 100%;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  margin: 15px 0;
+  max-height: 330px;
+  overflow: auto;
+
+  .singleCharacter {
+    width: 40px;
+    height: 40px;
+    background: #eaeaea;
+    border-radius: 10px;
+    display: flex;
+    cursor: pointer;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+
+    &:hover {
+      background: #706e6e;
+      color: #fff;
+    }
+  }
+}

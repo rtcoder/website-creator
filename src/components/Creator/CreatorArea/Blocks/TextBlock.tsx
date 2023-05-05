@@ -1,60 +1,45 @@
 import {BlockInterface} from "@/interfaces/Block.interface";
-import React from "react";
-import {connect} from "react-redux";
+import React, {useCallback, useEffect, useRef, useState} from "react";
+import {useDispatch} from "react-redux";
 import {setTextContent} from "@/store/structureSlice";
 
-interface TextComponentPropsInterface {
+interface Props {
     block: BlockInterface,
     multiline?: boolean,
     editable?: boolean
-    setTextContent: (data: { content: string; blockId: string }) => void
 }
 
-class TextBlock extends React.Component<any, any> {
-    constructor(props: TextComponentPropsInterface) {
-        super(props)
-        this.state = {
-            block: props.block,
-            ref: React.createRef(),
-            html: props.block.textContent,
-            multiline: props.multiline || false,
-            editable: props.editable || false,
+export default function TextBlock(props: Props) {
+    const CustomTag = props.block.tagName;
+    const ref = useRef(null);
+    const [html, setHtml] = useState(props.block.textContent)
+    const [isFocused, setIsFocused] = useState(false)
+    const dispatch = useDispatch();
+    const _setTextContent = useCallback((data) => {
+        dispatch(setTextContent(data));
+    }, [dispatch]);
+
+    const updateContent = () => {
+        const val = !!props.multiline
+            ? ref.current.innerHTML
+            : ref.current.innerText.replaceAll('\n', ' ');
+        _setTextContent({blockId: props.block.id, content: val})
+    }
+    useEffect(() => {
+        if (!isFocused) {
+            setHtml(props.block.textContent)
         }
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        const value = this.state.multiline
-            ? this.state.ref.current.innerHTML
-            : this.state.ref.current.innerText.replaceAll('\n', ' ');
-        return nextState.html !== value;
-    }
-
-    getHtml() {
-        return {__html: this.state.html};
-    }
-
-    updateContent() {
-        const {block} = this.state;
-        const val = this.state.multiline
-            ? this.state.ref.current.innerHTML
-            : this.state.ref.current.innerText.replaceAll('\n', ' ');
-        this.props.setTextContent({blockId: block.id, content: val})
-    }
-
-    render() {
-        const CustomTag = this.state.block.tagName;
-        return (
-            <CustomTag ref={this.state.ref}
-                       contentEditable={this.state.editable}
-                       suppressContentEditableWarning={true}
-                       onInput={this.updateContent.bind(this)}
-                       onChange={this.updateContent.bind(this)}
-                       onKeyUp={this.updateContent.bind(this)}
-                       dangerouslySetInnerHTML={this.getHtml()}
-            />
-        )
-    }
+    }, [props.block])
+    return (
+        <CustomTag ref={ref}
+                   onFocus={e => setIsFocused(true)}
+                   onBlur={e => setIsFocused(false)}
+                   contentEditable={!!props.editable}
+                   suppressContentEditableWarning={true}
+                   onInput={updateContent}
+                   dangerouslySetInnerHTML={{__html: html}}
+        />
+    )
 }
 
 
-export default connect(null, {setTextContent})(TextBlock as any) as any;

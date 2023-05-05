@@ -21,8 +21,13 @@ export default function BlockSelectionBorder() {
         container.style.width = `${width}px`
     }
     useEffect(() => {
-        setComponentPosition();
-    }, [selectedBlock, pageYOffset,hiddenBlocksIds])
+        setTimeout(()=>{
+            setComponentPosition();
+        },1);
+    }, [selectedBlock])
+    useEffect(() => {
+            setComponentPosition();
+    }, [pageYOffset, hiddenBlocksIds])
 
     return (
         <> {selectedBlock ? <div className={styles.selection} ref={ref}/> : ''}</>

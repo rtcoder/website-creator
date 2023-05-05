@@ -6,6 +6,7 @@ import AccordionItem from "@/components/construction/Accordion/AccordionItem";
 import Anchor from "@/components/Creator/LeftPanel/LeftSettingsPanel/Anchor/Anchor";
 import HeadingTagName from "@/components/Creator/LeftPanel/LeftSettingsPanel/HeadingTagName/HeadingTagName";
 import Link from "@/components/Creator/LeftPanel/LeftSettingsPanel/Link/Link";
+import SpecialCharacters from "@/components/Creator/LeftPanel/LeftSettingsPanel/SpecialCharacters/SpecialCharacters";
 
 export default function LeftSettingsPanel() {
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
@@ -26,6 +27,9 @@ export default function LeftSettingsPanel() {
                         </AccordionItem>
                         <AccordionItem title="Ikonka">
                             <IconPanel/>
+                        </AccordionItem>
+                        <AccordionItem title="Znaki specjalne">
+                            <SpecialCharacters/>
                         </AccordionItem>
                     </Accordion>
                 </>)
