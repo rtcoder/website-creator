@@ -36,7 +36,7 @@ export default function SpecialCharacters() {
     const getCharacters = () => {
         const characters = charactersList;
         categories.forEach((type) => {
-            fetchJson(`/json/special-characters/${type}.json`)
+            fetchJson<CharactersList>(`/json/special-characters/${type}.json`)
                 .then((list: CharactersList) => {
                     characters[type] = list;
                     if (!Object.keys(characters).find(cat => !characters[cat].length)) {
