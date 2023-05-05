@@ -30,15 +30,17 @@ export default function TextBlock(props: Props) {
             setHtml(props.block.textContent)
         }
     }, [props.block])
+    const tagProps = {
+        ref,
+        onFocus: () => setIsFocused(true),
+        onBlur: () => setIsFocused(false),
+        contentEditable: !!props.editable,
+        suppressContentEditableWarning: true,
+        onInput: updateContent,
+        dangerouslySetInnerHTML: {__html: html}
+    }
     return (
-        <CustomTag ref={ref}
-                   onFocus={e => setIsFocused(true)}
-                   onBlur={e => setIsFocused(false)}
-                   contentEditable={!!props.editable}
-                   suppressContentEditableWarning={true}
-                   onInput={updateContent}
-                   dangerouslySetInnerHTML={{__html: html}}
-        />
+        <CustomTag {...tagProps}/>
     )
 }
 
