@@ -41,7 +41,7 @@ export default function ColorPicker(props: ColorPickerProps) {
     const [currentColor, setCurrentColor] = useState<Rgba>([255, 255, 255, 1]);
     const [currentOpacity, setCurrentOpacity] = useState<number>(1);
     const [posMainCanvasCursor, setPosMainCanvasCursor] = useState<MousePos>({x: 0, y: 0});
-    const [colorToHistory, setColorToHistory] = useState<Rgba>(null);
+
     const onChange = (color: Rgba) => {
         props.onChange(colorArrayToString(color));
     }
@@ -100,26 +100,23 @@ export default function ColorPicker(props: ColorPickerProps) {
             return
         }
         mouseUpAll();
-        const color = updateColorValues(e);
-        setColorToHistory(color);
+        updateColorValues(e);
     }
     const mouseUpSelect = (e) => {
         if (!isMouseDownColorSelect) {
             return
         }
         mouseUpAll();
-        const color = updateColorSelectValues(e);
-        setColorToHistory(color);
+        updateColorSelectValues(e);
     }
     const mouseUpOpacity = (e) => {
         if (!isMouseDownOpacity) {
             return
         }
         mouseUpAll();
-        const color = updateColorOpacityValues(e);
-        setColorToHistory(color);
+        updateColorOpacityValues(e);
     }
-    const updateColorSelectValues = (e): Rgba => {
+    const updateColorSelectValues = (e) => {
         const mousePos = getMousePosOnElement(e);
         const color = getColorFromCanvas(canvasSelectRef, mousePos);
         generateHSV(canvasRef, canvasCursorRef, getHueFromRgba(color), posMainCanvasCursor);
@@ -127,9 +124,8 @@ export default function ColorPicker(props: ColorPickerProps) {
         const [r, g, b] = mainCanvasColor;
         setColorValue([r, g, b, currentOpacity]);
         renderCursor(canvasSelectCursorRef, {x: mousePos.x, y: 10})
-        return [r, g, b, currentOpacity];
     }
-    const updateColorOpacityValues = (e): Rgba => {
+    const updateColorOpacityValues = (e) => {
         const mousePos = getMousePosOnElement(e);
         const color = getColorFromCanvas(canvasOpacityRef, mousePos);
         const [r, g, b] = currentColor;
@@ -137,9 +133,8 @@ export default function ColorPicker(props: ColorPickerProps) {
         setCurrentOpacity(a);
         setColorValue([r, g, b, a]);
         renderCursor(canvasOpacityCursorRef, {x: mousePos.x, y: 10})
-        return [r, g, b, a];
     }
-    const updateColorValues = (e): Rgba => {
+    const updateColorValues = (e) => {
         const mousePos = getMousePosOnElement(e);
         const color = getColorFromCanvas(canvasRef, mousePos);
         const [r, g, b] = color;
@@ -147,7 +142,6 @@ export default function ColorPicker(props: ColorPickerProps) {
         onChange([r, g, b, currentOpacity]);
         setPosMainCanvasCursor(mousePos)
         renderCursor(canvasCursorRef, mousePos)
-        return [r, g, b, currentOpacity];
     }
     const mouseDown = () => {
         setIsMouseDown(true);
@@ -227,7 +221,7 @@ export default function ColorPicker(props: ColorPickerProps) {
                         </div>
                     </div>
                     <RgbaValues color={currentColor}/>
-                    <ColorHistory color={colorToHistory} onClickColor={setColor}/>
+                    <ColorHistory color={currentColor} onClickColor={setColor}/>
                 </div>
             </div>
         </div>
