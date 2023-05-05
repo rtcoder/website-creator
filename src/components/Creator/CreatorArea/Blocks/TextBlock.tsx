@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function TextBlock(props: Props) {
-    const CustomTag = props.block.tagName;
+    const CustomTag: string = props.block.tagName;
     const ref = useRef(null);
     const [html, setHtml] = useState(props.block.textContent)
     const [isFocused, setIsFocused] = useState(false)
