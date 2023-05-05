@@ -55,7 +55,7 @@ export default function SpecialCharacters() {
     }
     return (
         <div>
-            <Select id="chars-categories" onChange={setCharactersCategory}>
+            <Select onChange={setCharactersCategory}>
                 <Option value="">Wszystkie</Option>
                 <Option value="block">Bloki</Option>
                 <Option value="dingbats">Dingbaty</Option>
