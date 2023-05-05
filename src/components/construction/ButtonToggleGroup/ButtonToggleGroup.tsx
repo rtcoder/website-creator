@@ -2,7 +2,6 @@ import styles from './ButtonToggleGroup.module.scss'
 import {useEffect, useState} from "react";
 import classNames from "@/helpers/classNames";
 import ButtonToggle from "@/components/construction/ButtonToggleGroup/ButtonToggle/ButtonToggle";
-import {makeId} from "@/helpers/string-helpers";
 
 type ValueType = string | number;
 type Value = ValueType[] | ValueType;
@@ -95,7 +94,7 @@ export default function ButtonToggleGroup(props: Props) {
             .map((el, index) => {
                 const {className, children, ...rest} = el.props
                 return (
-                    <ButtonToggle key={makeId(3)}
+                    <ButtonToggle key={el.props.value + index}
                                   onClick={() => handleClick(el)}
                                   {...rest}
                                   className={classNames([styles.buttonToggle, className])}

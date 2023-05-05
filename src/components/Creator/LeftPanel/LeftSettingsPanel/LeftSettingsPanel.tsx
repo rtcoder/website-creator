@@ -7,30 +7,36 @@ import Anchor from "@/components/Creator/LeftPanel/LeftSettingsPanel/Anchor/Anch
 import HeadingTagName from "@/components/Creator/LeftPanel/LeftSettingsPanel/HeadingTagName/HeadingTagName";
 import Link from "@/components/Creator/LeftPanel/LeftSettingsPanel/Link/Link";
 import SpecialCharacters from "@/components/Creator/LeftPanel/LeftSettingsPanel/SpecialCharacters/SpecialCharacters";
+import {BlockInterface} from "@/interfaces/Block.interface";
+import {BlockTypes} from "@/types/block-type";
+import {isTextBlock} from "@/helpers/block-type-helpers";
 
 export default function LeftSettingsPanel() {
-    const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
+    const selectedBlock: BlockInterface = useSelector((state: any) => state.structure.selectedBlock);
 
     return (
         <div>
             {selectedBlock
                 ? (<>
                     <Accordion>
-                        <AccordionItem title="Link">
-                            <Link/>
-                        </AccordionItem>
-                        <AccordionItem title="Nagłówek">
-                            <HeadingTagName/>
-                        </AccordionItem>
                         <AccordionItem title="Kotwica">
                             <Anchor/>
                         </AccordionItem>
-                        <AccordionItem title="Ikonka">
-                            <IconPanel/>
+                        <AccordionItem title="Link">
+                            <Link/>
                         </AccordionItem>
-                        <AccordionItem title="Znaki specjalne">
-                            <SpecialCharacters/>
-                        </AccordionItem>
+                        {selectedBlock.type === BlockTypes.HEADING
+                            ? <AccordionItem title="Nagłówek">
+                                <HeadingTagName/>
+                            </AccordionItem> : ''}
+                        {selectedBlock.type === BlockTypes.ICON
+                            ? <AccordionItem title="Ikonka">
+                                <IconPanel/>
+                            </AccordionItem> : ''}
+                        {isTextBlock(selectedBlock)
+                            ? <AccordionItem title="Znaki specjalne">
+                                <SpecialCharacters/>
+                            </AccordionItem> : ''}
                     </Accordion>
                 </>)
                 : <NoBlock/>

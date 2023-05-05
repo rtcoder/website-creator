@@ -183,3 +183,7 @@ export function _mapBlock(block: BlockInterface, resetId = false): BlockInterfac
         children: block.children.map(b => _mapBlock(b, resetId))
     }
 }
+
+export const isTextBlock = (block: BlockInterface): boolean => {
+    return [BlockTypes.HEADING, BlockTypes.PARAGRAPH, BlockTypes.QUOTE, BlockTypes.BUTTON].includes(block.type);
+}
