@@ -40,7 +40,7 @@ export default function TextBlock(props: Props) {
         dangerouslySetInnerHTML: {__html: html}
     }
     return (
-        <CustomTag {...tagProps}/>
+        <CustomTag {...tagProps as any}/>
     )
 }
 
