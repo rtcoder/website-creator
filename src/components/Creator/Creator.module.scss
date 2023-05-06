@@ -1,8 +1,20 @@
 .creator {
+  $leftPanelDesktopWidth:380px;
+  $leftPanelMobileWidth:380px;
   display: grid;
   grid-template-columns: 380px calc(100% - 380px);
   grid-template-rows: 50px calc(100vh - 50px);
   grid-template-areas:
     "topPanel topPanel"
     "leftPanel creatorArea";
+
+  &.mobile{
+    grid-template-columns: 100%;
+    grid-template-rows: 50px calc(100vh - 350px) 350px;
+    grid-template-areas:
+    "topPanel"
+    "creatorArea"
+    "leftPanel";
+
+  }
 }

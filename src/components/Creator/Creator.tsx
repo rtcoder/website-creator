@@ -7,6 +7,8 @@ import {DndProvider} from "react-dnd";
 import {TouchBackend} from 'react-dnd-touch-backend'
 import {setStructure} from "@/store/structureSlice";
 import {useDispatch} from "react-redux";
+import classNames from "@/helpers/classNames";
+import {isMobile} from "@/helpers/mobile-detector";
 
 export default function Creator() {
     const dispatch = useDispatch();
@@ -20,10 +22,13 @@ export default function Creator() {
             setStructureValue(JSON.parse(lsStructure));
         }
     })
-
+    const classes = classNames({
+        [styles.creator]: true,
+        [styles.mobile]: isMobile()
+    })
     return (
         <DndProvider backend={TouchBackend} options={{enableMouseEvents: true}}>
-            <div className={styles.creator}>
+            <div className={classes}>
                 <TopPanel/>
                 <LeftPanel/>
                 <CreatorArea/>

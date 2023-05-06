@@ -6,6 +6,7 @@ import {duplicateBlock, removeBlock} from "@/store/structureSlice";
 import {useDispatch, useSelector} from "react-redux";
 import ActionMoveButtons from "@/components/Creator/CreatorArea/ActionButtons/ActionMoveButtons/ActionMoveButtons";
 import MediaActionButtons from "@/components/Creator/CreatorArea/ActionButtons/MediaActionButtons/MediaActionButtons";
+import {isMobile} from "@/helpers/mobile-detector";
 
 export default function ActionButtons() {
     const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export default function ActionButtons() {
         const parentLeft = parentBoundingRect.left;
         const parentHeight = parentBoundingRect.height;
         const {width, height} = container.getBoundingClientRect();
-        const creatorAreaLeftPos = 380;
+        const creatorAreaLeftPos = isMobile() ? 0 : 380;
         const creatorAreaTopPos = 50;
 
         let newTop = parentTop - height;
@@ -57,9 +58,13 @@ export default function ActionButtons() {
         setComponentPosition();
     }, [selectedBlock, pageYOffset, structure])
 
+    const classes = classNames({
+        [styles.actionButtons]: true,
+        [styles.mobile]: isMobile()
+    })
     return (
         <> {selectedBlock
-            ? <div className={styles.actionButtons} ref={ref}>
+            ? <div className={classes} ref={ref}>
                 <ActionMoveButtons block={selectedBlock}/>
                 <MediaActionButtons block={selectedBlock}/>
 
