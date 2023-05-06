@@ -21,6 +21,7 @@ export const BLOCK_TYPES_HUMAN_NAMES = {
     [BlockTypes.ICON]: 'Ikonka',
     [BlockTypes.AUDIO]: 'Audio',
     [BlockTypes.YOUTUBE]: 'YouTube',
+    [BlockTypes.SPOTIFY]: 'Spotify',
     [BlockTypes.VIMEO]: 'Vimeo',
     [BlockTypes.HR]: 'Pozioma linia',
     [BlockTypes.QUOTE]: 'Cytat',

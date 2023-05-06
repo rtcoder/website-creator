@@ -34,7 +34,7 @@ export interface BlockAttributesInterface {
     src?: string;
     frameBorder?: string;
     allow?: string;
-    allowFullscreen?: string;
+    allowFullScreen?: string;
     type?: string;
 
 }

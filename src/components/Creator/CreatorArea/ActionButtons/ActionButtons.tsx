@@ -1,7 +1,7 @@
 import styles from './ActionButtons.module.scss'
 import Icon from "@/components/construction/Icon/Icon";
 import classNames from "@/helpers/classNames";
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef} from "react";
 import {duplicateBlock, removeBlock} from "@/store/structureSlice";
 import {useDispatch, useSelector} from "react-redux";
 import ActionMoveButtons from "@/components/Creator/CreatorArea/ActionButtons/ActionMoveButtons/ActionMoveButtons";
@@ -11,6 +11,7 @@ export default function ActionButtons() {
     const dispatch = useDispatch();
     const ref = useRef(null);
     const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
+    const structure = useSelector((state: any) => state.structure.structure);
     const pageYOffset = useSelector((state: any) => state.structure.pageYOffset);
 
     const duplicate = useCallback((block) => {
@@ -47,14 +48,14 @@ export default function ActionButtons() {
             newLeft = parentLeft;
         }
         if (newLeft + width > window.innerWidth) {
-            newLeft = window.innerWidth-width
+            newLeft = window.innerWidth - width
         }
         container.style.top = `${newTop}px`
         container.style.left = `${newLeft}px`
     }
     useEffect(() => {
         setComponentPosition();
-    }, [selectedBlock, pageYOffset])
+    }, [selectedBlock, pageYOffset, structure])
 
     return (
         <> {selectedBlock
@@ -71,7 +72,7 @@ export default function ActionButtons() {
                       title="Duplikuj"
                       type="material-outlined"
                       name="content_copy"
-                      onClick={()=>duplicate(selectedBlock)}/>
+                      onClick={() => duplicate(selectedBlock)}/>
 
                 <Icon className={styles.itemButton}
                       title="Przenieś"
@@ -82,7 +83,7 @@ export default function ActionButtons() {
                       title="Usuń"
                       type="material-outlined"
                       name="close"
-                      onClick={()=>deleteBlk(selectedBlock)}/>
+                      onClick={() => deleteBlk(selectedBlock)}/>
             </div> : ''}</>
     )
 }

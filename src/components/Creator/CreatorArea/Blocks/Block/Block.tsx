@@ -31,13 +31,21 @@ export default function Block(props: BlockProps) {
     const hiddenBlocksIds = useSelector((state: any) => state.structure.hiddenBlocksIds);
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch();
-
-    const [{opacity}, dragRef] = useDrag({
+    const defaultOffset = {
+        x: 0,
+        y: 0,
+    };
+    const [{isDragging, offset}, dragRef] = useDrag({
         type: `${BLOCK_TYPES_HUMAN_NAMES[block.type]}`,
         item: () => block,
-        collect: (monitor) => ({
-            opacity: monitor.isDragging() ? 0.5 : 1
-        })
+        collect: (monitor) => {
+            const isDragging = monitor.isDragging();
+            const offset = isDragging ? (monitor.getDifferenceFromInitialOffset() || defaultOffset) : defaultOffset;
+            return {
+                isDragging,
+                offset
+            }
+        }
     });
 
     const selectBlock = useCallback((blk) => {
@@ -67,6 +75,15 @@ export default function Block(props: BlockProps) {
         [styles.minimized]: isHidden()
     });
     const withoutProperties = ['width', 'min-width', 'max-width', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right'];
+    const style = {
+        ...getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties) as any,
+        ...(isDragging ? {
+            top: offset.y + "px",
+            left: offset.x + "px",
+            zIndex: 100000,
+            pointerEvents: 'none'
+        } : {})
+    }
     return (
         <div className={classes}
              ref={dragRef}
@@ -74,7 +91,7 @@ export default function Block(props: BlockProps) {
              onMouseOver={onMouseOver}
              onMouseLeave={onMouseLeave}
              data-id={block.id}
-             style={getInheritedStyleWithout(block.styles, rwd, styleState, withoutProperties)}>
+             style={style}>
 
             <div className={styles.maskLayer}
                  title={BLOCK_TYPES_HUMAN_NAMES[block.type]}>

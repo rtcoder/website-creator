@@ -113,13 +113,13 @@ const getStartingAttributes = (type: BlockTypes.BlockType): BlockAttributesInter
         src: '',
         frameBorder: '0',
         allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-        allowFullscreen: ''
+        allowFullScreen: ''
     },
     [BlockTypes.VIMEO]: {
         src: '',
         frameBorder: '0',
         allow: 'autoplay; fullscreen; picture-in-picture',
-        allowFullscreen: ''
+        allowFullScreen: ''
     },
     [BlockTypes.IFRAME]: {
         src: '',
@@ -128,7 +128,7 @@ const getStartingAttributes = (type: BlockTypes.BlockType): BlockAttributesInter
     [BlockTypes.SPOTIFY]: {
         src: '',
         frameBorder: '0',
-        allowFullscreen: '',
+        allowFullScreen: '',
         width: '100%',
         height: '100%',
         allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
@@ -136,10 +136,9 @@ const getStartingAttributes = (type: BlockTypes.BlockType): BlockAttributesInter
     },
     [BlockTypes.GOOGLE_MAPS]: {
         src: '',
-        allowFullscreen: '',
+        allowFullScreen: '',
         width: '100%',
         height: '100%',
-        style: 'border:0;',
         referrerPolicy: 'no-referrer-when-downgrade',
         loading: 'lazy'
     },
@@ -147,7 +146,6 @@ const getStartingAttributes = (type: BlockTypes.BlockType): BlockAttributesInter
         src: '',
         width: '100%',
         height: '100%',
-        style: 'border:0;',
         frameBorder: '0',
         scrolling: 'no',
     },
