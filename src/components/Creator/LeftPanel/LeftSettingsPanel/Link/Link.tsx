@@ -6,6 +6,8 @@ import {Option, Select} from "@/components/construction/Select";
 import {BlockLinkInterface, LINK_TYPES} from "@/interfaces/BlockLink.interface";
 import {getAllStructureAnchors} from "@/helpers/block";
 import Input from "@/components/construction/Input/Input";
+import Icon from "@/components/construction/Icon/Icon";
+import style from './Link.module.scss'
 
 export default function Link() {
     const selectedBlock: BlockInterface = useSelector((state: any) => state.structure.selectedBlock);
@@ -63,11 +65,21 @@ export default function Link() {
         <div>
             <Select label="Typ linku" onChange={updateLinkType}>
                 <Option value='' selected={linkType === ''}>Wybierz</Option>
-                <Option value={LINK_TYPES.URL} selected={linkType === LINK_TYPES.URL}>Zwykły link</Option>
-                <Option value={LINK_TYPES.EMAIL} selected={linkType === LINK_TYPES.EMAIL}>E-mail</Option>
-                <Option value={LINK_TYPES.TEL} selected={linkType === LINK_TYPES.TEL}>Nr. telefonu</Option>
-                <Option value={LINK_TYPES.SKYPE} selected={linkType === LINK_TYPES.SKYPE}>Skype</Option>
-                <Option value={LINK_TYPES.ANCHOR} selected={linkType === LINK_TYPES.ANCHOR}>Element na stronie</Option>
+                <Option value={LINK_TYPES.URL} selected={linkType === LINK_TYPES.URL}>
+                    <Icon className={style.optionIcon} type="material" name="link"/> Zwykły link
+                </Option>
+                <Option value={LINK_TYPES.EMAIL} selected={linkType === LINK_TYPES.EMAIL}>
+                    <Icon className={style.optionIcon} type="material" name="alternate_email"/> E-mail
+                </Option>
+                <Option value={LINK_TYPES.TEL} selected={linkType === LINK_TYPES.TEL}>
+                    <Icon className={style.optionIcon} type="material" name="call"/> Nr. telefonu
+                </Option>
+                <Option value={LINK_TYPES.SKYPE} selected={linkType === LINK_TYPES.SKYPE}>
+                    <Icon className={style.optionIcon} type="fontawesome" name="fa-brands fa-skype"/> Skype
+                </Option>
+                <Option value={LINK_TYPES.ANCHOR} selected={linkType === LINK_TYPES.ANCHOR}>
+                    <Icon className={style.optionIcon} type="material" name="tag"/> Element na stronie
+                </Option>
             </Select>
 
             {linkType
@@ -77,7 +89,7 @@ export default function Link() {
                             <Option value="" selected={linkValue === ''}>Wybierz</Option>
                             {allAnchors.map(anchor =>
                                 <Option value={`#${anchor}`} key={anchor}
-                                        selected={linkValue === `#${anchor}`}>{anchor}</Option>)}
+                                        selected={linkValue === `#${anchor}`}>#{anchor}</Option>)}
                         </Select>
 
                         : <Input onChange={(ev, val) => updateLinkValue(val)} value={linkValue} label="Wpisz wartość"/>
