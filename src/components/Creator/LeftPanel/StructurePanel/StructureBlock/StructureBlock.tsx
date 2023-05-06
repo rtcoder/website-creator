@@ -83,7 +83,14 @@ export default function StructureBlock(props: Props) {
                         /> : ''}
                 </div>
                 <div className={styles.name}
-                     onClick={toggleSelectedBlock}>{BLOCK_TYPES_HUMAN_NAMES[props.block.type]}</div>
+                     onClick={toggleSelectedBlock}>
+                    {BLOCK_TYPES_HUMAN_NAMES[props.block.type]}
+                    {props.block.attributes.id ?
+                        <div className={styles.anchorName}>
+                            <Icon type="material" name="tag" className={styles.icon}/>
+                            {props.block.attributes.id}
+                        </div> : ''}
+                </div>
                 <div className={styles.buttons}>
                     <Icon type="fontawesome"
                           className={styles.icon}

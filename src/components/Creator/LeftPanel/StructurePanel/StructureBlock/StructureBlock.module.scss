@@ -8,20 +8,29 @@
   }
 
   &.selected {
-    &>.row {
+    & > .row {
       border-color: #19b6ff;
       background-color: #2b94c5;
       color: #fff;
+
+      .name {
+        .anchorName {
+          color: #e6e6e6;
+        }
+      }
     }
   }
+
   &:has(.selected) {
-    &>.row{
+    & > .row {
       border-color: #19b6ff;
     }
   }
-.hidden{
 
-}
+  .hidden {
+
+  }
+
   .row {
     display: grid;
     grid-template-columns: 20px auto 60px;
@@ -45,14 +54,33 @@
     .name {
       grid-area: name;
       cursor: pointer;
+      display: flex;
+
+      .anchorName {
+        display: flex;
+        margin-left: 5px;
+        color: #555;
+        font-size: 14px;
+        align-items: center;
+
+        .icon {
+          font-size: 18px;
+        }
+      }
     }
-    .buttons{
-      grid-area:buttons;
+
+    .buttons {
+      grid-area: buttons;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+
       .icon {
         cursor: pointer;
+
+        &:last-child {
+          color: #ea0000;
+        }
       }
     }
   }
