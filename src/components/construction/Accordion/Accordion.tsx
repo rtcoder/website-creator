@@ -8,7 +8,6 @@ interface Props {
 
 export default function Accordion(props: Props) {
     const getChildrenItems = () => {
-        console.log(AccordionItem.name)
         return (Array.isArray(props.children) ? props.children : [props.children])
             .flat()
             .filter((child) => child?.type?.name === AccordionItem.name);

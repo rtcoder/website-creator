@@ -19,7 +19,6 @@ export default function Anchor() {
         setAnchor(value);
         const allAnchors = getAllStructureAnchors([...structure]);
         if (allAnchors.includes(value)) {
-            console.log(allAnchors, value)
             setShowErrorMessage(true);
         } else {
             setShowErrorMessage(false);

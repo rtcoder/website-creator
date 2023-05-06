@@ -44,7 +44,7 @@ export default function Animations(props: Props) {
         setDelays([...value.delays]);
         setDurations([...value.durations]);
         setAnimations([...value.animations]);
-        console.log({value})
+
         if (value.animations.includes('none')) {
             props.onChange('', 'animationIterationCount');
             props.onChange('', 'animationDirection');

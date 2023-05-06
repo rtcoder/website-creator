@@ -27,7 +27,6 @@ export default function CanvasOpacity(props: CanvasOpacityProps) {
         }
     }
     const setColor = () => {
-        console.log(props.color)
         const canvasOpacityCursorWidth = canvasOpacityCursorRef.current.width;
         const [, , , a] = props.color;
         setOpacity(a, false);
