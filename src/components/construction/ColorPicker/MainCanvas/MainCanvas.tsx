@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import styles from "../ColorPicker.module.scss"
-import {MainCanvasProps, MousePos, Rgb} from "@/components/construction/ColorPicker/types";
+import {MainCanvasProps, MousePos, Rgb, Rgba} from "@/components/construction/ColorPicker/types";
 import {
     clamp,
     colorArrayToString,
@@ -28,14 +28,14 @@ export default function MainCanvas(props: MainCanvasProps) {
     const onChange = (color: Rgb) => {
         props.onChange(color);
     }
-    const setColorValue = (color: Rgb, change = true) => {
+    const setColorValue = (color: Rgb | Rgba, change = true) => {
         const [r, g, b] = color;
         setCurrentColor([r, g, b]);
         if (change) {
             onChange([r, g, b]);
         }
     }
-    const setColor = (color: Rgb, change = true) => {
+    const setColor = (color: Rgb | Rgba, change = true) => {
         setColorValue(color, change);
         const hue = getHueFromRgba(color);
         const mainCanvasWidth = canvasCursorRef.current.width;
