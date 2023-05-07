@@ -25,6 +25,7 @@ export interface BlockSettingsIconInterface {
 
 export interface BlockAttributesInterface {
     id?: string;
+    class?: string;
     scrolling?: string;
     style?: string;
     referrerPolicy?: string;

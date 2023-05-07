@@ -31,7 +31,7 @@ export default function Text(props: Props) {
             <div className={styles.stylesFormRow}>
                 Kolor
                 <div className={styles.stylesFormField}>
-                    <ColorPicker value={color} onChange={e => props.onChange(e, 'color')}/>
+                    <ColorPicker defaultValue="rgba(0,0,0,1)" value={color} onChange={e => props.onChange(e, 'color')}/>
                 </div>
             </div>
             <TextAlign onChange={props.onChange}/>
