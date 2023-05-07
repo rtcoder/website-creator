@@ -86,27 +86,36 @@
     font-weight: inherit;
     width: 100%;
   }
+
+  .children {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    flex-direction: inherit;
+    flex-wrap: inherit;
+    padding: 5px;
+  }
 }
 
 .children {
   width: 100%;
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  flex-direction: inherit;
-  flex-wrap: inherit;
+  display: table;
   min-height: 50px;
-  padding: 5px;
+  padding: 0 5px 50px 5px;
   height: 100%;
   height: -moz-available;
   height: -webkit-fill-available;
   height: fill-available;
 
   &.dragover {
-    background: #3bb956;
+    background: rgba(59, 185, 86, 0.49);
 
     &:has(.dragover) {
       background: transparent;
+    }
+
+    > div, .children > div {
+      outline: 1px solid #09c;
     }
   }
 

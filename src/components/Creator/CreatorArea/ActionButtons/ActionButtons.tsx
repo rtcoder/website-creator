@@ -38,11 +38,18 @@ export default function ActionButtons() {
         const parentHeight = parentBoundingRect.height;
         const {width, height} = container.getBoundingClientRect();
         const creatorAreaLeftPos = isMobile() ? 0 : 380;
+        const creatorAreaBottomPos = isMobile() ? window.innerHeight - 350 : window.innerHeight - 50;
         const creatorAreaTopPos = 50;
 
         let newTop = parentTop - height;
         if (newTop < creatorAreaTopPos) {
             newTop = parentTop + parentHeight;
+            if (newTop > creatorAreaBottomPos) {
+                newTop = parentTop;
+                if (newTop > creatorAreaBottomPos || newTop < creatorAreaTopPos) {
+                    newTop = creatorAreaTopPos;
+                }
+            }
         }
         let newLeft = parentLeft + (parentWidth / 2) - (width / 2);
         if (newLeft < creatorAreaLeftPos) {
@@ -65,24 +72,14 @@ export default function ActionButtons() {
     return (
         <> {selectedBlock
             ? <div className={classes} ref={ref}>
-                <ActionMoveButtons block={selectedBlock}/>
+                <ActionMoveButtons/>
                 <MediaActionButtons block={selectedBlock}/>
-
-                <Icon className={styles.itemButton}
-                      title="Ustawienia"
-                      type="material-outlined"
-                      name="build"/>
 
                 <Icon className={styles.itemButton}
                       title="Duplikuj"
                       type="material-outlined"
                       name="content_copy"
                       onClick={() => duplicate(selectedBlock)}/>
-
-                <Icon className={styles.itemButton}
-                      title="Przenieś"
-                      type="material-outlined"
-                      name="open_with"/>
 
                 <Icon className={classNames([styles.itemButton, styles.delete])}
                       title="Usuń"

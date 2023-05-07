@@ -5,6 +5,8 @@ import {STYLE_STATE_NAMES} from "@/enums/styleState";
 import {
     dropBlockFn,
     dropNewBlockFn,
+    moveDownBlockFn,
+    moveUpBlockFn,
     removeBlockFn,
     setRwdModeFn,
     setSelectedBlockFn,
@@ -61,7 +63,9 @@ const structureSlice = createSlice({
         setStylesProperty: setStylesPropertyFn,
         setPageYOffset: setPageYOffsetFn,
         setTagName: setTagNameFn,
-        setLink: setLinkFn
+        setLink: setLinkFn,
+        moveUpBlock: moveUpBlockFn,
+        moveDownBlock: moveDownBlockFn,
     }
 });
 
@@ -83,6 +87,8 @@ export const {
     setPageYOffset,
     setTagName,
     setLink,
+    moveUpBlock,
+    moveDownBlock,
 }: { [k: string]: (action: any) => AnyAction } = structureSlice.actions;
 
 export default structureSlice.reducer;

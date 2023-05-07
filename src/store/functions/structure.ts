@@ -1,10 +1,18 @@
 import {StructureState} from "@/store/structureSlice";
-import {addNewBlockAtIndex, moveBlock, removeRecursive} from "@/helpers/block";
+import {
+    addNewBlockAtIndex,
+    findIndexById,
+    getBlockParent,
+    moveBlock,
+    removeRecursive,
+    updateBlockInStructure
+} from "@/helpers/block";
 import {makeBlock} from "@/helpers/block-type-helpers";
 import {PayloadAction} from "@reduxjs/toolkit";
 import {BlockInterface} from "@/interfaces/Block.interface";
 import {RWD_MODES} from "@/enums/rwd";
 import {STYLE_STATE_NAMES} from "@/enums/styleState";
+import {arrayMove} from "@/helpers/array";
 
 interface SetSelectedBlockPayload {
     force: boolean;
@@ -60,3 +68,33 @@ export const removeBlockFn = (state: StructureState, {payload}: PayloadAction<Bl
         state.selectedBlock = null;
     }
 };
+export const moveUpBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
+    const {structure} = state;
+    const parent = getBlockParent(structure, payload.id);
+    if (parent) {
+        const index = findIndexById(parent.children, payload.id);
+        const nextIndex = index - 1;
+        parent.children = arrayMove(parent.children, index, nextIndex);
+        state.structure = updateBlockInStructure(structure, parent.id, parent);
+        return;
+    }
+
+    const index = findIndexById(structure, payload.id);
+    const nextIndex = index - 1;
+    state.structure = arrayMove(structure, index, nextIndex);
+}
+export const moveDownBlockFn = (state: StructureState, {payload}: PayloadAction<BlockInterface>) => {
+    const {structure} = state;
+    const parent = getBlockParent(structure, payload.id);
+    if (parent) {
+        const index = findIndexById(parent.children, payload.id);
+        const nextIndex = index + 1;
+        parent.children = arrayMove(parent.children, index, nextIndex);
+        state.structure = updateBlockInStructure(structure, parent.id, parent);
+        return;
+    }
+
+    const index = findIndexById(structure, payload.id);
+    const nextIndex = index + 1;
+    state.structure = arrayMove(structure, index, nextIndex);
+}

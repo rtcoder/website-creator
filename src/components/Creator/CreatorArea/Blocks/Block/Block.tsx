@@ -22,11 +22,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
 import {setSelectedBlock} from "@/store/structureSlice";
 import {BlockTypes} from "@/types/block-type";
+import {isMobile} from "@/helpers/mobile-detector";
 
 
 export default function Block(props: BlockProps) {
     const {block} = props;
     const rwd = useSelector((state: any) => state.structure.rwdMode);
+    const selectedBlock = useSelector((state: any) => state.structure.selectedBlock);
     const styleState = useSelector((state: any) => state.structure.styleState);
     const hiddenBlocksIds = useSelector((state: any) => state.structure.hiddenBlocksIds);
     const [isHovered, setIsHovered] = useState(false);
@@ -38,6 +40,9 @@ export default function Block(props: BlockProps) {
     const [{isDragging, offset}, dragRef] = useDrag({
         type: `${BLOCK_TYPES_HUMAN_NAMES[block.type]}`,
         item: () => block,
+        canDrag: () => {
+            return isMobile() ? (block.id === selectedBlock?.id) : true;
+        },
         collect: (monitor) => {
             const isDragging = monitor.isDragging();
             const offset = isDragging ? (monitor.getDifferenceFromInitialOffset() || defaultOffset) : defaultOffset;
@@ -97,6 +102,7 @@ export default function Block(props: BlockProps) {
                  title={BLOCK_TYPES_HUMAN_NAMES[block.type]}>
                 {BLOCK_TYPES_HUMAN_NAMES[block.type]}
             </div>
+
             {getBlockContent(block)}
         </div>
     )
